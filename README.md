@@ -47,7 +47,7 @@ $env:CARGO_INCREMENTAL = '0'
 cargo test --workspace
 ```
 
-Typechecking generates Next.js types before invoking TypeScript, so it works on a fresh checkout. Browser tests use installed Chrome. Windows visual baselines are included; Linux pixel-baseline capture and other release checks are documented in [AGENTS.md](AGENTS.md). The complete local gate is `bash scripts/gates.sh`; CI additionally runs coverage and Lighthouse checks. Passing local checks does not establish hosted publication or visual acceptance.
+Typechecking generates Next.js types before invoking TypeScript, so it works on a fresh checkout. `pnpm test` first copies the selected dataset's public API files and feeds, so schema-link tests do not require a prior build. DOM tests provide a ResizeObserver stand-in for jsdom; actual graph layout and resizing are covered by browser tests. Browser tests use installed Chrome. Windows visual baselines are included; Linux pixel-baseline capture and other release checks are documented in [AGENTS.md](AGENTS.md). The complete local gate is `bash scripts/gates.sh`; CI additionally runs coverage and Lighthouse checks. Passing local checks does not establish hosted publication or visual acceptance.
 
 Release checks also require `CELEBTIR_REPO_URL=https://github.com/<owner>/<repo>` when building, so the About page has its corrections link. `CELEBTIR_SITE_URL` supplies the public site origin for absolute metadata URLs. CI sets the repository URL explicitly; local browsing can run without these release settings.
 
@@ -73,7 +73,7 @@ Release checks also require `CELEBTIR_REPO_URL=https://github.com/<owner>/<repo>
 
 The ignored deployment entry point is deliberately not distributed by a clone. Its local commands and the versioned host helpers are described in [docs/deployment.md](docs/deployment.md). Deployment-entry tests require that owner's local script; ordinary CI does not call it. Runtime secrets must not be committed.
 
-GitHub's daily collection, bot data commits, Pages publication and schedule monitor are disabled by default through the repository variable `CELEBTIR_ENABLE_GITHUB_DAILY`. Only set it to `true` after an explicit decision to use that publication path. Source CI and registry-review checks remain enabled. Creating the first commit does not activate registry drafts or authorize deployment.
+GitHub's daily collection, bot data commits, Pages publication and schedule monitor are disabled by default through the repository variable `CELEBTIR_ENABLE_GITHUB_DAILY`. Only set it to `true` after an explicit decision to use that publication path. Source CI and registry-review checks remain enabled. The push-triggered `CI checks (no deployment)` workflow has read-only repository permissions; its offline deployment tests use temporary directories and mocked services without publishing or connecting to the host. Creating the first commit does not activate registry drafts or authorize deployment.
 
 ## Licenses
 

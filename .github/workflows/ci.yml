@@ -1,4 +1,4 @@
-name: ci
+name: CI checks (no deployment)
 
 on:
   push:
@@ -17,14 +17,15 @@ permissions:
 
 env:
   CARGO_TERM_COLOR: always
-  CELEBTIR_REPO_URL: https://github.com/KibaSoftware/celedir
+  CELEBTIR_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
 
 jobs:
-  deployment:
+  deployment-tests:
+    name: Offline deployment tests (no publication)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: deployment syntax and offline publication behavior
+      - name: Check scripts with temporary files and mocked services
         run: |
           bash -n scripts/deploy/bootstrap.sh
           bash -n scripts/deploy/update.sh

@@ -137,6 +137,9 @@ describe("ui_13 permissions link to the control graph", () => {
   it("ui_13 clicking an actor focuses it in the control graph", async () => {
     const s = loadSnapshot();
     render(<ProtocolSections page={buildProtocolPage(s, "kamino-lend", undefined, [])} />);
+    // Wait for the lazy canvas as well as the static list. Otherwise fast runs
+    // can finish before React Flow mounts and miss browser-API setup failures.
+    await waitFor(() => expect(section("control-graph").querySelector(".react-flow")).not.toBeNull());
     const link = within(section("permissions")).getAllByRole("link", { name: /Show in control graph/ })[0]!;
     const target = link.getAttribute("href")!;
     expect(target).toMatch(/^#node-/);
