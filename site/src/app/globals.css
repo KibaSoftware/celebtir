@@ -1,0 +1,343 @@
+/* Celebtir: the Elvish Highwatch system (ADR 023, amending UI-24). Dark only.
+   Values mirror src/lib/tokens.ts, whose tests check contrast. Fonts are
+   self-hosted through next/font (src/app/fonts.ts): nothing is fetched from a
+   third party (LCH-6). */
+:root {
+  --canvas: #080e1a;
+  --nav: #0e1828;
+  --surface-raised: #19283c;
+  --surface-alt: #112035;
+  --white: #f5f7fc;
+  --muted: #98a6ba;
+  --cyan: #78c8d5;
+  --low: #43ce9b;
+  --medium: #f0ba5e;
+  --high: #ed6267;
+  --unknown: #98a6ba;
+  --radius-control: 8px;
+  --radius-card: 9px;
+  --space-unit: 4px;
+  color-scheme: dark;
+
+  /* Surfaces: Midnight Navy → Observatory Navy → elevated → hover. */
+  --page: #080e1a;
+  --surface: #141f30;
+  --raised: #19283c;
+  --hover: #21334b;
+
+  /* Ink: Starlight White, Moon Silver, lifted Ancient Silver. */
+  --ink-primary: #f5f7fc;
+  --ink-secondary: #c5cfdd;
+  --ink-muted: #98a6ba;
+  --ink-link: #7eabef;
+  --link-underline: rgba(126, 171, 239, 0.45);
+
+  /* Brand: structure, selection and series; never ratings. */
+  --gold: #d4b46a;
+  --gold-muted: #a68b55;
+  --gold-line: rgba(212, 180, 106, 0.55);
+  --blue: #6599e8;
+  --blue-tint: rgba(101, 153, 232, 0.08);
+  --blue-tint-strong: rgba(101, 153, 232, 0.16);
+  --sapphire: #345fad;
+  --silver: #c5cfdd;
+
+  --grid: #1d2b40;
+  --axis: #2c3d55;
+  --border: #293b52;
+  --border-strong: rgba(197, 207, 221, 0.22);
+
+  /* Status: reserved for ratings, always with an icon and a text label. */
+  --status-good: #43ce9b;
+  --status-warning: #f0ba5e;
+  --status-serious: #ee8a5e;
+  --status-critical: #ed6267;
+  --status-neutral: #98a6ba;
+  --status-subdued: #76839a;
+
+  /* Stage marks: the lavender ramp of src/lib/labels.ts, never a status color. */
+  --stage-mark: #b3a8e6;
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-cormorant), "Trajan Pro", Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", "Cascadia Mono", Menlo, Consolas, monospace;
+
+  /* Type scale. */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-md: 0.875rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 2rem;
+  --text-kpi: 1.875rem;
+
+  /* Spacing, shape, motion. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --radius: 9px;
+  --radius-sm: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 8px 24px rgba(2, 6, 14, 0.35);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur: 180ms;
+  --dur-slow: 220ms;
+
+  /* Shared analytical frame; prose retains its independent reading measure. */
+  --content: 2560px;
+  --page-gutter: 16px;
+  --prose: 72ch;
+  --nav-height: 60px;
+  /* The sticky header's full height: one row, or two once the nav folds. */
+  --header-height: 61px;
+}
+
+/* Explicit visibility wins over responsive table display rules. */
+[hidden] { display: none !important; }
+select {
+  font: inherit;
+  color: var(--ink-primary);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-control);
+  padding: 7px 10px;
+  max-width: 100%;
+}
+select:hover { border-color: var(--ink-muted); }
+@media (max-width: 640px) {
+  button, select, summary { min-height: 44px; }
+}
+
+@media (max-width: 1180px) {
+  :root {
+    --header-height: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur: 0ms;
+    --dur-slow: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: calc(var(--header-height) + 16px);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--page);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Links are underlined so they read as links without colour (WCAG 1.4.1);
+   navigation lists, where every item is a link, drop the line. */
+a {
+  color: var(--ink-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--link-underline);
+  transition: color var(--dur-fast) var(--ease), text-decoration-color var(--dur-fast) var(--ease);
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+nav a,
+header a {
+  text-decoration: none;
+}
+
+nav a:hover,
+header a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink-link);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Mono only for addresses, slots, signatures and IDs (ADR 023). Figures use
+   the sans face with tabular numerals: the `.num` utility. */
+code,
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.92em;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: var(--text-2xl);
+  margin: 0 0 var(--space-2);
+}
+
+h2 {
+  font-size: var(--text-xl);
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+::selection {
+  background: rgba(101, 153, 232, 0.35);
+}
+
+/* Visually hidden, still read by screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* UI-25: usable at 375 px. Below 640 px every table in the page body becomes
+   a stack of cards; TableLabels copies each column's name into data-label so
+   a card shows "TVL  $1.31B". The header row stays as a scrollable strip so
+   its sort buttons remain visible. Tables that page or lay out their own
+   columns opt out with data-cards="off". */
+@media (max-width: 640px) {
+  main table:not([data-cards="off"]),
+  main table:not([data-cards="off"]) > tbody,
+  main table:not([data-cards="off"]) > tbody > tr,
+  main table:not([data-cards="off"]) > tbody > tr > th,
+  main table:not([data-cards="off"]) > tbody > tr > td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Without sort buttons the header row adds nothing to cards: hide it
+     (still read by screen readers). With them, it is a scrollable strip. */
+  main table:not([data-cards="off"]) > thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  main table:not([data-cards="off"]) > thead:has(button) {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+  }
+
+  main table:not([data-cards="off"]) > thead:has(button) tr {
+    display: flex;
+    gap: 4px 14px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  main table:not([data-cards="off"]) > thead th {
+    display: block;
+    flex: none;
+    border: 0 !important;
+    padding: 4px 0 !important;
+    white-space: nowrap;
+  }
+
+  main table:not([data-cards="off"]) > tbody > tr {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--raised);
+    margin: 0 0 10px;
+    padding: 8px 12px;
+  }
+
+  main table:not([data-cards="off"]) > tbody > tr > th,
+  main table:not([data-cards="off"]) > tbody > tr > td {
+    border: 0 !important;
+    padding: 3px 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+
+  /* Label floated into a left gutter, beside the value, keeps each card
+     short. Not a grid: that would split mixed text and links into cells. */
+  main table:not([data-cards="off"]) > tbody > tr > [data-label] {
+    /* flow-root contains the floated label, so a two-line label grows the row. */
+    display: flow-root;
+    padding-left: 8.5em !important;
+  }
+
+  main table:not([data-cards="off"]) > tbody > tr > [data-label]::before {
+    content: attr(data-label);
+    float: left;
+    margin-left: -8.5em;
+    padding-top: 2px;
+    width: 7.75em;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--ink-muted);
+  }
+
+  main table:not([data-cards="off"]) > caption {
+    display: block;
+  }
+}
+
+@media print {
+  :root { color-scheme: light; --page: #fff; --surface: #fff; --raised: #fff; --ink-primary: #111; --ink-secondary: #222; --ink-muted: #444; --ink-link: #174373; }
+  body { background: white; color: #111; }
+  body > header, footer, [data-shortcut="search"] { display: none !important; }
+  main { max-width: none !important; padding: 0 !important; }
+  pre, code { white-space: pre-wrap; overflow-wrap: anywhere; }
+  table { max-width: 100%; }
+  a[href^="https"]::after { content: " (" attr(href) ")"; font-size: 9pt; overflow-wrap: anywhere; }
+}
+
+/* Reading layer: intact source records remain in accessible disclosures. */
+.finding-copy { min-width: 0; line-height: 1.6; overflow-wrap: anywhere; }
+.finding-copy > p { margin-block: 8px; }
+.finding-copy summary { color: var(--ink-link); cursor: pointer; font-size: var(--text-sm); padding-block: 8px; }
+:where(main) details > summary { cursor: pointer; }
+:where(main) [id] { scroll-margin-top: calc(var(--header-height) + 20px); }

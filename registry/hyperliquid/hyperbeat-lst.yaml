@@ -1,0 +1,28 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-21.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Read live 2026-10-25 (F10): both contracts are UUPS proxies. Their Sourcify-verified
+# implementations (StakingCore 0xb829…f370, WithdrawManager 0xd7e4…9353) guard
+# upgradeToAndCall with roleRegistry.onlyProtocolUpgrader, and RoleRegistry 0x9010…4f76
+# (Sourcify exact match) requires its owner(): 0xa24a…2de4, which answers
+# getMinDelay() = 1800 s. Its proposers are not enumerable and are not listed.
+id: hyperbeat-lst
+name: Hyperbeat LST
+chain: hyper_evm
+category: liquid-staking
+website: https://hyperbeat.org
+defillama_slug: hyperbeat-lst
+programs:
+  - id: "0xCeaD893b162D38e714D82d06a7fe0b0dc3c38E0b"
+    name: Delegator
+    role: core
+    proxy: uups-role-registry
+    source: https://sourcify.dev/server/v2/contract/999/0xb829b6f905eadc9d9e08a1f54f190d83c7a6f370
+  - id: "0x9d0B0877b9f2204CF414Ca7862E4f03506822538"
+    name: Withdraw manager
+    role: core
+    # The implementation slot is set and the admin slot empty: a UUPS proxy.
+    proxy: uups-role-registry
+    source: https://sourcify.dev/server/v2/contract/999/0xd7e4b8ac588591a75e3b977ebd19563ddb629353
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-21

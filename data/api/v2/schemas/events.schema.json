@@ -1,0 +1,301 @@
+{
+  "$defs": {
+    "Address": {
+      "description": "An on-chain address in its chain's canonical text form (base58 on Solana,\n0x-hex on EVM). Format checks belong to the registry and collectors.",
+      "type": "string"
+    },
+    "Chain": {
+      "description": "The chain an address or fact lives on.",
+      "oneOf": [
+        {
+          "enum": [
+            "solana"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "hyper_evm",
+          "description": "Wave 2.",
+          "type": "string"
+        },
+        {
+          "const": "hyper_core",
+          "description": "Wave 2.",
+          "type": "string"
+        }
+      ]
+    },
+    "Deprecation": {
+      "description": "Set on every v1 file once /v2/ exists; v1 then stays for 90 days (API-2).",
+      "properties": {
+        "successor": {
+          "description": "Path of the replacing version, e.g. `/data/v2/`.",
+          "type": "string"
+        },
+        "sunset_date": {
+          "description": "`YYYY-MM-DD`: the last day this version is published.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "successor",
+        "sunset_date"
+      ],
+      "type": "object"
+    },
+    "Event": {
+      "properties": {
+        "after": true,
+        "backfill": {
+          "description": "Recorded from ProgramData history that predates the comparison: the\nchange is real, but older than the window it was recorded in (F6).",
+          "type": "boolean"
+        },
+        "before": true,
+        "corrects": {
+          "description": "For a correction: the id of the event it corrects (CHG-4). Events are\nnever edited or deleted.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "description": "The snapshot day the change was detected.",
+          "type": "string"
+        },
+        "detected_within_days": {
+          "description": "Days since the snapshot compared against: 1 normally, more after missed\nruns, when the change happened at some point within that window (CHG-5).",
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "type": "array"
+        },
+        "id": {
+          "description": "Stable: `<date>:<protocol>:<kind>:<subject>` (CHG-4).",
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/EventKind"
+        },
+        "occurred_on": {
+          "description": "For a transaction on chain: the UTC date of its block (F6). `date` is\nthe day Celebtir recorded it.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "protocol": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "signature": {
+          "description": "The transaction behind the change, when known (CHG-1).",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "slot": {
+          "description": "The transaction's slot, when the event is a transaction.",
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/Source"
+        },
+        "subject": {
+          "description": "The program, mint, account or factor the event is about.",
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "date",
+        "detected_within_days",
+        "subject",
+        "kind",
+        "severity",
+        "source",
+        "summary",
+        "before",
+        "after",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "EventKind": {
+      "oneOf": [
+        {
+          "enum": [
+            "controller_changed",
+            "made_immutable",
+            "program_upgraded",
+            "multisig_changed",
+            "admin_key_changed",
+            "verification_changed",
+            "oracle_changed",
+            "dependency_added",
+            "dependency_removed",
+            "token_control_changed",
+            "rating_changed",
+            "stage_changed",
+            "registry_edit",
+            "methodology_change"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "upgrade_authority_set",
+          "description": "A ProgramData `SetAuthority` transaction (F6).",
+          "type": "string"
+        },
+        {
+          "const": "upgrade_authority_removed",
+          "description": "A ProgramData authority removal: the program became immutable (F6).",
+          "type": "string"
+        },
+        {
+          "const": "hip3_changed",
+          "description": "A HIP-3 DEX appeared, disappeared, or changed its deployer, oracle\ncontrol, fee recipient or caps (HIP-6).",
+          "type": "string"
+        }
+      ]
+    },
+    "Evidence": {
+      "description": "Where a fact came from: the account read, the slot it was read at, the\nfield that held the value, and a link anyone can open to check it.",
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address"
+        },
+        "chain": {
+          "$ref": "#/$defs/Chain"
+        },
+        "explorer_url": {
+          "format": "uri",
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        },
+        "slot": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "chain",
+        "address",
+        "slot",
+        "field",
+        "explorer_url"
+      ],
+      "type": "object"
+    },
+    "Licence": {
+      "properties": {
+        "attribution": {
+          "description": "How to credit the data when reusing it.",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "attribution"
+      ],
+      "type": "object"
+    },
+    "Severity": {
+      "enum": [
+        "critical",
+        "warning",
+        "positive",
+        "info"
+      ],
+      "type": "string"
+    },
+    "Source": {
+      "description": "What changed: the chain, the registry, or the methodology (CHG-2).",
+      "enum": [
+        "on_chain",
+        "registry_edit",
+        "methodology"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "`/data/v2/events.json`: the change log, newest first. Rating and Stage\nevents of unassessed protocols are not published.",
+  "properties": {
+    "$schema": {
+      "description": "Root-relative path of this file's JSON Schema.",
+      "type": "string"
+    },
+    "api_version": {
+      "type": "string"
+    },
+    "deprecation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Deprecation"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "events": {
+      "items": {
+        "$ref": "#/$defs/Event"
+      },
+      "type": "array"
+    },
+    "licence": {
+      "$ref": "#/$defs/Licence"
+    },
+    "methodology_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "snapshot_date": {
+      "description": "The snapshot these data come from (`YYYY-MM-DD`).",
+      "type": "string"
+    }
+  },
+  "required": [
+    "$schema",
+    "api_version",
+    "schema_version",
+    "snapshot_date",
+    "methodology_version",
+    "licence",
+    "events"
+  ],
+  "title": "EventsApi",
+  "type": "object"
+}

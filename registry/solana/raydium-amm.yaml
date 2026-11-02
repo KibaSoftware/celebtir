@@ -1,0 +1,48 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# DefiLlama's raydium-amm counts AMM v4, CPMM and CLMM pools.
+# Tokens: the SOL-USDC AMM v4 pool 58oQChx4yWmvKdwLLZzBi4ChoCc2fqCUWBkwMihLYQo2, read on chain.
+# Admin: CLMM fee-tier config 0 (AmmConfig PDA, index 0) and its owner, read with the IDL from github.com/raydium-io/raydium-idl.
+# AMM v4 has no IDL and CPMM's admin key is compiled into the program, so neither has an admin entry.
+id: raydium-amm
+name: Raydium
+chain: solana
+category: dex
+website: https://raydium.io
+defillama_slug: raydium-amm
+programs:
+  - id: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8
+    name: AMM v4
+    role: core
+    source: https://docs.raydium.io/reference/program-addresses
+  - id: CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C
+    name: CPMM
+    role: core
+    source: https://docs.raydium.io/reference/program-addresses
+  - id: CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK
+    name: CLMM
+    role: core
+    source: https://docs.raydium.io/reference/program-addresses
+multisigs:
+  - address: tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u
+admin_accounts:
+  - account: 4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw
+    idl: idl/raydium-clmm.json
+    field: owner
+    power: parameters
+    source: https://solscan.io/account/4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw
+oracles_reviewed_none:
+  source: https://github.com/raydium-io/raydium-clmm
+  reviewed_on: 2026-10-25
+  note: "AMM v4, CPMM and CLMM price swaps from pool reserves; their instructions take no price-oracle account."
+tokens:
+  - mint: So11111111111111111111111111111111111111112
+    roles: [lp]
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    roles: [lp]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

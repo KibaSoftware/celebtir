@@ -1,0 +1,191 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 6,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "field": "freeze_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "key": "Q6XprfkF8RQQKoQVG33xT88H7wi8Uk1B1CC7YAs69Gi",
+        "kind": "single_key"
+      }
+    },
+    "identity": {
+      "issuer": "Tether",
+      "issuer_url": "https://tether.to/",
+      "kind": "stablecoin",
+      "source": "https://tether.to/en/supported-protocols/"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "field": "mint_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "key": "Q6XprfkF8RQQKoQVG33xT88H7wi8Uk1B1CC7YAs69Gi",
+        "kind": "single_key"
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 3839903225672940,
+    "symbol": "USDT"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+  "price": {
+    "kind": "price",
+    "usd_micros": 999144
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+            "field": "freeze_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "remove any permanent delegate and hold freeze or pause powers in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "balances can be frozen by single key Q6Xp…69Gi"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+            "field": "mint_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "hold the mint authority in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "new supply can be minted by single key Q6Xp…69Gi"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [
+      {
+        "factor": "supply_control",
+        "severity": "high",
+        "text": "New supply can be minted if single key Q6Xp…69Gi uses the mint authority."
+      },
+      {
+        "factor": "freeze_and_seize",
+        "severity": "high",
+        "text": "Your balance can be frozen if single key Q6Xp…69Gi uses the freeze authority."
+      }
+    ],
+    "symbol": "USDT"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 6,
+      "price_usd_micros": 999144,
+      "supply": 3839903225672940
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "jupiter-lend",
+      "roles": [
+        "deposit",
+        "borrowable"
+      ]
+    },
+    {
+      "protocol": "jupiter-perps",
+      "roles": [
+        "deposit"
+      ]
+    },
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "collateral",
+        "borrowable"
+      ]
+    }
+  ]
+}

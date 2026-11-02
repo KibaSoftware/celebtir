@@ -1,0 +1,14 @@
+{
+  "response": {
+    "commit": "bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4",
+    "executable_hash": "924abe7472a839c37ffffc1fb6663f54c6d5828afa3e31552a57497768a84a87",
+    "is_closed": false,
+    "is_frozen": false,
+    "is_verified": true,
+    "last_verified_at": "2026-09-03T18:09:28.873189",
+    "message": "On chain program verified",
+    "on_chain_hash": "924abe7472a839c37ffffc1fb6663f54c6d5828afa3e31552a57497768a84a87",
+    "repo_url": "https://github.com/Kamino-Finance/kfarms/tree/bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4"
+  },
+  "url": "https://verify.osec.io/status/FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr"
+}

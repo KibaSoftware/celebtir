@@ -1,0 +1,13 @@
+.state {
+  display: inline-block;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  border: 1px dashed var(--status-neutral);
+  border-radius: 4px;
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
+.state[data-state="unrated"] {
+  font-family: var(--font-mono);
+}

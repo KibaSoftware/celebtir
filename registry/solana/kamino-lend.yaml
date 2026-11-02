@@ -1,0 +1,221 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Tokens: the main market's reserves (api.kamino.finance reserves/metrics, 2026-10-19).
+# Collateral means a max LTV above 0; borrowable means debt is outstanding.
+# Oracle: every reserve reads Scope price account 3t4JZcue…; each reserve's chain is listed (ADR 022, F4).
+id: kamino-lend
+name: Kamino Lend
+chain: solana
+category: lending
+website: https://kamino.com
+defillama_slug: kamino-lend
+programs:
+  - id: KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD
+    name: Lending
+    role: core
+    source: https://github.com/Kamino-Finance/klend
+  - id: FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr
+    name: Farms
+    role: periphery
+    source: https://github.com/Kamino-Finance/kfarms
+multisigs:
+  - address: 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM
+  - address: 5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk
+  - address: 7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H
+admin_accounts:
+  - account: 7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF
+    idl: idl/kamino-lend.json
+    field: lending_market_owner
+    power: parameters
+    source: https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF
+oracles:
+  - account: 3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH
+    market: SOL reserve
+    role: primary
+    source: https://solscan.io/account/3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH
+    scope_chain:
+      account: d4A2prbA2whesmvHaL88BH6Ewn5N4bTSU2Ze8P6Bc4Q
+      idl: idl/kamino-lend.json
+      feed_field: config.token_info.scope_configuration.price_feed
+      chain_field: config.token_info.scope_configuration.price_chain
+      # Every other reserve of the main market holding deposits (api.kamino.finance
+      # reserves/metrics, 2026-10-25); each must still name this Scope price account.
+      reserves:
+        - market: "dSOL reserve"
+          account: StGKGcLQoTsWzQ1tFY2bWqrdiuBhqdFE4niiAutQxQB
+        - market: "USDC reserve"
+          account: D6q6wuQSrifJKZYpR1M8R4YawnLDtDsMmWM1NbBmgJ59
+        - market: "JITOSOL reserve"
+          account: EVbyPKrHG6WBfm4dLxLMJpUDY43cCAcHSpV3KYjKsktW
+        - market: "dfdvSOL reserve"
+          account: CkgQnPbuHHwSv2mNdAKH79TKSqC6jsyttK9yh4MPH6z3
+        - market: "cbBTC reserve"
+          account: 37Jk2zkz23vkAYBT66HM2gaqJuNg2nYLsCreQAVt5MWK
+        - market: "JupSOL reserve"
+          account: DGQZWCY17gGtBUgdaFs1VreJWsodkjFxndPsskwFKGpp
+        - market: "USDG reserve"
+          account: ESCkPWKHmgNE7Msf77n9yzqJd5kQVWWGy3o5Mgxhvavp
+        - market: "PYUSD reserve"
+          account: 2gc9Dm1eB6UgVYFBUN9bWks6Kes9PbWSaPaa9DqyvEiN
+        - market: "hSOL reserve"
+          account: CExamod1Ai3d1N8Vh7sBjt5xbZzb2VmGMAFocf7fxCzm
+        - market: "vSOL reserve"
+          account: CHBNUPdjeo2N5QkZY2uAqv7TW5EbCTMsfvaskCBuxbom
+        - market: "MSOL reserve"
+          account: FBSyPnxtHKLBZ4UeeUyAnbtFuAmTHLtso9YtsqRDRWpM
+        - market: "USDT reserve"
+          account: H3t6qZ1JkguCNTi9uzVKqQ7dvt2cum4XiXWom6Gn5e5S
+        - market: "xBTC reserve"
+          account: 4Hyrqb9Mq7y1wkq4YoqHkPdPx3VQyFY3mxMj67naC1Cb
+        - market: "fBTC reserve"
+          account: 2EXNMnkHE5TY1wTwA9UKi3wpTvoXpFsDPeGC5GVttu5F
+        - market: "bSOL reserve"
+          account: H9vmCVd77N1HZa36eBn3UnftYmg4vQzPfm1RxabHAMER
+        - market: "pSOL reserve"
+          account: HV9KsS5mB4b9CFhDJVKdfxWBAomYfUk5PeUsdgMQsUrB
+        - market: "bonkSOL reserve"
+          account: Ht9NoB1udjpRqws1sCw1j2dL7MeTDHYCDdDFkbc1Arst
+        - market: "jSOL reserve"
+          account: HD93Fq3gmVh3J7euJJ5MBw8Ph3ebeMFS699JQePN4XgN
+        - market: "strongSOL reserve"
+          account: A2J2CEwmwa9aTKbEfNoik6YTyNep9GtvNjU65okWYhwn
+        - market: "ETH reserve"
+          account: febGYTnFX4GbSGoFHFeJXUHgNaK53fB23uDins9Jp1E
+        - market: "USDS reserve"
+          account: BHUi32TrEsfN2U821G4FprKrR4hTeK4LCWtA3BFetuqA
+        - market: "lanternSOL reserve"
+          account: J5oj3VKWQNKRZx3heWZx7JZC59AEDQ9UQwqqiy63nCuf
+        - market: "JLP reserve"
+          account: EAA3VVsxUuQB1Tm5x7TJkq9ATtiX5Qwq8ok7gXwim7oo
+        - market: "bnSOL reserve"
+          account: Fqjbo3L4NAyzPcy6swv1XXLm1c7tUTKWMDkjCo9mfSDq
+        - market: "CASH reserve"
+          account: ApQkX32ULJUzszZDe986aobLDLMNDoGQK8tRm6oD6SsA
+        - market: "picoSOL reserve"
+          account: 2UFz8kwraHybFyKhGQRwAsE5NtNpAhWs2X5grGoS7hnQ
+        - market: "stkeSOL reserve"
+          account: 2gFjdQLFaFqTKMv4nFGMAP4bX2F5KAsyiJn8yZQHPKSE
+        - market: "EURC reserve"
+          account: EGPE45iPkme8G8C1xFDNZoZeHdP3aRYtaAfAQuuwrcGZ
+        - market: "WBTC reserve"
+          account: HYnVhjsvU1vBKTPsXs1dWe6cJeuU8E4gjoYpmwe81KzN
+        - market: "cgntSOL reserve"
+          account: BvafE5Sm6rLrBbVRtJ2FkCzfNJQ2TjcL8bvPZULUDYrt
+        - market: "JUP reserve"
+          account: 4AFAGAm5G8fkcKy7QerL88E7BiSE22ZRbvJzvaKjayor
+        - market: "FDUSD reserve"
+          account: Bpc4kAh29J3YDQUMJJdGdr1zBAhTQjC48R1B8YTWudsi
+        - market: "JTO reserve"
+          account: 9Ukd2MSw5RvVFaN8jLhWxjHLEGiF1F6Hf7v3Zq5hZsKB
+        - market: "hubSOL reserve"
+          account: B5uYvxUcwX5fCB4msGU4DaHh8k6fsSkKHNboy94F9vbt
+        - market: "USD1 reserve"
+          account: 6vKCRnEzrxRS1NybsMVEyNE3ztFAxCz6WusiiGft1PbA
+        - market: "kSOLBSOLOrca reserve"
+          account: 57U9pEC8NsWvHgWywd2xHTRkGQzWWYsWivxYRhtxZrLB
+        - market: "UXD reserve"
+          account: GhGPbkWmPjSkbkgZbhNGBTxzwQKjqDpZwNfaf2gQKgdG
+        - market: "bbSOL reserve"
+          account: 6U9CnJYCQwHUEmf4Pq4oGVKHVvD29wZvtPbFNjYmgjaF
+        - market: "cdcSOL reserve"
+          account: FMbsZf4HuQ1a8a7VdmALT3S8WRfu3EocphRKPXxRsfGd
+        - market: "tBTC reserve"
+          account: Hcz1o77tF9TpdEHcvrx29tz7SBKoQEwJA1wuJqGZYnTw
+        - market: "USDH reserve"
+          account: DaGyAQJrdkLCzYZiUWg49NV8vabDnhR7ETwLu5eQgL56
+        - market: "nxSOL reserve"
+          account: 8gVpWfWDCtCcUX1meSphqqpyWBceLCcrs9yEXwKKjQrL
+        - market: "kSOLMSOLRaydium reserve"
+          account: FPAwg5jadDs8AvUtvtAbit2RCZdkZES6yY5X6nCSuEw9
+        - market: "adraSOL reserve"
+          account: 64AZMUHLB6NYvQSt41JTer4v8NAFDCz5sUPb7dYpCxa
+        - market: "laineSOL reserve"
+          account: HMCXsf1jFUDbvGGhvUzCzwkKbmUhxhxz7gYZwXpTuReT
+        - market: "kUXDUSDCOrca reserve"
+          account: AxuWrPrJfwrUTvCWRxpkSQct6q8k1YSJzxhyYw2AAmv2
+        - market: "fwdSOL reserve"
+          account: 8qnVHjKMcWAdkFnKvmRigj9J7UAVj2ooJ83GfeNn2DpR
+        - market: "USDC reserve AWnK"
+          account: AWnKJ9dsiHcoDCThxE5E93ikDTAXkApoNwrKM2tp9KFJ
+        - market: "kSOLJITOSOLRaydium reserve"
+          account: 75WrtSz7rLCdBvAQhtHi8M2jC8HnpT8iUxcYkdeawr37
+        - market: "wstETH reserve"
+          account: 4eUxuaHSHNTftaui3XVW32d2Ph2hKBLpuMP25gQ5MqF4
+        - market: "kSOLJITOSOLOrca reserve"
+          account: GFLLgX9V6PR1PzhgsGzeyUddpt2ws2PBRAxRwoLrboGp
+        - market: "USDC reserve 5xXx"
+          account: 5xXxt9uVHrcT5b1KveAT5ZWgk2f74aDjnLEDDEeAxgpN
+        - market: "USDC reserve 6paz"
+          account: 6pazpY4icuXZ5sb2jMWAqdG4TtbUoY1SJ45237Fjht9h
+        - market: "CHAI reserve"
+          account: 5YpGenXaAowj4HS33AvirVb8P4tgue7S7YaY6MyYZ7LD
+      direct_feed_fields:
+        - config.token_info.pyth_configuration.price
+        - config.token_info.switchboard_configuration.price_aggregator
+tokens:
+  - mint: So11111111111111111111111111111111111111112
+    roles: [collateral, borrowable]
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    roles: [collateral, borrowable]
+  - mint: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    roles: [collateral, borrowable]
+  - mint: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+    roles: [collateral, borrowable]
+  - mint: jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v
+    roles: [collateral, borrowable]
+  - mint: Dso1bDeDjCQxTrWHqUUi63oBvV7Mdm6WaobLbQ7gnPQ
+    roles: [collateral, borrowable]
+  - mint: BNso1VUJnh4zcfpZa6986Ea66P6TCp59hvtNJ8b1X85
+    roles: [collateral, borrowable]
+  - mint: cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm
+    roles: [collateral]
+  - mint: 7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs
+    roles: [collateral, borrowable]
+  - mint: 3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh
+    roles: [collateral, borrowable]
+  - mint: cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij
+    roles: [collateral, borrowable]
+  - mint: 27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4
+    roles: [deposit]
+  - mint: sctmB7GPi5L2Q5G9tUSzXvhZ4YiDMEGcRov9KfArQpx
+    roles: [collateral]
+  - mint: 2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH
+    roles: [collateral, borrowable]
+  - mint: 2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo
+    roles: [collateral, borrowable]
+  - mint: mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So
+    roles: [collateral, borrowable]
+  - mint: he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A
+    roles: [collateral, borrowable]
+  - mint: vSoLxydx6akxyMD9XEcPvGYNGq6Nn66oqVb3UkGkei7
+    roles: [collateral, borrowable]
+  - mint: bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1
+    roles: [collateral, borrowable]
+  - mint: pSo1f9nQXWgXibFtKf7NWYxb5enAM4qfP6UJSiXRQfL
+    roles: [collateral, borrowable]
+  - mint: BonK1YhkXEGLZzwtcvRTip3gAL9nCeQD7ppZBLXhtTs
+    roles: [collateral, borrowable]
+  - mint: 7Q2afV64in6N6SeZsAAB81TJzwDoD6zpqmHkzi9Dcavn
+    roles: [collateral]
+  - mint: strng7mqqc1MBJJV6vMzYbEqnwVGvKKGKedeCvtktWA
+    roles: [collateral]
+  - mint: LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg
+    roles: [collateral]
+  - mint: picobAEvs6w7QEknPce34wAE4gknZA9v5tTonnmHYdX
+    roles: [collateral, borrowable]
+  - mint: HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr
+    roles: [borrowable]
+  - mint: JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN
+    roles: [deposit]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

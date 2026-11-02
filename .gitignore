@@ -1,0 +1,46 @@
+# Local credentials and owner-specific deployment entry point
+.env
+.env.*
+/deploy.ps1
+*.dpapi
+*.key
+*.pem
+*.pfx
+*.p12
+
+# Local agent worktrees, browser captures and one-off redesign scripts
+/.claude/
+.playwright-cli/
+/.redesign/
+
+# Local review candidates, exports, archives and verification evidence
+/output/
+/site/output/
+/data/cache/
+
+# Dependencies, compiler output and generated caches
+/target/
+**/node_modules/
+/site/.next/
+/site/out/
+**/__pycache__/
+*.py[cod]
+*.tsbuildinfo
+/.venv/
+/venv/
+
+# Test reports (keep checked-in fixtures and screenshot baselines)
+/coverage/
+/test-results/
+/playwright-report/
+/.lighthouseci/
+*.profraw
+*.profdata
+
+# Logs and operating-system debris
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo

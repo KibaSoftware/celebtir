@@ -1,0 +1,54 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "getMultipleAccounts",
+    "params": [
+      [
+        "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+        "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr"
+      ],
+      {
+        "commitment": "finalized",
+        "dataSlice": {
+          "length": 36,
+          "offset": 0
+        },
+        "encoding": "base64"
+      }
+    ]
+  },
+  "response": {
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "context": {
+        "apiVersion": "4.3.0",
+        "slot": 458085384
+      },
+      "value": [
+        {
+          "data": [
+            "AgAAAIRMohNu7QFIhSZnG4DdIQLFGAqjMqCcvme5zoE+LQAr",
+            "base64"
+          ],
+          "executable": true,
+          "lamports": 33141440,
+          "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+          "rentEpoch": 18446744073709551615,
+          "space": 36
+        },
+        {
+          "data": [
+            "AgAAAD9FZ6puXe4MQHwrrlwPObSASpdAAlXwflF+sYnuri4a",
+            "base64"
+          ],
+          "executable": true,
+          "lamports": 1141440,
+          "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+          "rentEpoch": 18446744073709551615,
+          "space": 36
+        }
+      ]
+    }
+  }
+}

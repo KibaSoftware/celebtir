@@ -1,0 +1,16 @@
+.panel { min-width: 0; padding: 18px; border: 1px solid var(--border); border-radius: var(--radius-card); background: var(--surface); }
+.panel h2 { font-size: 20px; margin: 0 0 12px; }
+.panel p { font-size: 14px; }
+.note { color: var(--ink-muted); font-size: 13px !important; }
+.archive { background: linear-gradient(#141f30df, #141f30ef), url('/art/archive.webp') center / cover; }
+.observatory { background: linear-gradient(#141f30d9, #141f30e6), url('/art/observatory.webp') center / cover; }
+.bastion { background: linear-gradient(90deg,#141f30ec,#141f30c7), url('/art/hyperevm.webp') center / cover; }
+.risk { background: linear-gradient(#141f30eb,#141f30f2), url('/art/risk.webp') center / cover; }
+.factors { margin: 20px 0 0; display: grid; gap: 13px; }
+.factors > div { display: grid; grid-template-columns: minmax(120px, 1.2fr) minmax(80px, 2fr) auto; gap: 14px; align-items: center; font-size: 13px; }
+.factors dd { margin: 0; font-variant-numeric: tabular-nums; color: var(--ink-secondary); }
+.factors dt a { color: var(--ink-secondary); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 16px 0; }
+.record { margin: 12px 0; overflow-wrap: anywhere; }
+.record summary { cursor: pointer; padding: 12px 0; }
+@media(max-width: 767px) { .grid { grid-template-columns: 1fr; } .factors > div { grid-template-columns: 1fr auto; } .factors dd:first-of-type { grid-column: 1 / -1; grid-row: 2; } }

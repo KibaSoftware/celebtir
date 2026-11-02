@@ -1,0 +1,15 @@
+{
+  "address": "H6ARHf6YXhGYeQfUzQNGk6rDNnLBQKrenN712K4AQJEG",
+  "data_base64": "1MOyoQIAAAA=",
+  "data_slice": [
+    0,
+    8
+  ],
+  "executable": false,
+  "lamports": 23942400,
+  "name": "oracle-pyth-legacy-sol",
+  "note": "Pyth legacy SOL/USD price account (owner: Pyth oracle program)",
+  "owner": "FsJ3A3u2vn5cTVofAjvy6y5kwABJAqYWpe4975bi2epH",
+  "slot": 458013491,
+  "source": "api.mainnet-beta.solana.com getMultipleAccounts finalized"
+}

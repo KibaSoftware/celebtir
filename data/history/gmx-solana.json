@@ -1,0 +1,36 @@
+{
+  "days": [
+    {
+      "assessment": "assessed",
+      "date": "2026-10-21",
+      "fees_usd": 178678,
+      "methodology_version": "0.1",
+      "ratings": {
+        "admin_powers": "medium",
+        "code_transparency": "low",
+        "dependencies": "high",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 26325593,
+      "volume_usd": null
+    }
+  ],
+  "protocol": "gmx-solana",
+  "review": {
+    "awaiting_human_review": true,
+    "due": false,
+    "last_reviewed": "2026-10-19"
+  },
+  "schema_version": "0.2.0",
+  "upgrades": {
+    "average_interval_days": 67.3,
+    "complete": true,
+    "last_upgrade_date": "2026-10-21",
+    "last_upgrade_slot": 459556802,
+    "upgrades": 10,
+    "upgrades_last_30_days": 1
+  }
+}

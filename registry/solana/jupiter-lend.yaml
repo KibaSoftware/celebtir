@@ -1,0 +1,259 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Tokens: Earn assets (deposit) and borrow-vault pairs (collateral, borrowable) from lite-api.jup.ag/lend/v1, 2026-10-19.
+# Admin: the Liquidity, LendingAdmin and VaultAdmin accounts' authority, read with IDLs from github.com/jup-ag/jupiter-lend (origins.yaml has the commit).
+id: jupiter-lend
+name: Jupiter Lend
+chain: solana
+category: lending
+website: https://jup.ag/lend
+defillama_slug: jupiter-lend
+programs:
+  - id: jupeiUmn818Jg1ekPURTpr4mFo29p46vygyykFJ3wZC
+    name: Liquidity
+    role: core
+    source: https://developers.jup.ag/docs/lend/program-addresses
+  - id: jup3YeL8QhtSx1e253b2FDvsMNC87fDrgQZivbrndc9
+    name: Earn
+    role: core
+    source: https://developers.jup.ag/docs/lend/program-addresses
+  - id: jupr81YtYssSyPt8jbnGuiWon5f6x9TcDEFxYe3Bdzi
+    name: Vaults (Borrow)
+    role: core
+    source: https://developers.jup.ag/docs/lend/program-addresses
+  - id: jupgfSgfuAXv4B6R2Uxu85Z1qdzgju79s6MfZekN6XS
+    name: Flashloan
+    role: core
+    source: https://developers.jup.ag/docs/lend/program-addresses
+  - id: jupZ4m2GqUCJ5iueMfzQf8khFfH31d4XAQt3RzCT9Vd
+    name: AMM
+    role: core
+    source: https://developers.jup.ag/docs/lend/program-addresses
+  - id: jup7TthsMgcR9Y3L277b8Eo9uboVSmu1utkuXHNUKar
+    name: Lending Rewards Rate Model
+    role: periphery
+    source: https://developers.jup.ag/docs/lend/program-addresses
+  - id: jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc
+    name: Oracle
+    role: periphery
+    source: https://developers.jup.ag/docs/lend/program-addresses
+multisigs:
+  - address: J3mJ3wz6xkVUk3T8qHnuAYNxsRH3ixHsryYNZAU2vG8P
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/J3mJ3wz6xkVUk3T8qHnuAYNxsRH3ixHsryYNZAU2vG8P
+  - address: 5Y93cxqp8rGtjDhxGkehewfhFdxLkrCfPDWookCGeASF
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/5Y93cxqp8rGtjDhxGkehewfhFdxLkrCfPDWookCGeASF
+admin_accounts:
+  - account: 7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z
+    idl: idl/jupiter-lend-liquidity.json
+    field: authority
+    power: parameters
+    source: https://solscan.io/account/7s1da8DduuBFqGra5bJBjpnvL5E9mGzCuMk1Qkh4or2Z
+  - account: 5nmGjA4s7ATzpBQXC5RNceRpaJ7pYw2wKsNBWyuSAZV6
+    idl: idl/jupiter-lend-earn.json
+    field: authority
+    power: parameters
+    source: https://solscan.io/account/5nmGjA4s7ATzpBQXC5RNceRpaJ7pYw2wKsNBWyuSAZV6
+  - account: 4Pgx2M7ZsDRvXU4CitoT94EJUohxqSk3eBuLsoz834dm
+    idl: idl/jupiter-lend-vaults.json
+    field: authority
+    power: parameters
+    source: https://solscan.io/account/4Pgx2M7ZsDRvXU4CitoT94EJUohxqSk3eBuLsoz834dm
+oracles:
+  # Composite price accounts owned by the Jupiter Lend oracle program, one per vault
+  # group (lite-api.jup.ag/lend/v1/borrow/vaults); owners re-read at slot 461325171.
+  - account: EP5krxdhV5DtNdnKtLkLG94BhQqmvBFGwBhPg9oxsBg8
+    market: "INF/USDC"
+    role: primary
+    source: https://solscan.io/account/EP5krxdhV5DtNdnKtLkLG94BhQqmvBFGwBhPg9oxsBg8
+  - account: 8DGyDgXxiGBtV9UuKBVWhHDtL2DntdQgy5krhx35dmJS
+    market: "INF/WSOL"
+    role: primary
+    source: https://solscan.io/account/8DGyDgXxiGBtV9UuKBVWhHDtL2DntdQgy5krhx35dmJS
+  - account: 2ut2BsiJP3DVdxvPvYWxuLgjHvx2nFLtxNM6j6GzdNYT
+    market: "JLP/JupUSD, JLP/USDC, JLP/USDG, JLP/USDS, JLP/USDT"
+    role: primary
+    source: https://solscan.io/account/2ut2BsiJP3DVdxvPvYWxuLgjHvx2nFLtxNM6j6GzdNYT
+  - account: 58SXH8bZiEvgV9zND1Pw3HLPmL2kJkQxdNbMykcLiXwp
+    market: "JLP/WSOL"
+    role: primary
+    source: https://solscan.io/account/58SXH8bZiEvgV9zND1Pw3HLPmL2kJkQxdNbMykcLiXwp
+  - account: EhwMMs895SN5ikNtfdjoutu2p3m1jAYCYWwq1WJgj5uN
+    market: "JUP/USDC, JUP/USDT"
+    role: primary
+    source: https://solscan.io/account/EhwMMs895SN5ikNtfdjoutu2p3m1jAYCYWwq1WJgj5uN
+  - account: 7dMftDCAgjiVHAdZnZUYaXRQTXDczqeSeHSDfwfbJu7D
+    market: "JitoSOL/EURC"
+    role: primary
+    source: https://solscan.io/account/7dMftDCAgjiVHAdZnZUYaXRQTXDczqeSeHSDfwfbJu7D
+  - account: BhXPkEZncwZuxm9Q1HXuUxbwaYBUNngRWAHzqugT5GeW
+    market: "JitoSOL/USDC, JitoSOL/USDG, JitoSOL/USDS"
+    role: primary
+    source: https://solscan.io/account/BhXPkEZncwZuxm9Q1HXuUxbwaYBUNngRWAHzqugT5GeW
+  - account: E1AmhqYXqRaLm4fbcVULopCPp46zL481QJDBNE6EqwUi
+    market: "JitoSOL/WSOL"
+    role: primary
+    source: https://solscan.io/account/E1AmhqYXqRaLm4fbcVULopCPp46zL481QJDBNE6EqwUi
+  - account: B43xNpXoCt4mdW8FNf7CfSUMiRoe9h2LTb89s42fZesy
+    market: "JupSOL/EURC"
+    role: primary
+    source: https://solscan.io/account/B43xNpXoCt4mdW8FNf7CfSUMiRoe9h2LTb89s42fZesy
+  - account: G1v2MF771Fp1e14f8RekvsEuEzjRayfKLqbicmq1d8bd
+    market: "JupSOL/JupUSD, JupSOL/USDC, JupSOL/USDG, JupSOL/USDS, JupSOL/USDT"
+    role: primary
+    source: https://solscan.io/account/G1v2MF771Fp1e14f8RekvsEuEzjRayfKLqbicmq1d8bd
+  - account: BUheG75WugBMzKCisiMX4AVLAu3boPXzEkT2xws55A3V
+    market: "JupSOL/WSOL"
+    role: primary
+    source: https://solscan.io/account/BUheG75WugBMzKCisiMX4AVLAu3boPXzEkT2xws55A3V
+  - account: 419iNcGppruf5BaBQbmkHoU59M1pTCPZCUGBuVBzW8jH
+    market: "LBTC/JupUSD, LBTC/USDC, LBTC/USDG"
+    role: primary
+    source: https://solscan.io/account/419iNcGppruf5BaBQbmkHoU59M1pTCPZCUGBuVBzW8jH
+  - account: 3wJJsAV1M7uXMnF1RnpnWCi8MseudkDWjj7vfX1inTir
+    market: "LBTC/cbBTC"
+    role: primary
+    source: https://solscan.io/account/3wJJsAV1M7uXMnF1RnpnWCi8MseudkDWjj7vfX1inTir
+  - account: Fa1zDwJrXzZUyoUjmoojPrEQseYSW9M5xy2LmcDPPCHc
+    market: "NVDAx/JupUSD, NVDAx/USDC"
+    role: primary
+    source: https://solscan.io/account/Fa1zDwJrXzZUyoUjmoojPrEQseYSW9M5xy2LmcDPPCHc
+  - account: 77CkEgRne9jtzGrWVspETXhK3DumNMpJpbN8aP9okLX4
+    market: "PST/JupUSD, PST/USDC"
+    role: primary
+    source: https://solscan.io/account/77CkEgRne9jtzGrWVspETXhK3DumNMpJpbN8aP9okLX4
+  - account: 8UJfPZinaPs6C4UKWb6CmeLgTbQThMyB7AJFYCFpHwoi
+    market: "QQQx/JupUSD, QQQx/USDC"
+    role: primary
+    source: https://solscan.io/account/8UJfPZinaPs6C4UKWb6CmeLgTbQThMyB7AJFYCFpHwoi
+  - account: DuX7B4gKvXPbBhQGXv4mD5FiFYf8C3EE8Pm5eh42mGiT
+    market: "SPYx/JupUSD, SPYx/USDC"
+    role: primary
+    source: https://solscan.io/account/DuX7B4gKvXPbBhQGXv4mD5FiFYf8C3EE8Pm5eh42mGiT
+  - account: Hxkqy3LBkuUcx3DPGSAaMV4Vfyh5rzX2i4n7yQNwAdTx
+    market: "TSLAx/JupUSD, TSLAx/USDC"
+    role: primary
+    source: https://solscan.io/account/Hxkqy3LBkuUcx3DPGSAaMV4Vfyh5rzX2i4n7yQNwAdTx
+  - account: DVAtgDycxPEoy4cZEpbxEFQ4tpbwqxTQmhxPAgdKAhz8
+    market: "WBTC/EURC, cbBTC/EURC, xBTC/EURC"
+    role: primary
+    source: https://solscan.io/account/DVAtgDycxPEoy4cZEpbxEFQ4tpbwqxTQmhxPAgdKAhz8
+  - account: CNJ9ertXEXT4Gm9GjTpxMgnboDvUe2tbgkW1yKhnQKro
+    market: "WBTC/USDC, WBTC/USDG, WBTC/USDS, cbBTC/USDC, cbBTC/USDG, cbBTC/USDS, cbBTC/USDT, xBTC/USDC, xBTC/USDG, xBTC/USDS"
+    role: primary
+    source: https://solscan.io/account/CNJ9ertXEXT4Gm9GjTpxMgnboDvUe2tbgkW1yKhnQKro
+  - account: 6634zns7ATMA6RuGMJFv4uRcFxVxFYd8w8pVyNbfKMg2
+    market: "WBTC/WSOL, cbBTC/WSOL, xBTC/WSOL"
+    role: primary
+    source: https://solscan.io/account/6634zns7ATMA6RuGMJFv4uRcFxVxFYd8w8pVyNbfKMg2
+  - account: 4bnExY5Bz95gpwTq9JiTWXpt53dPJEyhVj1NYzUh7Jn8
+    market: "WSOL/EURC"
+    role: primary
+    source: https://solscan.io/account/4bnExY5Bz95gpwTq9JiTWXpt53dPJEyhVj1NYzUh7Jn8
+  - account: 6uU9EvKL1rSTyw3ZqKz4hMNEB4NBCo3D3rg3n13fymHm
+    market: "WSOL/JupUSD, WSOL/USDC, WSOL/USDG, WSOL/USDS, WSOL/USDT"
+    role: primary
+    source: https://solscan.io/account/6uU9EvKL1rSTyw3ZqKz4hMNEB4NBCo3D3rg3n13fymHm
+  - account: CxWoweRuXaPCHqTF7zL4mi8mzpTTGKYM6nNAUoYhU6XY
+    market: "WSOL/cbBTC"
+    role: primary
+    source: https://solscan.io/account/CxWoweRuXaPCHqTF7zL4mi8mzpTTGKYM6nNAUoYhU6XY
+  - account: kWpMbzDF7JcjDNZ6oabFnuR3ocLsA28hufuBz7CtcDA
+    market: "WSOL/xBTC"
+    role: primary
+    source: https://solscan.io/account/kWpMbzDF7JcjDNZ6oabFnuR3ocLsA28hufuBz7CtcDA
+  - account: GaDTdKQ4ccNvGpJDifQPftrjGwmdnQdSnDifhNdhf9tF
+    market: "dfdvSOL/USDC"
+    role: primary
+    source: https://solscan.io/account/GaDTdKQ4ccNvGpJDifQPftrjGwmdnQdSnDifhNdhf9tF
+  - account: Ea4A6j5yEKFxxFbiP4K5nKgYoD5yVfRKQqHf9tsAtrNi
+    market: "dfdvSOL/WSOL"
+    role: primary
+    source: https://solscan.io/account/Ea4A6j5yEKFxxFbiP4K5nKgYoD5yVfRKQqHf9tsAtrNi
+  - account: 94mQFaB4xfj6K6VHjrB5KPVcbWhutgbFGUwgRnkwQJVq
+    market: "fwdSOL/WSOL"
+    role: primary
+    source: https://solscan.io/account/94mQFaB4xfj6K6VHjrB5KPVcbWhutgbFGUwgRnkwQJVq
+  - account: FkJEsqqysZHR35h71fN7ARuQpBFroJU84C3cdsKTWcBG
+    market: "japanSOL/WSOL"
+    role: primary
+    source: https://solscan.io/account/FkJEsqqysZHR35h71fN7ARuQpBFroJU84C3cdsKTWcBG
+  - account: BLZyo9dbcG4jKtMPLCgXauFwGsaDMrUKj4ao7ihUrKHS
+    market: "jlJUPUSD/USDC, jlJUPUSD/USDG, jlJUPUSD/USDT"
+    role: primary
+    source: https://solscan.io/account/BLZyo9dbcG4jKtMPLCgXauFwGsaDMrUKj4ao7ihUrKHS
+  - account: AvHwVJxZAN5iUDWZuFsTySgYbjG7zcMkn3oZXyYcWWaa
+    market: "mSOL/USDC, mSOL/USDG"
+    role: primary
+    source: https://solscan.io/account/AvHwVJxZAN5iUDWZuFsTySgYbjG7zcMkn3oZXyYcWWaa
+  - account: 546HPrQvDrXJtyPk2jbd4J1Gtw4hCgQj9xLCjRxe6t7S
+    market: "mSOL/WSOL"
+    role: primary
+    source: https://solscan.io/account/546HPrQvDrXJtyPk2jbd4J1Gtw4hCgQj9xLCjRxe6t7S
+  - account: yfsSuBNoHhX7yCeaUPC78x4ZJ4NzyyBq4AkcfaTfxB6
+    market: "reUSD/JupUSD"
+    role: primary
+    source: https://solscan.io/account/yfsSuBNoHhX7yCeaUPC78x4ZJ4NzyyBq4AkcfaTfxB6
+  - account: 2gFY1YckrZtmK6LiTzTSdq5JbU3SdfZaHzLQoseD1xHu
+    market: "sUSDai/JupUSD, sUSDai/USDC"
+    role: primary
+    source: https://solscan.io/account/2gFY1YckrZtmK6LiTzTSdq5JbU3SdfZaHzLQoseD1xHu
+  - account: 9u81hVRNLu5hXuHt4X5hQDp34cSTYWujXwdZsQC4omvp
+    market: "st2NxEEbh/WSOL"
+    role: primary
+    source: https://solscan.io/account/9u81hVRNLu5hXuHt4X5hQDp34cSTYWujXwdZsQC4omvp
+  - account: Gty4LVEgECPvoN2guA5oLheq2mzRnngBXxxp96Gwggsg
+    market: "stCatzoSM/WSOL"
+    role: primary
+    source: https://solscan.io/account/Gty4LVEgECPvoN2guA5oLheq2mzRnngBXxxp96Gwggsg
+  - account: F1CFgstLE9CzRfvzow7eeXx1XXr49RCX2Y1U4KNTEJLi
+    market: "stFKsC411/WSOL"
+    role: primary
+    source: https://solscan.io/account/F1CFgstLE9CzRfvzow7eeXx1XXr49RCX2Y1U4KNTEJLi
+  - account: 71V6SSaY1kgQwb2XYP2Ld2UhEZFaJLdeZJjFjUyJUwV8
+    market: "sthe1iusu/WSOL"
+    role: primary
+    source: https://solscan.io/account/71V6SSaY1kgQwb2XYP2Ld2UhEZFaJLdeZJjFjUyJUwV8
+  - account: HeEhhiZBs5B8kimvAaeZWo1eKFGhpukW3yLhRr55FVa3
+    market: "syrupUSDC/JupUSD, syrupUSDC/USDC, syrupUSDC/USDG, syrupUSDC/USDS, syrupUSDC/USDT"
+    role: primary
+    source: https://solscan.io/account/HeEhhiZBs5B8kimvAaeZWo1eKFGhpukW3yLhRr55FVa3
+tokens:
+  - mint: So11111111111111111111111111111111111111112
+    roles: [deposit, collateral, borrowable]
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    roles: [deposit, borrowable]
+  - mint: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    roles: [deposit, borrowable]
+  - mint: jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v
+    roles: [collateral]
+  - mint: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+    roles: [collateral]
+  - mint: 27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4
+    roles: [collateral]
+  - mint: cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij
+    roles: [collateral, borrowable]
+  - mint: 3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh
+    roles: [collateral]
+  - mint: cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm
+    roles: [collateral]
+  - mint: JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD
+    roles: [deposit, borrowable]
+  - mint: HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr
+    roles: [deposit, borrowable]
+  - mint: 2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH
+    roles: [deposit, borrowable]
+  - mint: JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN
+    roles: [collateral]
+  - mint: 5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm
+    roles: [collateral]
+  - mint: mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So
+    roles: [collateral]
+  - mint: sctmB7GPi5L2Q5G9tUSzXvhZ4YiDMEGcRov9KfArQpx
+    roles: [collateral]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

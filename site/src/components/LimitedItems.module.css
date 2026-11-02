@@ -1,0 +1,4 @@
+.hidden { display: none !important; }
+.controlItem { list-style: none; grid-column: 1 / -1; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding-block: 12px; color: var(--ink-muted); font-size: var(--text-sm); }
+.controls button { color: var(--ink-link); background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 8px 12px; font: inherit; cursor: pointer; min-height: 40px; }

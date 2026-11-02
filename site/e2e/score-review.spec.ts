@@ -1,0 +1,40 @@
+import { test,expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+import { mkdirSync } from 'node:fs';
+import path from 'node:path';
+import { facts } from './snapshot';
+// Both the committed demo's Kamino and the reviewed candidate's Orca have
+// unresolved Stage criteria and a recorded upgrade timelock.
+const reviewedName = facts.protocols.orca?.name ?? facts.protocols['kamino-lend'].name ?? 'Kamino Lend';
+const output=path.resolve(__dirname,'../../output/reviews/score-review-2026-10-26/screenshots');
+for(const [width,height] of [[1440,900],[768,1024],[375,812],[720,450]])test(`srd_04 Stage inspector and protections ${width}`,async({page},info)=>{
+ test.skip(info.project.name!=='desktop','Explicit viewport coverage in desktop project.');
+ await page.setViewportSize({width,height});
+ await page.goto('/risk/?chain=solana');
+ const trigger=page.getByRole('button',{name:new RegExp(`^${reviewedName}: Stage 0, .*verified unmet`)});
+ await trigger.focus();await page.keyboard.press('Enter');
+ const dialog=page.getByRole('dialog');await expect(dialog).toBeVisible();
+ await expect(dialog.getByText('What would be required for the next Stage',{exact:true})).toBeVisible();
+ await expect(dialog.getByText('Requirement unresolved — evidence incomplete').first()).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ expect(page.frames()).toHaveLength(1);
+ const audit=await new AxeBuilder({page}).setLegacyMode(true).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+ expect(audit.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
+ mkdirSync(output,{recursive:true});await page.screenshot({path:path.join(output,`${width}-stage-inspector.png`)});
+ await page.keyboard.press('Escape');await expect(dialog).toHaveCount(0);await expect(trigger).toBeFocused();
+ await page.keyboard.press('Space');await expect(dialog).toBeVisible();await page.keyboard.press('Escape');
+ await page.locator('summary').filter({hasText:'Compare verified protections'}).click();
+ await page.getByLabel('Has verified upgrade timelock',{exact:true}).check();
+ await expect(page).toHaveURL(/protections=timelock/);
+ await page.reload();
+ await page.locator('summary').filter({hasText:'Compare verified protections'}).click();
+ await expect(page.getByLabel('Has verified upgrade timelock',{exact:true})).toBeChecked();
+ await page.getByLabel('Include unresolved',{exact:true}).check();
+ await page.getByRole('button',{name:'Clear filters',exact:true}).click();
+ await expect(page).toHaveURL(/chain=solana/);await expect(page).not.toHaveURL(/protections=/);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ await page.screenshot({path:path.join(output,`${width}-protections.png`),fullPage:true});
+ const evidence=page.getByRole('button',{name:`Inspect has verified upgrade timelock evidence for ${reviewedName}`});
+ await evidence.focus();await page.keyboard.press('Enter');await expect(page.getByRole('dialog')).toBeVisible();
+ await expect(page.getByRole('dialog').getByText('Evidence: accounts read',{exact:true})).toBeVisible();
+});

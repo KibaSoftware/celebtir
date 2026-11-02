@@ -1,0 +1,190 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 6,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "field": "extensions",
+          "slot": 458085504
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "field": "freeze_authority",
+          "slot": 458085504
+        }
+      ],
+      "value": {
+        "key": "7dGbd2QZcCKcTndnHcTL8q7SMVXAkp688NTQYwrRCrar",
+        "kind": "single_key"
+      }
+    },
+    "identity": {
+      "issuer": "Circle",
+      "issuer_url": "https://www.circle.com/usdc",
+      "kind": "stablecoin",
+      "source": "https://developers.circle.com/stablecoins/usdc-contract-addresses"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "field": "mint_authority",
+          "slot": 458085504
+        }
+      ],
+      "value": {
+        "key": "BJE5MMbqXjVwjAF7oxwPYXnTXDyspzZyt4vwenNw5ruG",
+        "kind": "single_key"
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "field": "mint",
+          "slot": 458085504
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 7840779522027966,
+    "symbol": "USDC"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.3",
+  "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+  "price": {
+    "kind": "unavailable",
+    "reason": "DefiLlama prices unavailable: HTTP status 404"
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "field": "freeze_authority",
+            "slot": 458085504
+          }
+        ],
+        "next_step": "remove any permanent delegate and hold freeze or pause powers in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "balances can be frozen by single key 7dGbd2QZcCKcTndnHcTL8q7SMVXAkp688NTQYwrRCrar"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "field": "mint",
+            "slot": 458085504
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "field": "mint_authority",
+            "slot": 458085504
+          }
+        ],
+        "next_step": "hold the mint authority in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "new supply can be minted by single key BJE5MMbqXjVwjAF7oxwPYXnTXDyspzZyt4vwenNw5ruG"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "field": "extensions",
+            "slot": 458085504
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [
+      {
+        "factor": "supply_control",
+        "severity": "high",
+        "text": "New supply can be minted if single key BJE5MMbqXjVwjAF7oxwPYXnTXDyspzZyt4vwenNw5ruG uses the mint authority."
+      },
+      {
+        "factor": "freeze_and_seize",
+        "severity": "high",
+        "text": "Your balance can be frozen if single key 7dGbd2QZcCKcTndnHcTL8q7SMVXAkp688NTQYwrRCrar uses the freeze authority."
+      }
+    ],
+    "symbol": "USDC"
+  },
+  "snapshot_date": "2026-10-17",
+  "supply_history": [
+    {
+      "date": "2026-10-15",
+      "decimals": 6,
+      "price_usd_micros": null,
+      "supply": 7840779522027966
+    },
+    {
+      "date": "2026-10-16",
+      "decimals": 6,
+      "price_usd_micros": null,
+      "supply": 7840779522027966
+    },
+    {
+      "date": "2026-10-17",
+      "decimals": 6,
+      "price_usd_micros": null,
+      "supply": 7840779522027966
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "collateral",
+        "borrowable"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-21.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Read live 2026-10-25 (F10): the EIP-1967 admin is ProxyAdmin 0xE7B0…25dc, whose
+# owner() is TimelockController 0xc5DE…23D2: getMinDelay() = 172800 (48 h), and it
+# holds its own DEFAULT_ADMIN_ROLE. hasRole(PROPOSER_ROLE, Safe 0x97de…51f9) = true.
+# Proposers are not enumerable, so only this candidate is confirmed; the Safe (4 of 6)
+# is also the proxy's own owner(), whose powers on the token are not yet determined.
+id: sthype
+name: stHYPE
+chain: hyper_evm
+category: liquid-staking
+website: https://app.valantis.xyz
+defillama_slug: sthype
+programs:
+  - id: "0xfFaa4a3D97fE9107Cef8a3F48c069F577Ff76cC1"
+    name: stHYPE token
+    role: core
+    proxy: eip1967
+    source: https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/staked-hype/index.js
+safes:
+  - address: "0x97dEe0eA4Ca10560f260A0f6f45bdC128A1D51f9"
+    source: https://hyperevmscan.io/address/0x97dee0ea4ca10560f260a0f6f45bdc128a1d51f9
+timelocks:
+  - address: "0xc5DEd4F7F53919c714059a17d31371aE847E23D2"
+    proposers: ["0x97dEe0eA4Ca10560f260A0f6f45bdC128A1D51f9"]
+    source: https://hyperevmscan.io/address/0xc5DEd4F7F53919c714059a17d31371aE847E23D2
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-21

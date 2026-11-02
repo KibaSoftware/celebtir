@@ -1,0 +1,185 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 8,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+          "field": "freeze_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "key": "DSFAkPhfrSR95J9oq9Sh8rUetbj5vgFmwiSuHw6rAVnz",
+        "kind": "single_key"
+      }
+    },
+    "identity": {
+      "issuer": "Coinbase",
+      "issuer_url": "https://www.coinbase.com/cbbtc",
+      "kind": "other",
+      "source": "https://www.coinbase.com/cbbtc"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+          "field": "mint_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "key": "CTQE6PMesbH4szKR9Nk5moj9WWUr9MVGP734wYX9wy3p",
+        "kind": "single_key"
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 288128393034,
+    "symbol": "cbBTC"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+  "price": {
+    "kind": "price",
+    "usd_micros": 84371845623
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+            "field": "freeze_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "remove any permanent delegate and hold freeze or pause powers in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "balances can be frozen by single key DSFA…AVnz"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+            "field": "mint_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "hold the mint authority in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "new supply can be minted by single key CTQE…wy3p"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [
+      {
+        "factor": "supply_control",
+        "severity": "high",
+        "text": "New supply can be minted if single key CTQE…wy3p uses the mint authority."
+      },
+      {
+        "factor": "freeze_and_seize",
+        "severity": "high",
+        "text": "Your balance can be frozen if single key DSFA…AVnz uses the freeze authority."
+      }
+    ],
+    "symbol": "cbBTC"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 8,
+      "price_usd_micros": 84371845623,
+      "supply": 288128393034
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "jupiter-lend",
+      "roles": [
+        "collateral",
+        "borrowable"
+      ]
+    },
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "collateral",
+        "borrowable"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1226 @@
+{
+  "status": "DRAFT: on-chain token-map configuration decoded; provider roles and feed-account decoders require review before activation",
+  "slot": 459736346,
+  "token_map": "7cEiyyEB2VGMtnKLb7Ro7SsJKYZVBZjpS8ihBD8jR938",
+  "source": "https://github.com/gmsol-labs/gmx-solana/blob/main/programs/store/src/states/token_config.rs",
+  "tokens": [
+    {
+      "mint": "KgV1GvrHQmRBY8sHQQeUKwTm2r2h8t4C8qt12Cw1HVE",
+      "name": "AVAX",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14GWgDna9JNA24z9fSy1zFHcvQnnpTZWFvDLsHPmB6G",
+          "expected": true,
+          "source": "https://solscan.io/account/14GWgDna9JNA24z9fSy1zFHcvQnnpTZWFvDLsHPmB6G"
+        },
+        {
+          "provider_index": 1,
+          "account": "Ax9ujW5B9oqcv59N8m6f1BpTBq2rGeGaBcpKjC5UYsXU",
+          "expected": false,
+          "source": "https://solscan.io/account/Ax9ujW5B9oqcv59N8m6f1BpTBq2rGeGaBcpKjC5UYsXU"
+        }
+      ]
+    },
+    {
+      "mint": "LitYCK3XFM7imaCwzutins43WCKfH8iubaEhp9JFPcj",
+      "name": "LIT",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13riEFkLzduiXrJydxNoupgwDBqnpyvSBsEtVHvwvps",
+          "expected": true,
+          "source": "https://solscan.io/account/13riEFkLzduiXrJydxNoupgwDBqnpyvSBsEtVHvwvps"
+        }
+      ]
+    },
+    {
+      "mint": "LtcsFqdfsLyoHZ7cRt9BkijqbFRAN1M4fB8naGaykTF",
+      "name": "LTC",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13ra4Uxj6iTKe2pTsLzQ5nm4xJTpvMoTxHnFmPKGbNr",
+          "expected": true,
+          "source": "https://solscan.io/account/13ra4Uxj6iTKe2pTsLzQ5nm4xJTpvMoTxHnFmPKGbNr"
+        },
+        {
+          "provider_index": 1,
+          "account": "8RMnV1eD55iqUFJLMguPkYBkq8DCtx81XcmAja93LvRR",
+          "expected": false,
+          "source": "https://solscan.io/account/8RMnV1eD55iqUFJLMguPkYBkq8DCtx81XcmAja93LvRR"
+        }
+      ]
+    },
+    {
+      "mint": "Metn9UEcTz2oUDL2rBmxrvTvhL2TfYBqvfYnjf1xptt",
+      "name": "META",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18XqkJkBryttEbi26BfPF6qz3dZcHU1ympWiL7UHRkF",
+          "expected": true,
+          "source": "https://solscan.io/account/18XqkJkBryttEbi26BfPF6qz3dZcHU1ympWiL7UHRkF"
+        }
+      ]
+    },
+    {
+      "mint": "Msftix9DNgRjxF7SXjjqfxjusmaXByNnDc6cdX3Z2qu",
+      "name": "MSFT",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18QafaofAKExuxMMNg4SQthAAhGPEyqqsKMGvcL15hs",
+          "expected": true,
+          "source": "https://solscan.io/account/18QafaofAKExuxMMNg4SQthAAhGPEyqqsKMGvcL15hs"
+        }
+      ]
+    },
+    {
+      "mint": "Mst8Wf1EzeQi9pmtuhRoJ85DG7EPzBoa38bayRvNZXb",
+      "name": "MSTR",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18AmC9bK5HfN44bZkRpqQH43DXLSq2vSMd7n23n6DqJ",
+          "expected": true,
+          "source": "https://solscan.io/account/18AmC9bK5HfN44bZkRpqQH43DXLSq2vSMd7n23n6DqJ"
+        }
+      ]
+    },
+    {
+      "mint": "NatUnX3bFG3XrT7P4HrJG2xhmCaz3uurT9fSkwGJ51P",
+      "name": "NATGAS",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1BMX7Vbh7q3GVm75FLg3HZsaMWQPm4nP2teB1XNsz5C",
+          "expected": true,
+          "source": "https://solscan.io/account/1BMX7Vbh7q3GVm75FLg3HZsaMWQPm4nP2teB1XNsz5C"
+        }
+      ]
+    },
+    {
+      "mint": "Nearqg83ZH4Wbj2DDeN1EE86CUZaPFX2n8vErWNCPov",
+      "name": "NEAR",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1433VbvDLMCUjhZGck6zmRwUQLRuFoanhQqXFF6t87N",
+          "expected": true,
+          "source": "https://solscan.io/account/1433VbvDLMCUjhZGck6zmRwUQLRuFoanhQqXFF6t87N"
+        }
+      ]
+    },
+    {
+      "mint": "NvdwZ2PeA9HaCnRu59ZmRXGQJfyaRVTVZuxZ79voGWP",
+      "name": "NVDA",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18gBSMyKC9eru7t5ACQEnNAqXyYUsYwDgJYL4AiRgX6",
+          "expected": true,
+          "source": "https://solscan.io/account/18gBSMyKC9eru7t5ACQEnNAqXyYUsYwDgJYL4AiRgX6"
+        }
+      ]
+    },
+    {
+      "mint": "NzdGr62wT4t1xoHdYoVMEdWPb1yg9WQp2rQa34sscgJ",
+      "name": "NZD",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18bjENyhAfKvpwCSyZqV8QFnexSJyngZdoGMgyKqAEF",
+          "expected": true,
+          "source": "https://solscan.io/account/18bjENyhAfKvpwCSyZqV8QFnexSJyngZdoGMgyKqAEF"
+        }
+      ]
+    },
+    {
+      "mint": "PepeCS5SuDLkUwfnhmBLsPsVdpy9WR5bmXT4dkipR9i",
+      "name": "PEPE",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13pU5Yduzg2THVAsEdXb1h2PaFpLd3St16VKm1Kjkz3",
+          "expected": true,
+          "source": "https://solscan.io/account/13pU5Yduzg2THVAsEdXb1h2PaFpLd3St16VKm1Kjkz3"
+        },
+        {
+          "provider_index": 1,
+          "account": "FSfxunDmjjbDV2QxpyxFCAPKmYJHSLnLuvQXDLkMzLBm",
+          "expected": false,
+          "source": "https://solscan.io/account/FSfxunDmjjbDV2QxpyxFCAPKmYJHSLnLuvQXDLkMzLBm"
+        }
+      ]
+    },
+    {
+      "mint": "QqqSrHycWaS3f3o4fvEgeVfXfZbqdchUGB3rGxok9qj",
+      "name": "QQQ",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18Tu15qAcRgzri2kbnBmKKkwGvjUZ6jVZH1CKuqKS5W",
+          "expected": true,
+          "source": "https://solscan.io/account/18Tu15qAcRgzri2kbnBmKKkwGvjUZ6jVZH1CKuqKS5W"
+        }
+      ]
+    },
+    {
+      "mint": "ShibkCetJam99AeDv93Q4KKVkeLCBSLSmBKNLpwt1ik",
+      "name": "SHIB",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13xk48rmEkKmuFwua4Wjc1ePj9TrkKvcQ5YuyC4xHiB",
+          "expected": true,
+          "source": "https://solscan.io/account/13xk48rmEkKmuFwua4Wjc1ePj9TrkKvcQ5YuyC4xHiB"
+        },
+        {
+          "provider_index": 1,
+          "account": "HD7fKr26unn2521YNNKeV7o45c4qzpzbNMceg2NCysE1",
+          "expected": false,
+          "source": "https://solscan.io/account/HD7fKr26unn2521YNNKeV7o45c4qzpzbNMceg2NCysE1"
+        }
+      ]
+    },
+    {
+      "mint": "So11111111111111111111111111111111111111112",
+      "name": "WSOL",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14HefJnxgiYQ6qiGL5b6GVZVUSAFpmehRdBJRaZ6GKx",
+          "expected": true,
+          "source": "https://solscan.io/account/14HefJnxgiYQ6qiGL5b6GVZVUSAFpmehRdBJRaZ6GKx"
+        },
+        {
+          "provider_index": 1,
+          "account": "H6ARHf6YXhGYeQfUzQNGk6rDNnLBQKrenN712K4AQJEG",
+          "expected": false,
+          "source": "https://solscan.io/account/H6ARHf6YXhGYeQfUzQNGk6rDNnLBQKrenN712K4AQJEG"
+        }
+      ]
+    },
+    {
+      "mint": "So1Zu7vPQQxrguzUehKAyVLpjcc769zxgBuDAsxTUMH",
+      "name": "SOL",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14HefJnxgiYQ6qiGL5b6GVZVUSAFpmehRdBJRaZ6GKx",
+          "expected": true,
+          "source": "https://solscan.io/account/14HefJnxgiYQ6qiGL5b6GVZVUSAFpmehRdBJRaZ6GKx"
+        },
+        {
+          "provider_index": 1,
+          "account": "H6ARHf6YXhGYeQfUzQNGk6rDNnLBQKrenN712K4AQJEG",
+          "expected": false,
+          "source": "https://solscan.io/account/H6ARHf6YXhGYeQfUzQNGk6rDNnLBQKrenN712K4AQJEG"
+        }
+      ]
+    },
+    {
+      "mint": "Spc8vPRaUMi4KKofgM8duFQRBK58xjS15pdzgioAAhD",
+      "name": "SPCX",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1B3BRNUHmsgsSAdTLUUSuEryQenWYNEfZxmR5ZoFD8x",
+          "expected": true,
+          "source": "https://solscan.io/account/1B3BRNUHmsgsSAdTLUUSuEryQenWYNEfZxmR5ZoFD8x"
+        }
+      ]
+    },
+    {
+      "mint": "SpyoXYfv2RmbLkURbxyXvxs83PFFNMiirXgZhBAgxBQ",
+      "name": "SPY",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "188bmg2W6eGzfuWa1xWDKaLWtMyojKZZEFc1EnuQKFt",
+          "expected": true,
+          "source": "https://solscan.io/account/188bmg2W6eGzfuWa1xWDKaLWtMyojKZZEFc1EnuQKFt"
+        }
+      ]
+    },
+    {
+      "mint": "SuiyRuzKdsxGgdhVJGg5dDz6wtNSQUAWN21zSdCmYXs",
+      "name": "SUI",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13uUXzE1xGSRDFsaPV4WjUABY2BWGhfz4Y8PgNdePWN",
+          "expected": true,
+          "source": "https://solscan.io/account/13uUXzE1xGSRDFsaPV4WjUABY2BWGhfz4Y8PgNdePWN"
+        },
+        {
+          "provider_index": 1,
+          "account": "3Qub3HaAJaa2xNY7SUqPKd3vVwTqDfDDkEUMPjXD2c1q",
+          "expected": false,
+          "source": "https://solscan.io/account/3Qub3HaAJaa2xNY7SUqPKd3vVwTqDfDDkEUMPjXD2c1q"
+        }
+      ]
+    },
+    {
+      "mint": "TaouYgVPRRT3TUkfTK7fQWkoSM35cbuMVEFAXifsuAf",
+      "name": "TAO",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13jxRMA4vbqsSkyh4DN1hCHBkVZcNdp3yK1tUqaoJfs",
+          "expected": true,
+          "source": "https://solscan.io/account/13jxRMA4vbqsSkyh4DN1hCHBkVZcNdp3yK1tUqaoJfs"
+        }
+      ]
+    },
+    {
+      "mint": "TonDqfXQT4A9oexj8nWdQuUs97Zep5UG5auXByTKe79",
+      "name": "TON",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14WxvNQRst8FDA4tNzxkoyYnVX3oe7LxfmUzL9js27f",
+          "expected": true,
+          "source": "https://solscan.io/account/14WxvNQRst8FDA4tNzxkoyYnVX3oe7LxfmUzL9js27f"
+        },
+        {
+          "provider_index": 1,
+          "account": "AFJXXYuniABNnoEE7DLtkxwqLDkcda4xG5k2F4FB86hj",
+          "expected": false,
+          "source": "https://solscan.io/account/AFJXXYuniABNnoEE7DLtkxwqLDkcda4xG5k2F4FB86hj"
+        }
+      ]
+    },
+    {
+      "mint": "TrxYuLyf3WbYPrQ84cjyWgfcEeKTc7m5cKBNBZhY5MN",
+      "name": "TRX",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13i8CUGz21rwYap7Bngps8hsDVrFsSXjn3DoRNw6PfX",
+          "expected": true,
+          "source": "https://solscan.io/account/13i8CUGz21rwYap7Bngps8hsDVrFsSXjn3DoRNw6PfX"
+        },
+        {
+          "provider_index": 1,
+          "account": "7yjcov5hfpr6iG67sh848jiSXDzrp4A1JbFkrpZrnFbg",
+          "expected": false,
+          "source": "https://solscan.io/account/7yjcov5hfpr6iG67sh848jiSXDzrp4A1JbFkrpZrnFbg"
+        }
+      ]
+    },
+    {
+      "mint": "Ts1F5Xa8WR4mGqpZ35bhDM56MHf7Zzvq3L6dYGXVdk4",
+      "name": "TSLA",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18MAcEvgzQoAktRTsNhPo4Cb6Gtp7L2X5hAEeiYtD13",
+          "expected": true,
+          "source": "https://solscan.io/account/18MAcEvgzQoAktRTsNhPo4Cb6Gtp7L2X5hAEeiYtD13"
+        }
+      ]
+    },
+    {
+      "mint": "Unicsoj67GbDzQyWXQEh9vG5jBiVhMREtWBVDAFVpQq",
+      "name": "UNI",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "141es2EHsWNNYNiSXdf36LNMTtLxGCFfEfCbw7aNaav",
+          "expected": true,
+          "source": "https://solscan.io/account/141es2EHsWNNYNiSXdf36LNMTtLxGCFfEfCbw7aNaav"
+        },
+        {
+          "provider_index": 1,
+          "account": "98dE7gWsyWggCizXAS4qrSgcRxrYrAXCoZsbJTLVN81W",
+          "expected": false,
+          "source": "https://solscan.io/account/98dE7gWsyWggCizXAS4qrSgcRxrYrAXCoZsbJTLVN81W"
+        }
+      ]
+    },
+    {
+      "mint": "VvvGPgHYN8KiC7H4aUQwJdfze5uB6rxkL63nHymxjZM",
+      "name": "VVV",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13jyDeqh4Sn5NnChgMDk5SbQ9XCSzXDx3k83eHFvSD6",
+          "expected": true,
+          "source": "https://solscan.io/account/13jyDeqh4Sn5NnChgMDk5SbQ9XCSzXDx3k83eHFvSD6"
+        }
+      ]
+    },
+    {
+      "mint": "WLFinEv6ypjkczcS83FZqFpgFZYwQXutRbxGe7oC16g",
+      "name": "WLFI",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13uSTrQUtxNGXHaMaAtsjR6xjBgdUq52CABvmKMNSER",
+          "expected": true,
+          "source": "https://solscan.io/account/13uSTrQUtxNGXHaMaAtsjR6xjBgdUq52CABvmKMNSER"
+        }
+      ]
+    },
+    {
+      "mint": "X1mpyVGnE5VhzwbAqLp1FuAW7oY45WPTDisbcEkbVLq",
+      "name": "XLM",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13xgLefH9m6ucxoTYarw81d2ny5zLunjkJZ9nkNoRey",
+          "expected": true,
+          "source": "https://solscan.io/account/13xgLefH9m6ucxoTYarw81d2ny5zLunjkJZ9nkNoRey"
+        },
+        {
+          "provider_index": 1,
+          "account": "DMw1AaDmW9g8cCcB4KqCAdWiDNkyFJg7cQ6nhdHpMN6j",
+          "expected": false,
+          "source": "https://solscan.io/account/DMw1AaDmW9g8cCcB4KqCAdWiDNkyFJg7cQ6nhdHpMN6j"
+        }
+      ]
+    },
+    {
+      "mint": "XagEFqWzJtB3XezX6KLQtGkBQDdTpcXYDG7X3EdMH2Y",
+      "name": "XAG",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1AmC72ASs7UMD2Vbbjc2dcDbGe3vkT6DfxPxdSciLz4",
+          "expected": true,
+          "source": "https://solscan.io/account/1AmC72ASs7UMD2Vbbjc2dcDbGe3vkT6DfxPxdSciLz4"
+        }
+      ]
+    },
+    {
+      "mint": "Xauxf2VJhbue14FGbp3W8XwfQSECHYpiPMNMWSCwjSR",
+      "name": "XAU",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1Awk1hMG4m63pLRQgW9cCfK51w4RABwLmW97UptUDb3",
+          "expected": true,
+          "source": "https://solscan.io/account/1Awk1hMG4m63pLRQgW9cCfK51w4RABwLmW97UptUDb3"
+        }
+      ]
+    },
+    {
+      "mint": "Xmric3gq5zb9bcuUW5o2MePQsnni3FxG2wavk6REm6X",
+      "name": "XMR",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "149b1o5Max1gFNUkhcKbNtt57HjKkty9UdXTUngrXgu",
+          "expected": true,
+          "source": "https://solscan.io/account/149b1o5Max1gFNUkhcKbNtt57HjKkty9UdXTUngrXgu"
+        }
+      ]
+    },
+    {
+      "mint": "Xp1adJXBj9MhK7hwAbgPN2rhuiK64nfMYTSg9vzgUB2",
+      "name": "XPL",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13mZJaZ36zn5EaxpY3jKMZr6X5wujrm6mRdAAgFh39T",
+          "expected": true,
+          "source": "https://solscan.io/account/13mZJaZ36zn5EaxpY3jKMZr6X5wujrm6mRdAAgFh39T"
+        }
+      ]
+    },
+    {
+      "mint": "XrpSaeAcbKAGv8P3kWbMbwbq8xcWgR548yvyiKKJUB9",
+      "name": "XRP",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14KeKBMtoWuz3B2kDxRPkLZ4Lnt32Wa8EuJuJbX33QQ",
+          "expected": true,
+          "source": "https://solscan.io/account/14KeKBMtoWuz3B2kDxRPkLZ4Lnt32Wa8EuJuJbX33QQ"
+        },
+        {
+          "provider_index": 1,
+          "account": "Guffb8DAAxNH6kdoawYjPXTbwUhjmveh8R4LM6uEqRV1",
+          "expected": false,
+          "source": "https://solscan.io/account/Guffb8DAAxNH6kdoawYjPXTbwUhjmveh8R4LM6uEqRV1"
+        }
+      ]
+    },
+    {
+      "mint": "arb61K9FqhdBzLQdwi4aae6MLn94RzbcMs8varqwUt5",
+      "name": "ARB",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13h2yfF4RJRoN7z3wQUNAg3XSVW1v4aTgMVH51EEtNR",
+          "expected": true,
+          "source": "https://solscan.io/account/13h2yfF4RJRoN7z3wQUNAg3XSVW1v4aTgMVH51EEtNR"
+        }
+      ]
+    },
+    {
+      "mint": "cadDuN2bphC1u8K61ZF9hJCshTRmEyVNd4qiMY28ijo",
+      "name": "USDCAD",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18DQi6VRNSGxTr2XSNbxNVKJijYTiWmms61mar2ufRw",
+          "expected": true,
+          "source": "https://solscan.io/account/18DQi6VRNSGxTr2XSNbxNVKJijYTiWmms61mar2ufRw"
+        }
+      ]
+    },
+    {
+      "mint": "chfdyavofe2ZXsU67oBnruALSgftfTntvDw3MvyEVRs",
+      "name": "USDCHF",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18piHvZeGFcmvU8QR8tzCkyZZj9Aiv2uj4EUrbckvRN",
+          "expected": true,
+          "source": "https://solscan.io/account/18piHvZeGFcmvU8QR8tzCkyZZj9Aiv2uj4EUrbckvRN"
+        }
+      ]
+    },
+    {
+      "mint": "jpygxG9g45Lui4P3GQgfdfNSYcR9985HAcxBRPTHr66",
+      "name": "USDJPY",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18F6QJCbiHAtUcLbHGmyeCXsDTSzYbxCSkFhTQiwhap",
+          "expected": true,
+          "source": "https://solscan.io/account/18F6QJCbiHAtUcLbHGmyeCXsDTSzYbxCSkFhTQiwhap"
+        }
+      ]
+    },
+    {
+      "mint": "mxnZft9hb7nH93UxTApmXzk95Fg6BERE1PPRzwg6SLL",
+      "name": "USDMXN",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "188dvn9tyoS4A5fMg2Dbj5XBVGBvDu9yLZo5KSMXPnD",
+          "expected": true,
+          "source": "https://solscan.io/account/188dvn9tyoS4A5fMg2Dbj5XBVGBvDu9yLZo5KSMXPnD"
+        }
+      ]
+    },
+    {
+      "mint": "ondoq3GfxTjnebAmpJ3mCLeoA2mZBRU8Kqoo6vTiaz1",
+      "name": "ONDO",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "146ihbn1Sp7AnCMmD2Vqb9dCUWBAcLoefwsqhsnW8Wd",
+          "expected": true,
+          "source": "https://solscan.io/account/146ihbn1Sp7AnCMmD2Vqb9dCUWBAcLoefwsqhsnW8Wd"
+        }
+      ]
+    },
+    {
+      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "name": "PUMP",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13otMD39rMdNRreWdjY1y926caVQM2BLkH3ZK37ThXW",
+          "expected": true,
+          "source": "https://solscan.io/account/13otMD39rMdNRreWdjY1y926caVQM2BLkH3ZK37ThXW"
+        },
+        {
+          "provider_index": 1,
+          "account": "9DGVna8NFhcVEQoswYx3qwhuKSvDUaCZikjMYs9jxZP6",
+          "expected": false,
+          "source": "https://solscan.io/account/9DGVna8NFhcVEQoswYx3qwhuKSvDUaCZikjMYs9jxZP6"
+        }
+      ]
+    },
+    {
+      "mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+      "name": "BOME",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14KFdSNnvxhfkP12c8Atn1Qy7M45x6TjwjtjBsT6REt",
+          "expected": true,
+          "source": "https://solscan.io/account/14KFdSNnvxhfkP12c8Atn1Qy7M45x6TjwjtjBsT6REt"
+        },
+        {
+          "provider_index": 1,
+          "account": "4HrdTEHbsRozp1WYty22pAxjvaPmwXQz3sUVFTdSHtUZ",
+          "expected": false,
+          "source": "https://solscan.io/account/4HrdTEHbsRozp1WYty22pAxjvaPmwXQz3sUVFTdSHtUZ"
+        }
+      ]
+    },
+    {
+      "mint": "w1d1cTQ734BFeBdjUAHgH8tBk8EJ52PjcvroUq5Jekw",
+      "name": "WLD",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "141KTzZoZcHuH6eoLVXSkzFKbDE4v6e6VSPXfK6QboN",
+          "expected": true,
+          "source": "https://solscan.io/account/141KTzZoZcHuH6eoLVXSkzFKbDE4v6e6VSPXfK6QboN"
+        }
+      ]
+    },
+    {
+      "mint": "wtikDoxPLXGSBHacYcLf6SwLQEW5dqGKhErA73QeCrJ",
+      "name": "WTI",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1AqUiVXH1A9cExgWtQXyGvtA2afoDePWqvB6scrcHFo",
+          "expected": true,
+          "source": "https://solscan.io/account/1AqUiVXH1A9cExgWtQXyGvtA2afoDePWqvB6scrcHFo"
+        }
+      ]
+    },
+    {
+      "mint": "xcu22Giuo4jqkDgv3KtfyUrco3a42BFLTnS7XjQ5Taz",
+      "name": "XCU",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1Aygnv8YN1RFKAojt3X83nLfXMgnTCqWg6m8kyymdfV",
+          "expected": true,
+          "source": "https://solscan.io/account/1Aygnv8YN1RFKAojt3X83nLfXMgnTCqWg6m8kyymdfV"
+        }
+      ]
+    },
+    {
+      "mint": "xpd2uvvfPfoogQxyrLyqE3NgSHSbkNNXr7bGnJWLB6n",
+      "name": "XPD",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1B2PJkYy4oa5YrpQUvz4tRyVT7qt8HVVyAcjok3E4Gs",
+          "expected": true,
+          "source": "https://solscan.io/account/1B2PJkYy4oa5YrpQUvz4tRyVT7qt8HVVyAcjok3E4Gs"
+        }
+      ]
+    },
+    {
+      "mint": "xptah2VhwW4pcLdkMvUinEsDNvMXpgHiVfG2mmkEuGR",
+      "name": "XPT",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1BSa52DfAMnUZqgAH7oafUbeBnhAe2efMKDUAWobitT",
+          "expected": true,
+          "source": "https://solscan.io/account/1BSa52DfAMnUZqgAH7oafUbeBnhAe2efMKDUAWobitT"
+        }
+      ]
+    },
+    {
+      "mint": "2wpTofQ8SkACrkZWrZDjXPitYa8AwWgX8AfxdeBRRVLX",
+      "name": "LINK",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "142piXHY3XQVn19TYYMGdrFYa48nomCJigjji8EW7dA",
+          "expected": true,
+          "source": "https://solscan.io/account/142piXHY3XQVn19TYYMGdrFYa48nomCJigjji8EW7dA"
+        },
+        {
+          "provider_index": 1,
+          "account": "ALdkqQDMfHNg77oCNskfX751kHys4KE7SFuZzuKaN536",
+          "expected": false,
+          "source": "https://solscan.io/account/ALdkqQDMfHNg77oCNskfX751kHys4KE7SFuZzuKaN536"
+        }
+      ]
+    },
+    {
+      "mint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+      "name": "WBTC",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14CUCU7nzYBAyBzfYqv5gTMy4WeBEYHzJMShRq3cez3",
+          "expected": true,
+          "source": "https://solscan.io/account/14CUCU7nzYBAyBzfYqv5gTMy4WeBEYHzJMShRq3cez3"
+        },
+        {
+          "provider_index": 1,
+          "account": "Eavb8FKNoYPbHnSS8kMi4tnUh8qK8bqxTjCojer4pZrr",
+          "expected": false,
+          "source": "https://solscan.io/account/Eavb8FKNoYPbHnSS8kMi4tnUh8qK8bqxTjCojer4pZrr"
+        }
+      ]
+    },
+    {
+      "mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+      "name": "TRUMP",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14Tx6Z2FQXKxuJhYu7oPSeyRqUVgXNqMmbVRUaGMHVk",
+          "expected": true,
+          "source": "https://solscan.io/account/14Tx6Z2FQXKxuJhYu7oPSeyRqUVgXNqMmbVRUaGMHVk"
+        },
+        {
+          "provider_index": 1,
+          "account": "A8G6XyA6fSrsavG63ssAGU3Hnt2oDZARxefREzAY5axH",
+          "expected": false,
+          "source": "https://solscan.io/account/A8G6XyA6fSrsavG63ssAGU3Hnt2oDZARxefREzAY5axH"
+        }
+      ]
+    },
+    {
+      "mint": "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs",
+      "name": "WETH",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13zYoj5QEwisVa2HMX3c3HAfogqFWhzbeqAnuY2gxU8",
+          "expected": true,
+          "source": "https://solscan.io/account/13zYoj5QEwisVa2HMX3c3HAfogqFWhzbeqAnuY2gxU8"
+        },
+        {
+          "provider_index": 1,
+          "account": "BastoSHcSMY6bNucX9ctwEsumV9d7y8gXPLqTZ221XPK",
+          "expected": false,
+          "source": "https://solscan.io/account/BastoSHcSMY6bNucX9ctwEsumV9d7y8gXPLqTZ221XPK"
+        }
+      ]
+    },
+    {
+      "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "name": "FARTCOIN",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13hhA3zLP5jp9GUzVCB3bxMba3kuRPSrQG1ECWso7CH",
+          "expected": true,
+          "source": "https://solscan.io/account/13hhA3zLP5jp9GUzVCB3bxMba3kuRPSrQG1ECWso7CH"
+        },
+        {
+          "provider_index": 1,
+          "account": "6yeKsM8eY1ei8fBdx3Ua7MDbGffMxGCPX4pavBGVUaA3",
+          "expected": false,
+          "source": "https://solscan.io/account/6yeKsM8eY1ei8fBdx3Ua7MDbGffMxGCPX4pavBGVUaA3"
+        }
+      ]
+    },
+    {
+      "mint": "9wX6Qz1Y5YQe71dfnFYFfZYXZhKqjYKQwdqfrRkmYUSX",
+      "name": "WGMX",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13jR6dSgVTHxanZTeuPqnHZksZ6NnExGeYbWTaGLbcb",
+          "expected": true,
+          "source": "https://solscan.io/account/13jR6dSgVTHxanZTeuPqnHZksZ6NnExGeYbWTaGLbcb"
+        }
+      ]
+    },
+    {
+      "mint": "A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS",
+      "name": "ZEC",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14CrXQzP5Ero3NvmW92uLSqgWDRqU2eEdKJTP8CMsuL",
+          "expected": true,
+          "source": "https://solscan.io/account/14CrXQzP5Ero3NvmW92uLSqgWDRqU2eEdKJTP8CMsuL"
+        }
+      ]
+    },
+    {
+      "mint": "AapaFKgsAsCMqSvXBPXqipX5WWxArgnPbADSNfhU9E9J",
+      "name": "AAPL",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18sWerz9xnPSK4hvhYndd2vrPvX6yTcUU5jYuJMipNj",
+          "expected": true,
+          "source": "https://solscan.io/account/18sWerz9xnPSK4hvhYndd2vrPvX6yTcUU5jYuJMipNj"
+        }
+      ]
+    },
+    {
+      "mint": "AaveaPPwFJx88apsgcpzck7xkohpiZPViKkNndRZJ6pv",
+      "name": "AAVE",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13uLN2HjRTnnRzKTvQU51DBFJbkHh9b5xo7UUyUWEfE",
+          "expected": true,
+          "source": "https://solscan.io/account/13uLN2HjRTnnRzKTvQU51DBFJbkHh9b5xo7UUyUWEfE"
+        },
+        {
+          "provider_index": 1,
+          "account": "3wDLxH34Yz8tGjwHszQ2MfzHwRoaQgKA32uq2bRpjJBW",
+          "expected": false,
+          "source": "https://solscan.io/account/3wDLxH34Yz8tGjwHszQ2MfzHwRoaQgKA32uq2bRpjJBW"
+        }
+      ]
+    },
+    {
+      "mint": "AdamfezT5MsUMv5PtSBDWHwPCpcYVyq2CWAseqNbwU7Q",
+      "name": "ADA",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "147duoVux6yWUG5SAG9n8SoxRZ1FxmQwd53CCisSMJX",
+          "expected": true,
+          "source": "https://solscan.io/account/147duoVux6yWUG5SAG9n8SoxRZ1FxmQwd53CCisSMJX"
+        },
+        {
+          "provider_index": 1,
+          "account": "3pyn4svBbxJ9Wnn3RVeafyLWfzie6yC5eTig2S62v9SC",
+          "expected": false,
+          "source": "https://solscan.io/account/3pyn4svBbxJ9Wnn3RVeafyLWfzie6yC5eTig2S62v9SC"
+        }
+      ]
+    },
+    {
+      "mint": "AmzF1ANXKgmWzm8TLmjAUaZTeqT4gZGV9Xi81yLx1FF9",
+      "name": "AMZN",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18xDYTuv9Q34H4stbx915haTufDPpjPKPRKMGwT9rrn",
+          "expected": true,
+          "source": "https://solscan.io/account/18xDYTuv9Q34H4stbx915haTufDPpjPKPRKMGwT9rrn"
+        }
+      ]
+    },
+    {
+      "mint": "Ast9jCRDBog1oWQUJbhXbGhiPcjPTgsbPKf3qGK8vixc",
+      "name": "ASTER",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14AzBr8HXGJ9zTg1BjVcA7eMPcYxWEQA35ZxnkDbC1t",
+          "expected": true,
+          "source": "https://solscan.io/account/14AzBr8HXGJ9zTg1BjVcA7eMPcYxWEQA35ZxnkDbC1t"
+        }
+      ]
+    },
+    {
+      "mint": "Audg5JLrnh6tRy6WWPRnZ1kh9xiWr2omtP5xdQRTvqQh",
+      "name": "AUD",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18rDGXrfXYo4DjjF72qYgiP81FuDM9fzEKQzGffia3u",
+          "expected": true,
+          "source": "https://solscan.io/account/18rDGXrfXYo4DjjF72qYgiP81FuDM9fzEKQzGffia3u"
+        }
+      ]
+    },
+    {
+      "mint": "BchGdYptcKvUDCpHMDAB5h1MfXq2LPzRLcU8b4r8dQiQ",
+      "name": "BCH",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13krhX6Xt9R42P6tbMUK9acUwyHqpiAyGh9N6YWpc6y",
+          "expected": true,
+          "source": "https://solscan.io/account/13krhX6Xt9R42P6tbMUK9acUwyHqpiAyGh9N6YWpc6y"
+        },
+        {
+          "provider_index": 1,
+          "account": "5ALDzwcRJfSyGdGyhP3kP628aqBNHZzLuVww7o9kdspe",
+          "expected": false,
+          "source": "https://solscan.io/account/5ALDzwcRJfSyGdGyhP3kP628aqBNHZzLuVww7o9kdspe"
+        }
+      ]
+    },
+    {
+      "mint": "BnbuyeSZgnWxXppzkRgiA5TR4t3L9NBRnk6Hbr9m5GsJ",
+      "name": "BNB",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13qhrqfnLsSYCjye9k9ncuhgx7Fg8FWyrSAbWC9J6v1",
+          "expected": true,
+          "source": "https://solscan.io/account/13qhrqfnLsSYCjye9k9ncuhgx7Fg8FWyrSAbWC9J6v1"
+        },
+        {
+          "provider_index": 1,
+          "account": "4CkQJBxhU8EZ2UjhigbtdaPbpTe6mqf811fipYBFbSYN",
+          "expected": false,
+          "source": "https://solscan.io/account/4CkQJBxhU8EZ2UjhigbtdaPbpTe6mqf811fipYBFbSYN"
+        }
+      ]
+    },
+    {
+      "mint": "BtcTQYRj7HRRk7MwnWiTFj8rWqN2ALt2QYig4cSWqTbv",
+      "name": "BTC",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14CUCU7nzYBAyBzfYqv5gTMy4WeBEYHzJMShRq3cez3",
+          "expected": true,
+          "source": "https://solscan.io/account/14CUCU7nzYBAyBzfYqv5gTMy4WeBEYHzJMShRq3cez3"
+        },
+        {
+          "provider_index": 1,
+          "account": "GVXRSBjFk6e6J3NbVPXohDJetcTjaeeuykUpbQF8UoMU",
+          "expected": false,
+          "source": "https://solscan.io/account/GVXRSBjFk6e6J3NbVPXohDJetcTjaeeuykUpbQF8UoMU"
+        }
+      ]
+    },
+    {
+      "mint": "BzdSwajpPDpWrHzFJajvyzVpeJdnPsr2cmyowUh4P7VN",
+      "name": "BZ",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "1BGVDZpULDaRVqSGb7hof3ykzyYineP3GKDvSGKAc1a",
+          "expected": true,
+          "source": "https://solscan.io/account/1BGVDZpULDaRVqSGb7hof3ykzyYineP3GKDvSGKAc1a"
+        }
+      ]
+    },
+    {
+      "mint": "C1MHyoTJpRTeS9AQCyspNVu2EWAYCZwmJ1jNkEArFP1f",
+      "name": "APE",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13jTrTiD6HAkCUCd7RrRU2iSF4MLJeQ4kbG29SmLtbw",
+          "expected": true,
+          "source": "https://solscan.io/account/13jTrTiD6HAkCUCd7RrRU2iSF4MLJeQ4kbG29SmLtbw"
+        },
+        {
+          "provider_index": 1,
+          "account": "2TdKEvPTKpDtJo6pwxd79atZFQNWiSUT2T47nF9j5qFy",
+          "expected": false,
+          "source": "https://solscan.io/account/2TdKEvPTKpDtJo6pwxd79atZFQNWiSUT2T47nF9j5qFy"
+        }
+      ]
+    },
+    {
+      "mint": "CrcK7E8tx7irevagMrVcoBEeJAsNVYC2DkBJYgFzJmuP",
+      "name": "CRCL",
+      "enabled": false,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18PteMaAUWcvaMY6KSCXC4fnfZ6uY2i7kUpnhsQ1nhr",
+          "expected": true,
+          "source": "https://solscan.io/account/18PteMaAUWcvaMY6KSCXC4fnfZ6uY2i7kUpnhsQ1nhr"
+        }
+      ]
+    },
+    {
+      "mint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+      "name": "BONK",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13rrYZ18CSrorqkqdma9Ma7Q3ewuCVwhB2qUqTXwEpG",
+          "expected": true,
+          "source": "https://solscan.io/account/13rrYZ18CSrorqkqdma9Ma7Q3ewuCVwhB2qUqTXwEpG"
+        },
+        {
+          "provider_index": 1,
+          "account": "8ihFLu5FimgTQ1Unh4dVyEHUGodJ5gJQCrQf4KUVB9bN",
+          "expected": false,
+          "source": "https://solscan.io/account/8ihFLu5FimgTQ1Unh4dVyEHUGodJ5gJQCrQf4KUVB9bN"
+        }
+      ]
+    },
+    {
+      "mint": "DogeJP1vR955QsXWKT1vw5gJsyiTthqPEtJZj8enDWxF",
+      "name": "DOGE",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13xH4kaU4V3FQJ42pqUb9Jt4rygArUry3axUkmafpxB",
+          "expected": true,
+          "source": "https://solscan.io/account/13xH4kaU4V3FQJ42pqUb9Jt4rygArUry3axUkmafpxB"
+        },
+        {
+          "provider_index": 1,
+          "account": "FsSM3s38PX9K7Dn6eGzuE29S2Dsk1Sss1baytTQdCaQj",
+          "expected": false,
+          "source": "https://solscan.io/account/FsSM3s38PX9K7Dn6eGzuE29S2Dsk1Sss1baytTQdCaQj"
+        }
+      ]
+    },
+    {
+      "mint": "DotB5VDVP2VbfETfRsEsWnPH42tBiQZxHjGNH4iaNGSR",
+      "name": "DOT",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14XjxkETqCaaM3SP8b53454JRAGsVpn97Wsi2ftWoZt",
+          "expected": true,
+          "source": "https://solscan.io/account/14XjxkETqCaaM3SP8b53454JRAGsVpn97Wsi2ftWoZt"
+        },
+        {
+          "provider_index": 1,
+          "account": "EcV1X1gY2yb4KXxjVQtTHTbioum2gvmPnFk4zYAt7zne",
+          "expected": false,
+          "source": "https://solscan.io/account/EcV1X1gY2yb4KXxjVQtTHTbioum2gvmPnFk4zYAt7zne"
+        }
+      ]
+    },
+    {
+      "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "name": "WIF",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14PhB4uweqPZQSgJemsyKFrVTfLjtRSQKwCjhCPA4Bn",
+          "expected": true,
+          "source": "https://solscan.io/account/14PhB4uweqPZQSgJemsyKFrVTfLjtRSQKwCjhCPA4Bn"
+        },
+        {
+          "provider_index": 1,
+          "account": "6ABgrEZk8urs6kJ1JNdC1sspH5zKXRqxy8sg3ZG2cQps",
+          "expected": false,
+          "source": "https://solscan.io/account/6ABgrEZk8urs6kJ1JNdC1sspH5zKXRqxy8sg3ZG2cQps"
+        }
+      ]
+    },
+    {
+      "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "name": "USDC",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "149eGQvrtmymuPsmd3EhYzYVboeAvDRx4cS3MExZuMj",
+          "expected": true,
+          "source": "https://solscan.io/account/149eGQvrtmymuPsmd3EhYzYVboeAvDRx4cS3MExZuMj"
+        },
+        {
+          "provider_index": 1,
+          "account": "Gnt27xtC473ZT2Mw5u8wZ68Z3gULkSTb5DuxJy7eJotD",
+          "expected": false,
+          "source": "https://solscan.io/account/Gnt27xtC473ZT2Mw5u8wZ68Z3gULkSTb5DuxJy7eJotD"
+        }
+      ]
+    },
+    {
+      "mint": "EnaRUVoWPozu58p8FerezM3fP8erLU5pFeXmjikq9qmR",
+      "name": "ENA",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13sKDNyjq9DMf6SNLt3FLjX3uZgaV3S1NjfNcXh8r6c",
+          "expected": true,
+          "source": "https://solscan.io/account/13sKDNyjq9DMf6SNLt3FLjX3uZgaV3S1NjfNcXh8r6c"
+        }
+      ]
+    },
+    {
+      "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "name": "USDT",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14EmEDM462s7CwZLweUnrURe4FG2iPNBwYBgJ8ytnDx",
+          "expected": true,
+          "source": "https://solscan.io/account/14EmEDM462s7CwZLweUnrURe4FG2iPNBwYBgJ8ytnDx"
+        }
+      ]
+    },
+    {
+      "mint": "EthK4kKnQQUd1Ae1w7sdiMAUaJwq2RMwr7AtscXEdEsF",
+      "name": "ETH",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13zYoj5QEwisVa2HMX3c3HAfogqFWhzbeqAnuY2gxU8",
+          "expected": true,
+          "source": "https://solscan.io/account/13zYoj5QEwisVa2HMX3c3HAfogqFWhzbeqAnuY2gxU8"
+        },
+        {
+          "provider_index": 1,
+          "account": "JBu1AL4obBcCMqKBBxhpWCNUt136ijcuMZLFvTP7iWdB",
+          "expected": false,
+          "source": "https://solscan.io/account/JBu1AL4obBcCMqKBBxhpWCNUt136ijcuMZLFvTP7iWdB"
+        }
+      ]
+    },
+    {
+      "mint": "EurdPiuWJazzqJLKE4Amb1ZQxVkpwEiSKCZfNgXC9Wi4",
+      "name": "EUR",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18iVBcWJXPPq52yD1E7RGo2gbPbY9HXgsXyYXThqM85",
+          "expected": true,
+          "source": "https://solscan.io/account/18iVBcWJXPPq52yD1E7RGo2gbPbY9HXgsXyYXThqM85"
+        }
+      ]
+    },
+    {
+      "mint": "FUAfBo2jgks6gB4Z4LfZkqSZgzNucisEHqnNebaRxM1P",
+      "name": "MELANIA",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13qVKFKFpACX7ZPGaWLAb5Sv8yN8C9RYX3Bv9N6uDhU",
+          "expected": true,
+          "source": "https://solscan.io/account/13qVKFKFpACX7ZPGaWLAb5Sv8yN8C9RYX3Bv9N6uDhU"
+        },
+        {
+          "provider_index": 1,
+          "account": "Ags7BRbUCdKNPdTV31zUfu8QM3hzFV2mh4hHvrcoECFd",
+          "expected": false,
+          "source": "https://solscan.io/account/Ags7BRbUCdKNPdTV31zUfu8QM3hzFV2mh4hHvrcoECFd"
+        }
+      ]
+    },
+    {
+      "mint": "GbpeVg2NBeL9Q2RDLrYkkkRXNMjaXg4vBZbh2cffH7aG",
+      "name": "GBP",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18SyetUzS5Q3R7wbgeJxZpTooX93r1nMx8ocdm7ShxW",
+          "expected": true,
+          "source": "https://solscan.io/account/18SyetUzS5Q3R7wbgeJxZpTooX93r1nMx8ocdm7ShxW"
+        }
+      ]
+    },
+    {
+      "mint": "GmxDsqjKYUrwgbvccGrpF1LoyHPUq8FQqT1FJfkvrMfY",
+      "name": "GMX",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13jR6dSgVTHxanZTeuPqnHZksZ6NnExGeYbWTaGLbcb",
+          "expected": true,
+          "source": "https://solscan.io/account/13jR6dSgVTHxanZTeuPqnHZksZ6NnExGeYbWTaGLbcb"
+        },
+        {
+          "provider_index": 1,
+          "account": "DUfPJwSZvqicctyYtN8CcspN9bZttypo3Cq3VMgXoZ8z",
+          "expected": false,
+          "source": "https://solscan.io/account/DUfPJwSZvqicctyYtN8CcspN9bZttypo3Cq3VMgXoZ8z"
+        }
+      ]
+    },
+    {
+      "mint": "GooBXeDfVwNPMCvHvGvUtEVxt1GwGzXxL8kqv8YKsAAy",
+      "name": "GOOGL",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "18BUkzs6x4C3mK1W1NPHxdZZvnvFaQ5QXkX5Zx5ggBz",
+          "expected": true,
+          "source": "https://solscan.io/account/18BUkzs6x4C3mK1W1NPHxdZZvnvFaQ5QXkX5Zx5ggBz"
+        }
+      ]
+    },
+    {
+      "mint": "HTHR6CbWSqrVCB83onNwKKH1W3qpGoKbpqvs9sgK7PEC",
+      "name": "WPUMP",
+      "enabled": false,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "13otMD39rMdNRreWdjY1y926caVQM2BLkH3ZK37ThXW",
+          "expected": true,
+          "source": "https://solscan.io/account/13otMD39rMdNRreWdjY1y926caVQM2BLkH3ZK37ThXW"
+        },
+        {
+          "provider_index": 1,
+          "account": "9DGVna8NFhcVEQoswYx3qwhuKSvDUaCZikjMYs9jxZP6",
+          "expected": false,
+          "source": "https://solscan.io/account/9DGVna8NFhcVEQoswYx3qwhuKSvDUaCZikjMYs9jxZP6"
+        }
+      ]
+    },
+    {
+      "mint": "HypeVcgZWXS1fSuij5R5Kp9JcYjw34ZG6yic1bde9vS5",
+      "name": "HYPE",
+      "enabled": true,
+      "feeds": [
+        {
+          "provider_index": 0,
+          "account": "14PDiyLur82KYs8QgDAThnMxVfw62FVK3YnppgpzSJ4",
+          "expected": true,
+          "source": "https://solscan.io/account/14PDiyLur82KYs8QgDAThnMxVfw62FVK3YnppgpzSJ4"
+        }
+      ]
+    }
+  ]
+}

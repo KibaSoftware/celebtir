@@ -1,0 +1,37 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Tokens: the SOL-USDC Whirlpool Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE, read on chain.
+id: orca
+name: Orca
+chain: solana
+category: dex
+website: https://www.orca.so
+defillama_slug: orca-dex
+programs:
+  - id: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+    name: Whirlpools
+    role: core
+    source: https://github.com/orca-so/whirlpools
+multisigs:
+  - address: BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF
+admin_accounts:
+  - account: 2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ
+    idl: idl/orca-whirlpools.json
+    field: fee_authority
+    power: parameters
+    source: https://solscan.io/account/2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ
+oracles_reviewed_none:
+  source: https://github.com/orca-so/whirlpools
+  reviewed_on: 2026-10-25
+  note: "Whirlpools price swaps from pool reserves and ticks; the program reads no price-oracle account."
+tokens:
+  - mint: So11111111111111111111111111111111111111112
+    roles: [lp]
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    roles: [lp]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

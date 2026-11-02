@@ -1,0 +1,47 @@
+name: registry-cooling
+
+# REG-6: registry changes merge only 24 hours after the last commit. This sets
+# the commit status `registry-cooling`, which branch protection requires
+# (6.5). Pull requests set it on every push; an hourly job flips it to success
+# once the 24 hours have passed.
+on:
+  pull_request:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  statuses: write
+
+jobs:
+  on-push:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: set registry-cooling status
+        run: bash scripts/set-cooling-status.sh "origin/${{ github.base_ref }}" "${{ github.event.pull_request.head.sha }}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  hourly:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: re-check open pull requests
+        run: |
+          for sha in $(gh pr list --state open --json headRefOid --jq '.[].headRefOid'); do
+            git fetch -q origin "$sha"
+            git checkout -q "$sha"
+            bash scripts/set-cooling-status.sh "origin/${{ github.event.repository.default_branch }}" "$sha"
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}

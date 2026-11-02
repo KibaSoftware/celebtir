@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-15",
+  "events": [
+    {
+      "after": {
+        "date": "2026-08-20",
+        "new_authority": null,
+        "slot": 440486775
+      },
+      "backfill": true,
+      "before": null,
+      "date": "2026-10-15",
+      "detected_within_days": 56,
+      "evidence": [
+        {
+          "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/tx/3tTU214kgvZxi2x9SbSCJDNLnvFxAqRGktnMT6gP6SiTAMzUawc8N7GR23tySTAbsR8hc2J98f2Mg2nDXa1MubRi",
+          "field": "ProgramData transaction (program_upgraded)",
+          "slot": 440486775
+        }
+      ],
+      "id": "2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@3tTU214kgvZxi2x9SbSCJDNLnvFxAqRGktnMT6gP6SiTAMzUawc8N7GR23tySTAbsR8hc2J98f2Mg2nDXa1MubRi",
+      "kind": "program_upgraded",
+      "occurred_on": "2026-08-20",
+      "protocol": "kamino-lend",
+      "severity": "warning",
+      "signature": "3tTU214kgvZxi2x9SbSCJDNLnvFxAqRGktnMT6gP6SiTAMzUawc8N7GR23tySTAbsR8hc2J98f2Mg2nDXa1MubRi",
+      "slot": 440486775,
+      "source": "on_chain",
+      "subject": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@440486775",
+      "summary": "program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-08-20 (slot 440486775); recorded from ProgramData history"
+    },
+    {
+      "after": {
+        "date": "2026-05-12",
+        "new_authority": null,
+        "slot": 419212537
+      },
+      "backfill": true,
+      "before": null,
+      "date": "2026-10-15",
+      "detected_within_days": 156,
+      "evidence": [
+        {
+          "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/tx/4mVFW8YSrFcxxGYmwceyRZGvYGkMiXd1ZSTN7vwd2bthrY3qz2E8FoVUBL4bPUuokFmnQCouDtvXsbxDTKaBhXDS",
+          "field": "ProgramData transaction (program_upgraded)",
+          "slot": 419212537
+        }
+      ],
+      "id": "2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@4mVFW8YSrFcxxGYmwceyRZGvYGkMiXd1ZSTN7vwd2bthrY3qz2E8FoVUBL4bPUuokFmnQCouDtvXsbxDTKaBhXDS",
+      "kind": "program_upgraded",
+      "occurred_on": "2026-05-12",
+      "protocol": "kamino-lend",
+      "severity": "warning",
+      "signature": "4mVFW8YSrFcxxGYmwceyRZGvYGkMiXd1ZSTN7vwd2bthrY3qz2E8FoVUBL4bPUuokFmnQCouDtvXsbxDTKaBhXDS",
+      "slot": 419212537,
+      "source": "on_chain",
+      "subject": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@419212537",
+      "summary": "program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-05-12 (slot 419212537); recorded from ProgramData history"
+    },
+    {
+      "after": {
+        "date": "2026-05-14",
+        "new_authority": null,
+        "slot": 419662599
+      },
+      "backfill": true,
+      "before": null,
+      "date": "2026-10-15",
+      "detected_within_days": 154,
+      "evidence": [
+        {
+          "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/tx/56zLB6QogzoiEemhvj4xj6Ujj8J9nRoYMsjW4S2xQ7Ezq1nMquhVsqTcwwdVUKCN7qfcUupSFkZtcXMQTuvErXdJ",
+          "field": "ProgramData transaction (program_upgraded)",
+          "slot": 419662599
+        }
+      ],
+      "id": "2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@56zLB6QogzoiEemhvj4xj6Ujj8J9nRoYMsjW4S2xQ7Ezq1nMquhVsqTcwwdVUKCN7qfcUupSFkZtcXMQTuvErXdJ",
+      "kind": "program_upgraded",
+      "occurred_on": "2026-05-14",
+      "protocol": "kamino-lend",
+      "severity": "warning",
+      "signature": "56zLB6QogzoiEemhvj4xj6Ujj8J9nRoYMsjW4S2xQ7Ezq1nMquhVsqTcwwdVUKCN7qfcUupSFkZtcXMQTuvErXdJ",
+      "slot": 419662599,
+      "source": "on_chain",
+      "subject": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@419662599",
+      "summary": "program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-05-14 (slot 419662599); recorded from ProgramData history"
+    },
+    {
+      "after": {
+        "date": "2026-05-28",
+        "new_authority": null,
+        "slot": 422723185
+      },
+      "backfill": true,
+      "before": null,
+      "date": "2026-10-15",
+      "detected_within_days": 140,
+      "evidence": [
+        {
+          "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/tx/WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4",
+          "field": "ProgramData transaction (program_upgraded)",
+          "slot": 422723185
+        }
+      ],
+      "id": "2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4",
+      "kind": "program_upgraded",
+      "occurred_on": "2026-05-28",
+      "protocol": "kamino-lend",
+      "severity": "warning",
+      "signature": "WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4",
+      "slot": 422723185,
+      "source": "on_chain",
+      "subject": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@422723185",
+      "summary": "program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-05-28 (slot 422723185); recorded from ProgramData history"
+    },
+    {
+      "after": {
+        "date": "2026-08-12",
+        "new_authority": null,
+        "slot": 438843135
+      },
+      "backfill": true,
+      "before": null,
+      "date": "2026-10-15",
+      "detected_within_days": 64,
+      "evidence": [
+        {
+          "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/tx/smn7ibUfuPNhLoovx1eYpwZWZtego9q6U7LVkk8Tc4thrbcwtbTCGXX13ogh8YShsLcusN12AoyWq8yuLuagQQr",
+          "field": "ProgramData transaction (program_upgraded)",
+          "slot": 438843135
+        }
+      ],
+      "id": "2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@smn7ibUfuPNhLoovx1eYpwZWZtego9q6U7LVkk8Tc4thrbcwtbTCGXX13ogh8YShsLcusN12AoyWq8yuLuagQQr",
+      "kind": "program_upgraded",
+      "occurred_on": "2026-08-12",
+      "protocol": "kamino-lend",
+      "severity": "warning",
+      "signature": "smn7ibUfuPNhLoovx1eYpwZWZtego9q6U7LVkk8Tc4thrbcwtbTCGXX13ogh8YShsLcusN12AoyWq8yuLuagQQr",
+      "slot": 438843135,
+      "source": "on_chain",
+      "subject": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@438843135",
+      "summary": "program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-08-12 (slot 438843135); recorded from ProgramData history"
+    }
+  ],
+  "previous_date": "",
+  "schema_version": "0.2.0"
+}

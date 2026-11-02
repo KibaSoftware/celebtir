@@ -1,0 +1,5 @@
+# HIP-3 perp DEXs are discovered from the info API (`perpDexs`); this file
+# only adds the stake requirement and optional display data (HREG-4, HIP-4).
+required_stake: "500000"
+required_stake_source: https://hyperliquid.gitbook.io/hyperliquid-docs/hyperliquid-improvement-proposals-hips/hip-3-builder-deployed-perpetuals
+dexs: {}

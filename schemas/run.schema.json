@@ -1,0 +1,208 @@
+{
+  "$defs": {
+    "RunChain": {
+      "additionalProperties": false,
+      "description": "Calls and coverage for one extra chain in a run (HOPS-1).",
+      "properties": {
+        "block": {
+          "description": "The pinned HyperEVM block; None when the RPC did not answer.",
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "budget": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "calls": {
+          "additionalProperties": {
+            "format": "uint64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "description": "JSON-RPC requests per method, retries included.",
+          "type": "object"
+        },
+        "failures": {
+          "description": "Failures in this chain only; also listed in the run's `failures`.",
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "hip3_dexs": {
+          "description": "HIP-3 DEXs listed; 0 when the info API failed.",
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "info_calls": {
+          "description": "Info API requests (`perpDexs`, `delegatorSummary`).",
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "protocols": {
+          "description": "HyperEVM protocols collected.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "retries": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "rpc_host": {
+          "description": "The HyperEVM RPC host only, never the URL (SNAP-5).",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rpc_host",
+        "calls",
+        "retries",
+        "budget",
+        "info_calls",
+        "protocols",
+        "hip3_dexs",
+        "failures"
+      ],
+      "type": "object"
+    },
+    "RunFailure": {
+      "additionalProperties": false,
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "scope": {
+          "description": "A protocol ID, `token:<mint>` or `tokens`.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scope",
+        "error"
+      ],
+      "type": "object"
+    },
+    "RunNote": {
+      "additionalProperties": false,
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "protocol",
+        "note"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "`data/snapshots/<date>/run.json`: how the run went. The only file with\nwall-clock timestamps (SNAP-2).",
+  "properties": {
+    "budget": {
+      "format": "uint64",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "budget_exceeded": {
+      "type": "boolean"
+    },
+    "calls": {
+      "additionalProperties": {
+        "format": "uint64",
+        "minimum": 0,
+        "type": "integer"
+      },
+      "description": "Requests per RPC method, retries included (COL-5).",
+      "type": "object"
+    },
+    "duration_ms": {
+      "format": "uint64",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "failures": {
+      "items": {
+        "$ref": "#/$defs/RunFailure"
+      },
+      "type": "array"
+    },
+    "finished_at": {
+      "type": "string"
+    },
+    "hyperliquid": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/RunChain"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "The Hyperliquid half of the run (wave 2, HOPS-1); None when it was\nnot collected."
+    },
+    "protocols": {
+      "description": "Protocols collected successfully.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "retries": {
+      "format": "uint64",
+      "minimum": 0,
+      "type": "integer"
+    },
+    "review_needed": {
+      "items": {
+        "$ref": "#/$defs/RunNote"
+      },
+      "type": "array"
+    },
+    "rpc_host": {
+      "description": "The RPC host only, never the URL (SNAP-5).",
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "started_at": {
+      "description": "RFC 3339, UTC.",
+      "type": "string"
+    },
+    "tool_version": {
+      "description": "Tool version and, when built in CI, the commit.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "tool_version",
+    "started_at",
+    "finished_at",
+    "duration_ms",
+    "rpc_host",
+    "calls",
+    "retries",
+    "budget",
+    "budget_exceeded",
+    "protocols",
+    "failures",
+    "review_needed"
+  ],
+  "title": "RunFile",
+  "type": "object"
+}

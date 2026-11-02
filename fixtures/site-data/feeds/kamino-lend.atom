@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>tag:celebtir,2026:kamino-lend</id>
+  <title>Celebtir: changes to kamino-lend</title>
+  <link rel="self" type="application/atom+xml" href="https://celebtir.com/feeds/kamino-lend.atom"/>
+  <link rel="alternate" type="text/html" href="https://celebtir.com/changelog/"/>
+  <author><name>Celebtir</name></author>
+  <updated>2026-10-15T00:00:00Z</updated>
+  <entry>
+    <id>tag:celebtir,2026:2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@3tTU214kgvZxi2x9SbSCJDNLnvFxAqRGktnMT6gP6SiTAMzUawc8N7GR23tySTAbsR8hc2J98f2Mg2nDXa1MubRi</id>
+    <title>program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-08-20 (slot 440486775); recorded from ProgramData history</title>
+    <link rel="alternate" type="text/html" href="https://celebtir.com/changelog/#2026-10-15-kamino-lend-program_upgraded-KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD-3tTU214kgvZxi2x9SbSCJDNLnvFxAqRGktnMT6gP6SiTAMzUawc8N7GR23tySTAbsR8hc2J98f2Mg2nDXa1MubRi"/>
+    <updated>2026-10-15T00:00:00Z</updated>
+    <category term="warning"/>
+    <content type="text">program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-08-20 (slot 440486775); recorded from ProgramData history (Warning, OnChain); transaction 3tTU214kgvZxi2x9SbSCJDNLnvFxAqRGktnMT6gP6SiTAMzUawc8N7GR23tySTAbsR8hc2J98f2Mg2nDXa1MubRi</content>
+  </entry>
+  <entry>
+    <id>tag:celebtir,2026:2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@4mVFW8YSrFcxxGYmwceyRZGvYGkMiXd1ZSTN7vwd2bthrY3qz2E8FoVUBL4bPUuokFmnQCouDtvXsbxDTKaBhXDS</id>
+    <title>program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-05-12 (slot 419212537); recorded from ProgramData history</title>
+    <link rel="alternate" type="text/html" href="https://celebtir.com/changelog/#2026-10-15-kamino-lend-program_upgraded-KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD-4mVFW8YSrFcxxGYmwceyRZGvYGkMiXd1ZSTN7vwd2bthrY3qz2E8FoVUBL4bPUuokFmnQCouDtvXsbxDTKaBhXDS"/>
+    <updated>2026-10-15T00:00:00Z</updated>
+    <category term="warning"/>
+    <content type="text">program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-05-12 (slot 419212537); recorded from ProgramData history (Warning, OnChain); transaction 4mVFW8YSrFcxxGYmwceyRZGvYGkMiXd1ZSTN7vwd2bthrY3qz2E8FoVUBL4bPUuokFmnQCouDtvXsbxDTKaBhXDS</content>
+  </entry>
+  <entry>
+    <id>tag:celebtir,2026:2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@56zLB6QogzoiEemhvj4xj6Ujj8J9nRoYMsjW4S2xQ7Ezq1nMquhVsqTcwwdVUKCN7qfcUupSFkZtcXMQTuvErXdJ</id>
+    <title>program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-05-14 (slot 419662599); recorded from ProgramData history</title>
+    <link rel="alternate" type="text/html" href="https://celebtir.com/changelog/#2026-10-15-kamino-lend-program_upgraded-KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD-56zLB6QogzoiEemhvj4xj6Ujj8J9nRoYMsjW4S2xQ7Ezq1nMquhVsqTcwwdVUKCN7qfcUupSFkZtcXMQTuvErXdJ"/>
+    <updated>2026-10-15T00:00:00Z</updated>
+    <category term="warning"/>
+    <content type="text">program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-05-14 (slot 419662599); recorded from ProgramData history (Warning, OnChain); transaction 56zLB6QogzoiEemhvj4xj6Ujj8J9nRoYMsjW4S2xQ7Ezq1nMquhVsqTcwwdVUKCN7qfcUupSFkZtcXMQTuvErXdJ</content>
+  </entry>
+  <entry>
+    <id>tag:celebtir,2026:2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4</id>
+    <title>program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-05-28 (slot 422723185); recorded from ProgramData history</title>
+    <link rel="alternate" type="text/html" href="https://celebtir.com/changelog/#2026-10-15-kamino-lend-program_upgraded-KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD-WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4"/>
+    <updated>2026-10-15T00:00:00Z</updated>
+    <category term="warning"/>
+    <content type="text">program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-05-28 (slot 422723185); recorded from ProgramData history (Warning, OnChain); transaction WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4</content>
+  </entry>
+  <entry>
+    <id>tag:celebtir,2026:2026-10-15:kamino-lend:program_upgraded:KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD@smn7ibUfuPNhLoovx1eYpwZWZtego9q6U7LVkk8Tc4thrbcwtbTCGXX13ogh8YShsLcusN12AoyWq8yuLuagQQr</id>
+    <title>program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-08-12 (slot 438843135); recorded from ProgramData history</title>
+    <link rel="alternate" type="text/html" href="https://celebtir.com/changelog/#2026-10-15-kamino-lend-program_upgraded-KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD-smn7ibUfuPNhLoovx1eYpwZWZtego9q6U7LVkk8Tc4thrbcwtbTCGXX13ogh8YShsLcusN12AoyWq8yuLuagQQr"/>
+    <updated>2026-10-15T00:00:00Z</updated>
+    <category term="warning"/>
+    <content type="text">program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD upgraded on 2026-08-12 (slot 438843135); recorded from ProgramData history (Warning, OnChain); transaction smn7ibUfuPNhLoovx1eYpwZWZtego9q6U7LVkk8Tc4thrbcwtbTCGXX13ogh8YShsLcusN12AoyWq8yuLuagQQr</content>
+  </entry>
+</feed>

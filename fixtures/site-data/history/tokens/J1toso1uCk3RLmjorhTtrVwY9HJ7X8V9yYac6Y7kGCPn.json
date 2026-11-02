@@ -1,0 +1,25 @@
+{
+  "days": [
+    {
+      "date": "2026-10-15",
+      "decimals": 9,
+      "price_usd_micros": null,
+      "supply": 8025417267857893
+    },
+    {
+      "date": "2026-10-16",
+      "decimals": 9,
+      "price_usd_micros": null,
+      "supply": 8025417267857893
+    },
+    {
+      "date": "2026-10-17",
+      "decimals": 9,
+      "price_usd_micros": null,
+      "supply": 8025417267857893
+    }
+  ],
+  "mint": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+  "schema_version": "0.2.0",
+  "symbol": "JitoSOL"
+}

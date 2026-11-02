@@ -1,0 +1,741 @@
+{
+  "status": "DRAFT: review 24 hours after evidence capture; composite source decoding and vault relationships require owner review",
+  "discovery": "https://lite-api.jup.ag/lend/v1/borrow/vaults",
+  "oracles": [
+    {
+      "account": "2gFY1YckrZtmK6LiTzTSdq5JbU3SdfZaHzLQoseD1xHu",
+      "market": "sUSDai/JupUSD, sUSDai/USDC",
+      "role": "primary",
+      "source": "https://solscan.io/account/2gFY1YckrZtmK6LiTzTSdq5JbU3SdfZaHzLQoseD1xHu",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "DXSLbLNfjYrjp4KKoDnLXT5j5Wdcr9hZCGCwpeeyDxZV",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/DXSLbLNfjYrjp4KKoDnLXT5j5Wdcr9hZCGCwpeeyDxZV"
+        }
+      ]
+    },
+    {
+      "account": "2ut2BsiJP3DVdxvPvYWxuLgjHvx2nFLtxNM6j6GzdNYT",
+      "market": "JLP/JupUSD, JLP/USDC, JLP/USDG, JLP/USDS, JLP/USDT",
+      "role": "primary",
+      "source": "https://solscan.io/account/2ut2BsiJP3DVdxvPvYWxuLgjHvx2nFLtxNM6j6GzdNYT",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "AyxByfn15hAEhR4G2jR89kqEXZwbaWX4sgyTpGCxSom8",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/AyxByfn15hAEhR4G2jR89kqEXZwbaWX4sgyTpGCxSom8"
+        }
+      ]
+    },
+    {
+      "account": "3wJJsAV1M7uXMnF1RnpnWCi8MseudkDWjj7vfX1inTir",
+      "market": "LBTC/cbBTC",
+      "role": "primary",
+      "source": "https://solscan.io/account/3wJJsAV1M7uXMnF1RnpnWCi8MseudkDWjj7vfX1inTir",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "J9B7zSGyq2P3yUb61DVeDKiEvcLGNM9TqeyFi8AodCDM",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/J9B7zSGyq2P3yUb61DVeDKiEvcLGNM9TqeyFi8AodCDM"
+        }
+      ]
+    },
+    {
+      "account": "419iNcGppruf5BaBQbmkHoU59M1pTCPZCUGBuVBzW8jH",
+      "market": "LBTC/JupUSD, LBTC/USDC, LBTC/USDG",
+      "role": "primary",
+      "source": "https://solscan.io/account/419iNcGppruf5BaBQbmkHoU59M1pTCPZCUGBuVBzW8jH",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "J9B7zSGyq2P3yUb61DVeDKiEvcLGNM9TqeyFi8AodCDM",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/J9B7zSGyq2P3yUb61DVeDKiEvcLGNM9TqeyFi8AodCDM"
+        },
+        {
+          "account": "Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o"
+        }
+      ]
+    },
+    {
+      "account": "4bnExY5Bz95gpwTq9JiTWXpt53dPJEyhVj1NYzUh7Jn8",
+      "market": "WSOL/EURC",
+      "role": "primary",
+      "source": "https://solscan.io/account/4bnExY5Bz95gpwTq9JiTWXpt53dPJEyhVj1NYzUh7Jn8",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        },
+        {
+          "account": "6GAPXtBGkRY81eUPevQpyhmm6oyT7tdFnHHHLxvZ8SAT",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/6GAPXtBGkRY81eUPevQpyhmm6oyT7tdFnHHHLxvZ8SAT"
+        }
+      ]
+    },
+    {
+      "account": "546HPrQvDrXJtyPk2jbd4J1Gtw4hCgQj9xLCjRxe6t7S",
+      "market": "mSOL/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/546HPrQvDrXJtyPk2jbd4J1Gtw4hCgQj9xLCjRxe6t7S",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC",
+          "type": "MsolPool",
+          "source": "https://solscan.io/account/8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC"
+        }
+      ]
+    },
+    {
+      "account": "58SXH8bZiEvgV9zND1Pw3HLPmL2kJkQxdNbMykcLiXwp",
+      "market": "JLP/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/58SXH8bZiEvgV9zND1Pw3HLPmL2kJkQxdNbMykcLiXwp",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "AyxByfn15hAEhR4G2jR89kqEXZwbaWX4sgyTpGCxSom8",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/AyxByfn15hAEhR4G2jR89kqEXZwbaWX4sgyTpGCxSom8"
+        },
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        }
+      ]
+    },
+    {
+      "account": "6634zns7ATMA6RuGMJFv4uRcFxVxFYd8w8pVyNbfKMg2",
+      "market": "WBTC/WSOL, cbBTC/WSOL, xBTC/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/6634zns7ATMA6RuGMJFv4uRcFxVxFYd8w8pVyNbfKMg2",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o"
+        },
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        }
+      ]
+    },
+    {
+      "account": "6uU9EvKL1rSTyw3ZqKz4hMNEB4NBCo3D3rg3n13fymHm",
+      "market": "WSOL/JupUSD, WSOL/USDC, WSOL/USDG, WSOL/USDS, WSOL/USDT",
+      "role": "primary",
+      "source": "https://solscan.io/account/6uU9EvKL1rSTyw3ZqKz4hMNEB4NBCo3D3rg3n13fymHm",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        }
+      ]
+    },
+    {
+      "account": "71V6SSaY1kgQwb2XYP2Ld2UhEZFaJLdeZJjFjUyJUwV8",
+      "market": "sthe1iusu/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/71V6SSaY1kgQwb2XYP2Ld2UhEZFaJLdeZJjFjUyJUwV8",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "BTST6Wy5XeDoM8UxSdGgqRkQXuae2i7jzF8CJpcr56v1",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/BTST6Wy5XeDoM8UxSdGgqRkQXuae2i7jzF8CJpcr56v1"
+        },
+        {
+          "account": "2k79y8CApbU9jAvWhLS2j6uRbaVjpLJTUzstBTho9vGq",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/2k79y8CApbU9jAvWhLS2j6uRbaVjpLJTUzstBTho9vGq"
+        },
+        {
+          "account": "Stake11111111111111111111111111111111111111",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/Stake11111111111111111111111111111111111111"
+        }
+      ]
+    },
+    {
+      "account": "77CkEgRne9jtzGrWVspETXhK3DumNMpJpbN8aP9okLX4",
+      "market": "PST/JupUSD, PST/USDC",
+      "role": "primary",
+      "source": "https://solscan.io/account/77CkEgRne9jtzGrWVspETXhK3DumNMpJpbN8aP9okLX4",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "iFgP2EbzHUZzMjqbjaagJQ8zmn6as3Hw95aVUKm67od",
+          "type": "PstPool",
+          "source": "https://solscan.io/account/iFgP2EbzHUZzMjqbjaagJQ8zmn6as3Hw95aVUKm67od"
+        },
+        {
+          "account": "59obFNBzyTBGowrkif5uK7ojS58vsuWz3ZCvg6tfZAGw",
+          "type": "PstPool",
+          "source": "https://solscan.io/account/59obFNBzyTBGowrkif5uK7ojS58vsuWz3ZCvg6tfZAGw"
+        }
+      ]
+    },
+    {
+      "account": "7dMftDCAgjiVHAdZnZUYaXRQTXDczqeSeHSDfwfbJu7D",
+      "market": "JitoSOL/EURC",
+      "role": "primary",
+      "source": "https://solscan.io/account/7dMftDCAgjiVHAdZnZUYaXRQTXDczqeSeHSDfwfbJu7D",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb"
+        },
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        },
+        {
+          "account": "6GAPXtBGkRY81eUPevQpyhmm6oyT7tdFnHHHLxvZ8SAT",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/6GAPXtBGkRY81eUPevQpyhmm6oyT7tdFnHHHLxvZ8SAT"
+        }
+      ]
+    },
+    {
+      "account": "8DGyDgXxiGBtV9UuKBVWhHDtL2DntdQgy5krhx35dmJS",
+      "market": "INF/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/8DGyDgXxiGBtV9UuKBVWhHDtL2DntdQgy5krhx35dmJS",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "AYhux5gJzCoeoc1PoJ1VxwPDe22RwcvpHviLDD1oCGvW",
+          "type": "InfPool",
+          "source": "https://solscan.io/account/AYhux5gJzCoeoc1PoJ1VxwPDe22RwcvpHviLDD1oCGvW"
+        },
+        {
+          "account": "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm",
+          "type": "InfPool",
+          "source": "https://solscan.io/account/5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm"
+        }
+      ]
+    },
+    {
+      "account": "8UJfPZinaPs6C4UKWb6CmeLgTbQThMyB7AJFYCFpHwoi",
+      "market": "QQQx/JupUSD, QQQx/USDC",
+      "role": "primary",
+      "source": "https://solscan.io/account/8UJfPZinaPs6C4UKWb6CmeLgTbQThMyB7AJFYCFpHwoi",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "DLuv79r7JPgdF2C266h1kuX8DPhg2amDtaTqz9Zm25w1",
+          "type": "ChainlinkDataStreams",
+          "source": "https://solscan.io/account/DLuv79r7JPgdF2C266h1kuX8DPhg2amDtaTqz9Zm25w1"
+        }
+      ]
+    },
+    {
+      "account": "94mQFaB4xfj6K6VHjrB5KPVcbWhutgbFGUwgRnkwQJVq",
+      "market": "fwdSOL/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/94mQFaB4xfj6K6VHjrB5KPVcbWhutgbFGUwgRnkwQJVq",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "2iZHumJq19hyCYkD3xFoZ6dbiFbJ5nqbwALMdJBYQsJa",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/2iZHumJq19hyCYkD3xFoZ6dbiFbJ5nqbwALMdJBYQsJa"
+        }
+      ]
+    },
+    {
+      "account": "9u81hVRNLu5hXuHt4X5hQDp34cSTYWujXwdZsQC4omvp",
+      "market": "st2NxEEbh/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/9u81hVRNLu5hXuHt4X5hQDp34cSTYWujXwdZsQC4omvp",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "D41RqNXhP2fM9mV9gV2D8GzscQ2kTwqoNwAc7qZubDjQ",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/D41RqNXhP2fM9mV9gV2D8GzscQ2kTwqoNwAc7qZubDjQ"
+        },
+        {
+          "account": "9yQLxEzusZ7QiZNafDNdzbEaTCPuJToGjMhLRJtZbgsd",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/9yQLxEzusZ7QiZNafDNdzbEaTCPuJToGjMhLRJtZbgsd"
+        },
+        {
+          "account": "Stake11111111111111111111111111111111111111",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/Stake11111111111111111111111111111111111111"
+        }
+      ]
+    },
+    {
+      "account": "AvHwVJxZAN5iUDWZuFsTySgYbjG7zcMkn3oZXyYcWWaa",
+      "market": "mSOL/USDC, mSOL/USDG",
+      "role": "primary",
+      "source": "https://solscan.io/account/AvHwVJxZAN5iUDWZuFsTySgYbjG7zcMkn3oZXyYcWWaa",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC",
+          "type": "MsolPool",
+          "source": "https://solscan.io/account/8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC"
+        },
+        {
+          "account": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+          "type": "Pyth",
+          "source": "https://solscan.io/account/7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE"
+        }
+      ]
+    },
+    {
+      "account": "B43xNpXoCt4mdW8FNf7CfSUMiRoe9h2LTb89s42fZesy",
+      "market": "JupSOL/EURC",
+      "role": "primary",
+      "source": "https://solscan.io/account/B43xNpXoCt4mdW8FNf7CfSUMiRoe9h2LTb89s42fZesy",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "8VpRhuxa7sUUepdY3kQiTmX9rS5vx4WgaXiAnXq4KCtr",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/8VpRhuxa7sUUepdY3kQiTmX9rS5vx4WgaXiAnXq4KCtr"
+        },
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        },
+        {
+          "account": "6GAPXtBGkRY81eUPevQpyhmm6oyT7tdFnHHHLxvZ8SAT",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/6GAPXtBGkRY81eUPevQpyhmm6oyT7tdFnHHHLxvZ8SAT"
+        }
+      ]
+    },
+    {
+      "account": "BLZyo9dbcG4jKtMPLCgXauFwGsaDMrUKj4ao7ihUrKHS",
+      "market": "jlJUPUSD/USDC, jlJUPUSD/USDG, jlJUPUSD/USDT",
+      "role": "primary",
+      "source": "https://solscan.io/account/BLZyo9dbcG4jKtMPLCgXauFwGsaDMrUKj4ao7ihUrKHS",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "papYEgeG5uPE4niUWZhihUUzVVotJn1mAWbYo2UBSHi",
+          "type": "JupLend",
+          "source": "https://solscan.io/account/papYEgeG5uPE4niUWZhihUUzVVotJn1mAWbYo2UBSHi"
+        },
+        {
+          "account": "2tQE8jVR5ezDw3PDa21BNzfyQ14Ug5cTf6n3swJNjkod",
+          "type": "JupLend",
+          "source": "https://solscan.io/account/2tQE8jVR5ezDw3PDa21BNzfyQ14Ug5cTf6n3swJNjkod"
+        },
+        {
+          "account": "E3U32h49TL9Qof3NeLja9qJxTrGYpY1o1NQPtrSLJjcc",
+          "type": "JupLend",
+          "source": "https://solscan.io/account/E3U32h49TL9Qof3NeLja9qJxTrGYpY1o1NQPtrSLJjcc"
+        },
+        {
+          "account": "7GxATsNMnaC88vdwd2t3mwrFuQwwGvmYPrUQ4D6FotXk",
+          "type": "JupLend",
+          "source": "https://solscan.io/account/7GxATsNMnaC88vdwd2t3mwrFuQwwGvmYPrUQ4D6FotXk"
+        }
+      ]
+    },
+    {
+      "account": "BUheG75WugBMzKCisiMX4AVLAu3boPXzEkT2xws55A3V",
+      "market": "JupSOL/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/BUheG75WugBMzKCisiMX4AVLAu3boPXzEkT2xws55A3V",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "8VpRhuxa7sUUepdY3kQiTmX9rS5vx4WgaXiAnXq4KCtr",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/8VpRhuxa7sUUepdY3kQiTmX9rS5vx4WgaXiAnXq4KCtr"
+        }
+      ]
+    },
+    {
+      "account": "BhXPkEZncwZuxm9Q1HXuUxbwaYBUNngRWAHzqugT5GeW",
+      "market": "JitoSOL/USDC, JitoSOL/USDG, JitoSOL/USDS",
+      "role": "primary",
+      "source": "https://solscan.io/account/BhXPkEZncwZuxm9Q1HXuUxbwaYBUNngRWAHzqugT5GeW",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb"
+        },
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        }
+      ]
+    },
+    {
+      "account": "CNJ9ertXEXT4Gm9GjTpxMgnboDvUe2tbgkW1yKhnQKro",
+      "market": "WBTC/USDC, WBTC/USDG, WBTC/USDS, cbBTC/USDC, cbBTC/USDG, cbBTC/USDS, cbBTC/USDT, xBTC/USDC, xBTC/USDG, xBTC/USDS",
+      "role": "primary",
+      "source": "https://solscan.io/account/CNJ9ertXEXT4Gm9GjTpxMgnboDvUe2tbgkW1yKhnQKro",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o"
+        }
+      ]
+    },
+    {
+      "account": "CxWoweRuXaPCHqTF7zL4mi8mzpTTGKYM6nNAUoYhU6XY",
+      "market": "WSOL/cbBTC",
+      "role": "primary",
+      "source": "https://solscan.io/account/CxWoweRuXaPCHqTF7zL4mi8mzpTTGKYM6nNAUoYhU6XY",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        },
+        {
+          "account": "Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o"
+        }
+      ]
+    },
+    {
+      "account": "DVAtgDycxPEoy4cZEpbxEFQ4tpbwqxTQmhxPAgdKAhz8",
+      "market": "WBTC/EURC, cbBTC/EURC, xBTC/EURC",
+      "role": "primary",
+      "source": "https://solscan.io/account/DVAtgDycxPEoy4cZEpbxEFQ4tpbwqxTQmhxPAgdKAhz8",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/Cv4T27XbjVoKUYwP72NQQanvZeA7W4YF9L4EnYT9kx5o"
+        },
+        {
+          "account": "6GAPXtBGkRY81eUPevQpyhmm6oyT7tdFnHHHLxvZ8SAT",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/6GAPXtBGkRY81eUPevQpyhmm6oyT7tdFnHHHLxvZ8SAT"
+        }
+      ]
+    },
+    {
+      "account": "DuX7B4gKvXPbBhQGXv4mD5FiFYf8C3EE8Pm5eh42mGiT",
+      "market": "SPYx/JupUSD, SPYx/USDC",
+      "role": "primary",
+      "source": "https://solscan.io/account/DuX7B4gKvXPbBhQGXv4mD5FiFYf8C3EE8Pm5eh42mGiT",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "A2GDb4Um4Tr42iKgPz5fQ2d7pYTnaUuHN3d5V41Cywff",
+          "type": "ChainlinkDataStreams",
+          "source": "https://solscan.io/account/A2GDb4Um4Tr42iKgPz5fQ2d7pYTnaUuHN3d5V41Cywff"
+        }
+      ]
+    },
+    {
+      "account": "E1AmhqYXqRaLm4fbcVULopCPp46zL481QJDBNE6EqwUi",
+      "market": "JitoSOL/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/E1AmhqYXqRaLm4fbcVULopCPp46zL481QJDBNE6EqwUi",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb"
+        }
+      ]
+    },
+    {
+      "account": "EP5krxdhV5DtNdnKtLkLG94BhQqmvBFGwBhPg9oxsBg8",
+      "market": "INF/USDC",
+      "role": "primary",
+      "source": "https://solscan.io/account/EP5krxdhV5DtNdnKtLkLG94BhQqmvBFGwBhPg9oxsBg8",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "AYhux5gJzCoeoc1PoJ1VxwPDe22RwcvpHviLDD1oCGvW",
+          "type": "InfPool",
+          "source": "https://solscan.io/account/AYhux5gJzCoeoc1PoJ1VxwPDe22RwcvpHviLDD1oCGvW"
+        },
+        {
+          "account": "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm",
+          "type": "InfPool",
+          "source": "https://solscan.io/account/5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm"
+        },
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        }
+      ]
+    },
+    {
+      "account": "Ea4A6j5yEKFxxFbiP4K5nKgYoD5yVfRKQqHf9tsAtrNi",
+      "market": "dfdvSOL/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/Ea4A6j5yEKFxxFbiP4K5nKgYoD5yVfRKQqHf9tsAtrNi",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "pyZMBjpWsVjKANAYK5mpNbKiws2krjRPZ2N2UYCSnbP",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/pyZMBjpWsVjKANAYK5mpNbKiws2krjRPZ2N2UYCSnbP"
+        }
+      ]
+    },
+    {
+      "account": "EhwMMs895SN5ikNtfdjoutu2p3m1jAYCYWwq1WJgj5uN",
+      "market": "JUP/USDC, JUP/USDT",
+      "role": "primary",
+      "source": "https://solscan.io/account/EhwMMs895SN5ikNtfdjoutu2p3m1jAYCYWwq1WJgj5uN",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "HasZT2Yt6GqneB6b9JVqUtGYWLqMTfS6HC9dK3LYgpQH",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/HasZT2Yt6GqneB6b9JVqUtGYWLqMTfS6HC9dK3LYgpQH"
+        }
+      ]
+    },
+    {
+      "account": "F1CFgstLE9CzRfvzow7eeXx1XXr49RCX2Y1U4KNTEJLi",
+      "market": "stFKsC411/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/F1CFgstLE9CzRfvzow7eeXx1XXr49RCX2Y1U4KNTEJLi",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "7hhbXZEaQNHzEBMxzumUb4uziRVCyUQwKpdu9nvYVEns",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/7hhbXZEaQNHzEBMxzumUb4uziRVCyUQwKpdu9nvYVEns"
+        },
+        {
+          "account": "2pMCRTPxF355vC56r6mL8vfnqa24up5CfZmcX1HkFj7i",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/2pMCRTPxF355vC56r6mL8vfnqa24up5CfZmcX1HkFj7i"
+        },
+        {
+          "account": "Stake11111111111111111111111111111111111111",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/Stake11111111111111111111111111111111111111"
+        }
+      ]
+    },
+    {
+      "account": "Fa1zDwJrXzZUyoUjmoojPrEQseYSW9M5xy2LmcDPPCHc",
+      "market": "NVDAx/JupUSD, NVDAx/USDC",
+      "role": "primary",
+      "source": "https://solscan.io/account/Fa1zDwJrXzZUyoUjmoojPrEQseYSW9M5xy2LmcDPPCHc",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "A4RuZpjfbdzo1fQTqu1ng7kNya1knC2fHSSG5Sv4G4EH",
+          "type": "ChainlinkDataStreams",
+          "source": "https://solscan.io/account/A4RuZpjfbdzo1fQTqu1ng7kNya1knC2fHSSG5Sv4G4EH"
+        }
+      ]
+    },
+    {
+      "account": "FkJEsqqysZHR35h71fN7ARuQpBFroJU84C3cdsKTWcBG",
+      "market": "japanSOL/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/FkJEsqqysZHR35h71fN7ARuQpBFroJU84C3cdsKTWcBG",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "jHm8bwgfbaZgUv4mAGh29KthFGLTvoNF63oT5wpu4jk",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/jHm8bwgfbaZgUv4mAGh29KthFGLTvoNF63oT5wpu4jk"
+        }
+      ]
+    },
+    {
+      "account": "G1v2MF771Fp1e14f8RekvsEuEzjRayfKLqbicmq1d8bd",
+      "market": "JupSOL/JupUSD, JupSOL/USDC, JupSOL/USDG, JupSOL/USDS, JupSOL/USDT",
+      "role": "primary",
+      "source": "https://solscan.io/account/G1v2MF771Fp1e14f8RekvsEuEzjRayfKLqbicmq1d8bd",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "8VpRhuxa7sUUepdY3kQiTmX9rS5vx4WgaXiAnXq4KCtr",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/8VpRhuxa7sUUepdY3kQiTmX9rS5vx4WgaXiAnXq4KCtr"
+        },
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        }
+      ]
+    },
+    {
+      "account": "GaDTdKQ4ccNvGpJDifQPftrjGwmdnQdSnDifhNdhf9tF",
+      "market": "dfdvSOL/USDC",
+      "role": "primary",
+      "source": "https://solscan.io/account/GaDTdKQ4ccNvGpJDifQPftrjGwmdnQdSnDifhNdhf9tF",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "pyZMBjpWsVjKANAYK5mpNbKiws2krjRPZ2N2UYCSnbP",
+          "type": "StakePool",
+          "source": "https://solscan.io/account/pyZMBjpWsVjKANAYK5mpNbKiws2krjRPZ2N2UYCSnbP"
+        },
+        {
+          "account": "CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CH31Xns5z3M1cTAbKW34jcxPPciazARpijcHj9rxtemt"
+        }
+      ]
+    },
+    {
+      "account": "Gty4LVEgECPvoN2guA5oLheq2mzRnngBXxxp96Gwggsg",
+      "market": "stCatzoSM/WSOL",
+      "role": "primary",
+      "source": "https://solscan.io/account/Gty4LVEgECPvoN2guA5oLheq2mzRnngBXxxp96Gwggsg",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "6Ff5x2bBDKXC3sdnMManfUjpKgtFSYTAGjfgEaW5CKrQ",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/6Ff5x2bBDKXC3sdnMManfUjpKgtFSYTAGjfgEaW5CKrQ"
+        },
+        {
+          "account": "98B1NMLYaNJQNxiQGr53vbjNFMNTYFmDqoCgj7qD9Vhm",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/98B1NMLYaNJQNxiQGr53vbjNFMNTYFmDqoCgj7qD9Vhm"
+        },
+        {
+          "account": "Stake11111111111111111111111111111111111111",
+          "type": "SinglePool",
+          "source": "https://solscan.io/account/Stake11111111111111111111111111111111111111"
+        }
+      ]
+    },
+    {
+      "account": "HeEhhiZBs5B8kimvAaeZWo1eKFGhpukW3yLhRr55FVa3",
+      "market": "syrupUSDC/JupUSD, syrupUSDC/USDC, syrupUSDC/USDG, syrupUSDC/USDS, syrupUSDC/USDT",
+      "role": "primary",
+      "source": "https://solscan.io/account/HeEhhiZBs5B8kimvAaeZWo1eKFGhpukW3yLhRr55FVa3",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/CpNyiFt84q66665Kx64bobxZuMgZ2EecrhAJs1HikS2T"
+        }
+      ]
+    },
+    {
+      "account": "Hxkqy3LBkuUcx3DPGSAaMV4Vfyh5rzX2i4n7yQNwAdTx",
+      "market": "TSLAx/JupUSD, TSLAx/USDC",
+      "role": "primary",
+      "source": "https://solscan.io/account/Hxkqy3LBkuUcx3DPGSAaMV4Vfyh5rzX2i4n7yQNwAdTx",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "BJWkdfRiH2Yroomx27VS1TxGxPWcfQoXHMmafBY7apZo",
+          "type": "ChainlinkDataStreams",
+          "source": "https://solscan.io/account/BJWkdfRiH2Yroomx27VS1TxGxPWcfQoXHMmafBY7apZo"
+        }
+      ]
+    },
+    {
+      "account": "kWpMbzDF7JcjDNZ6oabFnuR3ocLsA28hufuBz7CtcDA",
+      "market": "WSOL/xBTC",
+      "role": "primary",
+      "source": "https://solscan.io/account/kWpMbzDF7JcjDNZ6oabFnuR3ocLsA28hufuBz7CtcDA",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+          "type": "Pyth",
+          "source": "https://solscan.io/account/7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE"
+        },
+        {
+          "account": "4cSM2e6rvbGQUFiJbqytoVMi5GgghSMr8LwVrT9VPSPo",
+          "type": "Pyth",
+          "source": "https://solscan.io/account/4cSM2e6rvbGQUFiJbqytoVMi5GgghSMr8LwVrT9VPSPo"
+        }
+      ]
+    },
+    {
+      "account": "yfsSuBNoHhX7yCeaUPC78x4ZJ4NzyyBq4AkcfaTfxB6",
+      "market": "reUSD/JupUSD",
+      "role": "primary",
+      "source": "https://solscan.io/account/yfsSuBNoHhX7yCeaUPC78x4ZJ4NzyyBq4AkcfaTfxB6",
+      "owner": "jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc",
+      "slot": 459736026,
+      "sources": [
+        {
+          "account": "8jW6E21Wx3CuzoFaBquzCCh8Cji7NC7S7TAf9bwBP5pM",
+          "type": "Chainlink",
+          "source": "https://solscan.io/account/8jW6E21Wx3CuzoFaBquzCCh8Cji7NC7S7TAf9bwBP5pM"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+  "data_base64": "AQAAAFTlniTAUaihSnsel5fw4Szfp0kCFmUxlaalEqbxZmArTN981/aCHAAJAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+  "data_slice": null,
+  "executable": false,
+  "lamports": 3826303234,
+  "name": "mint-jitosol",
+  "note": "JitoSOL mint: classic SPL Token, liquid staking",
+  "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+  "slot": 458015532,
+  "source": "api.mainnet-beta.solana.com getMultipleAccounts finalized"
+}

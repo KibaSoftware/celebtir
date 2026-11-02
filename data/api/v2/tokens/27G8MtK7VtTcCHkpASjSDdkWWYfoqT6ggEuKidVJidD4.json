@@ -1,0 +1,219 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 6,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "field": "freeze_authority",
+          "slot": 459678101
+        },
+        {
+          "address": "AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+          "field": "owner",
+          "slot": 459678105
+        }
+      ],
+      "value": {
+        "key": "AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+        "kind": "unrecognized",
+        "owner_program": "PERPHjGBqRHArX4DySjwM6UJHiR3sWAatqfdBS2qQJu"
+      }
+    },
+    "identity": {
+      "issuer": "Jupiter",
+      "issuer_url": "https://jup.ag/perps",
+      "kind": "other",
+      "source": "https://github.com/julianfssen/jupiter-perps-anchor-idl-parsing/blob/main/src/constants.ts"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "field": "mint_authority",
+          "slot": 459678101
+        },
+        {
+          "address": "AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+          "field": "owner",
+          "slot": 459678105
+        }
+      ],
+      "value": {
+        "key": "AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+        "kind": "unrecognized",
+        "owner_program": "PERPHjGBqRHArX4DySjwM6UJHiR3sWAatqfdBS2qQJu"
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 189946307496600,
+    "symbol": "JLP"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+  "price": {
+    "kind": "price",
+    "usd_micros": 4631684
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+            "field": "freeze_authority",
+            "slot": 459678101
+          },
+          {
+            "address": "AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+            "field": "owner",
+            "slot": 459678105
+          }
+        ],
+        "next_step": "remove any permanent delegate and hold freeze or pause powers in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "balances can be frozen by unrecognized controller AVzP…QK49 owned by program PERP…qQJu"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+            "field": "mint_authority",
+            "slot": 459678101
+          },
+          {
+            "address": "AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49",
+            "field": "owner",
+            "slot": 459678105
+          }
+        ],
+        "next_step": "hold the mint authority in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "new supply can be minted by unrecognized controller AVzP…QK49 owned by program PERP…qQJu"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [
+      {
+        "factor": "supply_control",
+        "severity": "high",
+        "text": "New supply can be minted if unrecognized controller AVzP…QK49 owned by program PERP…qQJu uses the mint authority."
+      },
+      {
+        "factor": "freeze_and_seize",
+        "severity": "high",
+        "text": "Your balance can be frozen if unrecognized controller AVzP…QK49 owned by program PERP…qQJu uses the freeze authority."
+      }
+    ],
+    "symbol": "JLP"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 6,
+      "price_usd_micros": 4631684,
+      "supply": 189946307496600
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "jupiter-lend",
+      "roles": [
+        "collateral"
+      ]
+    },
+    {
+      "protocol": "jupiter-perps",
+      "roles": [
+        "lp"
+      ]
+    },
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "deposit"
+      ]
+    }
+  ]
+}

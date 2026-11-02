@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 9,
+      "price_usd_micros": 156658986,
+      "supply": 1311554958334704
+    }
+  ],
+  "mint": "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm",
+  "schema_version": "0.2.0",
+  "symbol": "INF"
+}

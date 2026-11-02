@@ -1,0 +1,203 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 9,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "So11111111111111111111111111111111111111112",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/So11111111111111111111111111111111111111112",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "So11111111111111111111111111111111111111112",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/So11111111111111111111111111111111111111112",
+          "field": "freeze_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "immutable"
+      }
+    },
+    "identity": {
+      "issuer": "Solana (native mint)",
+      "issuer_url": "https://spl.solana.com/token#wrapping-sol",
+      "kind": "other",
+      "source": "https://spl.solana.com/token#wrapping-sol"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "So11111111111111111111111111111111111111112",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/So11111111111111111111111111111111111111112",
+          "field": "mint_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "immutable"
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "So11111111111111111111111111111111111111112",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/So11111111111111111111111111111111111111112",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 0,
+    "symbol": "SOL"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "So11111111111111111111111111111111111111112",
+  "price": {
+    "kind": "price",
+    "usd_micros": 107522002
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "So11111111111111111111111111111111111111112",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/So11111111111111111111111111111111111111112",
+            "field": "freeze_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no freeze, pause or seize power"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "So11111111111111111111111111111111111111112",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/So11111111111111111111111111111111111111112",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "So11111111111111111111111111111111111111112",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/So11111111111111111111111111111111111111112",
+            "field": "mint_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "mint authority renounced: supply is fixed"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "So11111111111111111111111111111111111111112",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/So11111111111111111111111111111111111111112",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [],
+    "symbol": "SOL"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 9,
+      "price_usd_micros": 107522002,
+      "supply": 0
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "gmx-solana",
+      "roles": [
+        "deposit"
+      ]
+    },
+    {
+      "protocol": "jupiter-lend",
+      "roles": [
+        "deposit",
+        "collateral",
+        "borrowable"
+      ]
+    },
+    {
+      "protocol": "jupiter-perps",
+      "roles": [
+        "deposit"
+      ]
+    },
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "collateral",
+        "borrowable"
+      ]
+    },
+    {
+      "protocol": "orca",
+      "roles": [
+        "lp"
+      ]
+    },
+    {
+      "protocol": "pumpswap",
+      "roles": [
+        "lp"
+      ]
+    },
+    {
+      "protocol": "raydium-amm",
+      "roles": [
+        "lp"
+      ]
+    }
+  ]
+}

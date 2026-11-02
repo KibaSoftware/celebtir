@@ -1,0 +1,31 @@
+name: schedule-check
+
+# OPS-7: GitHub disables scheduled workflows in public repos after 60 days
+# without repository activity. The daily data commit keeps the repo active;
+# this weekly check fails loudly if the schedule was disabled anyway.
+on:
+  schedule:
+    - cron: "41 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  issues: write
+
+jobs:
+  check:
+    # Do not open disabled-schedule issues while host deployment is selected.
+    if: vars.CELEBTIR_ENABLE_GITHUB_DAILY == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: daily workflow is enabled
+        run: |
+          state="$(gh workflow view daily.yml --repo "$GITHUB_REPOSITORY" --json state --jq .state)"
+          echo "daily.yml state: $state"
+          if [ "$state" != "active" ]; then
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "Daily schedule is disabled ($state)" \
+              --label pipeline-failure --body "Re-enable it under Actions → daily → Enable workflow."
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}

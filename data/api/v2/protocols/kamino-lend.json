@@ -1,0 +1,1739 @@
+{
+  "$schema": "/data/v2/schemas/protocol.schema.json",
+  "api_version": "v2",
+  "assessment": "assessed",
+  "chain": "solana",
+  "deprecation": null,
+  "facts": {
+    "admin": {
+      "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.lending_market_owner": {
+        "account": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+        "controller": {
+          "evidence": [
+            {
+              "address": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+              "field": "lending_market_owner",
+              "slot": 459676223
+            },
+            {
+              "address": "7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676226
+            }
+          ],
+          "value": {
+            "address": "7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "2RJJ1ZZpeQLm6HEQ1HtcrGJUzQa8hKQgjgDf7ANz9Rd5",
+              "5ggs2vd1csz74YMCzxesmcUEd3ycYFKAW6kfyttVYwBv",
+              "6vkzAQLAERW5RKHX68ZCDxWxW77T8dMqYUYMXCe6ooMC",
+              "7tH1k4PsMu3sNUYJxD5ezxhAmYYXyVVZz5c3dbaxcvUV",
+              "BEUTwDjLNoXvT26J9CZD5A1Fsr9WF2UXdcUVZuy4zQ3d",
+              "BMGYmN1hG8evD3pvy1Rk41bFUdGGVP5fYJbh2JHMonqK",
+              "CmJywvWynJAiADsgTkVWu5BJus4ru2SP1PnfBXvThrxZ",
+              "DFheUjWj6BL9CuF8gAYfF6TgrbrruTTCc3vE6Ajn1gyK",
+              "G8fVffcHt3n6DkjSdYj47xWe55QjFsL4P5zhQ9RXFuPa",
+              "HrKa158AuSt2QtDWnvr81qdgBZjJ7MJGkaQ8D7pZeYMj"
+            ],
+            "threshold": 4,
+            "time_lock_secs": 43200,
+            "voters": 10
+          }
+        },
+        "field": "lending_market_owner",
+        "power": "parameters"
+      }
+    },
+    "category": "lending",
+    "chain": "solana",
+    "dependencies": {
+      "evidence": [
+        {
+          "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "field": "transaction sample (28 transactions)",
+          "slot": 459676228
+        }
+      ],
+      "value": {
+        "callees": {},
+        "kind": "sampled"
+      }
+    },
+    "last_reviewed": "2026-10-19",
+    "max_slot": 459676228,
+    "min_slot": 459676019,
+    "name": "Kamino Lend",
+    "oracles": {
+      "3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH": {
+        "market": "SOL reserve",
+        "role": "primary",
+        "source": {
+          "evidence": [
+            {
+              "address": "3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH",
+              "field": "owner",
+              "slot": 459676226
+            }
+          ],
+          "value": {
+            "kind": "protocol_run"
+          }
+        },
+        "underlying": {
+          "evidence": [
+            {
+              "address": "d4A2prbA2whesmvHaL88BH6Ewn5N4bTSU2Ze8P6Bc4Q",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/d4A2prbA2whesmvHaL88BH6Ewn5N4bTSU2Ze8P6Bc4Q",
+              "field": "config.token_info.scope_configuration.price_chain",
+              "slot": 459676228
+            },
+            {
+              "address": "3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH",
+              "field": "oracle_mappings",
+              "slot": 459676228
+            },
+            {
+              "address": "4zh6bmb77qX2CL7t5AJYCqa6YqFafbz3QJNeFvZjLowg",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/4zh6bmb77qX2CL7t5AJYCqa6YqFafbz3QJNeFvZjLowg",
+              "field": "price_info_accounts, price_types, generic",
+              "slot": 459676228
+            }
+          ],
+          "value": {
+            "feeds": [
+              {
+                "address": "14HefJnxgiYQ6qiGL5b6GVZVUSAFpmehRdBJRaZ6GKx",
+                "source_type": "Chainlink"
+              },
+              {
+                "address": "HFn8GnPADiny6XqUoWE8uRPPxb29ikn4yTuPa9MF2fWJ",
+                "source_type": "PythLazer"
+              }
+            ],
+            "kind": "listed"
+          }
+        }
+      }
+    },
+    "programs": {
+      "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+              "field": "verified_build",
+              "slot": 459676019
+            }
+          ],
+          "value": {
+            "commit": "bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4",
+            "executable_hash": "924abe7472a839c37ffffc1fb6663f54c6d5828afa3e31552a57497768a84a87",
+            "kind": "verified",
+            "on_chain_hash": "924abe7472a839c37ffffc1fb6663f54c6d5828afa3e31552a57497768a84a87",
+            "repo": "https://github.com/Kamino-Finance/kfarms/tree/bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4"
+          }
+        },
+        "loader": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "role": "periphery",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "field": "upgrade_authority",
+              "slot": 459676020
+            },
+            {
+              "address": "5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676021
+            }
+          ],
+          "value": {
+            "address": "5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "5ggs2vd1csz74YMCzxesmcUEd3ycYFKAW6kfyttVYwBv",
+              "6vkzAQLAERW5RKHX68ZCDxWxW77T8dMqYUYMXCe6ooMC",
+              "7tH1k4PsMu3sNUYJxD5ezxhAmYYXyVVZz5c3dbaxcvUV",
+              "8g2PMddbKrqpPtd74pWM16xnDwtpKtkDJNDsQ9cWJZAC",
+              "BEUTwDjLNoXvT26J9CZD5A1Fsr9WF2UXdcUVZuy4zQ3d",
+              "BMGYmN1hG8evD3pvy1Rk41bFUdGGVP5fYJbh2JHMonqK",
+              "CmJywvWynJAiADsgTkVWu5BJus4ru2SP1PnfBXvThrxZ",
+              "DFheUjWj6BL9CuF8gAYfF6TgrbrruTTCc3vE6Ajn1gyK",
+              "G8fVffcHt3n6DkjSdYj47xWe55QjFsL4P5zhQ9RXFuPa",
+              "HrKa158AuSt2QtDWnvr81qdgBZjJ7MJGkaQ8D7pZeYMj"
+            ],
+            "threshold": 5,
+            "time_lock_secs": 86400,
+            "voters": 10
+          }
+        }
+      },
+      "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "field": "verified_build",
+              "slot": 459676019
+            }
+          ],
+          "value": {
+            "commit": "e921c648765fc2343c87614a00f4b39b640f0510",
+            "executable_hash": "976f1c8c163ae34e0e13e524e0225b465bad2587b9e3bbc86e41b193ed401922",
+            "kind": "verified",
+            "on_chain_hash": "976f1c8c163ae34e0e13e524e0225b465bad2587b9e3bbc86e41b193ed401922",
+            "repo": "https://github.com/Kamino-Finance/klend/tree/e921c648765fc2343c87614a00f4b39b640f0510"
+          }
+        },
+        "loader": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "field": "upgrade_authority",
+              "slot": 459676020
+            },
+            {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676021
+            }
+          ],
+          "value": {
+            "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "5ggs2vd1csz74YMCzxesmcUEd3ycYFKAW6kfyttVYwBv",
+              "6vkzAQLAERW5RKHX68ZCDxWxW77T8dMqYUYMXCe6ooMC",
+              "7tH1k4PsMu3sNUYJxD5ezxhAmYYXyVVZz5c3dbaxcvUV",
+              "8g2PMddbKrqpPtd74pWM16xnDwtpKtkDJNDsQ9cWJZAC",
+              "BEUTwDjLNoXvT26J9CZD5A1Fsr9WF2UXdcUVZuy4zQ3d",
+              "BMGYmN1hG8evD3pvy1Rk41bFUdGGVP5fYJbh2JHMonqK",
+              "CmJywvWynJAiADsgTkVWu5BJus4ru2SP1PnfBXvThrxZ",
+              "DFheUjWj6BL9CuF8gAYfF6TgrbrruTTCc3vE6Ajn1gyK",
+              "G8fVffcHt3n6DkjSdYj47xWe55QjFsL4P5zhQ9RXFuPa",
+              "HrKa158AuSt2QtDWnvr81qdgBZjJ7MJGkaQ8D7pZeYMj"
+            ],
+            "threshold": 5,
+            "time_lock_secs": 86400,
+            "voters": 10
+          }
+        }
+      }
+    },
+    "reviewed_by": null,
+    "sources": [
+      {
+        "address": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+        "kind": "admin",
+        "label": "lending_market_owner",
+        "url": "https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF"
+      },
+      {
+        "address": "5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk",
+        "kind": "multisig",
+        "label": "Squads v4",
+        "url": "https://solscan.io/account/5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk"
+      },
+      {
+        "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+        "kind": "multisig",
+        "label": "Squads v4",
+        "url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM"
+      },
+      {
+        "address": "7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H",
+        "kind": "multisig",
+        "label": "Squads v4",
+        "url": "https://solscan.io/account/7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H"
+      },
+      {
+        "address": "3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH",
+        "kind": "oracle",
+        "label": "SOL reserve",
+        "url": "https://solscan.io/account/3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH"
+      },
+      {
+        "address": "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+        "kind": "program",
+        "label": "Farms",
+        "url": "https://github.com/Kamino-Finance/kfarms"
+      },
+      {
+        "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+        "kind": "program",
+        "label": "Lending",
+        "url": "https://github.com/Kamino-Finance/klend"
+      }
+    ],
+    "tokens": {
+      "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4": [
+        "deposit"
+      ],
+      "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo": [
+        "collateral",
+        "borrowable"
+      ],
+      "2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH": [
+        "collateral",
+        "borrowable"
+      ],
+      "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": [
+        "collateral",
+        "borrowable"
+      ],
+      "7Q2afV64in6N6SeZsAAB81TJzwDoD6zpqmHkzi9Dcavn": [
+        "collateral"
+      ],
+      "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs": [
+        "collateral",
+        "borrowable"
+      ],
+      "BNso1VUJnh4zcfpZa6986Ea66P6TCp59hvtNJ8b1X85": [
+        "collateral",
+        "borrowable"
+      ],
+      "BonK1YhkXEGLZzwtcvRTip3gAL9nCeQD7ppZBLXhtTs": [
+        "collateral",
+        "borrowable"
+      ],
+      "Dso1bDeDjCQxTrWHqUUi63oBvV7Mdm6WaobLbQ7gnPQ": [
+        "collateral",
+        "borrowable"
+      ],
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": [
+        "collateral",
+        "borrowable"
+      ],
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": [
+        "collateral",
+        "borrowable"
+      ],
+      "HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr": [
+        "borrowable"
+      ],
+      "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn": [
+        "collateral",
+        "borrowable"
+      ],
+      "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN": [
+        "deposit"
+      ],
+      "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg": [
+        "collateral"
+      ],
+      "So11111111111111111111111111111111111111112": [
+        "collateral",
+        "borrowable"
+      ],
+      "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1": [
+        "collateral",
+        "borrowable"
+      ],
+      "cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm": [
+        "collateral"
+      ],
+      "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij": [
+        "collateral",
+        "borrowable"
+      ],
+      "he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A": [
+        "collateral",
+        "borrowable"
+      ],
+      "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v": [
+        "collateral",
+        "borrowable"
+      ],
+      "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So": [
+        "collateral",
+        "borrowable"
+      ],
+      "pSo1f9nQXWgXibFtKf7NWYxb5enAM4qfP6UJSiXRQfL": [
+        "collateral",
+        "borrowable"
+      ],
+      "picobAEvs6w7QEknPce34wAE4gknZA9v5tTonnmHYdX": [
+        "collateral",
+        "borrowable"
+      ],
+      "sctmB7GPi5L2Q5G9tUSzXvhZ4YiDMEGcRov9KfArQpx": [
+        "collateral"
+      ],
+      "strng7mqqc1MBJJV6vMzYbEqnwVGvKKGKedeCvtktWA": [
+        "collateral"
+      ],
+      "vSoLxydx6akxyMD9XEcPvGYNGq6Nn66oqVb3UkGkei7": [
+        "collateral",
+        "borrowable"
+      ]
+    },
+    "website": "https://kamino.com/"
+  },
+  "history": [
+    {
+      "assessment": "assessed",
+      "date": "2026-10-21",
+      "fees_usd": 140845,
+      "methodology_version": "0.1",
+      "ratings": {
+        "admin_powers": "high",
+        "code_transparency": "low",
+        "dependencies": "low",
+        "oracle_dependency": "high",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1346478483,
+      "volume_usd": null
+    }
+  ],
+  "id": "kamino-lend",
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "metrics": {
+    "asset_groups": {
+      "btc": 78120008,
+      "kind": "usd",
+      "other": 487730171,
+      "sol": 587072652,
+      "stablecoins": 193555652
+    },
+    "defillama_slug": "kamino-lend",
+    "fees": {
+      "change_7d_bp": -380,
+      "days": [
+        {
+          "date": "2026-09-21",
+          "usd": 166118
+        },
+        {
+          "date": "2026-09-22",
+          "usd": 174790
+        },
+        {
+          "date": "2026-09-23",
+          "usd": 158052
+        },
+        {
+          "date": "2026-09-24",
+          "usd": 163065
+        },
+        {
+          "date": "2026-09-25",
+          "usd": 164637
+        },
+        {
+          "date": "2026-09-26",
+          "usd": 158313
+        },
+        {
+          "date": "2026-09-27",
+          "usd": 157221
+        },
+        {
+          "date": "2026-09-28",
+          "usd": 159063
+        },
+        {
+          "date": "2026-09-29",
+          "usd": 208258
+        },
+        {
+          "date": "2026-09-30",
+          "usd": 228803
+        },
+        {
+          "date": "2026-10-01",
+          "usd": 165727
+        },
+        {
+          "date": "2026-10-02",
+          "usd": 166639
+        },
+        {
+          "date": "2026-10-03",
+          "usd": 171586
+        },
+        {
+          "date": "2026-10-04",
+          "usd": 172216
+        },
+        {
+          "date": "2026-10-05",
+          "usd": 159039
+        },
+        {
+          "date": "2026-10-06",
+          "usd": 159039
+        },
+        {
+          "date": "2026-10-07",
+          "usd": 150159
+        },
+        {
+          "date": "2026-10-08",
+          "usd": 149492
+        },
+        {
+          "date": "2026-10-09",
+          "usd": 148139
+        },
+        {
+          "date": "2026-10-10",
+          "usd": 152066
+        },
+        {
+          "date": "2026-10-11",
+          "usd": 151013
+        },
+        {
+          "date": "2026-10-12",
+          "usd": 148793
+        },
+        {
+          "date": "2026-10-13",
+          "usd": 155408
+        },
+        {
+          "date": "2026-10-14",
+          "usd": 148118
+        },
+        {
+          "date": "2026-10-15",
+          "usd": 148141
+        },
+        {
+          "date": "2026-10-16",
+          "usd": 149746
+        },
+        {
+          "date": "2026-10-17",
+          "usd": 143137
+        },
+        {
+          "date": "2026-10-18",
+          "usd": 140098
+        },
+        {
+          "date": "2026-10-19",
+          "usd": 144840
+        },
+        {
+          "date": "2026-10-20",
+          "usd": 140845
+        }
+      ],
+      "kind": "usd",
+      "latest": 140845
+    },
+    "tvl": {
+      "kind": "usd",
+      "value": 1346478483
+    },
+    "volume": {
+      "kind": "unavailable",
+      "reason": "no volume metric for this category; fees only"
+    }
+  },
+  "program_history": {
+    "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD": {
+      "complete": true,
+      "events": [
+        {
+          "date": "2023-03-15",
+          "kind": "deploy",
+          "signature": "5NoNc8s3JWNKTNp79u8iZDtPn6Pj8xfZsQ9uG1dx4Y2oh4wM1wyLNAHcNRQdoKAUjN9rz6gz4rkL2f71Q5cVh2RH",
+          "slot": 182746640
+        },
+        {
+          "date": "2023-03-15",
+          "kind": "set_authority",
+          "new_authority": "A9rQoX1sictAQkyXxaZA8nz674xutHwoqpK2mwLyexCZ",
+          "signature": "rSuWFzo33bVLgB32AL72KbQRtXizdkUJW83wVx3Br54shBtgZZrweSHAj5zmiZVVCSAjSDcs57uHDtZah2yjbqh",
+          "slot": 182751904
+        },
+        {
+          "date": "2023-04-11",
+          "kind": "upgrade",
+          "signature": "58pVnzzsHnnBnHi8AB8uvUy5Wa635UWKHTkAF27vv1bihHhftLrdXL6fBJeyGqkqR1oJjAZFQ7PQKieRbSAKoyXs",
+          "slot": 187842104
+        },
+        {
+          "date": "2023-04-17",
+          "kind": "upgrade",
+          "signature": "Ca4bcHv6x9AHZ1mbiM32or9DN4Rikuf94XGtonDLCtMysDq1LhPM4H7PYxuGCp9bXorD1EeqbJd949JetVXz1oM",
+          "slot": 188972996
+        },
+        {
+          "date": "2023-05-07",
+          "kind": "upgrade",
+          "signature": "4RKACw9quEVXGyjcL792ocB5obngJyrerungYkJ1cdB1UZhseTDNQjqLdbaNTCyeRhjRRq4oYSxwgy1jQwu282An",
+          "slot": 192694454
+        },
+        {
+          "date": "2023-07-15",
+          "kind": "upgrade",
+          "signature": "2WTmQt4vquyHWcTnen6n38DFC5s5QC46kF5LJh6MsUwzjNB2ccUcm6a5JgcsJwBhBMQRhjL6WXmKaYknv1uWkqk7",
+          "slot": 205508727
+        },
+        {
+          "date": "2023-07-27",
+          "kind": "upgrade",
+          "signature": "w6UmUvqn5tCJY7JvoneCi3ZK7ryrC5DqbogDwMoEhKEtz33ikNArbs8EwzieqhQYEtLo2es9vByzKfLp6fnCZGX",
+          "slot": 207824796
+        },
+        {
+          "date": "2023-07-27",
+          "kind": "upgrade",
+          "signature": "2tCv6VktoJF4dTrUSzXwz4so8rigrdS2fzdasWqAPNY3BS1R3ZRnxaf9HAWQHKcQ71rEYtB1CRvoPE76Z3oVHPsV",
+          "slot": 207904913
+        },
+        {
+          "date": "2023-07-27",
+          "kind": "upgrade",
+          "signature": "WL9vXwcicdyMuV1Xb2Uu7cKrRF77HPHMSvAHskaxNLYevu19DVEfgzgv6sC6S7nUk31637JrZeuaXfkxj8qdt99",
+          "slot": 207905181
+        },
+        {
+          "date": "2023-07-27",
+          "kind": "upgrade",
+          "signature": "2by8eXoeJv9fP6mk6ehsaqRoBNCJPfu4rbSUBejYaYBATFa7F3yBHTGCtCfyZzLr4r5NSDdh5og7PLThYvqpPZBh",
+          "slot": 207907275
+        },
+        {
+          "date": "2023-07-27",
+          "kind": "upgrade",
+          "signature": "5cMAeU7D2DHx4DAYdGKJQtbqsVSSx84XQZsYoAM2sjrySAN3uPvEFQfetmQQfSL8d6NepkEdxYVmN48b6A4Bk2kf",
+          "slot": 207908679
+        },
+        {
+          "date": "2023-07-28",
+          "kind": "upgrade",
+          "signature": "nAfcoVHUhs2Wtz1A2n2KHyrHf94csnxNsjtfwTT9poYWRtm1cNtYDRg43VAJEoiAPvZ22ayCH88LnYLuzK1sW3q",
+          "slot": 208024864
+        },
+        {
+          "date": "2023-08-08",
+          "kind": "upgrade",
+          "signature": "2pvk3tkCtnNcGzPB3D1LvcobNC9Yr42ajUfM7UN374GX5w9mZHaQYnxxPFmhXBB5DQ2GRLtuU7ns2LjUXvW75DzL",
+          "slot": 210239974
+        },
+        {
+          "date": "2023-08-10",
+          "kind": "upgrade",
+          "signature": "3R7P7kncxkYsKXPG1t7wRvrTSb2YjvaCyQUahsmSFvyijTDkbmzkACgpU7FAtsXnxXLy2t7MzLn6LdiegfKcpdhR",
+          "slot": 210631057
+        },
+        {
+          "date": "2023-09-05",
+          "kind": "upgrade",
+          "signature": "34Yj1s7AMuEATDR4q3F8MkbSksDK9U1YWGwvkHV58Yp1Heaxh2qQz87hSbPSBEWQcnhy8zP5YvhCrjbgHZ1HtcKA",
+          "slot": 215702708
+        },
+        {
+          "date": "2023-09-25",
+          "kind": "upgrade",
+          "signature": "5ZU4rLqtGXBiamr3mb3QsfeXg7afv3Sub5xftWBx1gqh7G3FPVC1mgXioWBGXirjF25DZ8vHGcQNVm7gKASebQdV",
+          "slot": 219661898
+        },
+        {
+          "date": "2023-10-12",
+          "kind": "upgrade",
+          "signature": "3xxdQvduaSzP7Zu6Dj1gGUXic67v8FcMg3xTH86ibeqFDk1RGSmV87oa38D7TtKxHY6dpGRCsV7Jgr4xA8mtC2re",
+          "slot": 223232744
+        },
+        {
+          "date": "2023-10-18",
+          "kind": "upgrade",
+          "signature": "wA4jZzxrAe2juexJaSvKD75DYz3jwGCxdiUCTKh3KWDbHQDdP36oKEUM1WY4jgReYhwbupLAP484AVJLoC93fXn",
+          "slot": 224467725
+        },
+        {
+          "date": "2023-10-19",
+          "kind": "set_authority",
+          "new_authority": "ELgAxEgaGCBxNcfLMqNSbBaYDWmHeirf6k439zrM2wmx",
+          "signature": "3Sai3FzGFMX2pHYYmYHqFMqGto52DyQp4fYcwhaz6nah87CrwacJdYx2dGRM53qzQe8np7qVkDiDSj96eiUAkt9a",
+          "slot": 224666515
+        },
+        {
+          "date": "2023-10-19",
+          "kind": "upgrade",
+          "signature": "3E52bs7LATLrPgXRWCUNrQPBJ4dzfDrkSarnpTfaMov2s74RrcNNz2kJarG4fC4rGHCDpVfWW9HNEubH7YYNmAsV",
+          "slot": 224667824
+        },
+        {
+          "date": "2023-10-19",
+          "kind": "upgrade",
+          "signature": "3PzgWT5KuHVwpppcZvN932YyDmptYFNcRPABrPsdTtLnauUYcA4fvgbdaCosQAeHvwwLSiAbwfuSuQEK3RxQaYta",
+          "slot": 224669036
+        },
+        {
+          "date": "2023-10-19",
+          "kind": "upgrade",
+          "signature": "3U7MkUWWGncXgtW5WyrbRMBzSeCXMSNmdKuAZisq3KLZPjJ6UgrSrhaYZyvtQc854XsZ3MyqDk2Jfekjgsszg9mA",
+          "slot": 224669465
+        },
+        {
+          "date": "2023-10-19",
+          "kind": "upgrade",
+          "signature": "4FHmY2ZKVRDJty59oHdBYQw5FLvE3RUKmTfzYiNvQWQjUKntfKeQ7JBmWzsGfUARW4bQVRULB5vYtwmY4MJjJuwM",
+          "slot": 224671591
+        },
+        {
+          "date": "2023-10-19",
+          "kind": "upgrade",
+          "signature": "2B6cgDytcRas6oSjfxDPkGSk37CnanqDjsEF6xPGSN6tCGPxZG7knYj2CS8LubUeF3HN1AQDEZLd4D2mBLtm6S76",
+          "slot": 224672475
+        },
+        {
+          "date": "2023-10-19",
+          "kind": "set_authority",
+          "new_authority": "A9rQoX1sictAQkyXxaZA8nz674xutHwoqpK2mwLyexCZ",
+          "signature": "4nnN9kuRe9PSn5n1Avcb5CxXNdrPfNWXommMDQ3LUGFETg8eV83WWoHFrL9hgZPvcrH6cb9EUcv3ANMJ5Fz88E3T",
+          "slot": 224672514
+        },
+        {
+          "date": "2023-10-19",
+          "kind": "upgrade",
+          "signature": "5HNwjyeiraYA7KrsUQqzo9DntnwA2MYmCAYN8zH2igHgimb6NdWj84RkN6w5iXtk9E7nGisuhFjdcya2mwjxmcvC",
+          "slot": 224745960
+        },
+        {
+          "date": "2023-10-20",
+          "kind": "upgrade",
+          "signature": "5PT7nZuFujCJYVms3vHyd2NfUd6M4gYQdyZRn6wAkmSauvzgyByvgEoBrJxpixzN6iGhM1S1baQfmKM2uKia1nxB",
+          "slot": 224824450
+        },
+        {
+          "date": "2023-10-22",
+          "kind": "upgrade",
+          "signature": "2BzMecVKGNCeJXpFFZq3qdmzMEtVuFpBWnbRzAu568M8rZyeLAHwy8vfz8RcMXvmSXqizidwGCqqFnuVRnob2niZ",
+          "slot": 225362509
+        },
+        {
+          "date": "2023-10-22",
+          "kind": "upgrade",
+          "signature": "3ZxRJTX8rj4CQGhii3rhhErpSgmBYFXzpB8aTWcR1oyBjL84Qs3NXXVE79NVohS8zu5RbJNs7bGZUFyWh4AqUyM3",
+          "slot": 225364450
+        },
+        {
+          "date": "2023-11-07",
+          "kind": "upgrade",
+          "signature": "54KPEUQEB5ZFXmwdjMaZixpjxbvWcMCAFcVT791nRmNPbZRTJFD4SzE5z4bqRrFSqGjyUrUZKThoCm3G9vMK6qtL",
+          "slot": 228602560
+        },
+        {
+          "date": "2023-11-07",
+          "kind": "upgrade",
+          "signature": "5v9ddVTXCZJwALg5x8KW6UBTDkbzcuhguyG1SxBq9VnspJDkFeSkn5GhmUVtfSWVD7DxXRVVWgB8beLiTSwsnzbo",
+          "slot": 228603535
+        },
+        {
+          "date": "2023-11-14",
+          "kind": "upgrade",
+          "signature": "4oNc9HiPsMGiwPox56ZCXuLBMjVRxaQw1H7MqHVdTQrCmNmuEGNvRkPw77SCa15PfLTFLrfRwCjPtnxceYJ6qmYX",
+          "slot": 229988095
+        },
+        {
+          "date": "2023-12-11",
+          "kind": "upgrade",
+          "signature": "4nDVDUSEZ1mwMT8qfbqPV1Uz5Q6HZMgagsvqjzcJmmT9gqCfSUdSo2xUmLy25kxWono5aeQW4uZYXb312FMKofyh",
+          "slot": 235305677
+        },
+        {
+          "date": "2024-01-22",
+          "kind": "upgrade",
+          "signature": "2bE5ehz21YBw1Y2QtscTWhdfw1BmA2DUHGtdKCQ6MdjMBRaJmkDH78zWUmc5APVcXR6mm65DPzfSWjhH8SfmxtqW",
+          "slot": 243456621
+        },
+        {
+          "date": "2024-02-13",
+          "kind": "upgrade",
+          "signature": "4pH48M8q8YpHYybVLyGt6n3FmvLFteHQa6bhrht7sHyb98rGcuXSLeEdxTGRHckqZhZS3ixFNukciGuruzNrvYun",
+          "slot": 247936380
+        },
+        {
+          "date": "2024-02-16",
+          "kind": "upgrade",
+          "signature": "5Y5XA2bVxzDr7xbGRiDxhebbWt8M6majGWeHGfnNELewPT461b2a5ZJkgUqs7hn7u2t9F4nmSwoXDhTkAH1M4ZKw",
+          "slot": 248504848
+        },
+        {
+          "date": "2024-02-26",
+          "kind": "upgrade",
+          "signature": "232EQhKDw2jLNMZVyWG52bDnZ4vYxGAgn9k1M6KDhG8py6DSJwu5xvGdrBfT5nbQuuRjqYq1HbjoPoqRskpWnt4u",
+          "slot": 250565903
+        },
+        {
+          "date": "2024-03-14",
+          "kind": "upgrade",
+          "signature": "3xetaEhi7zRy2ZYvKYA73WsnPsaHrcCQTK4fRMmWTmmgGiUqdKtRYgM2XgS3SZmNCPBQi9VajLD9UMN8m7FtJVqR",
+          "slot": 254195260
+        },
+        {
+          "date": "2024-03-21",
+          "kind": "upgrade",
+          "signature": "zQphx3qqoyupr8TiFwMNPVxzMU3zzRdVfbSa2Egs1zc6vdQ9REN9krUTM8SsP6hvoDxYPyEK6bcB2bTWmW8URLP",
+          "slot": 255630432
+        },
+        {
+          "date": "2024-05-07",
+          "kind": "upgrade",
+          "signature": "5Mp6PFcp92cbe5yNzoKE5Xc3z67qM1q8THJYnmJNjUG2S4JPVRB2Lum1FpkAFwffxmJhtB6wfpyfbwSKhjvgQdnV",
+          "slot": 264388345
+        },
+        {
+          "date": "2024-05-21",
+          "kind": "upgrade",
+          "signature": "3HbbM6asq86XPNKowWP2tp5FDSjKL2JvycmT1X6M2UnRCzk539XxXkS2g8daoDP6rp28ZRXqgMNvXt2CudLo3VG",
+          "slot": 267120101
+        },
+        {
+          "date": "2024-05-31",
+          "kind": "upgrade",
+          "signature": "3Dw5FRRLPGoxbkkAxGbWGndmr1HSSwuF8Y8ba45VAo4Fx6hwjUeuTYmVYPxr7iYeQdSrRrwUA7wFmsFt3WvSJY1E",
+          "slot": 269051626
+        },
+        {
+          "date": "2024-06-05",
+          "kind": "upgrade",
+          "signature": "4vYM2V5oX8fa9mWgfRs4c8CG8FQ4Ypc82UoZs2ik3pczaCcoPDkcYc3DaafPgczBR3FgwWZ4EbQD1FWoRX4deE8p",
+          "slot": 270039084
+        },
+        {
+          "date": "2024-06-10",
+          "kind": "upgrade",
+          "signature": "vt8yTuaADqDTBAgztPdjTK79Ve1EoSwAPcZBGAtnibJpJBfGN2bbyiZ1XsmMuv56pPXJV2co1bJs4n7Gk4Wnnk1",
+          "slot": 271018766
+        },
+        {
+          "date": "2024-06-19",
+          "kind": "upgrade",
+          "signature": "2ZDEz7TcFhcnh5iiaSZsTmNELEMB1ExGUMVRC51WXiQb3gnKztKDxcfFkXqU2fUEYLePEqRwtJKX3XuePQ86H1AJ",
+          "slot": 272739808
+        },
+        {
+          "date": "2024-06-19",
+          "kind": "upgrade",
+          "signature": "F7drC1cuz5hkjAoBhhuFJBp3c4NwgreW3BBq3pjTUaGmHVKxWjoEvxUtF5Px67DUmVJ9q9SKk2bfuTy1aqCNJBp",
+          "slot": 272786443
+        },
+        {
+          "date": "2024-07-03",
+          "kind": "upgrade",
+          "signature": "2bjscw7Bo6suG4wxtiqkiuVj7vWtcXa69dLPxg5fxRroLDg4L8ySy5j7Z7PibidGvKP7BjhJFp7u75UTVYrc46QJ",
+          "slot": 275456508
+        },
+        {
+          "date": "2024-07-17",
+          "kind": "upgrade",
+          "signature": "5dE6YvbSJakdSN3xkXCw9cQMv9h4c97wEd4t9VCWrcS4jDVNR3JaSCh7bKo5SSBBPWCjrd6MJgqqLBT9pKCxYhB3",
+          "slot": 278065168
+        },
+        {
+          "date": "2024-08-08",
+          "kind": "upgrade",
+          "signature": "5j1cE6nPJZq8Grvmu2YU56HuF7vWyuNfQVfLvKLJMBpHPc5twYNeNhZKsuq5xatFFUqQebcxN32ES3EbqhkXnMsb",
+          "slot": 282340161
+        },
+        {
+          "date": "2024-08-19",
+          "kind": "upgrade",
+          "signature": "3yGC65tnSn13uKUNXyFZvFXBaDM4CQ273XitjqmRZHBckzhdJMwXxp9cVvLFVcHhkkxCZ2o9LmWVj2PqZrQG2mr5",
+          "slot": 284570906
+        },
+        {
+          "date": "2024-09-16",
+          "kind": "upgrade",
+          "signature": "36GtyTKSp1J7BV4PhxzzHhQL4v78V9M8m45CN2MjMe2ujA8vMVGsKjnkzRN8iQjDHY7PAcTDCADr69x4wCdyEMZj",
+          "slot": 290167345
+        },
+        {
+          "date": "2024-10-21",
+          "kind": "upgrade",
+          "signature": "32d8XsFAriRsQQTLLDwRHZcUGSyDCciRE9qZ9uGA2LdGwXy5KMx3N4PpqgYGka6wwbxAHxEkmisJMy5kqWSNV8RK",
+          "slot": 296883118
+        },
+        {
+          "date": "2024-11-05",
+          "kind": "upgrade",
+          "signature": "2r3WunJWugxZAnqeX2Xd3SPN18DyfTdMB3ALMZ17DstDLjMwSyKoZSi4jDgz7QdRM5FVtTpjKFheJ4FKAL5JRNoL",
+          "slot": 299628948
+        },
+        {
+          "date": "2024-12-23",
+          "kind": "upgrade",
+          "signature": "cean9R3t3JAz1bYkLv41S7a7tPfqZu7Vo3KLtUyvHspw38UetXBz8tcb9QZRYeW6raUSmjG3V3QoJWhQZndrRqz",
+          "slot": 309311870
+        },
+        {
+          "date": "2025-01-06",
+          "kind": "upgrade",
+          "signature": "MtuFL3s8Zu5UzH6GMqocPXcpDGWLvcwUHpgX26XbPuD9VAu24ecwKT8BjgWJwQaDskKNV1zMmn9FCHLnAJrn27P",
+          "slot": 312249420
+        },
+        {
+          "date": "2025-01-13",
+          "kind": "upgrade",
+          "signature": "3AW8WP2SgYRTgr14N6Ab4pF1vezsTSEnsJQD1NMiG1anJzuoKqB5aTDM1QMq95zJvQrSNE7tcRRfoMoEf5grAWqy",
+          "slot": 313744854
+        },
+        {
+          "date": "2025-01-14",
+          "kind": "upgrade",
+          "signature": "34SRc4x9M53V1AqGhTas4GDAsGq5FM4m6esZqm3EwzB2Az2VwygUe8hPmawbnTsUwHzUPYG9G1hYJbStwGejyK6d",
+          "slot": 313926976
+        },
+        {
+          "date": "2025-02-04",
+          "kind": "upgrade",
+          "signature": "2kBdbNh8iSmoxEFPMkfYzLf2KyjXPW4LQocb9EC7pUMjc28mwHbxuxs9oWqDAAA4kYAqFxe9LWyThXw3rDjCHte",
+          "slot": 318404251
+        },
+        {
+          "date": "2025-02-04",
+          "kind": "upgrade",
+          "signature": "3vHafiqUiwx5TKJ9113vhXnFvLRcN44dQ2r18uduhhM9jc2fvKShmB1C4Jv7dMPEjDpMepr6aLx8jZZajKaVq4Ax",
+          "slot": 318426998
+        },
+        {
+          "date": "2025-02-21",
+          "kind": "upgrade",
+          "signature": "NkX7utaMmtXiMDFYxPQq67pKxVT673F6HqKwJtD9aLU9GKCmhgEuGzVBaXqmRPQyEf1YYX985M83kgZJaaeW33H",
+          "slot": 322147524
+        },
+        {
+          "date": "2025-02-21",
+          "kind": "upgrade",
+          "signature": "21fKjyKKUaD7jWWxpyJiNavehshGMcTEHUBH5Nx2Bw13nhnDumduDqvmUGoW8w1GbaRxYhpGsovcQCQWokTBQcJ5",
+          "slot": 322160291
+        },
+        {
+          "date": "2025-03-17",
+          "kind": "upgrade",
+          "signature": "2khPorzi32Pnb3KpDECim8YvLHRWZqdZtBAogojQ8GZuNaaAMAiFzJj4XXYJZGpbHAiYRgtTu6xWX5XTJTcgXufX",
+          "slot": 327358852
+        },
+        {
+          "date": "2025-04-25",
+          "kind": "set_authority",
+          "new_authority": "GzFgdRJXmawPhGeBsyRCDLx4jAKPsvbUqoqitzppkzkW",
+          "signature": "4tHwhfmz68K7dyfv2BJjm2YzifHXQASSkWVWPqxf5zkUSepqMDdzw4oU9Tuvw6wQQmpDXdkDLC3a8RcPYbzvPJFN",
+          "slot": 335789505
+        },
+        {
+          "date": "2025-05-08",
+          "kind": "extend",
+          "signature": "61XP42ngHgwvRxp7kVtANaCsFi2y8sF5vNL4fNwsm3BABugC7CpNumsQYAqY9LgVB3N8xd5rBABytgdHsEt4oTgC",
+          "slot": 338681542
+        },
+        {
+          "date": "2025-06-04",
+          "kind": "upgrade",
+          "signature": "32hkUMUuJj4N6kvz1MuXbk7swAsWKuJeFm9EEgrSzbxZouwgcyaLrCBnmKkfVDfgX9eeUT8TL4Yn6fh2EX31mT6c",
+          "slot": 344565638
+        },
+        {
+          "date": "2025-07-08",
+          "kind": "upgrade",
+          "signature": "5PdZe4MQoePWSwu7J5CrAmbvE6edM6yEmp6wTgC9qqSJ3Da3PwxfpnpxmmmLjyPrsgtZ4w2gbdJrpgjJErLLZ3z2",
+          "slot": 351953090
+        },
+        {
+          "date": "2025-08-27",
+          "kind": "upgrade",
+          "signature": "4KhyPLKRBRg7kvxtJj5ys2oeNjJLYo9P6DNb3qHznvk7wysjjwVQVL5SBb1oMQups5nLaabntePYy79sGEYvRARb",
+          "slot": 362812694
+        },
+        {
+          "date": "2025-10-10",
+          "kind": "upgrade",
+          "signature": "5RR5NqDzxirzJBPzRPEAqLaMfm564a5EGjxFRw7ktQwdmggnzenWZkP4XhHwAz7o6zfmMcqzJr9z4ceQ3PwW1rYH",
+          "slot": 372437517
+        },
+        {
+          "date": "2025-10-24",
+          "kind": "upgrade",
+          "signature": "3Z4tFnbt1Nx31uC9tu97syYh98uRn1EYD2aQ7GkVgV4DpBziXYYXkBTDaj3SdDCNB1jHh1ZzPF9DM5sTVdW4MoC",
+          "slot": 375504559
+        },
+        {
+          "date": "2025-11-10",
+          "kind": "upgrade",
+          "signature": "d5g6ofDxxn9UoQnUfhKQVyvxycV9UKWvJacmkcSGyCucj9h9P4xSQtRZ7EY95ViF1tPfb5K32WW88b2yjDD6xMz",
+          "slot": 379175867
+        },
+        {
+          "date": "2025-11-14",
+          "kind": "upgrade",
+          "signature": "2J5xY9eCebpQkY5Ri4SS3dSkw7raL8Pv8wAxbhrorY9XJWjR9tu8Ph4uo1apSj4NVu8cRRt6hR7rFR6413aeJ5Qo",
+          "slot": 380064273
+        },
+        {
+          "date": "2025-11-24",
+          "kind": "upgrade",
+          "signature": "2BBLVmBHRdHZYWMDxHHLLmkjkjLymEgVwL1dXVbTdVTbh6VzfunWU7ikgX18hKhTGnkYzBKNQpEL1knYqT9jFE9E",
+          "slot": 382241556
+        },
+        {
+          "date": "2025-11-29",
+          "kind": "upgrade",
+          "signature": "43n6j3s2C9NSJm2Qk7Y6muRwNWQai1rqEQ76Eq16Fmw7cNUkChztdLCsvg26TNjMcYAaFWFCBDgB5iKAneVWRBX4",
+          "slot": 383272179
+        },
+        {
+          "date": "2026-02-06",
+          "kind": "upgrade",
+          "signature": "4Cn2wd9ixm5NKySUMFYF1QaVnfCDeJz4N32LEq7sPZwNPWDLWj5zDT8GV9faxBbxohVf6fGEuH85t4kFRoAv18Rp",
+          "slot": 398430624
+        },
+        {
+          "date": "2026-02-16",
+          "kind": "upgrade",
+          "signature": "2zVCeAKnP7SswhNyti7bAC88jSbgtQ2vZoezoFZC51MT7yVtdwnwAJrZnbqYWGtoX3eAnN8xU1j8Zj4TGA38KgFf",
+          "slot": 400667629
+        },
+        {
+          "date": "2026-03-02",
+          "kind": "upgrade",
+          "signature": "EE6kDAPYeLnKVLBMCPty57WaFMZUT8eXCq9K8ndQfP98FYSMwjVNeFA2hnp99bMbBbA9H4twZQBD8P5znwfxJKW",
+          "slot": 403691910
+        },
+        {
+          "date": "2026-03-06",
+          "kind": "upgrade",
+          "signature": "3wuSQXezdJwQH4B94nA8xhbtSGTeM34ATZXKwNQRTWyV3PJceN9Fhz86V3Sr4c2Wnw3Gun7pqTqoZieeyfYvQsha",
+          "slot": 404558714
+        },
+        {
+          "date": "2026-03-17",
+          "kind": "upgrade",
+          "signature": "2BqY4vCoMGADSHdGxCEjFRMhMFHBCPhQvJq2t4pPgeMeZtE4AVsjguzCjCzPvqxJPDHtvmzzmxgXedWtGWA2XhUf",
+          "slot": 406987719
+        },
+        {
+          "date": "2026-03-26",
+          "kind": "upgrade",
+          "signature": "4Hhky4h8JvKpapK2xE1z2Zs7RD7KntkoqWe7EN6izJwNJ3zKRE2joXxaAXoA91LSGiJv48Ui9oSM9AGQa8XMKF9m",
+          "slot": 408974412
+        },
+        {
+          "date": "2026-04-13",
+          "kind": "upgrade",
+          "signature": "375uR4oZYbsTkyWxr8dshNux8gXFfBDtDGdD5GRG5taQrvCbhinL2mPmRyyjCzhqFpyUYVy8bV6RH4FJtqoEVhXs",
+          "slot": 412947819
+        },
+        {
+          "date": "2026-04-22",
+          "kind": "upgrade",
+          "signature": "3oSZnTMp1DcemT5WQgwmv15ajjsQfKj1MXQLJRrUFGjy6mcFWtzC7bQNC2jJfM6yaEm6pBYC4y8cWZEMqbhix4z5",
+          "slot": 414926385
+        },
+        {
+          "date": "2026-04-24",
+          "kind": "upgrade",
+          "signature": "A3NmKMCqtWYiZG5qvTsLd7EZX4Lrb7LrSybM9eNBKoSq8HDzzSVNjs8Y7VB8fg6kTcxzkAKgv7tBwqc5ndgEbv8",
+          "slot": 415332643
+        },
+        {
+          "date": "2026-05-07",
+          "kind": "upgrade",
+          "signature": "48F1diG47xoVYPAcsMymiYNGRFvBKDu5afqkeocB1QvzwbSGozVAgA7UEXZig5bgosKK2APKeEmokJZ4kD9wH6m1",
+          "slot": 418256582
+        },
+        {
+          "date": "2026-05-12",
+          "kind": "upgrade",
+          "signature": "4mVFW8YSrFcxxGYmwceyRZGvYGkMiXd1ZSTN7vwd2bthrY3qz2E8FoVUBL4bPUuokFmnQCouDtvXsbxDTKaBhXDS",
+          "slot": 419212537
+        },
+        {
+          "date": "2026-05-14",
+          "kind": "upgrade",
+          "signature": "56zLB6QogzoiEemhvj4xj6Ujj8J9nRoYMsjW4S2xQ7Ezq1nMquhVsqTcwwdVUKCN7qfcUupSFkZtcXMQTuvErXdJ",
+          "slot": 419662599
+        },
+        {
+          "date": "2026-05-28",
+          "kind": "upgrade",
+          "signature": "WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4",
+          "slot": 422723185
+        },
+        {
+          "date": "2026-08-12",
+          "kind": "upgrade",
+          "signature": "smn7ibUfuPNhLoovx1eYpwZWZtego9q6U7LVkk8Tc4thrbcwtbTCGXX13ogh8YShsLcusN12AoyWq8yuLuagQQr",
+          "slot": 438843135
+        },
+        {
+          "date": "2026-08-20",
+          "kind": "upgrade",
+          "signature": "3tTU214kgvZxi2x9SbSCJDNLnvFxAqRGktnMT6gP6SiTAMzUawc8N7GR23tySTAbsR8hc2J98f2Mg2nDXa1MubRi",
+          "slot": 440486775
+        },
+        {
+          "date": "2026-10-19",
+          "kind": "upgrade",
+          "signature": "2a44ujRtW2Kb9DK2TQ2xEnHY7unkKrcBZ9VZY9EUGMJYjqE69aZ6XxXaV8HYj4wMvqGaXKwm9KAnF1XTrQJbXPUe",
+          "slot": 458858791
+        }
+      ],
+      "scanned": 210,
+      "total": 210
+    }
+  },
+  "review": {
+    "awaiting_human_review": true,
+    "due": false,
+    "last_reviewed": "2026-10-19"
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "admin": {
+      "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.lending_market_owner": {
+        "rating": "high",
+        "reason": "`lending_market_owner` can change parameters, held by Squads v4 multisig, 4 of 10 voters, time lock 12 h"
+      }
+    },
+    "callees": {},
+    "control_class": "multisig_with_delay",
+    "controller_summary": "Squads 5 of 10 · 24 h delay",
+    "factors": {
+      "admin_powers": {
+        "evidence": [
+          {
+            "address": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+            "field": "lending_market_owner",
+            "slot": 459676223
+          },
+          {
+            "address": "7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676226
+          }
+        ],
+        "next_step": "hold every admin key in a multisig of 3+ voters at a 50%+ threshold → MEDIUM",
+        "rating": "high",
+        "reason": "`lending_market_owner` can change parameters, held by Squads v4 multisig, 4 of 10 voters, time lock 12 h"
+      },
+      "code_transparency": {
+        "evidence": [
+          {
+            "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "field": "verified_build",
+            "slot": 459676019
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "verified build of https://github.com/Kamino-Finance/klend/tree/e921c648765fc2343c87614a00f4b39b640f0510 at e921c648765fc2343c87614a00f4b39b640f0510"
+      },
+      "dependencies": {
+        "evidence": [
+          {
+            "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "field": "transaction sample (28 transactions)",
+            "slot": 459676228
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "calls no other programs with user funds"
+      },
+      "oracle_dependency": {
+        "evidence": [
+          {
+            "address": "3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/3t4JZcueEzTbVP6kLxXrL3VpWx45jDer4eqysweBchNH",
+            "field": "owner",
+            "slot": 459676226
+          }
+        ],
+        "next_step": "take prices from an established oracle network (pyth, switchboard, chainlink) → MEDIUM",
+        "rating": "high",
+        "reason": "SOL reserve: prices come from a protocol-run feed"
+      },
+      "upgrade_control": {
+        "evidence": [
+          {
+            "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+            "field": "upgrade_authority",
+            "slot": 459676020
+          },
+          {
+            "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676021
+          }
+        ],
+        "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+        "rating": "medium",
+        "reason": "Squads v4 multisig, 5 of 10 voters, time lock 24 h"
+      },
+      "upgrade_delay": {
+        "evidence": [
+          {
+            "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+            "field": "upgrade_authority",
+            "slot": 459676020
+          },
+          {
+            "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676021
+          }
+        ],
+        "next_step": "a time lock of 5 days+ → LOW",
+        "rating": "medium",
+        "reason": "time lock 24 h"
+      }
+    },
+    "programs": {
+      "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+              "field": "verified_build",
+              "slot": 459676019
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "verified build of https://github.com/Kamino-Finance/kfarms/tree/bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4 at bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4"
+        },
+        "role": "periphery",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "field": "upgrade_authority",
+              "slot": 459676020
+            },
+            {
+              "address": "5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676021
+            }
+          ],
+          "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+          "rating": "medium",
+          "reason": "Squads v4 multisig, 5 of 10 voters, time lock 24 h"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "field": "upgrade_authority",
+              "slot": 459676020
+            },
+            {
+              "address": "5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/5HzXCm7omo3M7sX5nC4XcAxcTXEC22UHegB1hQiRvbfk",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676021
+            }
+          ],
+          "next_step": "a time lock of 5 days+ → LOW",
+          "rating": "medium",
+          "reason": "time lock 24 h"
+        }
+      },
+      "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "field": "verified_build",
+              "slot": 459676019
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "verified build of https://github.com/Kamino-Finance/klend/tree/e921c648765fc2343c87614a00f4b39b640f0510 at e921c648765fc2343c87614a00f4b39b640f0510"
+        },
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "field": "upgrade_authority",
+              "slot": 459676020
+            },
+            {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676021
+            }
+          ],
+          "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+          "rating": "medium",
+          "reason": "Squads v4 multisig, 5 of 10 voters, time lock 24 h"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "field": "upgrade_authority",
+              "slot": 459676020
+            },
+            {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676021
+            }
+          ],
+          "next_step": "a time lock of 5 days+ → LOW",
+          "rating": "medium",
+          "reason": "time lock 24 h"
+        }
+      }
+    },
+    "risks": [
+      {
+        "category": "stolen",
+        "factor": "admin_powers",
+        "severity": "high",
+        "text": "Funds can be stolen if protocol parameters are changed by 4 of 10 voters of multisig 7idEEVRidWrahZJhxXMqniDbV6ESj7ZjyLrigcMcEt6H using `lending_market_owner`."
+      },
+      {
+        "category": "price_manipulation",
+        "factor": "oracle_dependency",
+        "severity": "high",
+        "text": "Prices can be manipulated if a protocol-run feed reports a false price for SOL reserve."
+      },
+      {
+        "category": "stolen",
+        "factor": "upgrade_control",
+        "severity": "medium",
+        "text": "Funds can be stolen if a core program is upgraded to new code by 5 of 10 voters of multisig 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM."
+      },
+      {
+        "category": "stolen",
+        "factor": "upgrade_delay",
+        "severity": "medium",
+        "text": "Funds can be stolen if a harmful upgrade is approved, because it takes effect after 24 h, before users can withdraw."
+      }
+    ],
+    "stage": {
+      "missing": [
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD: effective time lock 24 h; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "admin powers rated Low or Medium",
+          "detail": "HIGH: `lending_market_owner` can change parameters, held by Squads v4 multisig, 4 of 10 voters, time lock 12 h",
+          "id": "s1.admin_powers",
+          "met": false,
+          "stage": "stage_1"
+        }
+      ],
+      "next": "stage_1",
+      "requirements": [
+        {
+          "description": "core programs identified in the registry",
+          "detail": "1 core programs",
+          "id": "s0.core_programs",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "public source for every core program",
+          "detail": "all core programs have public source",
+          "id": "s0.public_source",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control readable for every core program",
+          "detail": "upgrade control read for all core programs",
+          "id": "s0.upgrade_control_known",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control rated Low or Medium",
+          "detail": "MEDIUM: Squads v4 multisig, 5 of 10 voters, time lock 24 h",
+          "id": "s1.upgrade_control",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD: effective time lock 24 h; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "admin powers rated Low or Medium",
+          "detail": "HIGH: `lending_market_owner` can change parameters, held by Squads v4 multisig, 4 of 10 voters, time lock 12 h",
+          "id": "s1.admin_powers",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "no multisig has a single-key config authority",
+          "detail": "no single-key config authority",
+          "id": "s1.config_authority",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "verified builds for all core programs",
+          "detail": "all core programs verified",
+          "id": "s1.verified_builds",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "every factor could be read (Unknown caps the Stage at 0)",
+          "detail": "no Unknown factors",
+          "id": "s1.no_unknown",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "core programs immutable, or upgradeable only through on-chain governance with a long delay",
+          "detail": "upgradeable without 30 days+ governance delay: KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "id": "s2.immutable_or_governance",
+          "met": false,
+          "stage": "stage_2"
+        },
+        {
+          "description": "no key can move or freeze user funds",
+          "detail": "no admin key can move or freeze funds",
+          "id": "s2.no_fund_control",
+          "met": true,
+          "stage": "stage_2"
+        }
+      ],
+      "stage": "stage_0"
+    },
+    "tokens": {
+      "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4": {
+        "roles": [
+          "deposit"
+        ],
+        "symbol": "JLP",
+        "warning": null,
+        "worst": "high"
+      },
+      "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "PYUSD",
+        "warning": "accepts PYUSD as collateral, which is rated High (Supply control: new supply can be minted by single key AxJk…kzbu; Freeze and seize powers: permanent delegate single key 2apB…YJjk can move tokens out of any wallet; balances can be frozen by single key 2apB…YJjk; Transfer restrictions: a transfer hook that can block transfers can be set by single key 2apB…YJjk; transfer fee can be changed by single key 2apB…YJjk)",
+        "worst": "high"
+      },
+      "2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "USDG",
+        "warning": "accepts USDG as collateral, which is rated High (Supply control: new supply can be minted by single key 2e99…1AB4; Freeze and seize powers: permanent delegate single key 2apB…YJjk can move tokens out of any wallet; balances can be frozen by single key 2apB…YJjk; Transfer restrictions: a transfer hook that can block transfers can be set by single key 2apB…YJjk; transfer fee can be changed by single key 2apB…YJjk)",
+        "worst": "high"
+      },
+      "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "WBTC",
+        "warning": "accepts WBTC as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller BCD7…YMV7 owned by program 1111…1111)",
+        "worst": "high"
+      },
+      "7Q2afV64in6N6SeZsAAB81TJzwDoD6zpqmHkzi9Dcavn": {
+        "roles": [
+          "collateral"
+        ],
+        "symbol": "JSOL",
+        "warning": "accepts JSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller HbJT…4fnt owned by program 1111…1111)",
+        "worst": "high"
+      },
+      "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "WETH",
+        "warning": "accepts WETH as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller BCD7…YMV7 owned by program 1111…1111)",
+        "worst": "high"
+      },
+      "BNso1VUJnh4zcfpZa6986Ea66P6TCp59hvtNJ8b1X85": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "BNSOL",
+        "warning": "accepts BNSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 75NP…qjCV owned by program 1111…1111)",
+        "worst": "high"
+      },
+      "BonK1YhkXEGLZzwtcvRTip3gAL9nCeQD7ppZBLXhtTs": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "bonkSOL",
+        "warning": "accepts bonkSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 9Lcm…nhhA)",
+        "worst": "high"
+      },
+      "Dso1bDeDjCQxTrWHqUUi63oBvV7Mdm6WaobLbQ7gnPQ": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "dSOL",
+        "warning": "accepts dSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 6727…mrUK)",
+        "worst": "high"
+      },
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "USDC",
+        "warning": "accepts USDC as collateral, which is rated High (Supply control: new supply can be minted by single key BJE5…5ruG; Freeze and seize powers: balances can be frozen by single key 7dGb…Crar)",
+        "worst": "high"
+      },
+      "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "USDT",
+        "warning": "accepts USDT as collateral, which is rated High (Supply control: new supply can be minted by single key Q6Xp…69Gi; Freeze and seize powers: balances can be frozen by single key Q6Xp…69Gi)",
+        "worst": "high"
+      },
+      "HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr": {
+        "roles": [
+          "borrowable"
+        ],
+        "symbol": "EURC",
+        "warning": null,
+        "worst": "high"
+      },
+      "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "JitoSOL",
+        "warning": "accepts JitoSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 6iQK…pVSS owned by program 1111…1111)",
+        "worst": "high"
+      },
+      "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN": {
+        "roles": [
+          "deposit"
+        ],
+        "symbol": "JUP",
+        "warning": null,
+        "worst": "low"
+      },
+      "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg": {
+        "roles": [
+          "collateral"
+        ],
+        "symbol": "lanternSOL",
+        "warning": "accepts lanternSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 6Sw4…g1fo)",
+        "worst": "high"
+      },
+      "So11111111111111111111111111111111111111112": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "SOL",
+        "warning": null,
+        "worst": "low"
+      },
+      "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "bSOL",
+        "warning": "accepts bSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 6Wec…CbV2 owned by program 1111…1111)",
+        "worst": "high"
+      },
+      "cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm": {
+        "roles": [
+          "collateral"
+        ],
+        "symbol": "fwdSOL",
+        "warning": "accepts fwdSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 3ndM…2xnA)",
+        "worst": "high"
+      },
+      "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "cbBTC",
+        "warning": "accepts cbBTC as collateral, which is rated High (Supply control: new supply can be minted by single key CTQE…wy3p; Freeze and seize powers: balances can be frozen by single key DSFA…AVnz)",
+        "worst": "high"
+      },
+      "he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "hSOL",
+        "warning": "accepts hSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 2rMu…j2YF owned by program 1111…1111)",
+        "worst": "high"
+      },
+      "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "JupSOL",
+        "warning": "accepts JupSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller EMju…QDNw owned by program 1111…1111)",
+        "worst": "high"
+      },
+      "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "mSOL",
+        "warning": "accepts mSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 3JLP…g6KM)",
+        "worst": "high"
+      },
+      "pSo1f9nQXWgXibFtKf7NWYxb5enAM4qfP6UJSiXRQfL": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "pSOL",
+        "warning": "accepts pSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 2zeX…gVfS)",
+        "worst": "high"
+      },
+      "picobAEvs6w7QEknPce34wAE4gknZA9v5tTonnmHYdX": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "picoSOL",
+        "warning": "accepts picoSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 4At8…1kGh)",
+        "worst": "high"
+      },
+      "sctmB7GPi5L2Q5G9tUSzXvhZ4YiDMEGcRov9KfArQpx": {
+        "roles": [
+          "collateral"
+        ],
+        "symbol": "dfdvSOL",
+        "warning": "accepts dfdvSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 7cWN…yYGW)",
+        "worst": "high"
+      },
+      "strng7mqqc1MBJJV6vMzYbEqnwVGvKKGKedeCvtktWA": {
+        "roles": [
+          "collateral"
+        ],
+        "symbol": "strongSOL",
+        "warning": "accepts strongSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller ABCT…fsSK)",
+        "worst": "high"
+      },
+      "vSoLxydx6akxyMD9XEcPvGYNGq6Nn66oqVb3UkGkei7": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "vSOL",
+        "warning": "accepts vSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller GdNX…HMMW owned by program 1111…1111)",
+        "worst": "high"
+      }
+    }
+  },
+  "snapshot_date": "2026-10-21",
+  "upgrades": {
+    "average_interval_days": 15.7,
+    "complete": true,
+    "last_upgrade_date": "2026-10-19",
+    "last_upgrade_slot": 458858791,
+    "upgrades": 83,
+    "upgrades_last_30_days": 1
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "$schema": "/data/v2/schemas/summary.schema.json",
+  "api_version": "v2",
+  "assessed_chains": [
+    "solana"
+  ],
+  "deprecation": null,
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "protocols": [
+    {
+      "assessment": "assessed",
+      "category": "liquid-staking",
+      "chain": "solana",
+      "control_class": "multisig_without_delay",
+      "controller_summary": "Squads 6 of 10 · no delay",
+      "id": "binance-staked-sol",
+      "links": {
+        "api": "/data/v2/protocols/binance-staked-sol.json",
+        "badge": "/badges/binance-staked-sol.svg",
+        "markdown": "/protocols/binance-staked-sol.md",
+        "page": "/protocols/binance-staked-sol/"
+      },
+      "name": "Binance Staked SOL",
+      "ratings": {
+        "admin_powers": "low",
+        "code_transparency": "high",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "low",
+        "upgrade_delay": "high"
+      },
+      "stage": "unrated",
+      "tvl_usd": 1119881064
+    },
+    {
+      "assessment": "assessed",
+      "category": "liquid-staking",
+      "chain": "solana",
+      "control_class": "multisig_without_delay",
+      "controller_summary": "Squads 6 of 11 · no delay",
+      "id": "drift-staked-sol",
+      "links": {
+        "api": "/data/v2/protocols/drift-staked-sol.json",
+        "badge": "/badges/drift-staked-sol.svg",
+        "markdown": "/protocols/drift-staked-sol.md",
+        "page": "/protocols/drift-staked-sol/"
+      },
+      "name": "Drift Staked SOL",
+      "ratings": {
+        "admin_powers": "low",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 299409338
+    },
+    {
+      "assessment": "assessed",
+      "category": "liquid-staking",
+      "chain": "solana",
+      "control_class": "multisig_without_delay",
+      "controller_summary": "Squads 6 of 11 · no delay",
+      "id": "forward-sol",
+      "links": {
+        "api": "/data/v2/protocols/forward-sol.json",
+        "badge": "/badges/forward-sol.svg",
+        "markdown": "/protocols/forward-sol.md",
+        "page": "/protocols/forward-sol/"
+      },
+      "name": "Forward Industries SOL",
+      "ratings": {
+        "admin_powers": "low",
+        "code_transparency": "high",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "high"
+      },
+      "stage": "unrated",
+      "tvl_usd": 297960715
+    },
+    {
+      "assessment": "assessed",
+      "category": "perps",
+      "chain": "solana",
+      "control_class": "multisig_with_delay",
+      "controller_summary": "Squads 4 of 7 · 600 s delay",
+      "id": "gmx-solana",
+      "links": {
+        "api": "/data/v2/protocols/gmx-solana.json",
+        "badge": "/badges/gmx-solana.svg",
+        "markdown": "/protocols/gmx-solana.md",
+        "page": "/protocols/gmx-solana/"
+      },
+      "name": "GMX Solana",
+      "ratings": {
+        "admin_powers": "medium",
+        "code_transparency": "low",
+        "dependencies": "high",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 26325593
+    },
+    {
+      "assessment": "assessed",
+      "category": "liquid-staking",
+      "chain": "solana",
+      "control_class": "multisig_without_delay",
+      "controller_summary": "Squads 6 of 10 · no delay",
+      "id": "jito",
+      "links": {
+        "api": "/data/v2/protocols/jito.json",
+        "badge": "/badges/jito.svg",
+        "markdown": "/protocols/jito.md",
+        "page": "/protocols/jito/"
+      },
+      "name": "Jito",
+      "ratings": {
+        "admin_powers": "low",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "low",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1117989147
+    },
+    {
+      "assessment": "assessed",
+      "category": "lending",
+      "chain": "solana",
+      "control_class": "multisig_with_delay",
+      "controller_summary": "Squads 4 of 6 · 12 h delay",
+      "id": "jupiter-lend",
+      "links": {
+        "api": "/data/v2/protocols/jupiter-lend.json",
+        "badge": "/badges/jupiter-lend.svg",
+        "markdown": "/protocols/jupiter-lend.md",
+        "page": "/protocols/jupiter-lend/"
+      },
+      "name": "Jupiter Lend",
+      "ratings": {
+        "admin_powers": "medium",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "low",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1044629116
+    },
+    {
+      "assessment": "assessed",
+      "category": "perps",
+      "chain": "solana",
+      "control_class": "multisig_with_delay",
+      "controller_summary": "Squads 4 of 8 · 24 h delay",
+      "id": "jupiter-perps",
+      "links": {
+        "api": "/data/v2/protocols/jupiter-perps.json",
+        "badge": "/badges/jupiter-perps.svg",
+        "markdown": "/protocols/jupiter-perps.md",
+        "page": "/protocols/jupiter-perps/"
+      },
+      "name": "Jupiter Perps",
+      "ratings": {
+        "admin_powers": "medium",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "medium",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 752838078
+    },
+    {
+      "assessment": "assessed",
+      "category": "liquid-staking",
+      "chain": "solana",
+      "control_class": "multisig_without_delay",
+      "controller_summary": "Squads 6 of 11 · no delay",
+      "id": "jupiter-staked-sol",
+      "links": {
+        "api": "/data/v2/protocols/jupiter-staked-sol.json",
+        "badge": "/badges/jupiter-staked-sol.svg",
+        "markdown": "/protocols/jupiter-staked-sol.md",
+        "page": "/protocols/jupiter-staked-sol/"
+      },
+      "name": "Jupiter Staked SOL",
+      "ratings": {
+        "admin_powers": "low",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 559032088
+    },
+    {
+      "assessment": "assessed",
+      "category": "lending",
+      "chain": "solana",
+      "control_class": "multisig_with_delay",
+      "controller_summary": "Squads 5 of 10 · 24 h delay",
+      "id": "kamino-lend",
+      "links": {
+        "api": "/data/v2/protocols/kamino-lend.json",
+        "badge": "/badges/kamino-lend.svg",
+        "markdown": "/protocols/kamino-lend.md",
+        "page": "/protocols/kamino-lend/"
+      },
+      "name": "Kamino Lend",
+      "ratings": {
+        "admin_powers": "high",
+        "code_transparency": "low",
+        "dependencies": "low",
+        "oracle_dependency": "high",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1346478483
+    },
+    {
+      "assessment": "assessed",
+      "category": "dex",
+      "chain": "solana",
+      "control_class": "multisig_with_delay",
+      "controller_summary": "Squads 5 of 9 · 24 h delay",
+      "id": "orca",
+      "links": {
+        "api": "/data/v2/protocols/orca.json",
+        "badge": "/badges/orca.svg",
+        "markdown": "/protocols/orca.md",
+        "page": "/protocols/orca/"
+      },
+      "name": "Orca",
+      "ratings": {
+        "admin_powers": "low",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 307331347
+    },
+    {
+      "assessment": "assessed",
+      "category": "dex",
+      "chain": "solana",
+      "control_class": "multisig_without_delay",
+      "controller_summary": "Squads 3 of 4 · no delay",
+      "id": "pumpswap",
+      "links": {
+        "api": "/data/v2/protocols/pumpswap.json",
+        "badge": "/badges/pumpswap.svg",
+        "markdown": "/protocols/pumpswap.md",
+        "page": "/protocols/pumpswap/"
+      },
+      "name": "PumpSwap",
+      "ratings": {
+        "admin_powers": "medium",
+        "code_transparency": "medium",
+        "dependencies": "medium",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 356654757
+    },
+    {
+      "assessment": "assessed",
+      "category": "dex",
+      "chain": "solana",
+      "control_class": "multisig_without_delay",
+      "controller_summary": "Squads 3 of 4 · no delay",
+      "id": "raydium-amm",
+      "links": {
+        "api": "/data/v2/protocols/raydium-amm.json",
+        "badge": "/badges/raydium-amm.svg",
+        "markdown": "/protocols/raydium-amm.md",
+        "page": "/protocols/raydium-amm/"
+      },
+      "name": "Raydium",
+      "ratings": {
+        "admin_powers": "high",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1200839089
+    }
+  ],
+  "schema_version": "2.0.0",
+  "snapshot_date": "2026-10-21",
+  "value_by_control": {
+    "all": {
+      "classes": {
+        "immutable": 0,
+        "multisig_with_delay": 3477602617,
+        "multisig_without_delay": 4951766198,
+        "single_key": 0,
+        "unrecognized": 0
+      },
+      "total": 8429368815
+    },
+    "by_category": {
+      "dex": {
+        "classes": {
+          "immutable": 0,
+          "multisig_with_delay": 307331347,
+          "multisig_without_delay": 1557493846,
+          "single_key": 0,
+          "unrecognized": 0
+        },
+        "total": 1864825193
+      },
+      "lending": {
+        "classes": {
+          "immutable": 0,
+          "multisig_with_delay": 2391107599,
+          "multisig_without_delay": 0,
+          "single_key": 0,
+          "unrecognized": 0
+        },
+        "total": 2391107599
+      },
+      "liquid-staking": {
+        "classes": {
+          "immutable": 0,
+          "multisig_with_delay": 0,
+          "multisig_without_delay": 3394272352,
+          "single_key": 0,
+          "unrecognized": 0
+        },
+        "total": 3394272352
+      },
+      "perps": {
+        "classes": {
+          "immutable": 0,
+          "multisig_with_delay": 779163671,
+          "multisig_without_delay": 0,
+          "single_key": 0,
+          "unrecognized": 0
+        },
+        "total": 779163671
+      }
+    },
+    "excluded": []
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "$defs": {
+    "Address": {
+      "description": "An on-chain address in its chain's canonical text form (base58 on Solana,\n0x-hex on EVM). Format checks belong to the registry and collectors.",
+      "type": "string"
+    },
+    "AuthorityPda": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/Address"
+        },
+        "program": {
+          "$ref": "#/$defs/Address"
+        },
+        "seeds": {
+          "items": {
+            "$ref": "#/$defs/PdaSeed"
+          },
+          "type": "array"
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "program",
+        "seeds",
+        "source"
+      ],
+      "type": "object"
+    },
+    "Issuer": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "source"
+      ],
+      "type": "object"
+    },
+    "PdaSeed": {
+      "description": "Every seed has an explicit encoding; address strings are decoded to 32 bytes.",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "literal",
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "address",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Provenance": {
+      "description": "Native to Solana, or bridged from another chain.",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "native",
+              "type": "string"
+            },
+            "source": {
+              "format": "uri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "source"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "backing_address": {
+              "description": "The backing token's address on `backing_chain`.",
+              "type": "string"
+            },
+            "backing_chain": {
+              "type": "string"
+            },
+            "bridge": {
+              "type": "string"
+            },
+            "kind": {
+              "const": "bridged",
+              "type": "string"
+            },
+            "source": {
+              "format": "uri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "bridge",
+            "backing_chain",
+            "backing_address",
+            "source"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "TokenEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "authority_pdas": {
+          "description": "Verified declarations for token, admin or upgrade authority PDAs.",
+          "items": {
+            "$ref": "#/$defs/AuthorityPda"
+          },
+          "type": "array"
+        },
+        "issuer": {
+          "$ref": "#/$defs/Issuer"
+        },
+        "mint": {
+          "$ref": "#/$defs/Address"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "source": {
+          "description": "Confirms the mint, symbol and type.",
+          "format": "uri",
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/TokenKind"
+        }
+      },
+      "required": [
+        "mint",
+        "symbol",
+        "type",
+        "source",
+        "issuer",
+        "provenance"
+      ],
+      "type": "object"
+    },
+    "TokenKind": {
+      "enum": [
+        "stablecoin",
+        "liquid-staking",
+        "bridged",
+        "governance",
+        "other"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "`registry/tokens.yaml` (TOK-1).",
+  "properties": {
+    "tokens": {
+      "items": {
+        "$ref": "#/$defs/TokenEntry"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "tokens"
+  ],
+  "title": "TokensFile",
+  "type": "object"
+}

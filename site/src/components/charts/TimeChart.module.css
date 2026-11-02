@@ -1,0 +1,180 @@
+.figure {
+  margin: 0;
+  background: var(--raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px var(--space-5) 14px;
+  min-width: 0;
+  box-shadow: var(--shadow);
+}
+
+.figure figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink-primary);
+}
+
+.description {
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: var(--text-xs);
+  color: var(--ink-secondary);
+}
+
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex: none;
+}
+
+.plot {
+  position: relative;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  touch-action: pan-y;
+}
+
+.grid {
+  stroke: var(--grid);
+  stroke-width: 1;
+}
+
+.baseline {
+  stroke: var(--axis);
+  stroke-width: 1;
+}
+
+.tick {
+  fill: var(--ink-muted);
+  font-size: 11px;
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+}
+
+.direct {
+  fill: var(--ink-secondary);
+  font-size: 11px;
+}
+
+.crosshair {
+  stroke: var(--silver);
+  stroke-opacity: 0.6;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.tooltip {
+  position: absolute;
+  top: 8px;
+  pointer-events: none;
+  background: var(--hover);
+  border: 1px solid var(--border-strong);
+  border-top-color: var(--gold-line);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-size: var(--text-xs);
+  min-width: 180px;
+  box-shadow: 0 12px 32px rgba(2, 6, 14, 0.55);
+}
+
+.tipDate {
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.tipMissing {
+  color: var(--ink-secondary);
+}
+
+.tipRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-secondary);
+}
+
+.tipValue {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.table {
+  margin-top: 8px;
+  font-size: var(--text-xs);
+}
+
+.table summary {
+  cursor: pointer;
+  color: var(--ink-link);
+  width: fit-content;
+}
+
+.table table {
+  margin-top: 6px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  padding: 3px 8px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid var(--grid);
+  white-space: nowrap;
+}
+
+.table th:first-child {
+  text-align: left;
+}
+
+.table thead th {
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.lineSwatch {
+  flex: none;
+}

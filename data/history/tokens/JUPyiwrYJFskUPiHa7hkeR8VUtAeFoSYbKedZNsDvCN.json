@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 6,
+      "price_usd_micros": 328927,
+      "supply": 6861485924354544
+    }
+  ],
+  "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+  "schema_version": "0.2.0",
+  "symbol": "JUP"
+}

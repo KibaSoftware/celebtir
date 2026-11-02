@@ -1,0 +1,379 @@
+{
+  "metrics": {},
+  "program_history": {},
+  "protocols": {
+    "sample-dex": {
+      "admin": {},
+      "category": null,
+      "chain": "solana",
+      "dependencies": {
+        "evidence": [
+          {
+            "address": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+            "field": "transaction_sample",
+            "slot": 382114900
+          }
+        ],
+        "value": {
+          "callees": {},
+          "kind": "sampled"
+        }
+      },
+      "last_reviewed": null,
+      "max_slot": 382114900,
+      "min_slot": 382114880,
+      "name": null,
+      "oracles": {},
+      "programs": {
+        "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc": {
+          "code_transparency": {
+            "evidence": [
+              {
+                "address": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+                "field": "verified_build",
+                "slot": 382114880
+              }
+            ],
+            "value": {
+              "commit": "0a1b2c3",
+              "executable_hash": "h",
+              "kind": "verified",
+              "on_chain_hash": "h",
+              "repo": "https://github.com/example/program"
+            }
+          },
+          "loader": null,
+          "role": "core",
+          "upgrade_control": {
+            "evidence": [
+              {
+                "address": "8YmFNBJ2CR5JLd3P1bzJxZRFcqGBy2DmBxVVcVPmUfAU",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/8YmFNBJ2CR5JLd3P1bzJxZRFcqGBy2DmBxVVcVPmUfAU",
+                "field": "upgrade_authority",
+                "slot": 382114880
+              }
+            ],
+            "value": {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "config_authority": null,
+              "kind": "multisig",
+              "multisig_kind": "squads_v4",
+              "threshold": 5,
+              "time_lock_secs": 432000,
+              "voters": 8
+            }
+          }
+        }
+      },
+      "reviewed_by": null,
+      "sources": [],
+      "tokens": {
+        "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": [
+          "lp"
+        ]
+      },
+      "website": null
+    },
+    "sample-lend": {
+      "admin": {
+        "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.lending_market_owner": {
+          "account": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+          "controller": {
+            "evidence": [
+              {
+                "address": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+                "field": "lending_market_owner",
+                "slot": 382114890
+              }
+            ],
+            "value": {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "config_authority": null,
+              "kind": "multisig",
+              "multisig_kind": "squads_v4",
+              "threshold": 2,
+              "time_lock_secs": 0,
+              "voters": 4
+            }
+          },
+          "field": "lending_market_owner",
+          "power": "parameters"
+        }
+      },
+      "category": null,
+      "chain": "solana",
+      "dependencies": {
+        "evidence": [
+          {
+            "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "field": "transaction_sample",
+            "slot": 382114900
+          }
+        ],
+        "value": {
+          "callees": {},
+          "kind": "sampled"
+        }
+      },
+      "last_reviewed": null,
+      "max_slot": 382114900,
+      "min_slot": 382114880,
+      "name": null,
+      "oracles": {
+        "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE": {
+          "market": "SOL reserve",
+          "role": "primary",
+          "source": {
+            "evidence": [
+              {
+                "address": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+                "field": "owner",
+                "slot": 382114890
+              }
+            ],
+            "value": {
+              "kind": "network",
+              "name": "pyth"
+            }
+          }
+        }
+      },
+      "programs": {
+        "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr": {
+          "code_transparency": {
+            "evidence": [
+              {
+                "address": "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+                "field": "verified_build",
+                "slot": 382114880
+              }
+            ],
+            "value": {
+              "kind": "public_source_unverified",
+              "repo": "https://github.com/example/program"
+            }
+          },
+          "loader": null,
+          "role": "periphery",
+          "upgrade_control": {
+            "evidence": [
+              {
+                "address": "3a8WZzXxBu5mzkCMJ9pJrUcDMqtvcxJ6dS27z7DFTCgb",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/3a8WZzXxBu5mzkCMJ9pJrUcDMqtvcxJ6dS27z7DFTCgb",
+                "field": "upgrade_authority",
+                "slot": 382114880
+              }
+            ],
+            "value": {
+              "key": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+              "kind": "single_key"
+            }
+          }
+        },
+        "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD": {
+          "code_transparency": {
+            "evidence": [
+              {
+                "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+                "field": "verified_build",
+                "slot": 382114880
+              }
+            ],
+            "value": {
+              "commit": "0a1b2c3",
+              "executable_hash": "h",
+              "kind": "verified",
+              "on_chain_hash": "h",
+              "repo": "https://github.com/example/program"
+            }
+          },
+          "loader": null,
+          "role": "core",
+          "upgrade_control": {
+            "evidence": [
+              {
+                "address": "9FtmuBFcCqRHGaqKSAYHwLjcHTvn7WZ1ZnkWgytXu3EA",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/9FtmuBFcCqRHGaqKSAYHwLjcHTvn7WZ1ZnkWgytXu3EA",
+                "field": "upgrade_authority",
+                "slot": 382114880
+              }
+            ],
+            "value": {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "config_authority": null,
+              "kind": "multisig",
+              "multisig_kind": "squads_v4",
+              "threshold": 2,
+              "time_lock_secs": 0,
+              "voters": 4
+            }
+          }
+        }
+      },
+      "reviewed_by": null,
+      "sources": [],
+      "tokens": {
+        "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": [
+          "collateral",
+          "borrowable"
+        ]
+      },
+      "website": null
+    },
+    "sample-perps": {
+      "admin": {},
+      "category": null,
+      "chain": "solana",
+      "dependencies": {
+        "evidence": [
+          {
+            "address": "dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH",
+            "field": "transaction_sample",
+            "slot": 382114900
+          }
+        ],
+        "value": {
+          "callees": {},
+          "kind": "sampled"
+        }
+      },
+      "last_reviewed": null,
+      "max_slot": 382114900,
+      "min_slot": 382114880,
+      "name": null,
+      "oracles": {},
+      "programs": {
+        "dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH": {
+          "code_transparency": {
+            "evidence": [
+              {
+                "address": "dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH",
+                "field": "verified_build",
+                "slot": 382114880
+              }
+            ],
+            "value": {
+              "commit": "0a1b2c3",
+              "executable_hash": "h",
+              "kind": "verified",
+              "on_chain_hash": "h",
+              "repo": "https://github.com/example/program"
+            }
+          },
+          "loader": null,
+          "role": "core",
+          "upgrade_control": {
+            "evidence": [
+              {
+                "address": "BHCNWD9tg2WrQq33SbF1EbMjNhVRjGb8Z1M5qxvXqLXz",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/BHCNWD9tg2WrQq33SbF1EbMjNhVRjGb8Z1M5qxvXqLXz",
+                "field": "upgrade_authority",
+                "slot": 382114880
+              }
+            ],
+            "value": {
+              "kind": "unavailable",
+              "reason": "ProgramData read failed: RPC timeout"
+            }
+          }
+        }
+      },
+      "reviewed_by": null,
+      "sources": [],
+      "tokens": {},
+      "website": null
+    }
+  },
+  "schema_version": "0.2.0",
+  "token_metrics": {},
+  "tokens": {
+    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+      "decimals": 6,
+      "extensions": {
+        "evidence": [
+          {
+            "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "field": "extensions",
+            "slot": 382114895
+          }
+        ],
+        "value": {
+          "default_frozen": false
+        }
+      },
+      "freeze_authority": {
+        "evidence": [
+          {
+            "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "field": "freeze_authority",
+            "slot": 382114895
+          }
+        ],
+        "value": {
+          "key": "7dGbd2QZcCKcTndnHcTL8q7SMVXAkp688NTQYwrRCrar",
+          "kind": "unrecognized",
+          "owner_program": null
+        }
+      },
+      "mint_authority": {
+        "evidence": [
+          {
+            "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "field": "mint_authority",
+            "slot": 382114895
+          }
+        ],
+        "value": {
+          "key": "BJE5MMbqXjVwjAF7oxwPYXnTXDyspzZyt4vwenNw5ruG",
+          "kind": "unrecognized",
+          "owner_program": null
+        }
+      },
+      "program": "spl_token",
+      "provenance": {
+        "evidence": [
+          {
+            "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+            "field": "mint",
+            "slot": 382114895
+          }
+        ],
+        "value": {
+          "kind": "native"
+        }
+      },
+      "supply": 1000000,
+      "symbol": "USDC"
+    }
+  }
+}

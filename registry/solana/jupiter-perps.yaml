@@ -1,0 +1,115 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Program, oracle program, JLP mint and custodies: the IDL repo that Jupiter's developer docs link to (developers.jup.ag/docs/perps).
+# Custody mints were read on chain. The admin key is authority index 1 of a Squads v3 multisig (ADR 021).
+# Oracles: Doves aggregate primary and Pyth fallback are registered below from
+# custody reads. The documented Chainlink guard remains unverified on chain;
+# v0.3 therefore keeps that coverage gap Unknown rather than asserting no fallback.
+id: jupiter-perps
+name: Jupiter Perps
+chain: solana
+category: perps
+website: https://jup.ag/perps
+defillama_slug: jupiter-perpetual-exchange
+programs:
+  - id: PERPHjGBqRHArX4DySjwM6UJHiR3sWAatqfdBS2qQJu
+    name: Perpetuals
+    role: core
+    source: https://developers.jup.ag/docs/perps/custody-account
+  - id: DoVEsk76QybCEHQGzkvYPWLQu9gzNoZZZt3TPiL597e
+    name: Doves oracle
+    role: periphery
+    # Owner of the oracle price accounts Jupiter documents (e.g. FYq2BWQ1…).
+    source: https://solscan.io/account/FYq2BWQ1V5P1WFBqr3qB2Kb5yHVvSv7upzKodgQE5zXh
+multisigs:
+  - address: AxkJ8oH5aDu4ZRWfsujPtxdb6Vhq4gDehpoReBgrUUSm
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/AxkJ8oH5aDu4ZRWfsujPtxdb6Vhq4gDehpoReBgrUUSm
+  - address: 7ZyDFzet6sKgZLN4D89JLfo7chu2n7nYdkFt5RCFk8Sf
+    program: squads-v3
+    vault_index: 1
+    source: https://solscan.io/account/7ZyDFzet6sKgZLN4D89JLfo7chu2n7nYdkFt5RCFk8Sf
+admin_accounts:
+  - account: H4ND9aYttUVLFmNypZqLjZ52FYiGvdEB45GmwNoKEjTj
+    idl: idl/jupiter-perps.json
+    field: admin
+    power: parameters
+    source: https://solscan.io/account/H4ND9aYttUVLFmNypZqLjZ52FYiGvdEB45GmwNoKEjTj
+oracles:
+  # Each custody's `dovesAgOracle` (the documented price account, Edge by Chaos Labs
+  # via Jupiter's Doves program) and its `oracle` Pyth account, read from the custody
+  # accounts at slot 461325171. Jupiter documents Edge as primary, bounded by Chainlink and
+  # Pyth; no Chainlink account appears in the custody or Doves accounts, so that guard
+  # is not yet verified on chain (D3).
+  - account: FYq2BWQ1V5P1WFBqr3qB2Kb5yHVvSv7upzKodgQE5zXh
+    market: SOL custody
+    role: primary
+    provider: Edge by Chaos Labs (Doves aggregate)
+    guarded_by: [chainlink, pyth]
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  - account: 7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE
+    market: SOL custody
+    role: fallback
+    bounds_primary: true
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  - account: AFZnHPzy4mvVCffrVwhewHbFc93uTHvDSFrVH7GtfXF1
+    market: ETH custody
+    role: primary
+    provider: Edge by Chaos Labs (Doves aggregate)
+    guarded_by: [chainlink, pyth]
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  - account: 42amVS4KgzR9rA28tkVYqVXjq9Qa8dcZQMbH5EYFX6XC
+    market: ETH custody
+    role: fallback
+    bounds_primary: true
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  - account: hUqAT1KQ7eW1i6Csp9CXYtpPfSAvi835V7wKi5fRfmC
+    market: BTC custody
+    role: primary
+    provider: Edge by Chaos Labs (Doves aggregate)
+    guarded_by: [chainlink, pyth]
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  - account: 4cSM2e6rvbGQUFiJbqytoVMi5GgghSMr8LwVrT9VPSPo
+    market: BTC custody
+    role: fallback
+    bounds_primary: true
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  - account: 6Jp2xZUTWdDD2ZyUPRzeMdc6AFQ5K3pFgZxk2EijfjnM
+    market: USDC custody
+    role: primary
+    provider: Edge by Chaos Labs (Doves aggregate)
+    guarded_by: [chainlink, pyth]
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  - account: Dpw1EAVrSB1ibxiDQyTAW6Zip3J4Btk2x4SgApQCeFbX
+    market: USDC custody
+    role: fallback
+    bounds_primary: true
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  - account: Fgc93D641F8N2d1xLjQ4jmShuD3GE3BsCXA56KBQbF5u
+    market: USDT custody
+    role: primary
+    provider: Edge by Chaos Labs (Doves aggregate)
+    guarded_by: [chainlink, pyth]
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  - account: HT2PLQBcG5EiCcNSaMHAjSgd9F98ecpATbk4Sk5oYuM
+    market: USDT custody
+    role: fallback
+    bounds_primary: true
+    source: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+tokens:
+  - mint: So11111111111111111111111111111111111111112
+    roles: [deposit]
+  - mint: 7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs
+    roles: [deposit]
+  - mint: 3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh
+    roles: [deposit]
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    roles: [deposit]
+  - mint: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    roles: [deposit]
+  - mint: 27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4
+    roles: [lp]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

@@ -1,0 +1,36 @@
+{
+  "days": [
+    {
+      "assessment": "assessed",
+      "date": "2026-10-21",
+      "fees_usd": 140845,
+      "methodology_version": "0.1",
+      "ratings": {
+        "admin_powers": "high",
+        "code_transparency": "low",
+        "dependencies": "low",
+        "oracle_dependency": "high",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1346478483,
+      "volume_usd": null
+    }
+  ],
+  "protocol": "kamino-lend",
+  "review": {
+    "awaiting_human_review": true,
+    "due": false,
+    "last_reviewed": "2026-10-19"
+  },
+  "schema_version": "0.2.0",
+  "upgrades": {
+    "average_interval_days": 15.7,
+    "complete": true,
+    "last_upgrade_date": "2026-10-19",
+    "last_upgrade_slot": 458858791,
+    "upgrades": 83,
+    "upgrades_last_30_days": 1
+  }
+}

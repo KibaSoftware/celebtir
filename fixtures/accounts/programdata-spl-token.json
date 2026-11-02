@@ -1,0 +1,15 @@
+{
+  "address": "3gvYRKWyXRR9xKWe1ZjPhLY5ZJRN7KDB4rFZFGoJfFk2",
+  "data_base64": "AwAAAICiABkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+  "data_slice": [
+    0,
+    45
+  ],
+  "executable": false,
+  "lamports": 759682820,
+  "name": "programdata-spl-token",
+  "note": "SPL Token ProgramData header: authority removed (immutable)",
+  "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+  "slot": 458009934,
+  "source": "api.mainnet-beta.solana.com getMultipleAccounts finalized"
+}

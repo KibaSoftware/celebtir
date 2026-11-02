@@ -1,0 +1,1139 @@
+{
+  "$schema": "/data/v2/schemas/protocol.schema.json",
+  "api_version": "v2",
+  "assessment": "assessed",
+  "chain": "solana",
+  "deprecation": null,
+  "facts": {
+    "admin": {
+      "4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw.owner": {
+        "account": "4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw",
+        "controller": {
+          "evidence": [
+            {
+              "address": "4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw",
+              "field": "owner",
+              "slot": 459677755
+            }
+          ],
+          "value": {
+            "key": "projjosVCPQH49d5em7VYS7fJZzaqKixqKtus7yk416",
+            "kind": "single_key"
+          }
+        },
+        "field": "owner",
+        "power": "parameters"
+      }
+    },
+    "category": "dex",
+    "chain": "solana",
+    "dependencies": {
+      "evidence": [
+        {
+          "address": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+          "field": "transaction sample (122 transactions)",
+          "slot": 459677846
+        }
+      ],
+      "value": {
+        "callees": {},
+        "kind": "sampled"
+      }
+    },
+    "last_reviewed": "2026-10-19",
+    "max_slot": 459677846,
+    "min_slot": 459676930,
+    "name": "Raydium",
+    "oracles": {},
+    "programs": {
+      "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+              "field": "verified_build",
+              "slot": 459676930
+            }
+          ],
+          "value": {
+            "kind": "public_source_unverified",
+            "on_chain_hash": "d4cee0cd4f78f69d05f5d645fc6d120dff830f231162d35cf2b2dae1df7b2c9f",
+            "repo": "https://github.com/raydium-io/raydium-amm"
+          }
+        },
+        "loader": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+              "field": "upgrade_authority",
+              "slot": 459676930
+            },
+            {
+              "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676930
+            }
+          ],
+          "value": {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "4aky1VxQ92ToCKvFtQhj7XbjKH4okmcHHNHDx4RriVgz",
+              "7W4mr6bHDgF1euonrraAF8easT5G6tEiRJdyVqNpu6tn",
+              "AZEvpc6RqVWt5uS1LiAXw9ann6bKKDwFBTCgZVWR2Zna",
+              "AaUu9okTZ9wUBTSYJ3QhXp7ssxGbabsAbyTJ91orVUUq"
+            ],
+            "threshold": 3,
+            "time_lock_secs": 0,
+            "voters": 4
+          }
+        }
+      },
+      "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+              "field": "verified_build",
+              "slot": 459676930
+            }
+          ],
+          "value": {
+            "kind": "public_source_unverified",
+            "on_chain_hash": "f78e9dbc080068facc531ab4b679680dd39efb9d07a08716b37d493e99272fc9",
+            "repo": "https://github.com/raydium-io/raydium-clmm/tree/119ed36bf9f33"
+          }
+        },
+        "loader": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+              "field": "upgrade_authority",
+              "slot": 459676930
+            },
+            {
+              "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676930
+            }
+          ],
+          "value": {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "4aky1VxQ92ToCKvFtQhj7XbjKH4okmcHHNHDx4RriVgz",
+              "7W4mr6bHDgF1euonrraAF8easT5G6tEiRJdyVqNpu6tn",
+              "AZEvpc6RqVWt5uS1LiAXw9ann6bKKDwFBTCgZVWR2Zna",
+              "AaUu9okTZ9wUBTSYJ3QhXp7ssxGbabsAbyTJ91orVUUq"
+            ],
+            "threshold": 3,
+            "time_lock_secs": 0,
+            "voters": 4
+          }
+        }
+      },
+      "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+              "field": "verified_build",
+              "slot": 459676930
+            }
+          ],
+          "value": {
+            "kind": "public_source_unverified",
+            "on_chain_hash": "93cad2458ac72435c94b8ac89faa686987f4e29d2f0e862d546fbc5aa814a0d2",
+            "repo": "https://github.com/raydium-io/raydium-cp-swap/tree/cfdb70a8ca9ea62bb5c304d4492ac0fc371ae8ce"
+          }
+        },
+        "loader": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+              "field": "upgrade_authority",
+              "slot": 459676930
+            },
+            {
+              "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676930
+            }
+          ],
+          "value": {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "4aky1VxQ92ToCKvFtQhj7XbjKH4okmcHHNHDx4RriVgz",
+              "7W4mr6bHDgF1euonrraAF8easT5G6tEiRJdyVqNpu6tn",
+              "AZEvpc6RqVWt5uS1LiAXw9ann6bKKDwFBTCgZVWR2Zna",
+              "AaUu9okTZ9wUBTSYJ3QhXp7ssxGbabsAbyTJ91orVUUq"
+            ],
+            "threshold": 3,
+            "time_lock_secs": 0,
+            "voters": 4
+          }
+        }
+      }
+    },
+    "reviewed_by": null,
+    "sources": [
+      {
+        "address": "4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw",
+        "kind": "admin",
+        "label": "owner",
+        "url": "https://solscan.io/account/4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw"
+      },
+      {
+        "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+        "kind": "multisig",
+        "label": "Squads v4",
+        "url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u"
+      },
+      {
+        "address": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+        "kind": "program",
+        "label": "AMM v4",
+        "url": "https://docs.raydium.io/reference/program-addresses"
+      },
+      {
+        "address": "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "kind": "program",
+        "label": "CLMM",
+        "url": "https://docs.raydium.io/reference/program-addresses"
+      },
+      {
+        "address": "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+        "kind": "program",
+        "label": "CPMM",
+        "url": "https://docs.raydium.io/reference/program-addresses"
+      }
+    ],
+    "tokens": {
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": [
+        "lp"
+      ],
+      "So11111111111111111111111111111111111111112": [
+        "lp"
+      ]
+    },
+    "website": "https://raydium.io/"
+  },
+  "history": [
+    {
+      "assessment": "assessed",
+      "date": "2026-10-21",
+      "fees_usd": 370326,
+      "methodology_version": "0.1",
+      "ratings": {
+        "admin_powers": "high",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1200839089,
+      "volume_usd": 178765360
+    }
+  ],
+  "id": "raydium-amm",
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "metrics": {
+    "asset_groups": {
+      "kind": "unavailable",
+      "reason": "DefiLlama has no per-token breakdown for this protocol"
+    },
+    "defillama_slug": "raydium-amm",
+    "fees": {
+      "change_7d_bp": 557,
+      "days": [
+        {
+          "date": "2026-09-22",
+          "usd": 1758774
+        },
+        {
+          "date": "2026-09-23",
+          "usd": 1143348
+        },
+        {
+          "date": "2026-09-24",
+          "usd": 1249981
+        },
+        {
+          "date": "2026-09-25",
+          "usd": 1124491
+        },
+        {
+          "date": "2026-09-26",
+          "usd": 640832
+        },
+        {
+          "date": "2026-09-27",
+          "usd": 457124
+        },
+        {
+          "date": "2026-09-28",
+          "usd": 835467
+        },
+        {
+          "date": "2026-09-29",
+          "usd": 921995
+        },
+        {
+          "date": "2026-09-30",
+          "usd": 791388
+        },
+        {
+          "date": "2026-10-01",
+          "usd": 716123
+        },
+        {
+          "date": "2026-10-02",
+          "usd": 751498
+        },
+        {
+          "date": "2026-10-03",
+          "usd": 320614
+        },
+        {
+          "date": "2026-10-04",
+          "usd": 396873
+        },
+        {
+          "date": "2026-10-05",
+          "usd": 455603
+        },
+        {
+          "date": "2026-10-06",
+          "usd": 461413
+        },
+        {
+          "date": "2026-10-07",
+          "usd": 543450
+        },
+        {
+          "date": "2026-10-08",
+          "usd": 504345
+        },
+        {
+          "date": "2026-10-09",
+          "usd": 300301
+        },
+        {
+          "date": "2026-10-10",
+          "usd": 222774
+        },
+        {
+          "date": "2026-10-11",
+          "usd": 294469
+        },
+        {
+          "date": "2026-10-12",
+          "usd": 424667
+        },
+        {
+          "date": "2026-10-13",
+          "usd": 408630
+        },
+        {
+          "date": "2026-10-14",
+          "usd": 319889
+        },
+        {
+          "date": "2026-10-15",
+          "usd": 497457
+        },
+        {
+          "date": "2026-10-16",
+          "usd": 451233
+        },
+        {
+          "date": "2026-10-17",
+          "usd": 217279
+        },
+        {
+          "date": "2026-10-18",
+          "usd": 197965
+        },
+        {
+          "date": "2026-10-19",
+          "usd": 407552
+        },
+        {
+          "date": "2026-10-20",
+          "usd": 471293
+        },
+        {
+          "date": "2026-10-21",
+          "usd": 370326
+        }
+      ],
+      "kind": "usd",
+      "latest": 370326
+    },
+    "tvl": {
+      "kind": "usd",
+      "value": 1200839089
+    },
+    "volume": {
+      "change_7d_bp": 518,
+      "days": [
+        {
+          "date": "2026-09-22",
+          "usd": 475876529
+        },
+        {
+          "date": "2026-09-23",
+          "usd": 395667263
+        },
+        {
+          "date": "2026-09-24",
+          "usd": 343217842
+        },
+        {
+          "date": "2026-09-25",
+          "usd": 296807774
+        },
+        {
+          "date": "2026-09-26",
+          "usd": 198971002
+        },
+        {
+          "date": "2026-09-27",
+          "usd": 183982099
+        },
+        {
+          "date": "2026-09-28",
+          "usd": 272138708
+        },
+        {
+          "date": "2026-09-29",
+          "usd": 294623792
+        },
+        {
+          "date": "2026-09-30",
+          "usd": 309848565
+        },
+        {
+          "date": "2026-10-01",
+          "usd": 276039835
+        },
+        {
+          "date": "2026-10-02",
+          "usd": 267938197
+        },
+        {
+          "date": "2026-10-03",
+          "usd": 136769159
+        },
+        {
+          "date": "2026-10-04",
+          "usd": 149585006
+        },
+        {
+          "date": "2026-10-05",
+          "usd": 175830756
+        },
+        {
+          "date": "2026-10-06",
+          "usd": 184687027
+        },
+        {
+          "date": "2026-10-07",
+          "usd": 231296336
+        },
+        {
+          "date": "2026-10-08",
+          "usd": 233184592
+        },
+        {
+          "date": "2026-10-09",
+          "usd": 152049719
+        },
+        {
+          "date": "2026-10-10",
+          "usd": 106105721
+        },
+        {
+          "date": "2026-10-11",
+          "usd": 128648848
+        },
+        {
+          "date": "2026-10-12",
+          "usd": 169579219
+        },
+        {
+          "date": "2026-10-13",
+          "usd": 178088772
+        },
+        {
+          "date": "2026-10-14",
+          "usd": 168853698
+        },
+        {
+          "date": "2026-10-15",
+          "usd": 241672147
+        },
+        {
+          "date": "2026-10-16",
+          "usd": 194714790
+        },
+        {
+          "date": "2026-10-17",
+          "usd": 99604031
+        },
+        {
+          "date": "2026-10-18",
+          "usd": 103736301
+        },
+        {
+          "date": "2026-10-19",
+          "usd": 166444979
+        },
+        {
+          "date": "2026-10-20",
+          "usd": 210526067
+        },
+        {
+          "date": "2026-10-21",
+          "usd": 178765360
+        }
+      ],
+      "kind": "usd",
+      "latest": 178765360
+    }
+  },
+  "program_history": {
+    "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": {
+      "complete": false,
+      "events": [],
+      "scanned": 336,
+      "total": 600
+    },
+    "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": {
+      "complete": false,
+      "events": [],
+      "scanned": 452,
+      "total": 600
+    },
+    "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C": {
+      "complete": false,
+      "events": [],
+      "scanned": 346,
+      "total": 600
+    }
+  },
+  "review": {
+    "awaiting_human_review": true,
+    "due": false,
+    "last_reviewed": "2026-10-19"
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "admin": {
+      "4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw.owner": {
+        "rating": "high",
+        "reason": "`owner` can change parameters, held by single key proj…k416"
+      }
+    },
+    "callees": {},
+    "control_class": "multisig_without_delay",
+    "controller_summary": "Squads 3 of 4 · no delay",
+    "factors": {
+      "admin_powers": {
+        "evidence": [
+          {
+            "address": "4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/4BLNHtVe942GSs4teSZqGX24xwKNkqU7bGgNn3iUiUpw",
+            "field": "owner",
+            "slot": 459677755
+          }
+        ],
+        "next_step": "hold every admin key in a multisig of 3+ voters at a 50%+ threshold → MEDIUM",
+        "rating": "high",
+        "reason": "`owner` can change parameters, held by single key proj…k416"
+      },
+      "code_transparency": {
+        "evidence": [
+          {
+            "address": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+            "field": "verified_build",
+            "slot": 459676930
+          },
+          {
+            "address": "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+            "field": "verified_build",
+            "slot": 459676930
+          },
+          {
+            "address": "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+            "field": "verified_build",
+            "slot": 459676930
+          }
+        ],
+        "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+        "rating": "medium",
+        "reason": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8: source public at https://github.com/raydium-io/raydium-amm, but the deployed build is not verified; CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK: source public at https://github.com/raydium-io/raydium-clmm/tree/119ed36bf9f33, but the deployed build is not verified; CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C: source public at https://github.com/raydium-io/raydium-cp-swap/tree/cfdb70a8ca9ea62bb5c304d4492ac0fc371ae8ce, but the deployed build is not verified"
+      },
+      "dependencies": {
+        "evidence": [
+          {
+            "address": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+            "field": "transaction sample (122 transactions)",
+            "slot": 459677846
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "calls no other programs with user funds"
+      },
+      "oracle_dependency": {
+        "evidence": [
+          {
+            "address": "A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+            "field": "upgrade_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+            "field": "upgrade_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+            "field": "upgrade_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676930
+          }
+        ],
+        "next_step": "not applicable: nothing to improve",
+        "rating": "not_applicable",
+        "reason": "the registry lists no price feeds; the evidence is the core programs' upgrade reads"
+      },
+      "upgrade_control": {
+        "evidence": [
+          {
+            "address": "A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+            "field": "upgrade_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+            "field": "upgrade_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+            "field": "upgrade_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676930
+          }
+        ],
+        "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+        "rating": "medium",
+        "reason": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8: Squads v4 multisig, 3 of 4 voters, time lock 0 s; CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK: Squads v4 multisig, 3 of 4 voters, time lock 0 s; CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C: Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+      },
+      "upgrade_delay": {
+        "evidence": [
+          {
+            "address": "A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+            "field": "upgrade_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+            "field": "upgrade_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+            "field": "upgrade_authority",
+            "slot": 459676930
+          },
+          {
+            "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676930
+          }
+        ],
+        "next_step": "a time lock of 24 h+ → MEDIUM; 5 days+ → LOW",
+        "rating": "high",
+        "reason": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8: time lock 0 s; CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK: time lock 0 s; CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C: time lock 0 s"
+      }
+    },
+    "programs": {
+      "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+              "field": "verified_build",
+              "slot": 459676930
+            }
+          ],
+          "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+          "rating": "medium",
+          "reason": "source public at https://github.com/raydium-io/raydium-amm, but the deployed build is not verified"
+        },
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+              "field": "upgrade_authority",
+              "slot": 459676930
+            },
+            {
+              "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676930
+            }
+          ],
+          "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+          "rating": "medium",
+          "reason": "Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/A7ZG7ByDi8DpzT9Ab7CiXhvgYTJQmaDPJkMDoPitaCQV",
+              "field": "upgrade_authority",
+              "slot": 459676930
+            },
+            {
+              "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676930
+            }
+          ],
+          "next_step": "a time lock of 24 h+ → MEDIUM; 5 days+ → LOW",
+          "rating": "high",
+          "reason": "time lock 0 s"
+        }
+      },
+      "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+              "field": "verified_build",
+              "slot": 459676930
+            }
+          ],
+          "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+          "rating": "medium",
+          "reason": "source public at https://github.com/raydium-io/raydium-clmm/tree/119ed36bf9f33, but the deployed build is not verified"
+        },
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+              "field": "upgrade_authority",
+              "slot": 459676930
+            },
+            {
+              "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676930
+            }
+          ],
+          "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+          "rating": "medium",
+          "reason": "Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/HzD2cCXXT3UQNjMMY6kDv9w6gZ9qquSdfoGXrLL3LXx",
+              "field": "upgrade_authority",
+              "slot": 459676930
+            },
+            {
+              "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676930
+            }
+          ],
+          "next_step": "a time lock of 24 h+ → MEDIUM; 5 days+ → LOW",
+          "rating": "high",
+          "reason": "time lock 0 s"
+        }
+      },
+      "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+              "field": "verified_build",
+              "slot": 459676930
+            }
+          ],
+          "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+          "rating": "medium",
+          "reason": "source public at https://github.com/raydium-io/raydium-cp-swap/tree/cfdb70a8ca9ea62bb5c304d4492ac0fc371ae8ce, but the deployed build is not verified"
+        },
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+              "field": "upgrade_authority",
+              "slot": 459676930
+            },
+            {
+              "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676930
+            }
+          ],
+          "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+          "rating": "medium",
+          "reason": "Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/DMawCQzbgNTmbzaESc7o6pvL1KAeetY8zA7jNpzntHhU",
+              "field": "upgrade_authority",
+              "slot": 459676930
+            },
+            {
+              "address": "tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676930
+            }
+          ],
+          "next_step": "a time lock of 24 h+ → MEDIUM; 5 days+ → LOW",
+          "rating": "high",
+          "reason": "time lock 0 s"
+        }
+      }
+    },
+    "risks": [
+      {
+        "category": "stolen",
+        "factor": "upgrade_delay",
+        "severity": "high",
+        "text": "Funds can be stolen if a harmful upgrade is approved, because it takes effect immediately, before users can withdraw."
+      },
+      {
+        "category": "stolen",
+        "factor": "admin_powers",
+        "severity": "high",
+        "text": "Funds can be stolen if protocol parameters are changed by the holder of key projjosVCPQH49d5em7VYS7fJZzaqKixqKtus7yk416 using `owner`."
+      },
+      {
+        "category": "stolen",
+        "factor": "upgrade_control",
+        "severity": "medium",
+        "text": "Funds can be stolen if a core program is upgraded to new code by 3 of 4 voters of multisig tr8rgazUrZzgdkfc6Q622nVJHMMzh29trdBE2uBHb4u."
+      },
+      {
+        "category": "stolen",
+        "factor": "code_transparency",
+        "severity": "medium",
+        "text": "Funds can be stolen if the deployed code of 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8 differs from its public source, because the build is not verified."
+      },
+      {
+        "category": "stolen",
+        "factor": "code_transparency",
+        "severity": "medium",
+        "text": "Funds can be stolen if the deployed code of CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK differs from its public source, because the build is not verified."
+      },
+      {
+        "category": "stolen",
+        "factor": "code_transparency",
+        "severity": "medium",
+        "text": "Funds can be stolen if the deployed code of CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C differs from its public source, because the build is not verified."
+      }
+    ],
+    "stage": {
+      "missing": [
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8: effective time lock 0 s; CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK: effective time lock 0 s; CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C: effective time lock 0 s; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "admin powers rated Low or Medium",
+          "detail": "HIGH: `owner` can change parameters, held by single key proj…k416",
+          "id": "s1.admin_powers",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "verified builds for all core programs",
+          "detail": "not verified: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8, CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK, CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+          "id": "s1.verified_builds",
+          "met": false,
+          "stage": "stage_1"
+        }
+      ],
+      "next": "stage_1",
+      "requirements": [
+        {
+          "description": "core programs identified in the registry",
+          "detail": "3 core programs",
+          "id": "s0.core_programs",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "public source for every core program",
+          "detail": "all core programs have public source",
+          "id": "s0.public_source",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control readable for every core program",
+          "detail": "upgrade control read for all core programs",
+          "id": "s0.upgrade_control_known",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control rated Low or Medium",
+          "detail": "MEDIUM: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8: Squads v4 multisig, 3 of 4 voters, time lock 0 s; CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK: Squads v4 multisig, 3 of 4 voters, time lock 0 s; CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C: Squads v4 multisig, 3 of 4 voters, time lock 0 s",
+          "id": "s1.upgrade_control",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8: effective time lock 0 s; CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK: effective time lock 0 s; CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C: effective time lock 0 s; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "admin powers rated Low or Medium",
+          "detail": "HIGH: `owner` can change parameters, held by single key proj…k416",
+          "id": "s1.admin_powers",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "no multisig has a single-key config authority",
+          "detail": "no single-key config authority",
+          "id": "s1.config_authority",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "verified builds for all core programs",
+          "detail": "not verified: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8, CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK, CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+          "id": "s1.verified_builds",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "every factor could be read (Unknown caps the Stage at 0)",
+          "detail": "no Unknown factors",
+          "id": "s1.no_unknown",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "core programs immutable, or upgradeable only through on-chain governance with a long delay",
+          "detail": "upgradeable without 30 days+ governance delay: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8, CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK, CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C",
+          "id": "s2.immutable_or_governance",
+          "met": false,
+          "stage": "stage_2"
+        },
+        {
+          "description": "no key can move or freeze user funds",
+          "detail": "no admin key can move or freeze funds",
+          "id": "s2.no_fund_control",
+          "met": true,
+          "stage": "stage_2"
+        }
+      ],
+      "stage": "stage_0"
+    },
+    "tokens": {
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+        "roles": [
+          "lp"
+        ],
+        "symbol": "USDC",
+        "warning": null,
+        "worst": "high"
+      },
+      "So11111111111111111111111111111111111111112": {
+        "roles": [
+          "lp"
+        ],
+        "symbol": "SOL",
+        "warning": null,
+        "worst": "low"
+      }
+    }
+  },
+  "snapshot_date": "2026-10-21",
+  "upgrades": {
+    "average_interval_days": null,
+    "complete": false,
+    "last_upgrade_date": null,
+    "last_upgrade_slot": null,
+    "upgrades": 0,
+    "upgrades_last_30_days": 0
+  }
+}

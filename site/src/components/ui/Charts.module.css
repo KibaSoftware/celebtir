@@ -1,0 +1,114 @@
+.stack {
+  margin: 0;
+}
+
+.bar {
+  display: flex;
+  gap: 2px;
+  height: 14px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.stack[data-compact] .bar {
+  height: 8px;
+}
+
+.segment {
+  flex-basis: 0;
+  min-width: 3px;
+  transition: filter var(--dur-fast) var(--ease);
+}
+
+.segment:hover {
+  filter: brightness(1.15);
+}
+
+/* Unknown and similar segments carry a hatch so they read without colour. */
+.segment[data-pattern="dashed"],
+.key[data-pattern="dashed"] {
+  background-image: repeating-linear-gradient(135deg, rgba(8, 14, 26, 0.55) 0 2px, transparent 2px 5px) !important;
+}
+
+.emptyBar {
+  flex: 1;
+  border: 1px dashed var(--border-strong);
+  border-radius: 4px;
+}
+
+.legend {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 6px var(--space-4);
+}
+
+.legend li {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  align-items: baseline;
+  gap: 8px;
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+}
+
+.legend li[data-zero] {
+  color: var(--ink-muted);
+}
+
+.key {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  align-self: center;
+}
+
+.legendLabel {
+  min-width: 0;
+}
+
+.legendValue {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-primary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.legend li[data-zero] .legendValue {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.legendSub {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.spark {
+  display: block;
+  color: var(--blue);
+}
+
+.noSpark {
+  color: var(--ink-muted);
+}
+
+.share {
+  display: block;
+  width: 100%;
+  min-width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.shareFill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--blue);
+}

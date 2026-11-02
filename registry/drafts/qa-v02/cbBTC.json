@@ -1,0 +1,9 @@
+{
+  "status": "DRAFT: await 24-hour cooling and owner review",
+  "mint": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+  "symbol": "cbBTC",
+  "proposed_kind": "bridged",
+  "display_category": "Bridged or wrapped BTC",
+  "source": "https://www.coinbase.com/cbbtc",
+  "reason": "BTC-backed token on Solana; existing bridged kind avoids a redundant BTC asset class in the provenance taxonomy. Do not infer a bridge controller from this label."
+}

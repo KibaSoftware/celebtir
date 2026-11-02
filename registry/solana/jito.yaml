@@ -1,0 +1,37 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Pool Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb is owned by the SPL Stake Pool program.
+# Its upgrade authority is authority index 1 of a Squads v3 multisig shared with Binance Staked SOL (ADR 021).
+id: jito
+name: Jito
+chain: solana
+category: liquid-staking
+website: https://www.jito.network
+defillama_slug: jito-liquid-staking
+programs:
+  - id: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+    name: SPL Stake Pool
+    role: core
+    source: https://spl.solana.com/stake-pool
+    shared_with: [binance-staked-sol]
+multisigs:
+  - address: 3yqoHFE4nBGchuVH5rJuZMFvsmnaDTuLLdvGPDUEJcbW
+    program: squads-v3
+    vault_index: 1
+    source: https://solscan.io/account/3yqoHFE4nBGchuVH5rJuZMFvsmnaDTuLLdvGPDUEJcbW
+    shared_with: [binance-staked-sol]
+stake_pools:
+  # Manager, staker and deposit/withdraw authorities are read on chain (F3, D2).
+  - account: Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb
+    pool_mint: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+oracles_reviewed_none:
+  source: https://github.com/solana-program/stake-pool
+  reviewed_on: 2026-10-25
+  note: "The SPL stake pool program prices pool tokens from its own stake and reserve account balances; none of its instructions takes a price-oracle account."
+tokens:
+  - mint: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+    roles: [deposit]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

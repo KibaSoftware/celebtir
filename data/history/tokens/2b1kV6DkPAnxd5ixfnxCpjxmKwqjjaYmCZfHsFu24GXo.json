@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 6,
+      "price_usd_micros": 1000484,
+      "supply": 682333039159768
+    }
+  ],
+  "mint": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+  "schema_version": "0.2.0",
+  "symbol": "PYUSD"
+}

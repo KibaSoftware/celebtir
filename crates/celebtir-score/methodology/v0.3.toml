@@ -1,0 +1,103 @@
+# Celebtir methodology v0.3: every threshold the scorer uses (SCO-2).
+# The rules are written next to their numbers. Changing a number here changes
+# ratings without a code change, and needs a new version and a changelog entry.
+#
+# Unknown is not High: missing or unreadable data is Unknown, never Low or N/A.
+# A gap is never filled with an assumption.
+
+version = "0.3"
+
+# Who can replace the code?
+# Low: immutable, or a multisig with >= low_min_voters voters at >= low_min_threshold_pct.
+# Medium: a multisig with >= medium_min_voters voters at >= medium_min_threshold_pct.
+# High: a single key, a smaller multisig, or a multisig whose config authority is one key.
+# Unknown: an unreadable controller, a multisig that cannot act, or a program-derived
+#   address whose controlling program is not resolved by a verified registry declaration.
+# A verified program-derived address rates as its controlling program's upgrade controller.
+# Ratios use voters (members with the Vote permission), not total members.
+[upgrade_control]
+low_min_voters = 5
+low_min_threshold_pct = 60
+medium_min_voters = 3
+medium_min_threshold_pct = 50
+
+# How long between approval and a new version going live?
+# Low: >= low_min_secs, or immutable. Medium: >= medium_min_secs. High: less, or none.
+# Squads v3 has no time-lock field: its delay is "no time lock", rated as none.
+[upgrade_delay]
+low_min_secs = 432000    # 5 days
+medium_min_secs = 86400  # 24 hours
+
+# Can a key change parameters, pause or move funds outside an upgrade?
+# Low: every admin field renounced, parameters-only power held behind a time lock of
+#   at least low_min_time_lock_secs (ADR 003), or a sourced registry review that found
+#   no admin accounts (`admin_reviewed_none`).
+# Medium: parameters or pause held by a multisig meeting the medium multisig bar above.
+# High: anything else.
+# Unknown: no admin accounts read and no sourced review: an empty list is not "none".
+# SPL stake-pool manager, staker and deposit authority hold the parameters power (D2):
+#   fees, validator set and deposit gating; none of them moves or freezes user funds.
+[admin_powers]
+low_min_time_lock_secs = 86400  # 24 hours
+
+# Where do prices come from? Oracle owner programs are classified by registry/oracles.yaml.
+# Low: an established network with a fallback, or a guarded primary (below).
+# Medium: a single established network.
+# High: a protocol-run or single-signer feed, or an unclassified owner, as primary.
+# Unknown: no feeds registered and no sourced review (`oracles_reviewed_none`, then N/A).
+#   Lending and perpetuals cannot be reviewed as having no feeds.
+# Guarded primary (D3): a primary outside established_networks (e.g. Edge by Chaos Labs,
+#   classified "other") rates Low only when the registry records fallback feeds from at
+#   least guarded_primary_min_networks distinct established networks that bound it (the
+#   protocol rejects a primary price outside a threshold of them). The reason names the
+#   primary and its guards.
+[oracle_dependency]
+required_for_categories = ["lending", "perps"]
+established_networks = ["pyth", "switchboard", "chainlink"]
+guarded_primary_min_networks = 2
+
+# Value by control type (D4, option B). Each protocol's TVL goes to the class of its
+# weakest core program's controller:
+#   multisig_without_delay: effective delay of zero (no time lock, or a config authority
+#     that bypasses it);
+#   multisig_short_delay: a delay above zero but below delayed_min_secs;
+#   multisig_with_delay: a delay of at least delayed_min_secs (the Medium upgrade-delay bar).
+# Timelocks follow the same thresholds; the headline "protected" share counts only
+# multisig_with_delay and immutable.
+[value_classes]
+delayed_min_secs = 86400  # 24 hours
+
+# Tokens are rated on four factors and get no Stage (D1).
+# Supply control and Freeze and seize:
+#   Low: the authority is renounced, or held by a verified program-derived address
+#     whose controlling program is immutable or rates Low on upgrade control.
+#   Medium: held by a multisig meeting the Medium bar, or by a program whose upgrade
+#     controller rates Medium.
+#   High: a single key, a weaker multisig, an unrecognized holder, a program rated High,
+#     or any permanent delegate.
+#   Unknown: an off-curve authority whose controlling program is not resolved.
+# Transfer restrictions: Low with no hook, fee or default-frozen accounts; otherwise at
+#   least Medium, and High when the hook or fee authority rates High.
+# Provenance: Low native; Medium bridged.
+#
+# Stages describe control arrangements, not code safety.
+# Unrated: any Stage 0 requirement unmet (the only definition).
+# Stage 0: core programs identified, public source for each, upgrade control readable.
+
+# Stage 1, "Guarded" (mirrors L2Beat's Stage 1).
+[stage1]
+min_upgrade_delay_secs = 432000   # 5 days
+emergency_min_voters = 8
+emergency_min_threshold_pct = 75
+
+# Stage 2, "User-protected". No protocol admin key can move funds or pause the
+# protocol (a pause freezes funds in place). Token-issuer freeze keys on accepted
+# tokens (D6) are rated on the token pages and the collateral warning, and do not
+# count against Stage 2.
+[stage2]
+governance_min_delay_secs = 2592000  # 30 days
+
+# Chains whose protocols are rated. Others are listed as unassessed: their facts
+# are published, but no ratings, Stage or value class (F5).
+[coverage]
+assessed_chains = ["solana"]

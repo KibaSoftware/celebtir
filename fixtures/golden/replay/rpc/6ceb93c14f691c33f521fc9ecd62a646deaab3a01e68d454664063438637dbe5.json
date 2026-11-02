@@ -1,0 +1,42 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "getMultipleAccounts",
+    "params": [
+      [
+        "dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH"
+      ],
+      {
+        "commitment": "finalized",
+        "dataSlice": {
+          "length": 0,
+          "offset": 0
+        },
+        "encoding": "base64"
+      }
+    ]
+  },
+  "response": {
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "context": {
+        "apiVersion": "4.3.0",
+        "slot": 458085408
+      },
+      "value": [
+        {
+          "data": [
+            "",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 2735014001,
+          "owner": "11111111111111111111111111111111",
+          "rentEpoch": 18446744073709551615,
+          "space": 0
+        }
+      ]
+    }
+  }
+}

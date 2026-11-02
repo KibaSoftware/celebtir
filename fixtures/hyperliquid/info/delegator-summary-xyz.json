@@ -1,0 +1,16 @@
+{
+  "anchor_block": 49145769,
+  "host": "api.hyperliquid.xyz",
+  "note": "Stake of the xyz DEX deployer (HIP-4)",
+  "request": {
+    "type": "delegatorSummary",
+    "user": "0x88806a71d74ad0a510b350545c9ae490912f0888"
+  },
+  "response": {
+    "delegated": "501610.91703892",
+    "nPendingWithdrawals": 0,
+    "totalPendingWithdrawal": "0.0",
+    "undelegated": "0.0"
+  }
+}
+

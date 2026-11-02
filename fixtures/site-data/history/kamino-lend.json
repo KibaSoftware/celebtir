@@ -1,0 +1,70 @@
+{
+  "days": [
+    {
+      "assessment": "assessed",
+      "date": "2026-10-15",
+      "fees_usd": 149746,
+      "methodology_version": "0.3",
+      "ratings": {
+        "admin_powers": "unknown",
+        "code_transparency": "low",
+        "dependencies": "unknown",
+        "oracle_dependency": "medium",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1310434543,
+      "volume_usd": null
+    },
+    {
+      "assessment": "assessed",
+      "date": "2026-10-16",
+      "fees_usd": 149746,
+      "methodology_version": "0.3",
+      "ratings": {
+        "admin_powers": "unknown",
+        "code_transparency": "low",
+        "dependencies": "unknown",
+        "oracle_dependency": "medium",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1310434543,
+      "volume_usd": null
+    },
+    {
+      "assessment": "assessed",
+      "date": "2026-10-17",
+      "fees_usd": 149746,
+      "methodology_version": "0.3",
+      "ratings": {
+        "admin_powers": "unknown",
+        "code_transparency": "low",
+        "dependencies": "unknown",
+        "oracle_dependency": "medium",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1310434543,
+      "volume_usd": null
+    }
+  ],
+  "protocol": "kamino-lend",
+  "review": {
+    "awaiting_human_review": false,
+    "due": false,
+    "last_reviewed": "2026-10-17"
+  },
+  "schema_version": "0.2.0",
+  "upgrades": {
+    "average_interval_days": 25.0,
+    "complete": false,
+    "last_upgrade_date": "2026-08-20",
+    "last_upgrade_slot": 440486775,
+    "upgrades": 5,
+    "upgrades_last_30_days": 0
+  }
+}

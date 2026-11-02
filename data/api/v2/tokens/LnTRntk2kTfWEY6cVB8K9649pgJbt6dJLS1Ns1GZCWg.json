@@ -1,0 +1,186 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 9,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+          "field": "freeze_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "immutable"
+      }
+    },
+    "identity": {
+      "issuer": "Lantern",
+      "issuer_url": "https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml",
+      "kind": "liquid-staking",
+      "source": "https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+          "field": "mint_authority",
+          "slot": 459678101
+        },
+        {
+          "address": "6Sw4WcMTakZFrd19Q4hTH8ewiLxXXTCuBdVxAaneg1fo",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/6Sw4WcMTakZFrd19Q4hTH8ewiLxXXTCuBdVxAaneg1fo",
+          "field": "owner",
+          "slot": 459678111
+        }
+      ],
+      "value": {
+        "key": "6Sw4WcMTakZFrd19Q4hTH8ewiLxXXTCuBdVxAaneg1fo",
+        "kind": "unrecognized",
+        "owner_program": null
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 23023031769514,
+    "symbol": "lanternSOL"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+  "price": {
+    "kind": "unavailable",
+    "reason": "DefiLlama has no price for this mint"
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+            "field": "freeze_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no freeze, pause or seize power"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+            "field": "mint_authority",
+            "slot": 459678101
+          },
+          {
+            "address": "6Sw4WcMTakZFrd19Q4hTH8ewiLxXXTCuBdVxAaneg1fo",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/6Sw4WcMTakZFrd19Q4hTH8ewiLxXXTCuBdVxAaneg1fo",
+            "field": "owner",
+            "slot": 459678111
+          }
+        ],
+        "next_step": "hold the mint authority in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "new supply can be minted by unrecognized controller 6Sw4…g1fo"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [
+      {
+        "factor": "supply_control",
+        "severity": "high",
+        "text": "New supply can be minted if unrecognized controller 6Sw4…g1fo uses the mint authority."
+      }
+    ],
+    "symbol": "lanternSOL"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 9,
+      "price_usd_micros": null,
+      "supply": 23023031769514
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "collateral"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+tokens:
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    symbol: USDC
+    type: stablecoin
+    source: https://developers.circle.com/stablecoins/usdc-contract-addresses
+    issuer:
+      name: Circle
+      source: https://www.circle.com/usdc
+    provenance:
+      kind: native
+      source: https://developers.circle.com/stablecoins/usdc-contract-addresses
+  - mint: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+    symbol: JitoSOL
+    type: liquid-staking
+    source: https://www.jito.network/
+    issuer:
+      name: Jito
+      source: https://www.jito.network/
+    provenance:
+      kind: native
+      source: https://www.jito.network/

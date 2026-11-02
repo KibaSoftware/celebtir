@@ -1,0 +1,12 @@
+{
+  "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+  "data_base64": "AgAAACfxkLHTr5i4znFMROjK3/n4/EXLjl+sQgLv+BENl903",
+  "data_slice": null,
+  "executable": true,
+  "lamports": 230130698,
+  "name": "program-spl-token",
+  "note": "SPL Token program account (upgradeable loader since migration)",
+  "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+  "slot": 458009928,
+  "source": "api.mainnet-beta.solana.com getMultipleAccounts finalized"
+}

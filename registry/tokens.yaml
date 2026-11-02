@@ -1,0 +1,494 @@
+# Every token the 12 rated protocols list (TOK-1, TOK-2). Draft by the build loop,
+# 2026-10-19 and 2026-10-20; awaiting the owner's review (BACKLOG 5.5). Kamino's main
+# market has 58 reserves: this file covers the assets the rated protocols share, the
+# five rated LSTs, and Kamino and Jupiter Lend assets above $1M whose mint an issuer or
+# Sanctum's LST list confirms (ADR 019).
+tokens:
+  - mint: So11111111111111111111111111111111111111112
+    symbol: SOL
+    type: other
+    source: https://spl.solana.com/token#wrapping-sol
+    issuer:
+      name: Solana (native mint)
+      source: https://spl.solana.com/token#wrapping-sol
+    provenance:
+      kind: native
+      source: https://spl.solana.com/token#wrapping-sol
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    symbol: USDC
+    type: stablecoin
+    source: https://developers.circle.com/stablecoins/usdc-contract-addresses
+    issuer:
+      name: Circle
+      source: https://www.circle.com/usdc
+    provenance:
+      kind: native
+      source: https://developers.circle.com/stablecoins/usdc-contract-addresses
+  - mint: Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    symbol: USDT
+    type: stablecoin
+    source: https://tether.to/en/supported-protocols/
+    issuer:
+      name: Tether
+      source: https://tether.to/
+    provenance:
+      kind: native
+      source: https://tether.to/en/supported-protocols/
+  - mint: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 6iQKfEyhr3bZMotVkW6beNZz5CPAkiwvgV2CTje9pVSS
+        program: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+        seeds:
+          - kind: address
+            value: Jito4APyf642JPZPx3hGc6WWJ8zPKtRbRs4P815Awbb
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: JitoSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Jito
+      source: https://www.jito.network/
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: BNso1VUJnh4zcfpZa6986Ea66P6TCp59hvtNJ8b1X85
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 75NPzpxoh8sXGuSENFMREidq6FMzEx4g2AfcBEB6qjCV
+        program: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+        seeds:
+          - kind: address
+            value: Hr9pzexrBge3vgmBNRR8u42CNQgBXdHm4UkUN2DH4a7r
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: BNSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Binance
+      source: https://www.binance.com/en/solana-staking
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: EMjuABxELpYWYEwjkKmQKBNCwdaFAy4QYAs6W9bDQDNw
+        program: SPMBzsVUuoHA4Jm6KunbsotaahvVikZs1JyTW6iJvbn
+        seeds:
+          - kind: address
+            value: 8VpRhuxa7sUUepdY3kQiTmX9rS5vx4WgaXiAnXq4KCtr
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: JupSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Jupiter
+      source: https://jup.ag
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 3ndMuPC9Cz5VC4RJkpoPaZz6Px6eVXtRenw9Yi1o2xnA
+        program: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+        seeds:
+          - kind: address
+            value: 2iZHumJq19hyCYkD3xFoZ6dbiFbJ5nqbwALMdJBYQsJa
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: fwdSOL
+    type: liquid-staking
+    source: https://solscan.io/token/cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm
+    issuer:
+      name: Forward Industries
+      source: https://www.forwardindustries.com/
+    provenance:
+      kind: native
+      source: https://solscan.io/token/cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm
+  - mint: Dso1bDeDjCQxTrWHqUUi63oBvV7Mdm6WaobLbQ7gnPQ
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 6727ZvQ2YEz8jky1Z9fqDFG5mYuAvC9G34o2MxwzmrUK
+        program: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+        seeds:
+          - kind: address
+            value: 9mhGNSPArRMHpLDMSmxAvuoizBqtBGqYdT8WGuqgxNdn
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: dSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Drift
+      source: https://app.drift.trade
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: 27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: AVzP2GeRmqGphJsMxWoqjpUifPpCret7LqWhD8NWQK49
+        program: PERPHjGBqRHArX4DySjwM6UJHiR3sWAatqfdBS2qQJu
+        seeds:
+          - kind: literal
+            value: "transfer_authority"
+        source: https://solscan.io/account/38GK1i4cQPAxqrbfKX4RRMNfXpKRn5PgLFHVJeXm1C8Y
+    symbol: JLP
+    type: other
+    source: https://github.com/julianfssen/jupiter-perps-anchor-idl-parsing/blob/main/src/constants.ts
+    issuer:
+      name: Jupiter
+      source: https://jup.ag/perps
+    provenance:
+      kind: native
+      source: https://github.com/julianfssen/jupiter-perps-anchor-idl-parsing/blob/main/src/constants.ts
+  - mint: 3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7
+        program: wormDTUJ6AWPNvk59vGQbDvGJmqbDTdgWgAqcLBCgUb
+        seeds:
+          - kind: literal
+            value: "mint_signer"
+        source: https://github.com/wormhole-foundation/wormhole/blob/main/solana/modules/token_bridge/program/src/accounts.rs
+    symbol: WBTC
+    type: bridged
+    source: https://github.com/wormhole-foundation/wormhole-token-list/blob/main/content/by_dest.csv
+    issuer:
+      name: Wormhole (Portal)
+      source: https://portalbridge.com/
+    provenance:
+      kind: bridged
+      bridge: Wormhole (Portal)
+      backing_chain: ethereum
+      backing_address: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"
+      source: https://github.com/wormhole-foundation/wormhole-token-list/blob/main/content/by_dest.csv
+  - mint: 7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7
+        program: wormDTUJ6AWPNvk59vGQbDvGJmqbDTdgWgAqcLBCgUb
+        seeds:
+          - kind: literal
+            value: "mint_signer"
+        source: https://github.com/wormhole-foundation/wormhole/blob/main/solana/modules/token_bridge/program/src/accounts.rs
+    symbol: WETH
+    type: bridged
+    source: https://github.com/wormhole-foundation/wormhole-token-list/blob/main/content/by_dest.csv
+    issuer:
+      name: Wormhole (Portal)
+      source: https://portalbridge.com/
+    provenance:
+      kind: bridged
+      bridge: Wormhole (Portal)
+      backing_chain: ethereum
+      backing_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+      source: https://github.com/wormhole-foundation/wormhole-token-list/blob/main/content/by_dest.csv
+  - mint: cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij
+    symbol: cbBTC
+    type: other
+    source: https://www.coinbase.com/cbbtc
+    issuer:
+      name: Coinbase
+      source: https://www.coinbase.com/cbbtc
+    provenance:
+      kind: native
+      source: https://www.coinbase.com/cbbtc
+  - mint: sctmB7GPi5L2Q5G9tUSzXvhZ4YiDMEGcRov9KfArQpx
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 7cWNhDsHe1m36ttDkJVBgbee1hRFvPqWZT2iWaBAyYGW
+        program: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+        seeds:
+          - kind: address
+            value: pyZMBjpWsVjKANAYK5mpNbKiws2krjRPZ2N2UYCSnbP
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: dfdvSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: DeFi Development Corp
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 3JLPCS1qM2zRw3Dp6V4hZnYHd4toMNPkNesXdX9tg6KM
+        program: MarBmsSgKXdrN1egZf5sqe1TMai9K1rChYNDJgjq7aD
+        seeds:
+          - kind: address
+            value: 8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC
+          - kind: literal
+            value: "st_mint"
+        source: https://github.com/marinade-finance/liquid-staking-program/blob/main/programs/marinade-finance/src/state/mod.rs
+    symbol: mSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Marinade
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 2rMuGTyXCqCHZBSu6NZR9Aq8MhZX9gLkCHoQsPhSj2YF
+        program: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+        seeds:
+          - kind: address
+            value: 3wK2g8ZdzAH8FJ7PKr2RcvGh7V9VYson5hrVsJM5Lmws
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: hSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Helius
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: vSoLxydx6akxyMD9XEcPvGYNGq6Nn66oqVb3UkGkei7
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: GdNXJobf8fbTR5JSE7adxa6niaygjx4EEbnnRaDCHMMW
+        program: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+        seeds:
+          - kind: address
+            value: Fu9BYC6tWBo1KMKaP3CFoKfRhqv9akmy3DuYwnCyWiyC
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: vSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: The Vault
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 6WecYymEARvjG5ZyqkrVQ6YkhPfujNzWpSPwNKXHCbV2
+        program: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+        seeds:
+          - kind: address
+            value: stk9ApL5HeVAwPLr3TLhDXdZS8ptVu7zp6ov8HFDuMi
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: bSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: BlazeStake
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: pSo1f9nQXWgXibFtKf7NWYxb5enAM4qfP6UJSiXRQfL
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 2zeXA69dFoMLFLdzCfcff35aL7Y7uBZnjKBGWtESgVfS
+        program: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+        seeds:
+          - kind: address
+            value: pSPcvR8GmG9aKDUbn9nbKYjkxt9hxMS7kF1qqKJaPqJ
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: pSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Phantom
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: BonK1YhkXEGLZzwtcvRTip3gAL9nCeQD7ppZBLXhtTs
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 9LcmMfufi8YUcx83RALwF9Y9BPWZ7SqGy4D9VLe2nhhA
+        program: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+        seeds:
+          - kind: address
+            value: ArAQfbzsdotoKB5jJcZa3ajQrrPcWr2YQoDAEAiFxJAC
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: bonkSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: bonkSOL pool operator
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: 7Q2afV64in6N6SeZsAAB81TJzwDoD6zpqmHkzi9Dcavn
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: HbJTxftxnXgpePCshA8FubsRj9MW4kfPscfuUfn44fnt
+        program: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+        seeds:
+          - kind: address
+            value: CtMyWsrUtAwXWiGr9WjHT5fC3p3fgV8cyGpLTo2LJzG1
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: JSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: JPool
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: strng7mqqc1MBJJV6vMzYbEqnwVGvKKGKedeCvtktWA
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: ABCTazdzA7j6CHbnuetnWuvpeKh2XmxqVP75D8KJfsSK
+        program: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+        seeds:
+          - kind: address
+            value: GZDX5JYXDzCEDL3kybhjN7PSixL4ams3M2G4CvWmMmm5
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: strongSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Stronghold
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 6Sw4WcMTakZFrd19Q4hTH8ewiLxXXTCuBdVxAaneg1fo
+        program: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+        seeds:
+          - kind: address
+            value: LW3qEdGWdVrxNgxSXW8vZri7Jifg4HuKEQ1UABLxs3C
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: lanternSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Lantern
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: picobAEvs6w7QEknPce34wAE4gknZA9v5tTonnmHYdX
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: 4At8nQXanWgRvjbrVXmxMBBdfz39txWVm4SiXEoP1kGh
+        program: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+        seeds:
+          - kind: address
+            value: 8Dv3hNYcEWEaa4qVx9BTN1Wfvtha1z8cWDUXb7KVACVe
+          - kind: literal
+            value: "withdraw"
+        source: https://github.com/solana-program/stake-pool/blob/main/program/src/lib.rs
+    symbol: picoSOL
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: picoSOL pool operator
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: 5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm
+    # Re-derived and matched to the on-chain authority at slot 461325171 (finalized).
+    authority_pdas:
+      - key: AYhux5gJzCoeoc1PoJ1VxwPDe22RwcvpHviLDD1oCGvW
+        program: 5ocnV1qiCgaQR8Jb8xWnVbApfaygJ8tNoZfgPwsgx9kx
+        seeds:
+          - kind: literal
+            value: "state"
+        source: https://github.com/igneous-labs/S/blob/66de438b9e049aacc193b5795d26ac055d86d770/libs/s-controller-lib/src/lib.rs
+    symbol: INF
+    type: liquid-staking
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    issuer:
+      name: Sanctum
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+    provenance:
+      kind: native
+      source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+  - mint: 2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo
+    symbol: PYUSD
+    type: stablecoin
+    source: https://docs.paxos.com/guides/stablecoin/pyusd/mainnet
+    issuer:
+      name: Paxos
+      source: https://www.paxos.com/pyusd
+    provenance:
+      kind: native
+      source: https://docs.paxos.com/guides/stablecoin/pyusd/mainnet
+  - mint: 2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH
+    symbol: USDG
+    type: stablecoin
+    source: https://docs.paxos.com/guides/stablecoin/usdg/mainnet
+    issuer:
+      name: Paxos
+      source: https://www.paxos.com/usdg
+    provenance:
+      kind: native
+      source: https://docs.paxos.com/guides/stablecoin/usdg/mainnet
+  - mint: HzwqbKZw8HxMN6bF2yFZNrht3c2iXXzpKcFu7uBEDKtr
+    symbol: EURC
+    type: stablecoin
+    source: https://developers.circle.com/stablecoins/eurc-contract-addresses
+    issuer:
+      name: Circle
+      source: https://www.circle.com/eurc
+    provenance:
+      kind: native
+      source: https://developers.circle.com/stablecoins/eurc-contract-addresses
+  - mint: JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD
+    symbol: JupUSD
+    type: stablecoin
+    source: https://developers.jup.ag/docs/jupusd/index.md
+    issuer:
+      name: Jupiter
+      source: https://jup.ag
+    provenance:
+      kind: native
+      source: https://developers.jup.ag/docs/jupusd/index.md
+  - mint: JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN
+    symbol: JUP
+    type: governance
+    source: https://developers.jup.ag/docs/llms-full.txt
+    issuer:
+      name: Jupiter
+      source: https://jup.ag
+    provenance:
+      kind: native
+      source: https://developers.jup.ag/docs/llms-full.txt

@@ -1,0 +1,12 @@
+{
+  "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+  "data_base64": "AgAAAIRMohNu7QFIhSZnG4DdIQLFGAqjMqCcvme5zoE+LQAr",
+  "data_slice": null,
+  "executable": true,
+  "lamports": 33141440,
+  "name": "program-kamino-lend",
+  "note": "Kamino Lend program account (upgradeable loader)",
+  "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+  "slot": 458009913,
+  "source": "api.mainnet-beta.solana.com getMultipleAccounts finalized"
+}

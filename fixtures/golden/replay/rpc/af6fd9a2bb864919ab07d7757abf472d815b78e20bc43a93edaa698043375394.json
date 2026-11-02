@@ -1,0 +1,42 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "getMultipleAccounts",
+    "params": [
+      [
+        "6WU8Nxarf9fudRK5atWwjLY4vFaw5UrrWhL88qz7iCMJ"
+      ],
+      {
+        "commitment": "finalized",
+        "dataSlice": {
+          "length": 45,
+          "offset": 0
+        },
+        "encoding": "base64"
+      }
+    ]
+  },
+  "response": {
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "context": {
+        "apiVersion": "4.3.0",
+        "slot": 458085503
+      },
+      "value": [
+        {
+          "data": [
+            "AwAAAAAvaxoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 1477113840,
+          "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+          "rentEpoch": 0,
+          "space": 212101
+        }
+      ]
+    }
+  }
+}

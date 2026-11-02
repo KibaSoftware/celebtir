@@ -1,0 +1,22 @@
+[package]
+name = "celebtir-diff"
+description = "Celebtir change detection: typed events between two daily snapshots."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+
+[dependencies]
+celebtir-core.workspace = true
+celebtir-score.workspace = true
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

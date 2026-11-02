@@ -1,0 +1,97 @@
+{
+  "$schema": "/data/v2/schemas/summary.schema.json",
+  "api_version": "v2",
+  "assessed_chains": [
+    "solana"
+  ],
+  "deprecation": null,
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.3",
+  "protocols": [
+    {
+      "assessment": "assessed",
+      "category": "lending",
+      "chain": "solana",
+      "control_class": "multisig_with_delay",
+      "controller_summary": "Squads 5 of 10 · 24 h delay",
+      "id": "kamino-lend",
+      "links": {
+        "api": "/data/v2/protocols/kamino-lend.json",
+        "badge": "/badges/kamino-lend.svg",
+        "markdown": "/protocols/kamino-lend.md",
+        "page": "/protocols/kamino-lend/"
+      },
+      "name": "Kamino Lend",
+      "ratings": {
+        "admin_powers": "unknown",
+        "code_transparency": "low",
+        "dependencies": "unknown",
+        "oracle_dependency": "medium",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1310434543
+    },
+    {
+      "assessment": "assessed",
+      "category": "liquid-staking",
+      "chain": "solana",
+      "control_class": "unrecognized",
+      "controller_summary": "Program-derived, controller unresolved",
+      "id": "spl-stake-pool",
+      "links": {
+        "api": "/data/v2/protocols/spl-stake-pool.json",
+        "badge": "/badges/spl-stake-pool.svg",
+        "markdown": "/protocols/spl-stake-pool.md",
+        "page": "/protocols/spl-stake-pool/"
+      },
+      "name": "SPL Stake Pool",
+      "ratings": {
+        "admin_powers": "unknown",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "unknown",
+        "upgrade_control": "unknown",
+        "upgrade_delay": "unknown"
+      },
+      "stage": "unrated",
+      "tvl_usd": null
+    }
+  ],
+  "schema_version": "2.0.0",
+  "snapshot_date": "2026-10-17",
+  "value_by_control": {
+    "all": {
+      "classes": {
+        "immutable": 0,
+        "multisig_short_delay": 0,
+        "multisig_with_delay": 1310434543,
+        "multisig_without_delay": 0,
+        "single_key": 0,
+        "unrecognized": 0
+      },
+      "total": 1310434543
+    },
+    "by_category": {
+      "lending": {
+        "classes": {
+          "immutable": 0,
+          "multisig_short_delay": 0,
+          "multisig_with_delay": 1310434543,
+          "multisig_without_delay": 0,
+          "single_key": 0,
+          "unrecognized": 0
+        },
+        "total": 1310434543
+      }
+    },
+    "excluded": [
+      "spl-stake-pool"
+    ]
+  }
+}

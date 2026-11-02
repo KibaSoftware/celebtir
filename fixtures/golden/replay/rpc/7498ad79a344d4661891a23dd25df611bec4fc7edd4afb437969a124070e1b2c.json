@@ -1,0 +1,54 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "getMultipleAccounts",
+    "params": [
+      [
+        "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+        "3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C"
+      ],
+      {
+        "commitment": "finalized",
+        "dataSlice": {
+          "length": 0,
+          "offset": 0
+        },
+        "encoding": "base64"
+      }
+    ]
+  },
+  "response": {
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "context": {
+        "apiVersion": "4.3.0",
+        "slot": 458085395
+      },
+      "value": [
+        {
+          "data": [
+            "",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 1825031,
+          "owner": "rec5EKMGg6MxZYaMdyBfgwp4d5rB9T1VQH5pJv5LtFJ",
+          "rentEpoch": 18446744073709551615,
+          "space": 134
+        },
+        {
+          "data": [
+            "",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 200726442,
+          "owner": "HFn8GnPADiny6XqUoWE8uRPPxb29ikn4yTuPa9MF2fWJ",
+          "rentEpoch": 18446744073709551615,
+          "space": 28712
+        }
+      ]
+    }
+  }
+}

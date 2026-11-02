@@ -1,0 +1,107 @@
+{
+  "$defs": {
+    "Address": {
+      "description": "An on-chain address in its chain's canonical text form (base58 on Solana,\n0x-hex on EVM). Format checks belong to the registry and collectors.",
+      "type": "string"
+    },
+    "ProgramSource": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Address"
+        },
+        "name": {
+          "type": "string"
+        },
+        "source_code": {
+          "$ref": "#/$defs/SourceCode"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "source_code"
+      ],
+      "type": "object"
+    },
+    "SourceCode": {
+      "description": "Where a program's source is published, or a sourced finding that it is not.",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "commit": {
+              "description": "The full 40-character commit the program ID is declared at.",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "evidence": {
+              "description": "The page that ties this program ID to that source (a\n`declare_id!`, the publisher's program list).",
+              "format": "uri",
+              "type": "string"
+            },
+            "kind": {
+              "const": "public",
+              "type": "string"
+            },
+            "path": {
+              "description": "Path inside the repository, when the repo holds several programs.",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "repo": {
+              "description": "A repository URL: `https://github.com/<owner>/<repo>` (or GitLab).",
+              "format": "uri",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "repo",
+            "evidence"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "evidence": {
+              "description": "Where the search ended: the publisher's program list.",
+              "format": "uri",
+              "type": "string"
+            },
+            "kind": {
+              "const": "none_found",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "evidence"
+          ],
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "`registry/programs.yaml`: source-code facts keyed by program ID (F1), so\na program shared by several protocols carries one fact.",
+  "properties": {
+    "programs": {
+      "items": {
+        "$ref": "#/$defs/ProgramSource"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "programs"
+  ],
+  "title": "ProgramsFile",
+  "type": "object"
+}

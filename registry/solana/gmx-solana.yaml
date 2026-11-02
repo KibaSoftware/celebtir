@@ -1,0 +1,499 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Selected to meet the two-per-category minimum (ADR 019).
+# Admin: the Store's authority, vault 1 of the same multisig. The Store is bytemuck (Pod, explicit padding), so its fields sit at their sequential offsets.
+id: gmx-solana
+name: GMX Solana
+chain: solana
+category: perps
+website: https://gmtrade.xyz
+defillama_slug: gmx-solana
+programs:
+  - id: Gmso1uvJnLbawvw7yezdfCDcPydwW2s2iqG3w6MDucLo
+    name: Store
+    role: core
+    source: https://docs.rs/crate/gmsol-store/latest/source/src/lib.rs
+multisigs:
+  - address: CxnEVpQQcYa628TywzHGXeJ2jdVmbU51rnERat9xunP1
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/CxnEVpQQcYa628TywzHGXeJ2jdVmbU51rnERat9xunP1
+  - address: CxnEVpQQcYa628TywzHGXeJ2jdVmbU51rnERat9xunP1
+    program: squads-v4
+    vault_index: 1
+    source: https://solscan.io/account/CxnEVpQQcYa628TywzHGXeJ2jdVmbU51rnERat9xunP1
+admin_accounts:
+  - account: CTDLvGGXnoxvqLyTpGzdGLg9pD6JexKxKXSV8tqqo8bN
+    idl: idl/gmx-solana-store.json
+    field: authority
+    power: parameters
+    source: https://solscan.io/account/CTDLvGGXnoxvqLyTpGzdGLg9pD6JexKxKXSV8tqqo8bN
+oracles:
+  # The Store token map 7cEiyyEB2VGMtnKLb7Ro7SsJKYZVBZjpS8ihBD8jR938: every enabled token's expected provider is
+  # index 0, `ChainlinkDataStreams` (crates/utils/src/oracle.rs); `account` is its Data Streams
+  # feed ID, verified on chain by the Chainlink Data Streams verifier program.
+  # Feeds re-read at slot 461325171.
+  - account: 18sWerz9xnPSK4hvhYndd2vrPvX6yTcUU5jYuJMipNj
+    market: AAPL
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13uLN2HjRTnnRzKTvQU51DBFJbkHh9b5xo7UUyUWEfE
+    market: AAVE
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 147duoVux6yWUG5SAG9n8SoxRZ1FxmQwd53CCisSMJX
+    market: ADA
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18xDYTuv9Q34H4stbx915haTufDPpjPKPRKMGwT9rrn
+    market: AMZN
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13jTrTiD6HAkCUCd7RrRU2iSF4MLJeQ4kbG29SmLtbw
+    market: APE
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13h2yfF4RJRoN7z3wQUNAg3XSVW1v4aTgMVH51EEtNR
+    market: ARB
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14AzBr8HXGJ9zTg1BjVcA7eMPcYxWEQA35ZxnkDbC1t
+    market: ASTER
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18rDGXrfXYo4DjjF72qYgiP81FuDM9fzEKQzGffia3u
+    market: AUD
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14GWgDna9JNA24z9fSy1zFHcvQnnpTZWFvDLsHPmB6G
+    market: AVAX
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13krhX6Xt9R42P6tbMUK9acUwyHqpiAyGh9N6YWpc6y
+    market: BCH
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13qhrqfnLsSYCjye9k9ncuhgx7Fg8FWyrSAbWC9J6v1
+    market: BNB
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14KFdSNnvxhfkP12c8Atn1Qy7M45x6TjwjtjBsT6REt
+    market: BOME
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13rrYZ18CSrorqkqdma9Ma7Q3ewuCVwhB2qUqTXwEpG
+    market: BONK
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14CUCU7nzYBAyBzfYqv5gTMy4WeBEYHzJMShRq3cez3
+    market: BTC
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1BGVDZpULDaRVqSGb7hof3ykzyYineP3GKDvSGKAc1a
+    market: BZ
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13xH4kaU4V3FQJ42pqUb9Jt4rygArUry3axUkmafpxB
+    market: DOGE
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14XjxkETqCaaM3SP8b53454JRAGsVpn97Wsi2ftWoZt
+    market: DOT
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13sKDNyjq9DMf6SNLt3FLjX3uZgaV3S1NjfNcXh8r6c
+    market: ENA
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13zYoj5QEwisVa2HMX3c3HAfogqFWhzbeqAnuY2gxU8
+    market: ETH
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18iVBcWJXPPq52yD1E7RGo2gbPbY9HXgsXyYXThqM85
+    market: EUR
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13hhA3zLP5jp9GUzVCB3bxMba3kuRPSrQG1ECWso7CH
+    market: FARTCOIN
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18SyetUzS5Q3R7wbgeJxZpTooX93r1nMx8ocdm7ShxW
+    market: GBP
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13jR6dSgVTHxanZTeuPqnHZksZ6NnExGeYbWTaGLbcb
+    market: GMX
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18BUkzs6x4C3mK1W1NPHxdZZvnvFaQ5QXkX5Zx5ggBz
+    market: GOOGL
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14PDiyLur82KYs8QgDAThnMxVfw62FVK3YnppgpzSJ4
+    market: HYPE
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 142piXHY3XQVn19TYYMGdrFYa48nomCJigjji8EW7dA
+    market: LINK
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13riEFkLzduiXrJydxNoupgwDBqnpyvSBsEtVHvwvps
+    market: LIT
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13ra4Uxj6iTKe2pTsLzQ5nm4xJTpvMoTxHnFmPKGbNr
+    market: LTC
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13qVKFKFpACX7ZPGaWLAb5Sv8yN8C9RYX3Bv9N6uDhU
+    market: MELANIA
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18XqkJkBryttEbi26BfPF6qz3dZcHU1ympWiL7UHRkF
+    market: META
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18QafaofAKExuxMMNg4SQthAAhGPEyqqsKMGvcL15hs
+    market: MSFT
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18AmC9bK5HfN44bZkRpqQH43DXLSq2vSMd7n23n6DqJ
+    market: MSTR
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1BMX7Vbh7q3GVm75FLg3HZsaMWQPm4nP2teB1XNsz5C
+    market: NATGAS
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1433VbvDLMCUjhZGck6zmRwUQLRuFoanhQqXFF6t87N
+    market: NEAR
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18gBSMyKC9eru7t5ACQEnNAqXyYUsYwDgJYL4AiRgX6
+    market: NVDA
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18bjENyhAfKvpwCSyZqV8QFnexSJyngZdoGMgyKqAEF
+    market: NZD
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 146ihbn1Sp7AnCMmD2Vqb9dCUWBAcLoefwsqhsnW8Wd
+    market: ONDO
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13pU5Yduzg2THVAsEdXb1h2PaFpLd3St16VKm1Kjkz3
+    market: PEPE
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13otMD39rMdNRreWdjY1y926caVQM2BLkH3ZK37ThXW
+    market: PUMP
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18Tu15qAcRgzri2kbnBmKKkwGvjUZ6jVZH1CKuqKS5W
+    market: QQQ
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13xk48rmEkKmuFwua4Wjc1ePj9TrkKvcQ5YuyC4xHiB
+    market: SHIB
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14HefJnxgiYQ6qiGL5b6GVZVUSAFpmehRdBJRaZ6GKx
+    market: SOL
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1B3BRNUHmsgsSAdTLUUSuEryQenWYNEfZxmR5ZoFD8x
+    market: SPCX
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 188bmg2W6eGzfuWa1xWDKaLWtMyojKZZEFc1EnuQKFt
+    market: SPY
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13uUXzE1xGSRDFsaPV4WjUABY2BWGhfz4Y8PgNdePWN
+    market: SUI
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13jxRMA4vbqsSkyh4DN1hCHBkVZcNdp3yK1tUqaoJfs
+    market: TAO
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14WxvNQRst8FDA4tNzxkoyYnVX3oe7LxfmUzL9js27f
+    market: TON
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14Tx6Z2FQXKxuJhYu7oPSeyRqUVgXNqMmbVRUaGMHVk
+    market: TRUMP
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13i8CUGz21rwYap7Bngps8hsDVrFsSXjn3DoRNw6PfX
+    market: TRX
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18MAcEvgzQoAktRTsNhPo4Cb6Gtp7L2X5hAEeiYtD13
+    market: TSLA
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 141es2EHsWNNYNiSXdf36LNMTtLxGCFfEfCbw7aNaav
+    market: UNI
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 149eGQvrtmymuPsmd3EhYzYVboeAvDRx4cS3MExZuMj
+    market: USDC
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18DQi6VRNSGxTr2XSNbxNVKJijYTiWmms61mar2ufRw
+    market: USDCAD
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18piHvZeGFcmvU8QR8tzCkyZZj9Aiv2uj4EUrbckvRN
+    market: USDCHF
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 18F6QJCbiHAtUcLbHGmyeCXsDTSzYbxCSkFhTQiwhap
+    market: USDJPY
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 188dvn9tyoS4A5fMg2Dbj5XBVGBvDu9yLZo5KSMXPnD
+    market: USDMXN
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14EmEDM462s7CwZLweUnrURe4FG2iPNBwYBgJ8ytnDx
+    market: USDT
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13jyDeqh4Sn5NnChgMDk5SbQ9XCSzXDx3k83eHFvSD6
+    market: VVV
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14CUCU7nzYBAyBzfYqv5gTMy4WeBEYHzJMShRq3cez3
+    market: WBTC
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13zYoj5QEwisVa2HMX3c3HAfogqFWhzbeqAnuY2gxU8
+    market: WETH
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13jR6dSgVTHxanZTeuPqnHZksZ6NnExGeYbWTaGLbcb
+    market: WGMX
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14PhB4uweqPZQSgJemsyKFrVTfLjtRSQKwCjhCPA4Bn
+    market: WIF
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 141KTzZoZcHuH6eoLVXSkzFKbDE4v6e6VSPXfK6QboN
+    market: WLD
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13uSTrQUtxNGXHaMaAtsjR6xjBgdUq52CABvmKMNSER
+    market: WLFI
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14HefJnxgiYQ6qiGL5b6GVZVUSAFpmehRdBJRaZ6GKx
+    market: WSOL
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1AqUiVXH1A9cExgWtQXyGvtA2afoDePWqvB6scrcHFo
+    market: WTI
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1AmC72ASs7UMD2Vbbjc2dcDbGe3vkT6DfxPxdSciLz4
+    market: XAG
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1Awk1hMG4m63pLRQgW9cCfK51w4RABwLmW97UptUDb3
+    market: XAU
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1Aygnv8YN1RFKAojt3X83nLfXMgnTCqWg6m8kyymdfV
+    market: XCU
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13xgLefH9m6ucxoTYarw81d2ny5zLunjkJZ9nkNoRey
+    market: XLM
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 149b1o5Max1gFNUkhcKbNtt57HjKkty9UdXTUngrXgu
+    market: XMR
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1B2PJkYy4oa5YrpQUvz4tRyVT7qt8HVVyAcjok3E4Gs
+    market: XPD
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 13mZJaZ36zn5EaxpY3jKMZr6X5wujrm6mRdAAgFh39T
+    market: XPL
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 1BSa52DfAMnUZqgAH7oafUbeBnhAe2efMKDUAWobitT
+    market: XPT
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14KeKBMtoWuz3B2kDxRPkLZ4Lnt32Wa8EuJuJbX33QQ
+    market: XRP
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+  - account: 14CrXQzP5Ero3NvmW92uLSqgWDRqU2eEdKJTP8CMsuL
+    market: ZEC
+    role: primary
+    provider: Chainlink Data Streams
+    verified_by: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    source: https://github.com/gmsol-labs/gmx-solana/blob/8af1e70c0c0b6ff9d6b41ba4997910588fbcec28/crates/utils/src/oracle.rs
+tokens:
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    roles: [deposit]
+  - mint: So11111111111111111111111111111111111111112
+    roles: [deposit]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

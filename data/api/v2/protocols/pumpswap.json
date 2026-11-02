@@ -1,0 +1,868 @@
+{
+  "$schema": "/data/v2/schemas/protocol.schema.json",
+  "api_version": "v2",
+  "assessment": "assessed",
+  "chain": "solana",
+  "deprecation": null,
+  "facts": {
+    "admin": {
+      "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.admin": {
+        "account": "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
+        "controller": {
+          "evidence": [
+            {
+              "address": "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
+              "field": "admin",
+              "slot": 459676851
+            },
+            {
+              "address": "8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676851
+            }
+          ],
+          "value": {
+            "address": "8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "4tbEe4AquJWyMh7f7yE5poFChhsuPbeGh7EHVQCvq2N8",
+              "5sFJMw5dC59oKGKA9LgeYQCSmYS6rLeCegxMkcM2Pwby",
+              "6W6qsDbocrEs3vjri5Di15bf9PLRYhfxekPk25MhVHWz",
+              "7zc8kzBr5wbsQKxYYv9uCMgfcW5zjxLEopvmuf3ig6iw"
+            ],
+            "threshold": 3,
+            "time_lock_secs": 0,
+            "voters": 4
+          }
+        },
+        "field": "admin",
+        "power": "pause"
+      }
+    },
+    "category": "dex",
+    "chain": "solana",
+    "dependencies": {
+      "evidence": [
+        {
+          "address": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+          "field": "transaction sample (38 transactions)",
+          "slot": 459676852
+        }
+      ],
+      "value": {
+        "callees": {
+          "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ": {
+            "upgrade_control": {
+              "evidence": [
+                {
+                  "address": "75Uu23mqWBb8LM8vDppqC1mQAnCcBuLXhVaDezVMQLRw",
+                  "chain": "solana",
+                  "explorer_url": "https://solscan.io/account/75Uu23mqWBb8LM8vDppqC1mQAnCcBuLXhVaDezVMQLRw",
+                  "field": "upgrade_authority",
+                  "slot": 459676889
+                },
+                {
+                  "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+                  "chain": "solana",
+                  "explorer_url": "https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+                  "field": "threshold, time_lock, members, config_authority",
+                  "slot": 459676586
+                }
+              ],
+              "value": {
+                "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+                "config_authority": null,
+                "kind": "multisig",
+                "multisig_kind": "squads_v4",
+                "signers": [
+                  "4tbEe4AquJWyMh7f7yE5poFChhsuPbeGh7EHVQCvq2N8",
+                  "5sFJMw5dC59oKGKA9LgeYQCSmYS6rLeCegxMkcM2Pwby",
+                  "6W6qsDbocrEs3vjri5Di15bf9PLRYhfxekPk25MhVHWz",
+                  "7zc8kzBr5wbsQKxYYv9uCMgfcW5zjxLEopvmuf3ig6iw"
+                ],
+                "threshold": 3,
+                "time_lock_secs": 0,
+                "voters": 4
+              }
+            }
+          }
+        },
+        "kind": "sampled"
+      }
+    },
+    "last_reviewed": "2026-10-19",
+    "max_slot": 459676889,
+    "min_slot": 459676585,
+    "name": "PumpSwap",
+    "oracles": {},
+    "programs": {
+      "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+              "field": "verified_build",
+              "slot": 459676585
+            }
+          ],
+          "value": {
+            "kind": "public_source_unverified",
+            "repo": "https://github.com/pump-fun"
+          }
+        },
+        "loader": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+              "field": "upgrade_authority",
+              "slot": 459676585
+            },
+            {
+              "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676586
+            }
+          ],
+          "value": {
+            "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "4tbEe4AquJWyMh7f7yE5poFChhsuPbeGh7EHVQCvq2N8",
+              "5sFJMw5dC59oKGKA9LgeYQCSmYS6rLeCegxMkcM2Pwby",
+              "6W6qsDbocrEs3vjri5Di15bf9PLRYhfxekPk25MhVHWz",
+              "7zc8kzBr5wbsQKxYYv9uCMgfcW5zjxLEopvmuf3ig6iw"
+            ],
+            "threshold": 3,
+            "time_lock_secs": 0,
+            "voters": 4
+          }
+        }
+      }
+    },
+    "reviewed_by": null,
+    "sources": [
+      {
+        "address": "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
+        "kind": "admin",
+        "label": "admin",
+        "url": "https://solscan.io/account/ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw"
+      },
+      {
+        "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+        "kind": "multisig",
+        "label": "Squads v4",
+        "url": "https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW"
+      },
+      {
+        "address": "8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at",
+        "kind": "multisig",
+        "label": "Squads v4",
+        "url": "https://solscan.io/account/8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at"
+      },
+      {
+        "address": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+        "kind": "program",
+        "label": "PumpSwap AMM",
+        "url": "https://github.com/pump-fun/pump-public-docs/blob/main/docs/PUMP_SWAP_README.md"
+      }
+    ],
+    "tokens": {
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": [
+        "lp"
+      ],
+      "So11111111111111111111111111111111111111112": [
+        "lp"
+      ]
+    },
+    "website": "https://swap.pump.fun/"
+  },
+  "history": [
+    {
+      "assessment": "assessed",
+      "date": "2026-10-21",
+      "fees_usd": 3293223,
+      "methodology_version": "0.1",
+      "ratings": {
+        "admin_powers": "medium",
+        "code_transparency": "medium",
+        "dependencies": "medium",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "high"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 356654757,
+      "volume_usd": 396955961
+    }
+  ],
+  "id": "pumpswap",
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "metrics": {
+    "asset_groups": {
+      "btc": 219750,
+      "kind": "usd",
+      "other": 49667087,
+      "sol": 285641851,
+      "stablecoins": 21126069
+    },
+    "defillama_slug": "pumpswap",
+    "fees": {
+      "change_7d_bp": -1431,
+      "days": [
+        {
+          "date": "2026-09-21",
+          "usd": 3357626
+        },
+        {
+          "date": "2026-09-22",
+          "usd": 3398293
+        },
+        {
+          "date": "2026-09-23",
+          "usd": 3497406
+        },
+        {
+          "date": "2026-09-24",
+          "usd": 3389963
+        },
+        {
+          "date": "2026-09-25",
+          "usd": 3844327
+        },
+        {
+          "date": "2026-09-26",
+          "usd": 5591392
+        },
+        {
+          "date": "2026-09-27",
+          "usd": 5069717
+        },
+        {
+          "date": "2026-09-28",
+          "usd": 5503937
+        },
+        {
+          "date": "2026-09-29",
+          "usd": 3708908
+        },
+        {
+          "date": "2026-09-30",
+          "usd": 3894111
+        },
+        {
+          "date": "2026-10-01",
+          "usd": 4528848
+        },
+        {
+          "date": "2026-10-02",
+          "usd": 4740429
+        },
+        {
+          "date": "2026-10-03",
+          "usd": 4258063
+        },
+        {
+          "date": "2026-10-04",
+          "usd": 5161069
+        },
+        {
+          "date": "2026-10-05",
+          "usd": 4447961
+        },
+        {
+          "date": "2026-10-06",
+          "usd": 4474974
+        },
+        {
+          "date": "2026-10-07",
+          "usd": 4249304
+        },
+        {
+          "date": "2026-10-08",
+          "usd": 3642865
+        },
+        {
+          "date": "2026-10-09",
+          "usd": 4048604
+        },
+        {
+          "date": "2026-10-10",
+          "usd": 3608835
+        },
+        {
+          "date": "2026-10-11",
+          "usd": 3070265
+        },
+        {
+          "date": "2026-10-12",
+          "usd": 3612543
+        },
+        {
+          "date": "2026-10-13",
+          "usd": 3293816
+        },
+        {
+          "date": "2026-10-14",
+          "usd": 3291650
+        },
+        {
+          "date": "2026-10-15",
+          "usd": 3337638
+        },
+        {
+          "date": "2026-10-16",
+          "usd": 3275768
+        },
+        {
+          "date": "2026-10-17",
+          "usd": 2634553
+        },
+        {
+          "date": "2026-10-18",
+          "usd": 2910490
+        },
+        {
+          "date": "2026-10-19",
+          "usd": 3128280
+        },
+        {
+          "date": "2026-10-20",
+          "usd": 3293223
+        }
+      ],
+      "kind": "usd",
+      "latest": 3293223
+    },
+    "tvl": {
+      "kind": "usd",
+      "value": 356654757
+    },
+    "volume": {
+      "change_7d_bp": 1068,
+      "days": [
+        {
+          "date": "2026-09-21",
+          "usd": 390120220
+        },
+        {
+          "date": "2026-09-22",
+          "usd": 634146194
+        },
+        {
+          "date": "2026-09-23",
+          "usd": 270191061
+        },
+        {
+          "date": "2026-09-24",
+          "usd": 133758513
+        },
+        {
+          "date": "2026-09-25",
+          "usd": 425986996
+        },
+        {
+          "date": "2026-09-26",
+          "usd": 513608264
+        },
+        {
+          "date": "2026-09-27",
+          "usd": 297068246
+        },
+        {
+          "date": "2026-09-28",
+          "usd": 268391692
+        },
+        {
+          "date": "2026-09-29",
+          "usd": 337458953
+        },
+        {
+          "date": "2026-09-30",
+          "usd": 207001001
+        },
+        {
+          "date": "2026-10-01",
+          "usd": 371162712
+        },
+        {
+          "date": "2026-10-02",
+          "usd": 321134539
+        },
+        {
+          "date": "2026-10-03",
+          "usd": 401980913
+        },
+        {
+          "date": "2026-10-04",
+          "usd": 397812152
+        },
+        {
+          "date": "2026-10-05",
+          "usd": 306601303
+        },
+        {
+          "date": "2026-10-06",
+          "usd": 302947883
+        },
+        {
+          "date": "2026-10-07",
+          "usd": 280510285
+        },
+        {
+          "date": "2026-10-08",
+          "usd": 364570780
+        },
+        {
+          "date": "2026-10-09",
+          "usd": 389880050
+        },
+        {
+          "date": "2026-10-10",
+          "usd": 235280913
+        },
+        {
+          "date": "2026-10-11",
+          "usd": 135487404
+        },
+        {
+          "date": "2026-10-12",
+          "usd": 411875193
+        },
+        {
+          "date": "2026-10-13",
+          "usd": 451799237
+        },
+        {
+          "date": "2026-10-14",
+          "usd": 252507465
+        },
+        {
+          "date": "2026-10-15",
+          "usd": 513082193
+        },
+        {
+          "date": "2026-10-16",
+          "usd": 545448805
+        },
+        {
+          "date": "2026-10-17",
+          "usd": 194512994
+        },
+        {
+          "date": "2026-10-18",
+          "usd": 467317348
+        },
+        {
+          "date": "2026-10-19",
+          "usd": 142124804
+        },
+        {
+          "date": "2026-10-20",
+          "usd": 396955961
+        }
+      ],
+      "kind": "usd",
+      "latest": 396955961
+    }
+  },
+  "program_history": {
+    "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA": {
+      "complete": false,
+      "events": [],
+      "scanned": 519,
+      "total": 600
+    }
+  },
+  "review": {
+    "awaiting_human_review": true,
+    "due": false,
+    "last_reviewed": "2026-10-19"
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "admin": {
+      "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.admin": {
+        "rating": "medium",
+        "reason": "`admin` can pause, held by Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+      }
+    },
+    "callees": {
+      "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ": {
+        "rating": "medium",
+        "reason": "Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+      }
+    },
+    "control_class": "multisig_without_delay",
+    "controller_summary": "Squads 3 of 4 · no delay",
+    "factors": {
+      "admin_powers": {
+        "evidence": [
+          {
+            "address": "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw",
+            "field": "admin",
+            "slot": 459676851
+          },
+          {
+            "address": "8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676851
+          }
+        ],
+        "next_step": "limit admin keys to parameters behind a 24 h+ time lock, or renounce them → LOW",
+        "rating": "medium",
+        "reason": "`admin` can pause, held by Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+      },
+      "code_transparency": {
+        "evidence": [
+          {
+            "address": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+            "field": "verified_build",
+            "slot": 459676585
+          }
+        ],
+        "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+        "rating": "medium",
+        "reason": "source public at https://github.com/pump-fun, but the deployed build is not verified"
+      },
+      "dependencies": {
+        "evidence": [
+          {
+            "address": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+            "field": "transaction sample (38 transactions)",
+            "slot": 459676852
+          },
+          {
+            "address": "75Uu23mqWBb8LM8vDppqC1mQAnCcBuLXhVaDezVMQLRw",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/75Uu23mqWBb8LM8vDppqC1mQAnCcBuLXhVaDezVMQLRw",
+            "field": "upgrade_authority",
+            "slot": 459676889
+          },
+          {
+            "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676586
+          }
+        ],
+        "next_step": "callees rated Medium need a multisig of 5+ voters at a 60%+ threshold, or to be immutable → LOW",
+        "rating": "medium",
+        "reason": "callee pfee…ojVZ is Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+      },
+      "oracle_dependency": {
+        "evidence": [
+          {
+            "address": "6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+            "field": "upgrade_authority",
+            "slot": 459676585
+          },
+          {
+            "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676586
+          }
+        ],
+        "next_step": "not applicable: nothing to improve",
+        "rating": "not_applicable",
+        "reason": "the registry lists no price feeds; the evidence is the core programs' upgrade reads"
+      },
+      "upgrade_control": {
+        "evidence": [
+          {
+            "address": "6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+            "field": "upgrade_authority",
+            "slot": 459676585
+          },
+          {
+            "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676586
+          }
+        ],
+        "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+        "rating": "medium",
+        "reason": "Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+      },
+      "upgrade_delay": {
+        "evidence": [
+          {
+            "address": "6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+            "field": "upgrade_authority",
+            "slot": 459676585
+          },
+          {
+            "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676586
+          }
+        ],
+        "next_step": "a time lock of 24 h+ → MEDIUM; 5 days+ → LOW",
+        "rating": "high",
+        "reason": "time lock 0 s"
+      }
+    },
+    "programs": {
+      "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+              "field": "verified_build",
+              "slot": 459676585
+            }
+          ],
+          "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+          "rating": "medium",
+          "reason": "source public at https://github.com/pump-fun, but the deployed build is not verified"
+        },
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+              "field": "upgrade_authority",
+              "slot": 459676585
+            },
+            {
+              "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676586
+            }
+          ],
+          "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+          "rating": "medium",
+          "reason": "Squads v4 multisig, 3 of 4 voters, time lock 0 s"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6naEzKeUuFh1Jeeu51NXQgr5qkXgXtc9WKNct4xynVJc",
+              "field": "upgrade_authority",
+              "slot": 459676585
+            },
+            {
+              "address": "2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676586
+            }
+          ],
+          "next_step": "a time lock of 24 h+ → MEDIUM; 5 days+ → LOW",
+          "rating": "high",
+          "reason": "time lock 0 s"
+        }
+      }
+    },
+    "risks": [
+      {
+        "category": "stolen",
+        "factor": "upgrade_delay",
+        "severity": "high",
+        "text": "Funds can be stolen if a harmful upgrade is approved, because it takes effect immediately, before users can withdraw."
+      },
+      {
+        "category": "stolen",
+        "factor": "upgrade_control",
+        "severity": "medium",
+        "text": "Funds can be stolen if a core program is upgraded to new code by 3 of 4 voters of multisig 2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW."
+      },
+      {
+        "category": "frozen",
+        "factor": "admin_powers",
+        "severity": "medium",
+        "text": "Funds can be frozen if the protocol is paused by 3 of 4 voters of multisig 8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at using `admin`."
+      },
+      {
+        "category": "stolen",
+        "factor": "code_transparency",
+        "severity": "medium",
+        "text": "Funds can be stolen if the deployed code of pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA differs from its public source, because the build is not verified."
+      },
+      {
+        "category": "stolen",
+        "factor": "dependencies",
+        "severity": "medium",
+        "text": "Funds can be stolen if pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ, a program this protocol calls with user funds, is upgraded by 3 of 4 voters of multisig 2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW."
+      }
+    ],
+    "stage": {
+      "missing": [
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA: effective time lock 0 s; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "verified builds for all core programs",
+          "detail": "not verified: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+          "id": "s1.verified_builds",
+          "met": false,
+          "stage": "stage_1"
+        }
+      ],
+      "next": "stage_1",
+      "requirements": [
+        {
+          "description": "core programs identified in the registry",
+          "detail": "1 core programs",
+          "id": "s0.core_programs",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "public source for every core program",
+          "detail": "all core programs have public source",
+          "id": "s0.public_source",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control readable for every core program",
+          "detail": "upgrade control read for all core programs",
+          "id": "s0.upgrade_control_known",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control rated Low or Medium",
+          "detail": "MEDIUM: Squads v4 multisig, 3 of 4 voters, time lock 0 s",
+          "id": "s1.upgrade_control",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA: effective time lock 0 s; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "admin powers rated Low or Medium",
+          "detail": "MEDIUM: `admin` can pause, held by Squads v4 multisig, 3 of 4 voters, time lock 0 s",
+          "id": "s1.admin_powers",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "no multisig has a single-key config authority",
+          "detail": "no single-key config authority",
+          "id": "s1.config_authority",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "verified builds for all core programs",
+          "detail": "not verified: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+          "id": "s1.verified_builds",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "every factor could be read (Unknown caps the Stage at 0)",
+          "detail": "no Unknown factors",
+          "id": "s1.no_unknown",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "core programs immutable, or upgradeable only through on-chain governance with a long delay",
+          "detail": "upgradeable without 30 days+ governance delay: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+          "id": "s2.immutable_or_governance",
+          "met": false,
+          "stage": "stage_2"
+        },
+        {
+          "description": "no key can move or freeze user funds",
+          "detail": "can move or freeze funds: ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw.admin",
+          "id": "s2.no_fund_control",
+          "met": false,
+          "stage": "stage_2"
+        }
+      ],
+      "stage": "stage_0"
+    },
+    "tokens": {
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+        "roles": [
+          "lp"
+        ],
+        "symbol": "USDC",
+        "warning": null,
+        "worst": "high"
+      },
+      "So11111111111111111111111111111111111111112": {
+        "roles": [
+          "lp"
+        ],
+        "symbol": "SOL",
+        "warning": null,
+        "worst": "low"
+      }
+    }
+  },
+  "snapshot_date": "2026-10-21",
+  "upgrades": {
+    "average_interval_days": null,
+    "complete": false,
+    "last_upgrade_date": null,
+    "last_upgrade_slot": null,
+    "upgrades": 0,
+    "upgrades_last_30_days": 0
+  }
+}

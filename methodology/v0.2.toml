@@ -1,0 +1,46 @@
+# Celebtir methodology v0.2: every threshold the scorer uses (SCO-2).
+# The rules themselves are in the PRD's "Risk methodology" section. Changing a
+# number here changes ratings without a code change, and needs a changelog entry.
+
+version = "0.2"
+
+# Who can replace the code?
+# Low: immutable, or a multisig with >= low_min_voters voters at >= low_min_threshold_pct.
+# Medium: a multisig with >= medium_min_voters voters at >= medium_min_threshold_pct.
+# High: a single key, a smaller multisig, or a multisig whose config authority is one key.
+# Ratios use voters (members with the Vote permission), not total members.
+[upgrade_control]
+low_min_voters = 5
+low_min_threshold_pct = 60
+medium_min_voters = 3
+medium_min_threshold_pct = 50
+
+# How long between approval and a new version going live?
+# Low: >= low_min_secs, or immutable. Medium: >= medium_min_secs. High: less, or none.
+[upgrade_delay]
+low_min_secs = 432000    # 5 days
+medium_min_secs = 86400  # 24 hours
+
+# Can a key change parameters, pause or move funds outside an upgrade?
+# Low: no admin key, or parameters-only power held behind a time lock of at least
+# low_min_time_lock_secs (ADR 003). Medium: parameters or pause held by a multisig
+# meeting the medium multisig bar above. High: anything else.
+[admin_powers]
+low_min_time_lock_secs = 86400  # 24 hours
+
+# Where do prices come from? Oracle owner programs are classified by registry/oracles.yaml.
+# Low: an established network with a fallback. Medium: a single established network.
+# High: a protocol-run or single-signer feed, or an unclassified owner.
+[oracle_dependency]
+required_for_categories = ["lending", "perps"]
+established_networks = ["pyth", "switchboard", "chainlink"]
+
+# Stage 1, "Guarded" (mirrors L2Beat's Stage 1).
+[stage1]
+min_upgrade_delay_secs = 432000   # 5 days
+emergency_min_voters = 8
+emergency_min_threshold_pct = 75
+
+# Stage 2, "User-protected".
+[stage2]
+governance_min_delay_secs = 2592000  # 30 days

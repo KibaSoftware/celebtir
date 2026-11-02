@@ -1,0 +1,50 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "getMultipleAccounts",
+    "params": [
+      [
+        "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn"
+      ],
+      {
+        "commitment": "finalized",
+        "encoding": "base64"
+      }
+    ]
+  },
+  "response": {
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "context": {
+        "apiVersion": "4.3.0",
+        "slot": 458085504
+      },
+      "value": [
+        {
+          "data": [
+            "AQAAAJj+huiNm+Lqi8HMpIeLKYjCQPUrhCS/tA7Rot3LXhmbvjEsviXbGwAGAQEAAABicKqKWcWUBbRShshncubNEm6bil06OFNtN/e0FOi2Zw==",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 549895049557,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "rentEpoch": 18446744073709551615,
+          "space": 82
+        },
+        {
+          "data": [
+            "AQAAAFTlniTAUaihSnsel5fw4Szfp0kCFmUxlaalEqbxZmAr5clsERODHAAJAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 3826303234,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "rentEpoch": 18446744073709551615,
+          "space": 82
+        }
+      ]
+    }
+  }
+}

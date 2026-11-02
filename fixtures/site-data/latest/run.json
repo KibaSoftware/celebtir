@@ -1,0 +1,35 @@
+{
+  "budget": 5000,
+  "budget_exceeded": false,
+  "calls": {
+    "getMultipleAccounts": 14,
+    "getSignaturesForAddress": 4,
+    "getTransaction": 10
+  },
+  "duration_ms": 29,
+  "failures": [],
+  "finished_at": "2026-10-25T16:47:44Z",
+  "protocols": [
+    "kamino-lend",
+    "spl-stake-pool"
+  ],
+  "retries": 0,
+  "review_needed": [
+    {
+      "note": "authority CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY is a program-derived address owned by 11111111111111111111111111111111; its controlling program is not resolved by a registry declaration; registry review needed",
+      "protocol": "kamino-lend"
+    },
+    {
+      "note": "authority dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH is a program-derived address owned by 11111111111111111111111111111111; its controlling program is not resolved by a registry declaration; registry review needed",
+      "protocol": "spl-stake-pool"
+    },
+    {
+      "note": "mint_authority: authority 6iQKfEyhr3bZMotVkW6beNZz5CPAkiwvgV2CTje9pVSS is a program-derived address owned by 11111111111111111111111111111111; its controlling program is not resolved by a registry declaration; registry review needed",
+      "protocol": "token:J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn"
+    }
+  ],
+  "rpc_host": "offline",
+  "schema_version": "0.1.0",
+  "started_at": "2026-10-25T16:47:44Z",
+  "tool_version": "0.1.0 (b114b281ae6a)"
+}

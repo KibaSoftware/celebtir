@@ -1,0 +1,17 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-21.
+# Automated evidence collection is not human review; owner review remains outstanding.
+id: kinetiq-khype
+name: Kinetiq kHYPE
+chain: hyper_evm
+category: liquid-staking
+website: https://kinetiq.xyz
+defillama_slug: kinetiq-khype
+programs:
+  - id: "0x393D0B87Ed38fc779FD9611144aE649BA6082109"
+    name: kHYPE StakingManager
+    role: core
+    proxy: eip1967
+    source: https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/kinetiq/index.js
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-21

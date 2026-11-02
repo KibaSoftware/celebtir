@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 8,
+      "price_usd_micros": 2491369879,
+      "supply": 4546789350211
+    }
+  ],
+  "mint": "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs",
+  "schema_version": "0.2.0",
+  "symbol": "WETH"
+}

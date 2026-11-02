@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 8,
+      "price_usd_micros": 84261240079,
+      "supply": 246786716228
+    }
+  ],
+  "mint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+  "schema_version": "0.2.0",
+  "symbol": "WBTC"
+}

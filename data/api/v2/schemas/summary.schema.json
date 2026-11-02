@@ -1,0 +1,355 @@
+{
+  "$defs": {
+    "Assessment": {
+      "enum": [
+        "assessed",
+        "unassessed"
+      ],
+      "type": "string"
+    },
+    "Chain": {
+      "description": "The chain an address or fact lives on.",
+      "oneOf": [
+        {
+          "enum": [
+            "solana"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "hyper_evm",
+          "description": "Wave 2.",
+          "type": "string"
+        },
+        {
+          "const": "hyper_core",
+          "description": "Wave 2.",
+          "type": "string"
+        }
+      ]
+    },
+    "ControlClass": {
+      "description": "Ordered weakest first.",
+      "oneOf": [
+        {
+          "enum": [
+            "single_key",
+            "multisig_with_delay",
+            "immutable"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "unrecognized",
+          "description": "Controllers Celebtir cannot read or does not support yet.",
+          "type": "string"
+        },
+        {
+          "const": "multisig_without_delay",
+          "description": "Effective delay of zero: no time lock, or one a config authority\nbypasses (v0.3; before v0.3 also any delay below the bar).",
+          "type": "string"
+        },
+        {
+          "const": "multisig_short_delay",
+          "description": "v0.3 (D4 option B): a delay above zero but below the delayed bar.",
+          "type": "string"
+        }
+      ]
+    },
+    "Deprecation": {
+      "description": "Set on every v1 file once /v2/ exists; v1 then stays for 90 days (API-2).",
+      "properties": {
+        "successor": {
+          "description": "Path of the replacing version, e.g. `/data/v2/`.",
+          "type": "string"
+        },
+        "sunset_date": {
+          "description": "`YYYY-MM-DD`: the last day this version is published.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "successor",
+        "sunset_date"
+      ],
+      "type": "object"
+    },
+    "Licence": {
+      "properties": {
+        "attribution": {
+          "description": "How to credit the data when reusing it.",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "attribution"
+      ],
+      "type": "object"
+    },
+    "Links": {
+      "properties": {
+        "api": {
+          "type": "string"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "markdown": {
+          "type": "string"
+        },
+        "page": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "page",
+        "markdown",
+        "api",
+        "badge"
+      ],
+      "type": "object"
+    },
+    "Rating": {
+      "description": "A factor rating. `Unknown` (missing data, SCO-7) and `NotApplicable` are\nshown separately from High; neither is a risk level.",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "unknown",
+        "not_applicable"
+      ],
+      "type": "string"
+    },
+    "Stage": {
+      "enum": [
+        "unrated",
+        "stage_0",
+        "stage_1",
+        "stage_2"
+      ],
+      "type": "string"
+    },
+    "SummaryProtocol": {
+      "properties": {
+        "assessment": {
+          "$ref": "#/$defs/Assessment",
+          "description": "`unassessed`: listed with its facts, but not rated (F5)."
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "$ref": "#/$defs/Chain"
+        },
+        "control_class": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ControlClass"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "None for unassessed protocols."
+        },
+        "controller_summary": {
+          "description": "The weakest core program's controller in a few words: a fact, shown\nfor every protocol.",
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "links": {
+          "$ref": "#/$defs/Links"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ratings": {
+          "additionalProperties": false,
+          "description": "None for unassessed protocols.",
+          "properties": {
+            "admin_powers": {
+              "$ref": "#/$defs/Rating"
+            },
+            "code_transparency": {
+              "$ref": "#/$defs/Rating"
+            },
+            "dependencies": {
+              "$ref": "#/$defs/Rating"
+            },
+            "oracle_dependency": {
+              "$ref": "#/$defs/Rating"
+            },
+            "upgrade_control": {
+              "$ref": "#/$defs/Rating"
+            },
+            "upgrade_delay": {
+              "$ref": "#/$defs/Rating"
+            }
+          },
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "stage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Stage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "None for unassessed protocols."
+        },
+        "tvl_usd": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "chain",
+        "assessment",
+        "controller_summary",
+        "links"
+      ],
+      "type": "object"
+    },
+    "ValueByControl": {
+      "properties": {
+        "all": {
+          "$ref": "#/$defs/ValueRow"
+        },
+        "by_category": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ValueRow"
+          },
+          "description": "Keyed by registry category.",
+          "type": "object"
+        },
+        "excluded": {
+          "description": "Protocols left out because their TVL is unavailable.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "all",
+        "by_category",
+        "excluded"
+      ],
+      "type": "object"
+    },
+    "ValueRow": {
+      "description": "TVL per class; every class present, `total` the sum.",
+      "properties": {
+        "classes": {
+          "additionalProperties": {
+            "format": "uint64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "total": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "classes",
+        "total"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "`/data/v2/summary.json`.",
+  "properties": {
+    "$schema": {
+      "description": "Root-relative path of this file's JSON Schema.",
+      "type": "string"
+    },
+    "api_version": {
+      "type": "string"
+    },
+    "assessed_chains": {
+      "description": "Chains whose protocols are rated.",
+      "items": {
+        "$ref": "#/$defs/Chain"
+      },
+      "type": "array"
+    },
+    "deprecation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Deprecation"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "licence": {
+      "$ref": "#/$defs/Licence"
+    },
+    "methodology_version": {
+      "type": "string"
+    },
+    "protocols": {
+      "description": "Sorted by ID.",
+      "items": {
+        "$ref": "#/$defs/SummaryProtocol"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "snapshot_date": {
+      "description": "The snapshot these data come from (`YYYY-MM-DD`).",
+      "type": "string"
+    },
+    "value_by_control": {
+      "$ref": "#/$defs/ValueByControl",
+      "description": "Assessed protocols only."
+    }
+  },
+  "required": [
+    "$schema",
+    "api_version",
+    "schema_version",
+    "snapshot_date",
+    "methodology_version",
+    "licence",
+    "assessed_chains",
+    "protocols",
+    "value_by_control"
+  ],
+  "title": "SummaryApi",
+  "type": "object"
+}

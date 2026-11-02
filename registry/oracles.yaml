@@ -1,0 +1,38 @@
+# Oracle programs Celebtir classifies by owner (COL-12). A price account owned by a
+# `network` program counts as that network; `protocol-run` marks a feed or
+# aggregator a protocol operates itself (spec decision: rate as protocol-run).
+programs:
+  - program: rec5EKMGg6MxZYaMdyBfgwp4d5rB9T1VQH5pJv5LtFJ
+    class: network
+    name: pyth
+    source: https://docs.pyth.network/price-feeds/contract-addresses/solana
+  - program: pythWSnswVUd12oZpeFP8e9CVaEqJg25g1Vtc2biRsT
+    class: network
+    name: pyth
+    source: https://docs.pyth.network/price-feeds/contract-addresses/solana
+  - program: SBondMDrcV3K4kxZR1HNVT7osZxAHVHgYXL5Ze1oMUv
+    class: network
+    name: switchboard
+    source: https://unpkg.com/@switchboard-xyz/on-demand@3.10.6/dist/esm/utils/index.js
+  - program: HEvSKofvBgfaexv23kMabbYqxasxU3mQ4ibBMEmJWHny
+    class: network
+    name: chainlink
+    source: https://github.com/smartcontractkit/solana-starter-kit
+  - program: HFn8GnPADiny6XqUoWE8uRPPxb29ikn4yTuPa9MF2fWJ
+    class: protocol-run
+    name: scope
+    source: https://unpkg.com/@kamino-finance/scope-sdk@14.0.0/dist/constants/index.js
+    idl: idl/scope.json
+  # Chainlink Data Streams verifier: reports it verifies (GMX feed IDs) are Chainlink.
+  # Program ID per Chainlink's Solana verification docs and Helius's program catalog;
+  # executable on mainnet (read 2026-10-25).
+  - program: Gt9S41PtjR58CbG9JhJ3J6vxesqrNAswbWYbLNTMZA3c
+    class: network
+    name: chainlink
+    source: https://docs.chain.link/data-streams/tutorials/solana-onchain-report-verification
+  - program: jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc
+    class: protocol-run
+    name: jupiter-lend-oracle
+    source: https://developers.jup.ag/docs/lend/program-addresses
+# Doves (DoVEsk76…), the program behind Jupiter Perps' Edge prices, is deliberately not
+# listed: Edge is not an established network (D3), so its accounts classify as "other".

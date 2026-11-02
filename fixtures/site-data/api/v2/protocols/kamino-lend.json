@@ -1,0 +1,898 @@
+{
+  "$schema": "/data/v2/schemas/protocol.schema.json",
+  "api_version": "v2",
+  "assessment": "assessed",
+  "chain": "solana",
+  "deprecation": null,
+  "facts": {
+    "admin": {
+      "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.lending_market_owner": {
+        "account": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+        "controller": {
+          "evidence": [
+            {
+              "address": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+              "field": "lending_market_owner",
+              "slot": 458085395
+            },
+            {
+              "address": "24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT",
+              "field": "owner",
+              "slot": 458085395
+            }
+          ],
+          "value": {
+            "key": "24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT",
+            "kind": "pda",
+            "owner_program": "11111111111111111111111111111111"
+          }
+        },
+        "field": "lending_market_owner",
+        "power": "parameters"
+      }
+    },
+    "category": "lending",
+    "chain": "solana",
+    "dependencies": {
+      "evidence": [
+        {
+          "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "field": "transaction sample (0 transactions)",
+          "slot": 0
+        }
+      ],
+      "value": {
+        "kind": "unavailable",
+        "reason": "no readable transactions in the sample window"
+      }
+    },
+    "last_reviewed": "2026-10-17",
+    "max_slot": 458085395,
+    "min_slot": 458085384,
+    "name": "Kamino Lend",
+    "oracles": {
+      "3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C": {
+        "market": "SOL reserve",
+        "role": "fallback",
+        "source": {
+          "evidence": [
+            {
+              "address": "3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C",
+              "field": "owner",
+              "slot": 458085395
+            }
+          ],
+          "value": {
+            "kind": "protocol_run"
+          }
+        }
+      },
+      "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE": {
+        "market": "SOL reserve",
+        "role": "primary",
+        "source": {
+          "evidence": [
+            {
+              "address": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+              "field": "owner",
+              "slot": 458085395
+            }
+          ],
+          "value": {
+            "kind": "network",
+            "name": "pyth"
+          }
+        }
+      }
+    },
+    "programs": {
+      "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+              "field": "verified_build",
+              "slot": 458085384
+            }
+          ],
+          "value": {
+            "commit": "bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4",
+            "executable_hash": "924abe7472a839c37ffffc1fb6663f54c6d5828afa3e31552a57497768a84a87",
+            "kind": "verified",
+            "on_chain_hash": "924abe7472a839c37ffffc1fb6663f54c6d5828afa3e31552a57497768a84a87",
+            "repo": "https://github.com/Kamino-Finance/kfarms"
+          }
+        },
+        "loader": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "role": "periphery",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "field": "upgrade_authority",
+              "slot": 458085384
+            },
+            {
+              "address": "CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+              "field": "owner",
+              "slot": 458085385
+            }
+          ],
+          "value": {
+            "key": "CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+            "kind": "pda",
+            "owner_program": "11111111111111111111111111111111"
+          }
+        }
+      },
+      "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "field": "verified_build",
+              "slot": 458085384
+            }
+          ],
+          "value": {
+            "commit": "a08760976f51a3a58c4a0c6ea27b4a0e565bca79",
+            "executable_hash": "b1344d1979daec34bea862a3ed5c44ca5dc8b8e72ec32f1a90ac5150229c22d9",
+            "kind": "verified",
+            "on_chain_hash": "b1344d1979daec34bea862a3ed5c44ca5dc8b8e72ec32f1a90ac5150229c22d9",
+            "repo": "https://github.com/Kamino-Finance/klend"
+          }
+        },
+        "loader": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "field": "upgrade_authority",
+              "slot": 458085384
+            },
+            {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 458085385
+            }
+          ],
+          "value": {
+            "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "5ggs2vd1csz74YMCzxesmcUEd3ycYFKAW6kfyttVYwBv",
+              "6vkzAQLAERW5RKHX68ZCDxWxW77T8dMqYUYMXCe6ooMC",
+              "7tH1k4PsMu3sNUYJxD5ezxhAmYYXyVVZz5c3dbaxcvUV",
+              "8g2PMddbKrqpPtd74pWM16xnDwtpKtkDJNDsQ9cWJZAC",
+              "BEUTwDjLNoXvT26J9CZD5A1Fsr9WF2UXdcUVZuy4zQ3d",
+              "BMGYmN1hG8evD3pvy1Rk41bFUdGGVP5fYJbh2JHMonqK",
+              "CmJywvWynJAiADsgTkVWu5BJus4ru2SP1PnfBXvThrxZ",
+              "DFheUjWj6BL9CuF8gAYfF6TgrbrruTTCc3vE6Ajn1gyK",
+              "G8fVffcHt3n6DkjSdYj47xWe55QjFsL4P5zhQ9RXFuPa",
+              "HrKa158AuSt2QtDWnvr81qdgBZjJ7MJGkaQ8D7pZeYMj"
+            ],
+            "threshold": 5,
+            "time_lock_secs": 86400,
+            "voters": 10
+          }
+        }
+      }
+    },
+    "reviewed_by": "golden-fixture",
+    "sources": [
+      {
+        "address": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+        "kind": "admin",
+        "label": "lending_market_owner",
+        "url": "https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF"
+      },
+      {
+        "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+        "kind": "multisig",
+        "label": "Squads v4",
+        "url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM"
+      },
+      {
+        "address": "3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C",
+        "kind": "oracle",
+        "label": "SOL reserve",
+        "url": "https://solscan.io/account/3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C"
+      },
+      {
+        "address": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+        "kind": "oracle",
+        "label": "SOL reserve",
+        "url": "https://solscan.io/account/7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE"
+      },
+      {
+        "address": "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+        "kind": "program",
+        "label": "Farms",
+        "url": "https://github.com/Kamino-Finance/kfarms"
+      },
+      {
+        "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+        "kind": "program",
+        "label": "Lending",
+        "url": "https://github.com/Kamino-Finance/klend"
+      }
+    ],
+    "tokens": {
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": [
+        "collateral",
+        "borrowable"
+      ],
+      "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn": [
+        "collateral"
+      ]
+    },
+    "website": "https://kamino.finance/"
+  },
+  "history": [
+    {
+      "assessment": "assessed",
+      "date": "2026-10-15",
+      "fees_usd": 149746,
+      "methodology_version": "0.3",
+      "ratings": {
+        "admin_powers": "unknown",
+        "code_transparency": "low",
+        "dependencies": "unknown",
+        "oracle_dependency": "medium",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1310434543,
+      "volume_usd": null
+    },
+    {
+      "assessment": "assessed",
+      "date": "2026-10-16",
+      "fees_usd": 149746,
+      "methodology_version": "0.3",
+      "ratings": {
+        "admin_powers": "unknown",
+        "code_transparency": "low",
+        "dependencies": "unknown",
+        "oracle_dependency": "medium",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1310434543,
+      "volume_usd": null
+    },
+    {
+      "assessment": "assessed",
+      "date": "2026-10-17",
+      "fees_usd": 149746,
+      "methodology_version": "0.3",
+      "ratings": {
+        "admin_powers": "unknown",
+        "code_transparency": "low",
+        "dependencies": "unknown",
+        "oracle_dependency": "medium",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 1310434543,
+      "volume_usd": null
+    }
+  ],
+  "id": "kamino-lend",
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.3",
+  "metrics": {
+    "asset_groups": {
+      "btc": 79007333,
+      "kind": "usd",
+      "other": 470134851,
+      "sol": 575592326,
+      "stablecoins": 185700033
+    },
+    "defillama_slug": "kamino-lend",
+    "fees": {
+      "change_7d_bp": -508,
+      "days": [
+        {
+          "date": "2026-09-17",
+          "usd": 149590
+        },
+        {
+          "date": "2026-09-18",
+          "usd": 160826
+        },
+        {
+          "date": "2026-09-19",
+          "usd": 177491
+        },
+        {
+          "date": "2026-09-20",
+          "usd": 167544
+        },
+        {
+          "date": "2026-09-21",
+          "usd": 166118
+        },
+        {
+          "date": "2026-09-22",
+          "usd": 174790
+        },
+        {
+          "date": "2026-09-23",
+          "usd": 158052
+        },
+        {
+          "date": "2026-09-24",
+          "usd": 163065
+        },
+        {
+          "date": "2026-09-25",
+          "usd": 164637
+        },
+        {
+          "date": "2026-09-26",
+          "usd": 158313
+        },
+        {
+          "date": "2026-09-27",
+          "usd": 157221
+        },
+        {
+          "date": "2026-09-28",
+          "usd": 159063
+        },
+        {
+          "date": "2026-09-29",
+          "usd": 208258
+        },
+        {
+          "date": "2026-09-30",
+          "usd": 228803
+        },
+        {
+          "date": "2026-10-01",
+          "usd": 165727
+        },
+        {
+          "date": "2026-10-02",
+          "usd": 166639
+        },
+        {
+          "date": "2026-10-03",
+          "usd": 171586
+        },
+        {
+          "date": "2026-10-04",
+          "usd": 172216
+        },
+        {
+          "date": "2026-10-05",
+          "usd": 159039
+        },
+        {
+          "date": "2026-10-06",
+          "usd": 159039
+        },
+        {
+          "date": "2026-10-07",
+          "usd": 150159
+        },
+        {
+          "date": "2026-10-08",
+          "usd": 149492
+        },
+        {
+          "date": "2026-10-09",
+          "usd": 148139
+        },
+        {
+          "date": "2026-10-10",
+          "usd": 152066
+        },
+        {
+          "date": "2026-10-11",
+          "usd": 151013
+        },
+        {
+          "date": "2026-10-12",
+          "usd": 148793
+        },
+        {
+          "date": "2026-10-13",
+          "usd": 155408
+        },
+        {
+          "date": "2026-10-14",
+          "usd": 148118
+        },
+        {
+          "date": "2026-10-15",
+          "usd": 148141
+        },
+        {
+          "date": "2026-10-16",
+          "usd": 149746
+        }
+      ],
+      "kind": "usd",
+      "latest": 149746
+    },
+    "tvl": {
+      "kind": "usd",
+      "value": 1310434543
+    },
+    "volume": {
+      "kind": "unavailable",
+      "reason": "no volume metric for this category; fees only"
+    }
+  },
+  "program_history": {
+    "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD": {
+      "complete": false,
+      "events": [
+        {
+          "date": "2026-05-12",
+          "kind": "upgrade",
+          "signature": "4mVFW8YSrFcxxGYmwceyRZGvYGkMiXd1ZSTN7vwd2bthrY3qz2E8FoVUBL4bPUuokFmnQCouDtvXsbxDTKaBhXDS",
+          "slot": 419212537
+        },
+        {
+          "date": "2026-05-14",
+          "kind": "upgrade",
+          "signature": "56zLB6QogzoiEemhvj4xj6Ujj8J9nRoYMsjW4S2xQ7Ezq1nMquhVsqTcwwdVUKCN7qfcUupSFkZtcXMQTuvErXdJ",
+          "slot": 419662599
+        },
+        {
+          "date": "2026-05-28",
+          "kind": "upgrade",
+          "signature": "WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4",
+          "slot": 422723185
+        },
+        {
+          "date": "2026-08-12",
+          "kind": "upgrade",
+          "signature": "smn7ibUfuPNhLoovx1eYpwZWZtego9q6U7LVkk8Tc4thrbcwtbTCGXX13ogh8YShsLcusN12AoyWq8yuLuagQQr",
+          "slot": 438843135
+        },
+        {
+          "date": "2026-08-20",
+          "kind": "upgrade",
+          "signature": "3tTU214kgvZxi2x9SbSCJDNLnvFxAqRGktnMT6gP6SiTAMzUawc8N7GR23tySTAbsR8hc2J98f2Mg2nDXa1MubRi",
+          "slot": 440486775
+        }
+      ],
+      "scanned": 5,
+      "total": 90
+    }
+  },
+  "review": {
+    "awaiting_human_review": false,
+    "due": false,
+    "last_reviewed": "2026-10-17"
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "admin": {
+      "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.lending_market_owner": {
+        "rating": "unknown",
+        "reason": "`lending_market_owner` of 7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF can change parameters; holder program-derived address 24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT (no private key exists; controlling program not resolved)"
+      }
+    },
+    "callees": {},
+    "control_class": "multisig_with_delay",
+    "controller_summary": "Squads 5 of 10 · 24 h delay",
+    "factors": {
+      "admin_powers": {
+        "evidence": [
+          {
+            "address": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+            "field": "lending_market_owner",
+            "slot": 458085395
+          },
+          {
+            "address": "24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT",
+            "field": "owner",
+            "slot": 458085395
+          }
+        ],
+        "next_step": "rated once Celebtir can read the missing data; until then the Stage is capped at 0",
+        "rating": "unknown",
+        "reason": "`lending_market_owner` of 7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF can change parameters; holder program-derived address 24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT (no private key exists; controlling program not resolved)"
+      },
+      "code_transparency": {
+        "evidence": [
+          {
+            "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "field": "verified_build",
+            "slot": 458085384
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "verified build of https://github.com/Kamino-Finance/klend at a08760976f51a3a58c4a0c6ea27b4a0e565bca79"
+      },
+      "dependencies": {
+        "evidence": [
+          {
+            "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "field": "transaction sample (0 transactions)",
+            "slot": 0
+          }
+        ],
+        "next_step": "rated once Celebtir can read the missing data; until then the Stage is capped at 0",
+        "rating": "unknown",
+        "reason": "dependencies unavailable (no readable transactions in the sample window)"
+      },
+      "oracle_dependency": {
+        "evidence": [
+          {
+            "address": "3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C",
+            "field": "owner",
+            "slot": 458085395
+          },
+          {
+            "address": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+            "field": "owner",
+            "slot": 458085395
+          }
+        ],
+        "next_step": "add an established fallback feed for every market → LOW",
+        "rating": "medium",
+        "reason": "SOL reserve: single oracle network (pyth), no fallback"
+      },
+      "upgrade_control": {
+        "evidence": [
+          {
+            "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+            "field": "upgrade_authority",
+            "slot": 458085384
+          },
+          {
+            "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 458085385
+          }
+        ],
+        "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+        "rating": "medium",
+        "reason": "Squads v4 multisig 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM, 5 of 10 voters, time lock 24 h"
+      },
+      "upgrade_delay": {
+        "evidence": [
+          {
+            "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+            "field": "upgrade_authority",
+            "slot": 458085384
+          },
+          {
+            "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 458085385
+          }
+        ],
+        "next_step": "a time lock of 5 days+ → LOW",
+        "rating": "medium",
+        "reason": "time lock 24 h"
+      }
+    },
+    "programs": {
+      "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+              "field": "verified_build",
+              "slot": 458085384
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "verified build of https://github.com/Kamino-Finance/kfarms at bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4"
+        },
+        "role": "periphery",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "field": "upgrade_authority",
+              "slot": 458085384
+            },
+            {
+              "address": "CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+              "field": "owner",
+              "slot": 458085385
+            }
+          ],
+          "next_step": "rated once Celebtir can read the missing data; until then the Stage is capped at 0",
+          "rating": "unknown",
+          "reason": "program-derived address CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY (no private key exists; controlling program not resolved)"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+              "field": "upgrade_authority",
+              "slot": 458085384
+            },
+            {
+              "address": "CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+              "field": "owner",
+              "slot": 458085385
+            }
+          ],
+          "next_step": "rated once Celebtir can read the missing data; until then the Stage is capped at 0",
+          "rating": "unknown",
+          "reason": "delay unknown: program-derived address CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY (no private key exists; controlling program not resolved)"
+        }
+      },
+      "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "field": "verified_build",
+              "slot": 458085384
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "verified build of https://github.com/Kamino-Finance/klend at a08760976f51a3a58c4a0c6ea27b4a0e565bca79"
+        },
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "field": "upgrade_authority",
+              "slot": 458085384
+            },
+            {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 458085385
+            }
+          ],
+          "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+          "rating": "medium",
+          "reason": "Squads v4 multisig 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM, 5 of 10 voters, time lock 24 h"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "field": "upgrade_authority",
+              "slot": 458085384
+            },
+            {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 458085385
+            }
+          ],
+          "next_step": "a time lock of 5 days+ → LOW",
+          "rating": "medium",
+          "reason": "time lock 24 h"
+        }
+      }
+    },
+    "risks": [
+      {
+        "category": "stolen",
+        "factor": "upgrade_control",
+        "severity": "medium",
+        "text": "Core program code can be replaced by 5 of 10 voters of multisig 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM."
+      },
+      {
+        "category": "stolen",
+        "factor": "upgrade_delay",
+        "severity": "medium",
+        "text": "An approved upgrade takes effect after 24 h. Withdrawal completion within that period is not established by these configuration facts."
+      },
+      {
+        "category": "price_manipulation",
+        "factor": "oracle_dependency",
+        "severity": "medium",
+        "text": "Prices can be manipulated if its only oracle network (pyth) reports a false price for SOL reserve."
+      }
+    ],
+    "stage": {
+      "missing": [
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD: effective time lock 24 h; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "every factor could be read (Unknown caps the Stage at 0)",
+          "detail": "Unknown: Admin powers, Dependencies",
+          "id": "s1.no_unknown",
+          "met": false,
+          "stage": "stage_1"
+        }
+      ],
+      "next": "stage_1",
+      "requirements": [
+        {
+          "description": "core programs identified in the registry",
+          "detail": "1 core programs",
+          "id": "s0.core_programs",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "public source for every core program",
+          "detail": "all core programs have public source",
+          "id": "s0.public_source",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control readable for every core program",
+          "detail": "upgrade control read for all core programs",
+          "id": "s0.upgrade_control_known",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control rated Low or Medium",
+          "detail": "MEDIUM: Squads v4 multisig 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM, 5 of 10 voters, time lock 24 h",
+          "id": "s1.upgrade_control",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD: effective time lock 24 h; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "admin powers rated Low or Medium",
+          "detail": "UNKNOWN: `lending_market_owner` of 7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF can change parameters; holder program-derived address 24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT (no private key exists; controlling program not resolved)",
+          "id": "s1.admin_powers",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "no multisig has a single-key config authority",
+          "detail": "no single-key config authority",
+          "id": "s1.config_authority",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "verified builds for all core programs",
+          "detail": "all core programs verified",
+          "id": "s1.verified_builds",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "every factor could be read (Unknown caps the Stage at 0)",
+          "detail": "Unknown: Admin powers, Dependencies",
+          "id": "s1.no_unknown",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "core programs immutable, or upgradeable only through on-chain governance with a long delay",
+          "detail": "upgradeable without 30 days+ governance delay: KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "id": "s2.immutable_or_governance",
+          "met": false,
+          "stage": "stage_2"
+        },
+        {
+          "description": "no protocol admin key can move user funds or pause the protocol (token-issuer freeze keys are rated on token pages, not here)",
+          "detail": "no protocol admin key can move funds or pause",
+          "id": "s2.no_fund_control",
+          "met": true,
+          "stage": "stage_2"
+        }
+      ],
+      "stage": "stage_0"
+    },
+    "tokens": {
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+        "roles": [
+          "collateral",
+          "borrowable"
+        ],
+        "symbol": "USDC",
+        "warning": "accepts USDC as collateral, which is rated High (Supply control: new supply can be minted by single key BJE5MMbqXjVwjAF7oxwPYXnTXDyspzZyt4vwenNw5ruG; Freeze and seize powers: balances can be frozen by single key 7dGbd2QZcCKcTndnHcTL8q7SMVXAkp688NTQYwrRCrar)",
+        "worst": "high"
+      },
+      "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn": {
+        "roles": [
+          "collateral"
+        ],
+        "symbol": "JitoSOL",
+        "warning": null,
+        "worst": "unknown"
+      }
+    }
+  },
+  "snapshot_date": "2026-10-17",
+  "upgrades": {
+    "average_interval_days": 25.0,
+    "complete": false,
+    "last_upgrade_date": "2026-08-20",
+    "last_upgrade_slot": 440486775,
+    "upgrades": 5,
+    "upgrades_last_30_days": 0
+  }
+}

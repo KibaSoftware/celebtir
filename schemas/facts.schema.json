@@ -1,0 +1,2075 @@
+{
+  "$defs": {
+    "Activity": {
+      "description": "A daily USD series ending at the last complete day (VAL-6).",
+      "oneOf": [
+        {
+          "properties": {
+            "change_7d_bp": {
+              "description": "The 7-day total against the previous 7 days, in basis points\n(1 % = 100). None when either window has a missing or\nimplausible day (see `gap_days`) or the earlier total is zero.",
+              "format": "int64",
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "days": {
+              "description": "Up to 30 complete days, oldest first.",
+              "items": {
+                "$ref": "#/$defs/DailyUsd"
+              },
+              "type": "array"
+            },
+            "gap_days": {
+              "description": "Days in the two comparison windows that are absent or below 5 %\nof the series median, treated as missing (methodology v0.3, D5).",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "kind": {
+              "const": "usd",
+              "type": "string"
+            },
+            "latest": {
+              "description": "The newest complete day.",
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "days",
+            "latest"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Address": {
+      "description": "An on-chain address in its chain's canonical text form (base58 on Solana,\n0x-hex on EVM). Format checks belong to the registry and collectors.",
+      "type": "string"
+    },
+    "AdminFact": {
+      "additionalProperties": false,
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/Address"
+        },
+        "controller": {
+          "$ref": "#/$defs/Fact",
+          "description": "The key in `field`, resolved to its effective controller. `Immutable`\nmeans the field holds no key (renounced)."
+        },
+        "field": {
+          "type": "string"
+        },
+        "power": {
+          "$ref": "#/$defs/AdminPower"
+        }
+      },
+      "required": [
+        "account",
+        "field",
+        "power",
+        "controller"
+      ],
+      "type": "object"
+    },
+    "AdminPower": {
+      "description": "What an admin key can do outside an upgrade.",
+      "enum": [
+        "parameters",
+        "pause",
+        "funds"
+      ],
+      "type": "string"
+    },
+    "ArchivedProtocol": {
+      "additionalProperties": false,
+      "properties": {
+        "archived_on": {
+          "description": "`YYYY-MM-DD`.",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "archived_on",
+        "reason",
+        "source"
+      ],
+      "type": "object"
+    },
+    "AssetGroups": {
+      "description": "TVL by asset group in whole US dollars; the four groups sum to the TVL.",
+      "oneOf": [
+        {
+          "properties": {
+            "btc": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "kind": {
+              "const": "usd",
+              "type": "string"
+            },
+            "other": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "sol": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "stablecoins": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "stablecoins",
+            "sol",
+            "btc",
+            "other"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Chain": {
+      "description": "The chain an address or fact lives on.",
+      "oneOf": [
+        {
+          "enum": [
+            "solana"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "hyper_evm",
+          "description": "Wave 2.",
+          "type": "string"
+        },
+        {
+          "const": "hyper_core",
+          "description": "Wave 2.",
+          "type": "string"
+        }
+      ]
+    },
+    "CodeTransparency": {
+      "description": "Does the deployed binary match public source? (OtterSec, COL-13)",
+      "oneOf": [
+        {
+          "properties": {
+            "commit": {
+              "type": "string"
+            },
+            "executable_hash": {
+              "type": "string"
+            },
+            "kind": {
+              "const": "verified",
+              "type": "string"
+            },
+            "on_chain_hash": {
+              "type": "string"
+            },
+            "repo": {
+              "type": "string"
+            },
+            "warning": {
+              "description": "Set when the verified repo is outside the registry's GitHub org (COL-13).",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "repo",
+            "commit",
+            "on_chain_hash",
+            "executable_hash"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "commit": {
+              "description": "Full 40-character commit, when the registry records one.",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "kind": {
+              "const": "public_source_unverified",
+              "type": "string"
+            },
+            "on_chain_hash": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "repo": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "repo"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "no_public_source",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Controller": {
+      "description": "Who can change something, resolved to its effective controller.",
+      "oneOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "immutable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "A registry-declared PDA re-derived from its program and typed seeds.",
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "program_controlled",
+              "type": "string"
+            },
+            "program": {
+              "$ref": "#/$defs/Address"
+            },
+            "upgrade": {
+              "$ref": "#/$defs/Controller"
+            }
+          },
+          "required": [
+            "kind",
+            "key",
+            "program",
+            "upgrade"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "single_key",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "key"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "config_authority": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Controller"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "kind": {
+              "const": "multisig",
+              "type": "string"
+            },
+            "multisig_kind": {
+              "$ref": "#/$defs/MultisigKind"
+            },
+            "nested_signers": {
+              "additionalProperties": {
+                "$ref": "#/$defs/Controller"
+              },
+              "description": "Signers that are not plain wallet keys (another multisig's vault,\nor an unknown program-derived address), resolved; each still\ncounts as one voter (edge case 5).",
+              "type": "object"
+            },
+            "signers": {
+              "description": "Keys of the members with the Vote permission, sorted (UI-20).",
+              "items": {
+                "$ref": "#/$defs/Address"
+              },
+              "type": "array"
+            },
+            "threshold": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "time_lock_secs": {
+              "format": "uint32",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "voters": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "multisig_kind",
+            "address",
+            "threshold",
+            "voters",
+            "time_lock_secs"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "EVM, wave 2.",
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "admin": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Controller"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "A `DEFAULT_ADMIN_ROLE` holder other than the timelock itself: it\ncan change roles and the delay without waiting (ADR 024 D4)."
+            },
+            "kind": {
+              "const": "timelock",
+              "type": "string"
+            },
+            "min_delay_secs": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "proposer": {
+              "$ref": "#/$defs/Controller"
+            }
+          },
+          "required": [
+            "kind",
+            "address",
+            "min_delay_secs",
+            "proposer"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "A multisig that can never reach its threshold (ADR 004).",
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "cannot_act",
+              "type": "string"
+            },
+            "threshold": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "voters": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "address",
+            "threshold",
+            "voters"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "unrecognized",
+              "type": "string"
+            },
+            "owner_program": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Address"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "key"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "An off-curve address (no private key can exist for it) whose\ncontrolling program is not resolved by a verified registry\ndeclaration. Never a key, never \"unrecognized\" (methodology v0.3).",
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "pda",
+              "type": "string"
+            },
+            "owner_program": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Address"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Owner of the account at that address; None when no account exists."
+            }
+          },
+          "required": [
+            "kind",
+            "key"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "DailyUsd": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "description": "`YYYY-MM-DD`, UTC.",
+          "type": "string"
+        },
+        "usd": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "date",
+        "usd"
+      ],
+      "type": "object"
+    },
+    "Dependencies": {
+      "description": "Direct callees of the core programs, from a transaction sample (COL-14).",
+      "oneOf": [
+        {
+          "properties": {
+            "callees": {
+              "additionalProperties": {
+                "$ref": "#/$defs/DependencyFact"
+              },
+              "description": "Keyed by callee program address.",
+              "type": "object"
+            },
+            "declared": {
+              "description": "True when the list comes from the registry instead of a\ntransaction sample (HyperEVM in wave 2, HCOL-10).",
+              "type": "boolean"
+            },
+            "kind": {
+              "const": "sampled",
+              "type": "string"
+            },
+            "stale": {
+              "description": "True when the latest window had no transactions and this list is\ncarried over from an earlier run; its evidence keeps the old slot.",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "kind",
+            "callees"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "DependencyFact": {
+      "additionalProperties": false,
+      "properties": {
+        "upgrade_control": {
+          "$ref": "#/$defs/Fact"
+        }
+      },
+      "required": [
+        "upgrade_control"
+      ],
+      "type": "object"
+    },
+    "Evidence": {
+      "description": "Where a fact came from: the account read, the slot it was read at, the\nfield that held the value, and a link anyone can open to check it.",
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address"
+        },
+        "chain": {
+          "$ref": "#/$defs/Chain"
+        },
+        "explorer_url": {
+          "format": "uri",
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        },
+        "slot": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "chain",
+        "address",
+        "slot",
+        "field",
+        "explorer_url"
+      ],
+      "type": "object"
+    },
+    "Fact": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/Controller"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact10": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "additionalProperties": {
+            "items": {
+              "$ref": "#/$defs/Address"
+            },
+            "type": "array"
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact11": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact12": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/Hip3Stake"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact2": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/CodeTransparency"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact3": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/OracleSource"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact4": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/UnderlyingFeeds"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact5": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/Dependencies"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact6": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/TokenExtensions"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact7": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/TokenProvenance"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact8": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/Address"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact9": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Address"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Hip3DexFacts": {
+      "additionalProperties": false,
+      "description": "One builder-deployed perp DEX. Every fact is anchored to the HyperEVM\nblock read right before the request (ADR 024 D6).",
+      "properties": {
+        "deployer": {
+          "$ref": "#/$defs/Fact8"
+        },
+        "fee_recipient": {
+          "$ref": "#/$defs/Fact9"
+        },
+        "full_name": {
+          "type": "string"
+        },
+        "funding_multipliers": {
+          "$ref": "#/$defs/Fact11",
+          "description": "Asset → funding multiplier, as the API's decimal string."
+        },
+        "oi_caps": {
+          "$ref": "#/$defs/Fact11",
+          "description": "Asset → streaming open-interest cap, as the API's decimal string."
+        },
+        "oracle_updater": {
+          "$ref": "#/$defs/Fact9",
+          "description": "None: not delegated, the deployer pushes prices."
+        },
+        "stake": {
+          "$ref": "#/$defs/Fact12"
+        },
+        "sub_deployers": {
+          "$ref": "#/$defs/Fact10",
+          "description": "Per-action grants to other addresses (`setOracle`, `registerAsset`,\n…), each list sorted (ADR 024, 9.5 note)."
+        }
+      },
+      "required": [
+        "full_name",
+        "deployer",
+        "oracle_updater",
+        "sub_deployers",
+        "fee_recipient",
+        "oi_caps",
+        "funding_multipliers",
+        "stake"
+      ],
+      "type": "object"
+    },
+    "Hip3Snapshot": {
+      "description": "HIP-3 perp DEXs from the info API (wave 2, HIP-1 to HIP-5). Absent in\nSolana-only runs, so their output is unchanged (HSCO-5).",
+      "oneOf": [
+        {
+          "description": "Keyed by DEX name.",
+          "properties": {
+            "dexs": {
+              "additionalProperties": {
+                "$ref": "#/$defs/Hip3DexFacts"
+              },
+              "type": "object"
+            },
+            "kind": {
+              "const": "listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "dexs"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "The info API failed or answered something unparseable (HIP-5).",
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Hip3Stake": {
+      "oneOf": [
+        {
+          "description": "From `delegatorSummary`; amounts are HYPE as decimal strings.",
+          "properties": {
+            "delegated": {
+              "type": "string"
+            },
+            "kind": {
+              "const": "read",
+              "type": "string"
+            },
+            "pending_withdrawal": {
+              "type": "string"
+            },
+            "required": {
+              "description": "The required stake from `registry/hyperliquid/hip3.yaml`.",
+              "type": "string"
+            },
+            "stake_below_required": {
+              "type": "boolean"
+            },
+            "undelegated": {
+              "type": "string"
+            },
+            "unstaking": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "kind",
+            "delegated",
+            "undelegated",
+            "pending_withdrawal",
+            "required",
+            "stake_below_required",
+            "unstaking"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Metric": {
+      "description": "A number from an external source, or why it is missing. Missing numbers\nshow as \"data unavailable\" and never fail a run (VAL-7).",
+      "oneOf": [
+        {
+          "description": "Whole US dollars.",
+          "properties": {
+            "kind": {
+              "const": "usd",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "MultisigKind": {
+      "oneOf": [
+        {
+          "enum": [
+            "squads_v4",
+            "squads_v3"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "safe",
+          "description": "EVM, wave 2.",
+          "type": "string"
+        }
+      ]
+    },
+    "OracleFact": {
+      "additionalProperties": false,
+      "properties": {
+        "bounds_primary": {
+          "description": "The protocol rejects a primary price outside a threshold of this\nfeed, per the registry's source (v0.3 guarded-primary rule).",
+          "type": "boolean"
+        },
+        "guarded_by": {
+          "description": "For a primary: the oracle networks its publisher documents as\nbounding it. Each must be registered as a bounding fallback before the\nguard counts (v0.3, D3); a documented guard that is not is a gap.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "market": {
+          "type": "string"
+        },
+        "provider": {
+          "description": "Who publishes the price, when the owner program alone does not say\n(e.g. \"Edge by Chaos Labs\" on a Doves account).",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role": {
+          "$ref": "#/$defs/OracleRole"
+        },
+        "source": {
+          "$ref": "#/$defs/Fact3"
+        },
+        "underlying": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Fact4"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The feeds a protocol-run aggregator combines for this market, where\nthe registry says how to read them (edge case 11)."
+        },
+        "underlying_markets": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Fact4"
+          },
+          "description": "The same, per further market reading this account (Kamino: every\nreserve of the market), keyed by market name (F4).",
+          "type": "object"
+        }
+      },
+      "required": [
+        "market",
+        "role",
+        "source"
+      ],
+      "type": "object"
+    },
+    "OracleRole": {
+      "enum": [
+        "primary",
+        "fallback"
+      ],
+      "type": "string"
+    },
+    "OracleSource": {
+      "description": "Who publishes the price, from the oracle account's owner program (COL-12).",
+      "oneOf": [
+        {
+          "description": "An oracle network named in `registry/oracles.yaml` (`pyth`, …).",
+          "properties": {
+            "kind": {
+              "const": "network",
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "name"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "A feed run by the protocol itself or by a single signer.",
+          "properties": {
+            "kind": {
+              "const": "protocol_run",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "An owner program `oracles.yaml` does not know.",
+          "properties": {
+            "kind": {
+              "const": "other",
+              "type": "string"
+            },
+            "owner_program": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "kind",
+            "owner_program"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ProgramFacts": {
+      "additionalProperties": false,
+      "properties": {
+        "code_transparency": {
+          "$ref": "#/$defs/Fact2"
+        },
+        "loader": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Address"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Owner of the program account (COL-7); None when it was not read."
+        },
+        "role": {
+          "$ref": "#/$defs/ProgramRole"
+        },
+        "upgrade_control": {
+          "$ref": "#/$defs/Fact"
+        }
+      },
+      "required": [
+        "role",
+        "upgrade_control",
+        "code_transparency"
+      ],
+      "type": "object"
+    },
+    "ProgramHistory": {
+      "additionalProperties": false,
+      "description": "A program's upgrade history as far as it has been read. Busy ProgramData\naccounts appear in many unrelated transactions, so the history fills over\nseveral runs within the daily call budget.",
+      "properties": {
+        "complete": {
+          "description": "True once every transaction has been examined.",
+          "type": "boolean"
+        },
+        "events": {
+          "description": "Oldest first.",
+          "items": {
+            "$ref": "#/$defs/UpgradeEvent"
+          },
+          "type": "array"
+        },
+        "scanned": {
+          "description": "Transactions on the account examined so far.",
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total": {
+          "description": "Transactions on the account found so far.",
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "events",
+        "scanned",
+        "total",
+        "complete"
+      ],
+      "type": "object"
+    },
+    "ProgramRole": {
+      "description": "`core` programs hold or move user funds and decide the Stage (REG-5).",
+      "enum": [
+        "core",
+        "periphery"
+      ],
+      "type": "string"
+    },
+    "ProtocolFacts": {
+      "additionalProperties": false,
+      "properties": {
+        "admin": {
+          "additionalProperties": {
+            "$ref": "#/$defs/AdminFact"
+          },
+          "description": "Admin keys outside upgrades, keyed by `<account>.<field>`.",
+          "type": "object"
+        },
+        "admin_review": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReviewedNone"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "A sourced registry review that found no admin accounts. Without it,\nan empty `admin` map means \"not yet read\", never \"none\" (v0.3)."
+        },
+        "category": {
+          "default": null,
+          "description": "Registry category (`lending`, `dex`, `perps`, `liquid-staking`), for\ngrouping only.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chain": {
+          "$ref": "#/$defs/Chain"
+        },
+        "dependencies": {
+          "$ref": "#/$defs/Fact5",
+          "description": "Programs the core programs call with user funds."
+        },
+        "last_reviewed": {
+          "default": null,
+          "description": "The registry entry's `last_reviewed` date, for the review-due note (REG-7).",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "max_slot": {
+          "default": 0,
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "min_slot": {
+          "default": 0,
+          "description": "Lowest and highest slot among this protocol's reads (COL-3).",
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "name": {
+          "default": null,
+          "description": "Display name and website from the registry.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "oracle_review": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReviewedNone"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "A sourced registry review that found no price feeds (v0.3)."
+        },
+        "oracles": {
+          "additionalProperties": {
+            "$ref": "#/$defs/OracleFact"
+          },
+          "description": "Price feeds, keyed by oracle account.",
+          "type": "object"
+        },
+        "programs": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ProgramFacts"
+          },
+          "description": "Keyed by program address.",
+          "type": "object"
+        },
+        "reviewed_by": {
+          "default": null,
+          "description": "Who last reviewed the registry entry.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sources": {
+          "default": [],
+          "description": "Where each registry address was confirmed, sorted by kind then\naddress (shown on the protocol page, UI-12).",
+          "items": {
+            "$ref": "#/$defs/RegistrySource"
+          },
+          "type": "array"
+        },
+        "tokens": {
+          "additionalProperties": {
+            "items": {
+              "$ref": "#/$defs/TokenRole"
+            },
+            "type": "array"
+          },
+          "default": {},
+          "description": "Tokens the protocol uses and how, from the registry (TOK-2); keyed by mint.",
+          "type": "object"
+        },
+        "website": {
+          "default": null,
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "chain",
+        "programs",
+        "admin",
+        "oracles",
+        "dependencies"
+      ],
+      "type": "object"
+    },
+    "ProtocolMetrics": {
+      "additionalProperties": false,
+      "description": "One protocol's context metrics for the day.",
+      "properties": {
+        "asset_groups": {
+          "$ref": "#/$defs/AssetGroups",
+          "default": {
+            "kind": "unavailable",
+            "reason": "not collected"
+          },
+          "description": "TVL split by asset group (VAL-3)."
+        },
+        "defillama_slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fees": {
+          "$ref": "#/$defs/Activity",
+          "default": {
+            "kind": "unavailable",
+            "reason": "not collected"
+          },
+          "description": "Daily fees, every category (VAL-6)."
+        },
+        "tvl": {
+          "$ref": "#/$defs/Metric"
+        },
+        "volume": {
+          "$ref": "#/$defs/Activity",
+          "default": {
+            "kind": "unavailable",
+            "reason": "not collected"
+          },
+          "description": "Daily volume, DEXs only; others show fees only (VAL-6)."
+        }
+      },
+      "required": [
+        "tvl"
+      ],
+      "type": "object"
+    },
+    "RegistrySource": {
+      "additionalProperties": false,
+      "description": "A registry address and the public page that confirms it (REG-3).",
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address"
+        },
+        "kind": {
+          "$ref": "#/$defs/SourceKind"
+        },
+        "label": {
+          "description": "Program name, admin field or oracle market.",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "address",
+        "label",
+        "url"
+      ],
+      "type": "object"
+    },
+    "ReviewedNone": {
+      "additionalProperties": false,
+      "description": "A registry statement that a protocol has none of something (admin\naccounts, price feeds), with the public page that shows it.",
+      "properties": {
+        "note": {
+          "description": "What was checked, in one sentence.",
+          "type": "string"
+        },
+        "reviewed_on": {
+          "description": "`YYYY-MM-DD`.",
+          "type": "string"
+        },
+        "source": {
+          "description": "The source or documentation the review relied on.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "reviewed_on",
+        "note"
+      ],
+      "type": "object"
+    },
+    "SourceKind": {
+      "enum": [
+        "admin",
+        "multisig",
+        "oracle",
+        "program"
+      ],
+      "type": "string"
+    },
+    "TokenExtensions": {
+      "additionalProperties": false,
+      "description": "Token-2022 powers. `None` means the extension is absent.",
+      "properties": {
+        "default_frozen": {
+          "default": false,
+          "description": "New token accounts start frozen (an allowlist).",
+          "type": "boolean"
+        },
+        "metadata_update_authority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mint_close_authority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "other": {
+          "description": "Decoded extensions that carry no control power Celebtir rates\n(confidential transfers, interest-bearing, groups, …), by name.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "pause_authority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Who can pause all transfers."
+        },
+        "permanent_delegate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Can move tokens out of any wallet."
+        },
+        "transfer_fee_authority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Who can change the transfer fee; set when the extension is present."
+        },
+        "transfer_hook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TransferHook"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unknown": {
+          "description": "Extension type numbers Celebtir does not decode (TOK-4).",
+          "items": {
+            "format": "uint16",
+            "maximum": 65535,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TokenFacts": {
+      "additionalProperties": false,
+      "description": "One mint's control facts (TOK-3 to TOK-5). Every authority is resolved to\nits effective controller; `Immutable` means the authority is not set.",
+      "properties": {
+        "decimals": {
+          "default": 0,
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "extensions": {
+          "$ref": "#/$defs/Fact6",
+          "description": "Token-2022 extensions; empty for classic SPL Token mints."
+        },
+        "freeze_authority": {
+          "$ref": "#/$defs/Fact"
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TokenIdentity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Type, issuer and source from `registry/tokens.yaml` (TOK-1), for the\ntoken page."
+        },
+        "mint_authority": {
+          "$ref": "#/$defs/Fact"
+        },
+        "program": {
+          "$ref": "#/$defs/TokenProgram"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Fact7",
+          "description": "From `registry/tokens.yaml`; the evidence is the mint account."
+        },
+        "supply": {
+          "default": 0,
+          "description": "Supply in base units at the read slot (TOK-9).",
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "program",
+        "mint_authority",
+        "freeze_authority",
+        "extensions",
+        "provenance"
+      ],
+      "type": "object"
+    },
+    "TokenIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "issuer": {
+          "type": "string"
+        },
+        "issuer_url": {
+          "type": "string"
+        },
+        "kind": {
+          "description": "`stablecoin`, `liquid-staking`, `bridged`, `governance` or `other`.",
+          "type": "string"
+        },
+        "source": {
+          "description": "Confirms the mint, symbol and type.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "issuer",
+        "issuer_url",
+        "source"
+      ],
+      "type": "object"
+    },
+    "TokenMetrics": {
+      "description": "A token's price, in millionths of a US dollar so it stays an exact integer.",
+      "oneOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "price",
+              "type": "string"
+            },
+            "usd_micros": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "usd_micros"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "TokenProgram": {
+      "enum": [
+        "spl_token",
+        "token2022"
+      ],
+      "type": "string"
+    },
+    "TokenProvenance": {
+      "oneOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "native",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "backing_address": {
+              "type": "string"
+            },
+            "backing_chain": {
+              "type": "string"
+            },
+            "bridge": {
+              "type": "string"
+            },
+            "kind": {
+              "const": "bridged",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "bridge",
+            "backing_chain",
+            "backing_address"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "TokenRole": {
+      "description": "How a protocol uses a token (TOK-2).",
+      "enum": [
+        "collateral",
+        "borrowable",
+        "deposit",
+        "lp"
+      ],
+      "type": "string"
+    },
+    "TransferHook": {
+      "additionalProperties": false,
+      "properties": {
+        "authority": {
+          "$ref": "#/$defs/Controller",
+          "description": "Who can point the hook at another program."
+        },
+        "program": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Address"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "None when the extension is present but no hook program is set yet."
+        },
+        "program_controller": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Upgrade control of the hook program itself."
+        }
+      },
+      "required": [
+        "authority"
+      ],
+      "type": "object"
+    },
+    "UnderlyingFeed": {
+      "description": "One source an aggregator combines.",
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address",
+          "description": "The address the aggregator maps the entry to: an oracle or pool\naccount, or a feed ID for push-based sources."
+        },
+        "source_type": {
+          "description": "The aggregator's own name for the source type (Scope: `Chainlink`,\n`PythLazer`, `OrcaWhirlpoolAtoB`, …), from its vendored IDL.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_type",
+        "address"
+      ],
+      "type": "object"
+    },
+    "UnderlyingFeeds": {
+      "description": "What an aggregator (Kamino Scope) reads for one market.",
+      "oneOf": [
+        {
+          "description": "Leaf sources, sorted by type then address.",
+          "properties": {
+            "feeds": {
+              "items": {
+                "$ref": "#/$defs/UnderlyingFeed"
+              },
+              "type": "array"
+            },
+            "kind": {
+              "const": "listed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "feeds"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "UpgradeEvent": {
+      "additionalProperties": false,
+      "description": "One change to a program's ProgramData account (VAL-4).",
+      "properties": {
+        "date": {
+          "description": "`YYYY-MM-DD` from the block time; None when the chain has no block\ntime for the slot (show the slot only, never a guessed date).",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kind": {
+          "$ref": "#/$defs/UpgradeKind"
+        },
+        "new_authority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Address"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "For `set_authority`: the new upgrade authority."
+        },
+        "signature": {
+          "type": "string"
+        },
+        "slot": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "signature",
+        "slot",
+        "kind"
+      ],
+      "type": "object"
+    },
+    "UpgradeKind": {
+      "oneOf": [
+        {
+          "enum": [
+            "deploy",
+            "upgrade",
+            "set_authority",
+            "extend",
+            "close"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "remove_authority",
+          "description": "The authority was removed: the program became immutable.",
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "`data/snapshots/<date>/facts.json`. Holds no timestamps: the date lives in\nthe folder name and run timing lives in `run.json`.",
+  "properties": {
+    "archived": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ArchivedProtocol"
+      },
+      "description": "Protocols that left coverage, from `registry/archived.yaml` (ADR 017),\nkeyed by their former ID.",
+      "type": "object"
+    },
+    "hip3": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Hip3Snapshot"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "HIP-3 perp DEXs (wave 2); None when Hyperliquid was not collected."
+    },
+    "metrics": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ProtocolMetrics"
+      },
+      "default": {},
+      "description": "Context numbers from DefiLlama, keyed by protocol ID. Shown, never\nused in a rating (VAL-1, VAL-7).",
+      "type": "object"
+    },
+    "program_history": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ProgramHistory"
+      },
+      "default": {},
+      "description": "Transactions on each upgradeable core program's ProgramData, oldest\nfirst, keyed by program (VAL-4).",
+      "type": "object"
+    },
+    "protocols": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ProtocolFacts"
+      },
+      "description": "Keyed by registry protocol ID.",
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "token_metrics": {
+      "additionalProperties": {
+        "$ref": "#/$defs/TokenMetrics"
+      },
+      "default": {},
+      "description": "Token prices from DefiLlama, keyed by mint; context only (TOK-9).",
+      "type": "object"
+    },
+    "tokens": {
+      "additionalProperties": {
+        "$ref": "#/$defs/TokenFacts"
+      },
+      "default": {},
+      "description": "Keyed by mint address.",
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "protocols"
+  ],
+  "title": "FactsFile",
+  "type": "object"
+}

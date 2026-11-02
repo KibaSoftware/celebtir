@@ -1,0 +1,84 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Activity says why it has nothing to show 1`] = `
+[
+  "Volume unavailable: DefiLlama has no listing for this protocol.",
+  "Fees unavailable: DefiLlama has no listing for this protocol.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Control graph says why it has nothing to show 1`] = `
+[
+  "No keys found: no program, admin account or token in the registry has a controller that can act.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Dependencies and sources says why it has nothing to show 1`] = `
+[
+  "Called programs unavailable: no readable transactions in the sample window.",
+  "The registry lists no sources for this protocol.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Permissions says why it has nothing to show 1`] = `
+[
+  "No admin keys or upgrade authorities found.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Programs says why it has nothing to show 1`] = `
+[
+  "No programs are listed for this protocol in the registry.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Risk analysis says why it has nothing to show 1`] = `
+[
+  "No on-chain evidence was recorded for this.",
+  "No on-chain evidence was recorded for this.",
+  "No on-chain evidence was recorded for this.",
+  "No on-chain evidence was recorded for this.",
+  "No on-chain evidence was recorded for this.",
+  "No on-chain evidence was recorded for this.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Risk summary says why it has nothing to show 1`] = `
+[
+  "No risk sentences apply: no factor is rated High or Medium.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Stage says why it has nothing to show 1`] = `
+[
+  "No Stage requirements were evaluated: the protocol is Unrated because its core programs could not be assessed.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Summary says why it has nothing to show 1`] = `
+[
+  "No website is listed in the registry.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Updates says why it has nothing to show 1`] = `
+[
+  "No changes have been recorded for this protocol since tracking began.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Upgrades & governance says why it has nothing to show 1`] = `
+[
+  "No upgrade history has been built for this protocol yet.",
+  "No upgrades were found in the transactions examined so far.",
+]
+`;
+
+exports[`ui_12 all twelve sections, each with an empty state > ui_12 Value says why it has nothing to show 1`] = `
+[
+  "TVL unavailable: DefiLlama has no listing for this protocol.",
+  "The TVL chart appears once two daily snapshots exist.",
+  "Asset groups unavailable: DefiLlama has no listing for this protocol.",
+  "No tokens are listed for this protocol in the registry.",
+]
+`;

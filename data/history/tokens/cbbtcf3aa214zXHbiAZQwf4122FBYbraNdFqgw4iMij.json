@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 8,
+      "price_usd_micros": 84371845623,
+      "supply": 288128393034
+    }
+  ],
+  "mint": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+  "schema_version": "0.2.0",
+  "symbol": "cbBTC"
+}

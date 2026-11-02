@@ -1,0 +1,54 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink-primary);
+  white-space: nowrap;
+}
+
+/* A compact status label for matrices and cards: tinted ground, icon, text. */
+.badge[data-tone="pill"] {
+  padding: 3px 9px 3px 7px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.badge[data-tone="pill"][data-rating="low"] {
+  background: rgba(50, 189, 122, 0.1);
+  border-color: rgba(50, 189, 122, 0.28);
+}
+
+.badge[data-tone="pill"][data-rating="medium"] {
+  background: rgba(241, 185, 76, 0.1);
+  border-color: rgba(241, 185, 76, 0.28);
+}
+
+.badge[data-tone="pill"][data-rating="high"] {
+  background: rgba(237, 98, 103, 0.12);
+  border-color: rgba(237, 98, 103, 0.34);
+}
+
+.badge[data-tone="pill"][data-rating="unknown"] {
+  border-color: rgba(137, 146, 163, 0.55);
+  border-style: dashed;
+}
+
+.badge[data-tone="pill"][data-rating="not_applicable"] {
+  border-color: var(--border);
+  color: var(--ink-secondary);
+}
+
+.label {
+  letter-spacing: 0.01em;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

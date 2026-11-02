@@ -1,0 +1,152 @@
+name: daily
+
+# OPS-1: 02:17 UTC, an off-peak minute, and on demand.
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+# OPS-3: least privilege. Pages deploys need id-token; OPS-4 needs issues.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  pipeline:
+    # Host deployment is the active publication path. Owner opt-in is required
+    # before a first push can collect, commit data or publish GitHub Pages.
+    if: vars.CELEBTIR_ENABLE_GITHUB_DAILY == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      site: ${{ steps.site.outputs.exists }}
+    env:
+      CELEBTIR_RPC_URL: ${{ secrets.CELEBTIR_RPC_URL }}
+      # Wave 2 (ADR 024): both optional. Unset, the public HyperEVM RPC is used
+      # and verified source comes from Sourcify only.
+      CELEBTIR_HYPEREVM_RPC_URL: ${{ secrets.CELEBTIR_HYPEREVM_RPC_URL }}
+      CELEBTIR_ETHERSCAN_KEY: ${{ secrets.CELEBTIR_ETHERSCAN_KEY }}
+      CELEBTIR_COMMIT: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.88.0
+      - uses: Swatinem/rust-cache@v2
+      - name: is there a site to deploy?
+        id: site
+        run: if [ -f site/package.json ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; else echo "exists=false" >> "$GITHUB_OUTPUT"; fi
+      - name: build celebtir
+        run: cargo build --release -p celebtir
+
+      # OPS-2: validate → collect → score → diff → build site data.
+      - name: pipeline
+        id: pipeline
+        run: |
+          set +e
+          bash scripts/daily.sh --bin target/release/celebtir --hyperliquid 2>&1 | tee pipeline.log
+          status=${PIPESTATUS[0]}
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          # 2 = some protocols failed: publish, but report (OPS-4).
+          [ "$status" -eq 0 ] || [ "$status" -eq 2 ]
+
+      - name: upload snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: snapshot-${{ github.run_id }}
+          path: |
+            data/snapshots/
+            pipeline.log
+          if-no-files-found: ignore
+
+      # OPS-5: one bot commit per day summarising events and failures.
+      - name: commit data
+        run: |
+          git config user.name "celebtir-bot"
+          git config user.email "celebtir-bot@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "no data changes"
+          else
+            msg="$(target/release/celebtir summarize "data/snapshots/$(date -u +%Y-%m-%d)")"
+            git commit -m "$msg"
+            git push
+          fi
+
+      # OPS-6: projected monthly usage above 70% of the free tier opens an issue.
+      - name: usage check
+        run: |
+          json="$(target/release/celebtir --format json summarize "data/snapshots/$(date -u +%Y-%m-%d)")"
+          echo "$json"
+          if [ "$(echo "$json" | jq -r .usage_warning)" = "true" ]; then
+            gh issue create --title "RPC usage above 70% of the free tier" --label usage-warning \
+              --body "Projected monthly RPC usage: $(echo "$json" | jq -r .rpc_projected_monthly_pct)% of the free tier."
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      # The Pages URL makes Open Graph and Markdown links absolute (UI-14, UI-15).
+      - name: pages settings
+        id: pages
+        if: hashFiles('site/package.json') != ''
+        uses: actions/configure-pages@v5
+
+      - name: build site
+        if: hashFiles('site/package.json') != ''
+        run: |
+          corepack enable
+          pnpm -C site install --frozen-lockfile
+          pnpm -C site build
+        env:
+          CELEBTIR_SITE_URL: ${{ steps.pages.outputs.base_url }}
+          CELEBTIR_DATA: ${{ github.workspace }}/data
+
+      - name: upload pages artifact
+        if: hashFiles('site/package.json') != ''
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/out
+
+      # OPS-4: a partial run keeps or opens the pipeline-failure issue.
+      - name: report partial failure
+        if: steps.pipeline.outputs.status == '2'
+        run: bash scripts/pipeline-issue.sh open pipeline.log
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: close failure issue after a clean run
+        if: steps.pipeline.outputs.status == '0'
+        run: bash scripts/pipeline-issue.sh close
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  deploy:
+    needs: pipeline
+    if: vars.CELEBTIR_ENABLE_GITHUB_DAILY == 'true' && needs.pipeline.outputs.site == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
+      - uses: actions/checkout@v4
+      # API-3: the deployed files are readable cross-origin (GitHub Pages
+      # sends Access-Control-Allow-Origin: *; a static export cannot set it).
+      - name: check the static API
+        run: node site/scripts/check-api.mjs "${{ steps.deployment.outputs.page_url }}"
+
+  # OPS-4: a failed run leaves the site unchanged and opens or updates the issue.
+  report-failure:
+    needs: pipeline
+    if: vars.CELEBTIR_ENABLE_GITHUB_DAILY == 'true' && failure()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/pipeline-issue.sh open "" "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        env:
+          GH_TOKEN: ${{ github.token }}

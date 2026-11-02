@@ -1,0 +1,20 @@
+# Source facts for the golden fixture's programs (F1), keyed by program ID.
+programs:
+  - id: KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD
+    name: Lending
+    source_code:
+      kind: public
+      repo: https://github.com/Kamino-Finance/klend
+      evidence: https://github.com/Kamino-Finance/klend
+  - id: FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr
+    name: Farms
+    source_code:
+      kind: public
+      repo: https://github.com/Kamino-Finance/kfarms
+      evidence: https://github.com/Kamino-Finance/kfarms
+  - id: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+    name: SPL Stake Pool
+    source_code:
+      kind: public
+      repo: https://github.com/solana-program/stake-pool
+      evidence: https://www.solana-program.com/docs/stake-pool

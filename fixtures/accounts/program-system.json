@@ -1,0 +1,12 @@
+{
+  "address": "11111111111111111111111111111111",
+  "data_base64": "c29sYW5hX3N5c3RlbV9wcm9ncmFt",
+  "data_slice": null,
+  "executable": true,
+  "lamports": 1,
+  "name": "program-system",
+  "note": "System program: owned by NativeLoader (unsupported loader)",
+  "owner": "NativeLoader1111111111111111111111111111111",
+  "slot": 458009960,
+  "source": "api.mainnet-beta.solana.com getMultipleAccounts finalized"
+}

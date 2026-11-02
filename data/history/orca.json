@@ -1,0 +1,36 @@
+{
+  "days": [
+    {
+      "assessment": "assessed",
+      "date": "2026-10-21",
+      "fees_usd": 257537,
+      "methodology_version": "0.1",
+      "ratings": {
+        "admin_powers": "low",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 307331347,
+      "volume_usd": 278417543
+    }
+  ],
+  "protocol": "orca",
+  "review": {
+    "awaiting_human_review": true,
+    "due": false,
+    "last_reviewed": "2026-10-19"
+  },
+  "schema_version": "0.2.0",
+  "upgrades": {
+    "average_interval_days": null,
+    "complete": false,
+    "last_upgrade_date": null,
+    "last_upgrade_slot": null,
+    "upgrades": 0,
+    "upgrades_last_30_days": 0
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "getMultipleAccounts",
+    "params": [
+      [
+        "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+        "5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9"
+      ],
+      {
+        "commitment": "finalized",
+        "dataSlice": {
+          "length": 45,
+          "offset": 0
+        },
+        "encoding": "base64"
+      }
+    ]
+  },
+  "response": {
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "context": {
+        "apiVersion": "4.3.0",
+        "slot": 458085384
+      },
+      "value": [
+        {
+          "data": [
+            "AwAAAHdLQRoAAAAAAe2KAyz2sSxYZ1SbqX4ZAaGyRsTPFkrNy7+tAU2nA+an",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 72981780480,
+          "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+          "rentEpoch": 18446744073709551615,
+          "space": 10485760
+        },
+        {
+          "data": [
+            "AwAAAGBwdxoAAAAAAa4uH7i+/Y8GJZBKt+c9I2W0zTbUPaKwDUARCzIKeVh/",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 72981780480,
+          "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+          "rentEpoch": 18446744073709551615,
+          "space": 10485760
+        }
+      ]
+    }
+  }
+}

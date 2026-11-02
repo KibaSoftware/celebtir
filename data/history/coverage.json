@@ -1,0 +1,57 @@
+{
+  "assessed_chains": [
+    "solana"
+  ],
+  "methodology_version": "0.3",
+  "protocols": {
+    "binance-staked-sol": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "drift-staked-sol": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "forward-sol": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "gmx-solana": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "jito": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "jupiter-lend": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "jupiter-perps": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "jupiter-staked-sol": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "kamino-lend": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "orca": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "pumpswap": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "raydium-amm": {
+      "assessment": "assessed",
+      "chain": "solana"
+    }
+  },
+  "schema_version": "0.1.0"
+}

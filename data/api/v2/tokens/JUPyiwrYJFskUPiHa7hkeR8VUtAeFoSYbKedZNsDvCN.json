@@ -1,0 +1,170 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 6,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          "field": "freeze_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "immutable"
+      }
+    },
+    "identity": {
+      "issuer": "Jupiter",
+      "issuer_url": "https://jup.ag/",
+      "kind": "governance",
+      "source": "https://developers.jup.ag/docs/llms-full.txt"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          "field": "mint_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "immutable"
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 6861485924354544,
+    "symbol": "JUP"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+  "price": {
+    "kind": "price",
+    "usd_micros": 328927
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+            "field": "freeze_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no freeze, pause or seize power"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+            "field": "mint_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "mint authority renounced: supply is fixed"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [],
+    "symbol": "JUP"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 6,
+      "price_usd_micros": 328927,
+      "supply": 6861485924354544
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "jupiter-lend",
+      "roles": [
+        "collateral"
+      ]
+    },
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "deposit"
+      ]
+    }
+  ]
+}

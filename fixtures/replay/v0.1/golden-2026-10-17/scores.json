@@ -1,0 +1,908 @@
+{
+  "methodology_version": "0.1",
+  "protocols": {
+    "kamino-lend": {
+      "admin": {
+        "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF.lending_market_owner": {
+          "rating": "high",
+          "reason": "`lending_market_owner` can change parameters, held by unrecognized controller 24Lj…ZMMT owned by program 1111…1111"
+        }
+      },
+      "callees": {},
+      "control_class": "multisig_with_delay",
+      "controller_summary": "Squads 5 of 10 · 24 h delay",
+      "factors": {
+        "admin_powers": {
+          "evidence": [
+            {
+              "address": "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF",
+              "field": "lending_market_owner",
+              "slot": 458085395
+            },
+            {
+              "address": "24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT",
+              "field": "owner",
+              "slot": 458085395
+            }
+          ],
+          "next_step": "hold every admin key in a multisig of 3+ voters at a 50%+ threshold → MEDIUM",
+          "rating": "high",
+          "reason": "`lending_market_owner` can change parameters, held by unrecognized controller 24Lj…ZMMT owned by program 1111…1111"
+        },
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "field": "verified_build",
+              "slot": 458085384
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "verified build of https://github.com/Kamino-Finance/klend/tree/a08760976f51a3a58c4a0c6ea27b4a0e565bca79 at a08760976f51a3a58c4a0c6ea27b4a0e565bca79"
+        },
+        "dependencies": {
+          "evidence": [
+            {
+              "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+              "field": "transaction sample (0 transactions)",
+              "slot": 0
+            }
+          ],
+          "next_step": "rated once Celebtir can read the missing data; until then the Stage is capped at 0",
+          "rating": "unknown",
+          "reason": "dependencies unavailable (no readable transactions in the sample window)"
+        },
+        "oracle_dependency": {
+          "evidence": [
+            {
+              "address": "3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C",
+              "field": "owner",
+              "slot": 458085395
+            },
+            {
+              "address": "7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE",
+              "field": "owner",
+              "slot": 458085395
+            }
+          ],
+          "next_step": "add an established fallback feed for every market → LOW",
+          "rating": "medium",
+          "reason": "SOL reserve: single oracle network (pyth), no fallback"
+        },
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "field": "upgrade_authority",
+              "slot": 458085384
+            },
+            {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 458085385
+            }
+          ],
+          "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+          "rating": "medium",
+          "reason": "Squads v4 multisig, 5 of 10 voters, time lock 24 h"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+              "field": "upgrade_authority",
+              "slot": 458085384
+            },
+            {
+              "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 458085385
+            }
+          ],
+          "next_step": "a time lock of 5 days+ → LOW",
+          "rating": "medium",
+          "reason": "time lock 24 h"
+        }
+      },
+      "programs": {
+        "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr": {
+          "code_transparency": {
+            "evidence": [
+              {
+                "address": "FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr",
+                "field": "verified_build",
+                "slot": 458085384
+              }
+            ],
+            "next_step": "none: LOW is the lowest risk level",
+            "rating": "low",
+            "reason": "verified build of https://github.com/Kamino-Finance/kfarms/tree/bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4 at bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4"
+          },
+          "role": "periphery",
+          "upgrade_control": {
+            "evidence": [
+              {
+                "address": "5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+                "field": "upgrade_authority",
+                "slot": 458085384
+              },
+              {
+                "address": "CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+                "field": "owner",
+                "slot": 458085385
+              }
+            ],
+            "next_step": "Celebtir support for this controller type, or a multisig of 3+ voters at a 50%+ threshold → MEDIUM",
+            "rating": "high",
+            "reason": "unrecognized controller Civj…vMuY owned by program 1111…1111 (Celebtir does not yet support this controller type)"
+          },
+          "upgrade_delay": {
+            "evidence": [
+              {
+                "address": "5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/5Fz4tY19ihWJAW1j9RNoEQJKSdn5mQHjcVrcZ5BRK5E9",
+                "field": "upgrade_authority",
+                "slot": 458085384
+              },
+              {
+                "address": "CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/CivjSDKgTpmkRNL4zYcmv9D9QqPJg6yTxBVxMGcXvMuY",
+                "field": "owner",
+                "slot": 458085385
+              }
+            ],
+            "next_step": "a time lock of 24 h+ → MEDIUM; 5 days+ → LOW",
+            "rating": "high",
+            "reason": "no delay can be read for an unrecognized controller"
+          }
+        },
+        "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD": {
+          "code_transparency": {
+            "evidence": [
+              {
+                "address": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+                "field": "verified_build",
+                "slot": 458085384
+              }
+            ],
+            "next_step": "none: LOW is the lowest risk level",
+            "rating": "low",
+            "reason": "verified build of https://github.com/Kamino-Finance/klend/tree/a08760976f51a3a58c4a0c6ea27b4a0e565bca79 at a08760976f51a3a58c4a0c6ea27b4a0e565bca79"
+          },
+          "role": "core",
+          "upgrade_control": {
+            "evidence": [
+              {
+                "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+                "field": "upgrade_authority",
+                "slot": 458085384
+              },
+              {
+                "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+                "field": "threshold, time_lock, members, config_authority",
+                "slot": 458085385
+              }
+            ],
+            "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+            "rating": "medium",
+            "reason": "Squads v4 multisig, 5 of 10 voters, time lock 24 h"
+          },
+          "upgrade_delay": {
+            "evidence": [
+              {
+                "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+                "field": "upgrade_authority",
+                "slot": 458085384
+              },
+              {
+                "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+                "field": "threshold, time_lock, members, config_authority",
+                "slot": 458085385
+              }
+            ],
+            "next_step": "a time lock of 5 days+ → LOW",
+            "rating": "medium",
+            "reason": "time lock 24 h"
+          }
+        }
+      },
+      "risks": [
+        {
+          "category": "stolen",
+          "factor": "admin_powers",
+          "severity": "high",
+          "text": "Funds can be stolen if protocol parameters are changed by the unrecognized controller 24LjDBukaUSHgPowcF2wY1XscnhChcBUDETN2UhBZMMT using `lending_market_owner`."
+        },
+        {
+          "category": "stolen",
+          "factor": "upgrade_control",
+          "severity": "medium",
+          "text": "Funds can be stolen if a core program is upgraded to new code by 5 of 10 voters of multisig 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM."
+        },
+        {
+          "category": "stolen",
+          "factor": "upgrade_delay",
+          "severity": "medium",
+          "text": "Funds can be stolen if a harmful upgrade is approved, because it takes effect after 24 h, before users can withdraw."
+        },
+        {
+          "category": "price_manipulation",
+          "factor": "oracle_dependency",
+          "severity": "medium",
+          "text": "Prices can be manipulated if its only oracle network (pyth) reports a false price for SOL reserve."
+        }
+      ],
+      "stage": {
+        "missing": [
+          {
+            "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+            "detail": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD: effective time lock 24 h; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+            "id": "s1.upgrade_delay",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "admin powers rated Low or Medium",
+            "detail": "HIGH: `lending_market_owner` can change parameters, held by unrecognized controller 24Lj…ZMMT owned by program 1111…1111",
+            "id": "s1.admin_powers",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "every factor could be read (Unknown caps the Stage at 0)",
+            "detail": "Unknown: Dependencies",
+            "id": "s1.no_unknown",
+            "met": false,
+            "stage": "stage_1"
+          }
+        ],
+        "next": "stage_1",
+        "requirements": [
+          {
+            "description": "core programs identified in the registry",
+            "detail": "1 core programs",
+            "id": "s0.core_programs",
+            "met": true,
+            "stage": "stage_0"
+          },
+          {
+            "description": "public source for every core program",
+            "detail": "all core programs have public source",
+            "id": "s0.public_source",
+            "met": true,
+            "stage": "stage_0"
+          },
+          {
+            "description": "upgrade control readable for every core program",
+            "detail": "upgrade control read for all core programs",
+            "id": "s0.upgrade_control_known",
+            "met": true,
+            "stage": "stage_0"
+          },
+          {
+            "description": "upgrade control rated Low or Medium",
+            "detail": "MEDIUM: Squads v4 multisig, 5 of 10 voters, time lock 24 h",
+            "id": "s1.upgrade_control",
+            "met": true,
+            "stage": "stage_1"
+          },
+          {
+            "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+            "detail": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD: effective time lock 24 h; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+            "id": "s1.upgrade_delay",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "admin powers rated Low or Medium",
+            "detail": "HIGH: `lending_market_owner` can change parameters, held by unrecognized controller 24Lj…ZMMT owned by program 1111…1111",
+            "id": "s1.admin_powers",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "no multisig has a single-key config authority",
+            "detail": "no single-key config authority",
+            "id": "s1.config_authority",
+            "met": true,
+            "stage": "stage_1"
+          },
+          {
+            "description": "verified builds for all core programs",
+            "detail": "all core programs verified",
+            "id": "s1.verified_builds",
+            "met": true,
+            "stage": "stage_1"
+          },
+          {
+            "description": "every factor could be read (Unknown caps the Stage at 0)",
+            "detail": "Unknown: Dependencies",
+            "id": "s1.no_unknown",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "core programs immutable, or upgradeable only through on-chain governance with a long delay",
+            "detail": "upgradeable without 30 days+ governance delay: KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "id": "s2.immutable_or_governance",
+            "met": false,
+            "stage": "stage_2"
+          },
+          {
+            "description": "no key can move or freeze user funds",
+            "detail": "no admin key can move or freeze funds",
+            "id": "s2.no_fund_control",
+            "met": true,
+            "stage": "stage_2"
+          }
+        ],
+        "stage": "stage_0"
+      },
+      "tokens": {
+        "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+          "roles": [
+            "collateral",
+            "borrowable"
+          ],
+          "symbol": "USDC",
+          "warning": "accepts USDC as collateral, which is rated High (Supply control: new supply can be minted by single key BJE5…5ruG; Freeze and seize powers: balances can be frozen by single key 7dGb…Crar)",
+          "worst": "high"
+        },
+        "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn": {
+          "roles": [
+            "collateral"
+          ],
+          "symbol": "JitoSOL",
+          "warning": "accepts JitoSOL as collateral, which is rated High (Supply control: new supply can be minted by unrecognized controller 6iQK…pVSS owned by program 1111…1111)",
+          "worst": "high"
+        }
+      }
+    },
+    "spl-stake-pool": {
+      "admin": {},
+      "callees": {
+        "Stake11111111111111111111111111111111111111": {
+          "rating": "low",
+          "reason": "immutable"
+        }
+      },
+      "control_class": "unrecognized",
+      "controller_summary": "Unrecognized",
+      "factors": {
+        "admin_powers": {
+          "evidence": [
+            {
+              "address": "EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+              "field": "upgrade_authority",
+              "slot": 458085407
+            },
+            {
+              "address": "dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+              "field": "owner",
+              "slot": 458085408
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "the registry lists no admin accounts; the evidence is the core programs' upgrade reads"
+        },
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+              "field": "verified_build",
+              "slot": 458085407
+            }
+          ],
+          "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+          "rating": "medium",
+          "reason": "source public at https://github.com/solana-program, but the deployed build is not verified"
+        },
+        "dependencies": {
+          "evidence": [
+            {
+              "address": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+              "field": "transaction sample (5 transactions)",
+              "slot": 458084269
+            },
+            {
+              "address": "6WU8Nxarf9fudRK5atWwjLY4vFaw5UrrWhL88qz7iCMJ",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6WU8Nxarf9fudRK5atWwjLY4vFaw5UrrWhL88qz7iCMJ",
+              "field": "upgrade_authority",
+              "slot": 458085503
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "all 1 callees rated Low on upgrade control"
+        },
+        "oracle_dependency": {
+          "evidence": [
+            {
+              "address": "EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+              "field": "upgrade_authority",
+              "slot": 458085407
+            },
+            {
+              "address": "dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+              "field": "owner",
+              "slot": 458085408
+            }
+          ],
+          "next_step": "not applicable: nothing to improve",
+          "rating": "not_applicable",
+          "reason": "the registry lists no price feeds; the evidence is the core programs' upgrade reads"
+        },
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+              "field": "upgrade_authority",
+              "slot": 458085407
+            },
+            {
+              "address": "dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+              "field": "owner",
+              "slot": 458085408
+            }
+          ],
+          "next_step": "Celebtir support for this controller type, or a multisig of 3+ voters at a 50%+ threshold → MEDIUM",
+          "rating": "high",
+          "reason": "unrecognized controller dPpF…guDH owned by program 1111…1111 (Celebtir does not yet support this controller type)"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+              "field": "upgrade_authority",
+              "slot": 458085407
+            },
+            {
+              "address": "dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+              "field": "owner",
+              "slot": 458085408
+            }
+          ],
+          "next_step": "a time lock of 24 h+ → MEDIUM; 5 days+ → LOW",
+          "rating": "high",
+          "reason": "no delay can be read for an unrecognized controller"
+        }
+      },
+      "programs": {
+        "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy": {
+          "code_transparency": {
+            "evidence": [
+              {
+                "address": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+                "field": "verified_build",
+                "slot": 458085407
+              }
+            ],
+            "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+            "rating": "medium",
+            "reason": "source public at https://github.com/solana-program, but the deployed build is not verified"
+          },
+          "role": "core",
+          "upgrade_control": {
+            "evidence": [
+              {
+                "address": "EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+                "field": "upgrade_authority",
+                "slot": 458085407
+              },
+              {
+                "address": "dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+                "field": "owner",
+                "slot": 458085408
+              }
+            ],
+            "next_step": "Celebtir support for this controller type, or a multisig of 3+ voters at a 50%+ threshold → MEDIUM",
+            "rating": "high",
+            "reason": "unrecognized controller dPpF…guDH owned by program 1111…1111 (Celebtir does not yet support this controller type)"
+          },
+          "upgrade_delay": {
+            "evidence": [
+              {
+                "address": "EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/EmiU8AQkB2sswTxVB6aCmsAJftoowZGGDXuytm6X65R3",
+                "field": "upgrade_authority",
+                "slot": 458085407
+              },
+              {
+                "address": "dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+                "chain": "solana",
+                "explorer_url": "https://solscan.io/account/dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH",
+                "field": "owner",
+                "slot": 458085408
+              }
+            ],
+            "next_step": "a time lock of 24 h+ → MEDIUM; 5 days+ → LOW",
+            "rating": "high",
+            "reason": "no delay can be read for an unrecognized controller"
+          }
+        }
+      },
+      "risks": [
+        {
+          "category": "stolen",
+          "factor": "upgrade_control",
+          "severity": "high",
+          "text": "Funds can be stolen if a core program is upgraded to new code by the unrecognized controller dPpFfahSWhm5M2RB3nVaHsXfnh9ooz5bWtR3WeUguDH."
+        },
+        {
+          "category": "stolen",
+          "factor": "upgrade_delay",
+          "severity": "high",
+          "text": "Funds can be stolen if a harmful upgrade is approved, because it takes effect immediately, before users can withdraw."
+        },
+        {
+          "category": "stolen",
+          "factor": "code_transparency",
+          "severity": "medium",
+          "text": "Funds can be stolen if the deployed code of SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy differs from its public source, because the build is not verified."
+        }
+      ],
+      "stage": {
+        "missing": [
+          {
+            "description": "upgrade control rated Low or Medium",
+            "detail": "HIGH: unrecognized controller dPpF…guDH owned by program 1111…1111 (Celebtir does not yet support this controller type)",
+            "id": "s1.upgrade_control",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+            "detail": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy: effective time lock 0 s; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+            "id": "s1.upgrade_delay",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "verified builds for all core programs",
+            "detail": "not verified: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+            "id": "s1.verified_builds",
+            "met": false,
+            "stage": "stage_1"
+          }
+        ],
+        "next": "stage_1",
+        "requirements": [
+          {
+            "description": "core programs identified in the registry",
+            "detail": "1 core programs",
+            "id": "s0.core_programs",
+            "met": true,
+            "stage": "stage_0"
+          },
+          {
+            "description": "public source for every core program",
+            "detail": "all core programs have public source",
+            "id": "s0.public_source",
+            "met": true,
+            "stage": "stage_0"
+          },
+          {
+            "description": "upgrade control readable for every core program",
+            "detail": "upgrade control read for all core programs",
+            "id": "s0.upgrade_control_known",
+            "met": true,
+            "stage": "stage_0"
+          },
+          {
+            "description": "upgrade control rated Low or Medium",
+            "detail": "HIGH: unrecognized controller dPpF…guDH owned by program 1111…1111 (Celebtir does not yet support this controller type)",
+            "id": "s1.upgrade_control",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+            "detail": "SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy: effective time lock 0 s; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+            "id": "s1.upgrade_delay",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "admin powers rated Low or Medium",
+            "detail": "LOW: the registry lists no admin accounts; the evidence is the core programs' upgrade reads",
+            "id": "s1.admin_powers",
+            "met": true,
+            "stage": "stage_1"
+          },
+          {
+            "description": "no multisig has a single-key config authority",
+            "detail": "no single-key config authority",
+            "id": "s1.config_authority",
+            "met": true,
+            "stage": "stage_1"
+          },
+          {
+            "description": "verified builds for all core programs",
+            "detail": "not verified: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+            "id": "s1.verified_builds",
+            "met": false,
+            "stage": "stage_1"
+          },
+          {
+            "description": "every factor could be read (Unknown caps the Stage at 0)",
+            "detail": "no Unknown factors",
+            "id": "s1.no_unknown",
+            "met": true,
+            "stage": "stage_1"
+          },
+          {
+            "description": "core programs immutable, or upgradeable only through on-chain governance with a long delay",
+            "detail": "upgradeable without 30 days+ governance delay: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy",
+            "id": "s2.immutable_or_governance",
+            "met": false,
+            "stage": "stage_2"
+          },
+          {
+            "description": "no key can move or freeze user funds",
+            "detail": "no admin key can move or freeze funds",
+            "id": "s2.no_fund_control",
+            "met": true,
+            "stage": "stage_2"
+          }
+        ],
+        "stage": "stage_0"
+      },
+      "tokens": {
+        "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn": {
+          "roles": [
+            "deposit"
+          ],
+          "symbol": "JitoSOL",
+          "warning": null,
+          "worst": "high"
+        }
+      }
+    }
+  },
+  "schema_version": "0.1.0",
+  "tokens": {
+    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+      "factors": {
+        "freeze_and_seize": {
+          "evidence": [
+            {
+              "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "field": "freeze_authority",
+              "slot": 458085504
+            }
+          ],
+          "next_step": "remove any permanent delegate and hold freeze or pause powers in a multisig → MEDIUM",
+          "rating": "high",
+          "reason": "balances can be frozen by single key 7dGb…Crar"
+        },
+        "provenance": {
+          "evidence": [
+            {
+              "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "field": "mint",
+              "slot": 458085504
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "native to Solana"
+        },
+        "supply_control": {
+          "evidence": [
+            {
+              "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "field": "mint_authority",
+              "slot": 458085504
+            }
+          ],
+          "next_step": "hold the mint authority in a multisig → MEDIUM",
+          "rating": "high",
+          "reason": "new supply can be minted by single key BJE5…5ruG"
+        },
+        "transfer_restrictions": {
+          "evidence": [
+            {
+              "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+              "field": "extensions",
+              "slot": 458085504
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "no transfer restrictions"
+        }
+      },
+      "risks": [
+        {
+          "factor": "supply_control",
+          "severity": "high",
+          "text": "New supply can be minted if single key BJE5…5ruG uses the mint authority."
+        },
+        {
+          "factor": "freeze_and_seize",
+          "severity": "high",
+          "text": "Your balance can be frozen if single key 7dGb…Crar uses the freeze authority."
+        }
+      ],
+      "symbol": "USDC"
+    },
+    "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn": {
+      "factors": {
+        "freeze_and_seize": {
+          "evidence": [
+            {
+              "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+              "field": "freeze_authority",
+              "slot": 458085504
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "no freeze, pause or seize power"
+        },
+        "provenance": {
+          "evidence": [
+            {
+              "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+              "field": "mint",
+              "slot": 458085504
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "native to Solana"
+        },
+        "supply_control": {
+          "evidence": [
+            {
+              "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+              "field": "mint_authority",
+              "slot": 458085504
+            },
+            {
+              "address": "6iQKfEyhr3bZMotVkW6beNZz5CPAkiwvgV2CTje9pVSS",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/6iQKfEyhr3bZMotVkW6beNZz5CPAkiwvgV2CTje9pVSS",
+              "field": "owner",
+              "slot": 458085504
+            }
+          ],
+          "next_step": "hold the mint authority in a multisig → MEDIUM",
+          "rating": "high",
+          "reason": "new supply can be minted by unrecognized controller 6iQK…pVSS owned by program 1111…1111"
+        },
+        "transfer_restrictions": {
+          "evidence": [
+            {
+              "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+              "field": "extensions",
+              "slot": 458085504
+            }
+          ],
+          "next_step": "none: LOW is the lowest risk level",
+          "rating": "low",
+          "reason": "no transfer restrictions"
+        }
+      },
+      "risks": [
+        {
+          "factor": "supply_control",
+          "severity": "high",
+          "text": "New supply can be minted if unrecognized controller 6iQK…pVSS owned by program 1111…1111 uses the mint authority."
+        }
+      ],
+      "symbol": "JitoSOL"
+    }
+  },
+  "value_by_control": {
+    "all": {
+      "classes": {
+        "immutable": 0,
+        "multisig_with_delay": 1310434543,
+        "multisig_without_delay": 0,
+        "single_key": 0,
+        "unrecognized": 0
+      },
+      "total": 1310434543
+    },
+    "by_category": {
+      "lending": {
+        "classes": {
+          "immutable": 0,
+          "multisig_with_delay": 1310434543,
+          "multisig_without_delay": 0,
+          "single_key": 0,
+          "unrecognized": 0
+        },
+        "total": 1310434543
+      }
+    },
+    "excluded": [
+      "spl-stake-pool"
+    ]
+  }
+}

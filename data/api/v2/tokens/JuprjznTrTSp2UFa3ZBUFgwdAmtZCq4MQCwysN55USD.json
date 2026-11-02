@@ -1,0 +1,208 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 6,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+          "field": "freeze_authority",
+          "slot": 459678101
+        },
+        {
+          "address": "CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+          "field": "owner",
+          "slot": 459678113
+        }
+      ],
+      "value": {
+        "key": "CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+        "kind": "unrecognized",
+        "owner_program": null
+      }
+    },
+    "identity": {
+      "issuer": "Jupiter",
+      "issuer_url": "https://jup.ag/",
+      "kind": "stablecoin",
+      "source": "https://developers.jup.ag/docs/jupusd/index.md"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+          "field": "mint_authority",
+          "slot": 459678101
+        },
+        {
+          "address": "CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+          "field": "owner",
+          "slot": 459678113
+        }
+      ],
+      "value": {
+        "key": "CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+        "kind": "unrecognized",
+        "owner_program": null
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 42921154635715,
+    "symbol": "JupUSD"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+  "price": {
+    "kind": "price",
+    "usd_micros": 998758
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+            "field": "freeze_authority",
+            "slot": 459678101
+          },
+          {
+            "address": "CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+            "field": "owner",
+            "slot": 459678113
+          }
+        ],
+        "next_step": "remove any permanent delegate and hold freeze or pause powers in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "balances can be frozen by unrecognized controller CkzL…BZNA"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+            "field": "mint_authority",
+            "slot": 459678101
+          },
+          {
+            "address": "CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/CkzLnD9r4d4ZZofsgNVo2VNunxDmte5YJ4vfAgMfBZNA",
+            "field": "owner",
+            "slot": 459678113
+          }
+        ],
+        "next_step": "hold the mint authority in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "new supply can be minted by unrecognized controller CkzL…BZNA"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/JuprjznTrTSp2UFa3ZBUFgwdAmtZCq4MQCwysN55USD",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [
+      {
+        "factor": "supply_control",
+        "severity": "high",
+        "text": "New supply can be minted if unrecognized controller CkzL…BZNA uses the mint authority."
+      },
+      {
+        "factor": "freeze_and_seize",
+        "severity": "high",
+        "text": "Your balance can be frozen if unrecognized controller CkzL…BZNA uses the freeze authority."
+      }
+    ],
+    "symbol": "JupUSD"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 6,
+      "price_usd_micros": 998758,
+      "supply": 42921154635715
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "jupiter-lend",
+      "roles": [
+        "deposit",
+        "borrowable"
+      ]
+    }
+  ]
+}

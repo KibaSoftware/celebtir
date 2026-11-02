@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 6,
+      "price_usd_micros": 999464,
+      "supply": 7772864997273158
+    }
+  ],
+  "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+  "schema_version": "0.2.0",
+  "symbol": "USDC"
+}

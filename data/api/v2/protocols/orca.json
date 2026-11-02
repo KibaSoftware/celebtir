@@ -1,0 +1,803 @@
+{
+  "$schema": "/data/v2/schemas/protocol.schema.json",
+  "api_version": "v2",
+  "assessment": "assessed",
+  "chain": "solana",
+  "deprecation": null,
+  "facts": {
+    "admin": {
+      "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ.fee_authority": {
+        "account": "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+        "controller": {
+          "evidence": [
+            {
+              "address": "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+              "field": "fee_authority",
+              "slot": 459676540
+            },
+            {
+              "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676267
+            }
+          ],
+          "value": {
+            "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "2NfC7wE7zwZSeBWqdB5wKJUxgSSNXDxfZAjamVhh7gXb",
+              "2UsxUedKwJuJSTywPcBXKPvg2MeA1eBcBxqbUsi7PShG",
+              "62E2yXt9pyuurzpA74r5RbAP6eswLcWjFwEW8aqoK8mn",
+              "6DWfmaUTtgeUQe5cRQoUgHycQefnCDWVY2xkT9iCkddB",
+              "744yfFyAtJrH9FhRNHUFbevVhSBU42G3W4q2Zs2J9Npk",
+              "8xqdLe2KW5YiYbAGNEdeH2KqP4WvXVfFgt1QbKNSEVvt",
+              "BgV5ocPwmVjVgD999RBVDLUAQQxwPm3fRedhQxxBAjyp",
+              "F1FSHAbRu3YfEjKzyYNHoNGbzPuaoXcmJkEgGyG3gDN9",
+              "HNeMErwpEJFTMSNoK9fjhsedwvHQ7LMKxccDW9r2gumk"
+            ],
+            "threshold": 5,
+            "time_lock_secs": 86400,
+            "voters": 9
+          }
+        },
+        "field": "fee_authority",
+        "power": "parameters"
+      }
+    },
+    "category": "dex",
+    "chain": "solana",
+    "dependencies": {
+      "evidence": [
+        {
+          "address": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+          "field": "transaction sample (26 transactions)",
+          "slot": 459676540
+        }
+      ],
+      "value": {
+        "callees": {},
+        "kind": "sampled"
+      }
+    },
+    "last_reviewed": "2026-10-19",
+    "max_slot": 459676540,
+    "min_slot": 459676265,
+    "name": "Orca",
+    "oracles": {},
+    "programs": {
+      "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+              "field": "verified_build",
+              "slot": 459676265
+            }
+          ],
+          "value": {
+            "kind": "public_source_unverified",
+            "on_chain_hash": "75d0cbf14e39949d50656d581b2e0065ac9543588da96a1dc4c1091a939c605c",
+            "repo": "https://github.com/orca-so/whirlpools"
+          }
+        },
+        "loader": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+              "field": "upgrade_authority",
+              "slot": 459676266
+            },
+            {
+              "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676267
+            }
+          ],
+          "value": {
+            "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "config_authority": null,
+            "kind": "multisig",
+            "multisig_kind": "squads_v4",
+            "signers": [
+              "2NfC7wE7zwZSeBWqdB5wKJUxgSSNXDxfZAjamVhh7gXb",
+              "2UsxUedKwJuJSTywPcBXKPvg2MeA1eBcBxqbUsi7PShG",
+              "62E2yXt9pyuurzpA74r5RbAP6eswLcWjFwEW8aqoK8mn",
+              "6DWfmaUTtgeUQe5cRQoUgHycQefnCDWVY2xkT9iCkddB",
+              "744yfFyAtJrH9FhRNHUFbevVhSBU42G3W4q2Zs2J9Npk",
+              "8xqdLe2KW5YiYbAGNEdeH2KqP4WvXVfFgt1QbKNSEVvt",
+              "BgV5ocPwmVjVgD999RBVDLUAQQxwPm3fRedhQxxBAjyp",
+              "F1FSHAbRu3YfEjKzyYNHoNGbzPuaoXcmJkEgGyG3gDN9",
+              "HNeMErwpEJFTMSNoK9fjhsedwvHQ7LMKxccDW9r2gumk"
+            ],
+            "threshold": 5,
+            "time_lock_secs": 86400,
+            "voters": 9
+          }
+        }
+      }
+    },
+    "reviewed_by": null,
+    "sources": [
+      {
+        "address": "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+        "kind": "admin",
+        "label": "fee_authority",
+        "url": "https://solscan.io/account/2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ"
+      },
+      {
+        "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+        "kind": "multisig",
+        "label": "Squads v4",
+        "url": "https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF"
+      },
+      {
+        "address": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+        "kind": "program",
+        "label": "Whirlpools",
+        "url": "https://github.com/orca-so/whirlpools"
+      }
+    ],
+    "tokens": {
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": [
+        "lp"
+      ],
+      "So11111111111111111111111111111111111111112": [
+        "lp"
+      ]
+    },
+    "website": "https://www.orca.so/"
+  },
+  "history": [
+    {
+      "assessment": "assessed",
+      "date": "2026-10-21",
+      "fees_usd": 257537,
+      "methodology_version": "0.1",
+      "ratings": {
+        "admin_powers": "low",
+        "code_transparency": "medium",
+        "dependencies": "low",
+        "oracle_dependency": "not_applicable",
+        "upgrade_control": "medium",
+        "upgrade_delay": "medium"
+      },
+      "stage": "stage_0",
+      "tvl_usd": 307331347,
+      "volume_usd": 278417543
+    }
+  ],
+  "id": "orca",
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "metrics": {
+    "asset_groups": {
+      "kind": "unavailable",
+      "reason": "DefiLlama has no per-token breakdown for this protocol"
+    },
+    "defillama_slug": "orca-dex",
+    "fees": {
+      "change_7d_bp": -846,
+      "days": [
+        {
+          "date": "2026-09-22",
+          "usd": 413411
+        },
+        {
+          "date": "2026-09-23",
+          "usd": 434505
+        },
+        {
+          "date": "2026-09-24",
+          "usd": 334984
+        },
+        {
+          "date": "2026-09-25",
+          "usd": 358149
+        },
+        {
+          "date": "2026-09-26",
+          "usd": 214131
+        },
+        {
+          "date": "2026-09-27",
+          "usd": 327220
+        },
+        {
+          "date": "2026-09-28",
+          "usd": 407313
+        },
+        {
+          "date": "2026-09-29",
+          "usd": 447593
+        },
+        {
+          "date": "2026-09-30",
+          "usd": 402591
+        },
+        {
+          "date": "2026-10-01",
+          "usd": 303915
+        },
+        {
+          "date": "2026-10-02",
+          "usd": 345357
+        },
+        {
+          "date": "2026-10-03",
+          "usd": 141726
+        },
+        {
+          "date": "2026-10-04",
+          "usd": 198515
+        },
+        {
+          "date": "2026-10-05",
+          "usd": 266743
+        },
+        {
+          "date": "2026-10-06",
+          "usd": 295635
+        },
+        {
+          "date": "2026-10-07",
+          "usd": 338942
+        },
+        {
+          "date": "2026-10-08",
+          "usd": 349395
+        },
+        {
+          "date": "2026-10-09",
+          "usd": 203483
+        },
+        {
+          "date": "2026-10-10",
+          "usd": 141781
+        },
+        {
+          "date": "2026-10-11",
+          "usd": 158250
+        },
+        {
+          "date": "2026-10-12",
+          "usd": 300137
+        },
+        {
+          "date": "2026-10-13",
+          "usd": 245405
+        },
+        {
+          "date": "2026-10-14",
+          "usd": 233913
+        },
+        {
+          "date": "2026-10-15",
+          "usd": 306931
+        },
+        {
+          "date": "2026-10-16",
+          "usd": 206018
+        },
+        {
+          "date": "2026-10-17",
+          "usd": 131781
+        },
+        {
+          "date": "2026-10-18",
+          "usd": 144211
+        },
+        {
+          "date": "2026-10-19",
+          "usd": 193577
+        },
+        {
+          "date": "2026-10-20",
+          "usd": 254073
+        },
+        {
+          "date": "2026-10-21",
+          "usd": 257537
+        }
+      ],
+      "kind": "usd",
+      "latest": 257537
+    },
+    "tvl": {
+      "kind": "usd",
+      "value": 307331347
+    },
+    "volume": {
+      "change_7d_bp": 681,
+      "days": [
+        {
+          "date": "2026-09-22",
+          "usd": 367606756
+        },
+        {
+          "date": "2026-09-23",
+          "usd": 366044753
+        },
+        {
+          "date": "2026-09-24",
+          "usd": 320531238
+        },
+        {
+          "date": "2026-09-25",
+          "usd": 385912158
+        },
+        {
+          "date": "2026-09-26",
+          "usd": 230787119
+        },
+        {
+          "date": "2026-09-27",
+          "usd": 258872475
+        },
+        {
+          "date": "2026-09-28",
+          "usd": 416554827
+        },
+        {
+          "date": "2026-09-29",
+          "usd": 367814503
+        },
+        {
+          "date": "2026-09-30",
+          "usd": 439039533
+        },
+        {
+          "date": "2026-10-01",
+          "usd": 310117386
+        },
+        {
+          "date": "2026-10-02",
+          "usd": 415956329
+        },
+        {
+          "date": "2026-10-03",
+          "usd": 120189732
+        },
+        {
+          "date": "2026-10-04",
+          "usd": 185438996
+        },
+        {
+          "date": "2026-10-05",
+          "usd": 296254300
+        },
+        {
+          "date": "2026-10-06",
+          "usd": 288274670
+        },
+        {
+          "date": "2026-10-07",
+          "usd": 300558438
+        },
+        {
+          "date": "2026-10-08",
+          "usd": 350683776
+        },
+        {
+          "date": "2026-10-09",
+          "usd": 217402289
+        },
+        {
+          "date": "2026-10-10",
+          "usd": 118932611
+        },
+        {
+          "date": "2026-10-11",
+          "usd": 147088747
+        },
+        {
+          "date": "2026-10-12",
+          "usd": 263955149
+        },
+        {
+          "date": "2026-10-13",
+          "usd": 278659318
+        },
+        {
+          "date": "2026-10-14",
+          "usd": 289886037
+        },
+        {
+          "date": "2026-10-15",
+          "usd": 380898277
+        },
+        {
+          "date": "2026-10-16",
+          "usd": 270087220
+        },
+        {
+          "date": "2026-10-17",
+          "usd": 142193140
+        },
+        {
+          "date": "2026-10-18",
+          "usd": 177762587
+        },
+        {
+          "date": "2026-10-19",
+          "usd": 240017591
+        },
+        {
+          "date": "2026-10-20",
+          "usd": 290748780
+        },
+        {
+          "date": "2026-10-21",
+          "usd": 278417543
+        }
+      ],
+      "kind": "usd",
+      "latest": 278417543
+    }
+  },
+  "program_history": {
+    "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc": {
+      "complete": false,
+      "events": [],
+      "scanned": 306,
+      "total": 600
+    }
+  },
+  "review": {
+    "awaiting_human_review": true,
+    "due": false,
+    "last_reviewed": "2026-10-19"
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "admin": {
+      "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ.fee_authority": {
+        "rating": "low",
+        "reason": "`fee_authority` can change parameters behind a 24 h time lock"
+      }
+    },
+    "callees": {},
+    "control_class": "multisig_with_delay",
+    "controller_summary": "Squads 5 of 9 · 24 h delay",
+    "factors": {
+      "admin_powers": {
+        "evidence": [
+          {
+            "address": "2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/2LecshUwdy9xi7meFgHtFJQNSKk4KdTrcpvaB56dP2NQ",
+            "field": "fee_authority",
+            "slot": 459676540
+          },
+          {
+            "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676267
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "`fee_authority` can change parameters behind a 24 h time lock"
+      },
+      "code_transparency": {
+        "evidence": [
+          {
+            "address": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+            "field": "verified_build",
+            "slot": 459676265
+          }
+        ],
+        "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+        "rating": "medium",
+        "reason": "source public at https://github.com/orca-so/whirlpools, but the deployed build is not verified"
+      },
+      "dependencies": {
+        "evidence": [
+          {
+            "address": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+            "field": "transaction sample (26 transactions)",
+            "slot": 459676540
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "calls no other programs with user funds"
+      },
+      "oracle_dependency": {
+        "evidence": [
+          {
+            "address": "CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+            "field": "upgrade_authority",
+            "slot": 459676266
+          },
+          {
+            "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676267
+          }
+        ],
+        "next_step": "not applicable: nothing to improve",
+        "rating": "not_applicable",
+        "reason": "the registry lists no price feeds; the evidence is the core programs' upgrade reads"
+      },
+      "upgrade_control": {
+        "evidence": [
+          {
+            "address": "CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+            "field": "upgrade_authority",
+            "slot": 459676266
+          },
+          {
+            "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676267
+          }
+        ],
+        "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+        "rating": "medium",
+        "reason": "Squads v4 multisig, 5 of 9 voters, time lock 24 h"
+      },
+      "upgrade_delay": {
+        "evidence": [
+          {
+            "address": "CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+            "field": "upgrade_authority",
+            "slot": 459676266
+          },
+          {
+            "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+            "field": "threshold, time_lock, members, config_authority",
+            "slot": 459676267
+          }
+        ],
+        "next_step": "a time lock of 5 days+ → LOW",
+        "rating": "medium",
+        "reason": "time lock 24 h"
+      }
+    },
+    "programs": {
+      "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc": {
+        "code_transparency": {
+          "evidence": [
+            {
+              "address": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+              "field": "verified_build",
+              "slot": 459676265
+            }
+          ],
+          "next_step": "verify the deployed build against public source (OtterSec) → LOW",
+          "rating": "medium",
+          "reason": "source public at https://github.com/orca-so/whirlpools, but the deployed build is not verified"
+        },
+        "role": "core",
+        "upgrade_control": {
+          "evidence": [
+            {
+              "address": "CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+              "field": "upgrade_authority",
+              "slot": 459676266
+            },
+            {
+              "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676267
+            }
+          ],
+          "next_step": "a multisig of 5+ voters at a 60%+ threshold → LOW, or make the program immutable",
+          "rating": "medium",
+          "reason": "Squads v4 multisig, 5 of 9 voters, time lock 24 h"
+        },
+        "upgrade_delay": {
+          "evidence": [
+            {
+              "address": "CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/CtXfPzz36dH5Ws4UYKZvrQ1Xqzn42ecDW6y8NKuiN8nD",
+              "field": "upgrade_authority",
+              "slot": 459676266
+            },
+            {
+              "address": "BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+              "chain": "solana",
+              "explorer_url": "https://solscan.io/account/BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF",
+              "field": "threshold, time_lock, members, config_authority",
+              "slot": 459676267
+            }
+          ],
+          "next_step": "a time lock of 5 days+ → LOW",
+          "rating": "medium",
+          "reason": "time lock 24 h"
+        }
+      }
+    },
+    "risks": [
+      {
+        "category": "stolen",
+        "factor": "upgrade_control",
+        "severity": "medium",
+        "text": "Funds can be stolen if a core program is upgraded to new code by 5 of 9 voters of multisig BQsDWkL417U4tVE2sDnPks469pKdm6YzFgKH77doiEjF."
+      },
+      {
+        "category": "stolen",
+        "factor": "upgrade_delay",
+        "severity": "medium",
+        "text": "Funds can be stolen if a harmful upgrade is approved, because it takes effect after 24 h, before users can withdraw."
+      },
+      {
+        "category": "stolen",
+        "factor": "code_transparency",
+        "severity": "medium",
+        "text": "Funds can be stolen if the deployed code of whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc differs from its public source, because the build is not verified."
+      }
+    ],
+    "stage": {
+      "missing": [
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc: effective time lock 24 h; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "verified builds for all core programs",
+          "detail": "not verified: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+          "id": "s1.verified_builds",
+          "met": false,
+          "stage": "stage_1"
+        }
+      ],
+      "next": "stage_1",
+      "requirements": [
+        {
+          "description": "core programs identified in the registry",
+          "detail": "1 core programs",
+          "id": "s0.core_programs",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "public source for every core program",
+          "detail": "all core programs have public source",
+          "id": "s0.public_source",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control readable for every core program",
+          "detail": "upgrade control read for all core programs",
+          "id": "s0.upgrade_control_known",
+          "met": true,
+          "stage": "stage_0"
+        },
+        {
+          "description": "upgrade control rated Low or Medium",
+          "detail": "MEDIUM: Squads v4 multisig, 5 of 9 voters, time lock 24 h",
+          "id": "s1.upgrade_control",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "upgrade delay of the Stage 1 minimum, unless upgrades need an emergency multisig",
+          "detail": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc: effective time lock 24 h; needs 5 days+ or an emergency multisig of 8+ voters at 75%+",
+          "id": "s1.upgrade_delay",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "admin powers rated Low or Medium",
+          "detail": "LOW: `fee_authority` can change parameters behind a 24 h time lock",
+          "id": "s1.admin_powers",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "no multisig has a single-key config authority",
+          "detail": "no single-key config authority",
+          "id": "s1.config_authority",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "verified builds for all core programs",
+          "detail": "not verified: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+          "id": "s1.verified_builds",
+          "met": false,
+          "stage": "stage_1"
+        },
+        {
+          "description": "every factor could be read (Unknown caps the Stage at 0)",
+          "detail": "no Unknown factors",
+          "id": "s1.no_unknown",
+          "met": true,
+          "stage": "stage_1"
+        },
+        {
+          "description": "core programs immutable, or upgradeable only through on-chain governance with a long delay",
+          "detail": "upgradeable without 30 days+ governance delay: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+          "id": "s2.immutable_or_governance",
+          "met": false,
+          "stage": "stage_2"
+        },
+        {
+          "description": "no key can move or freeze user funds",
+          "detail": "no admin key can move or freeze funds",
+          "id": "s2.no_fund_control",
+          "met": true,
+          "stage": "stage_2"
+        }
+      ],
+      "stage": "stage_0"
+    },
+    "tokens": {
+      "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+        "roles": [
+          "lp"
+        ],
+        "symbol": "USDC",
+        "warning": null,
+        "worst": "high"
+      },
+      "So11111111111111111111111111111111111111112": {
+        "roles": [
+          "lp"
+        ],
+        "symbol": "SOL",
+        "warning": null,
+        "worst": "low"
+      }
+    }
+  },
+  "snapshot_date": "2026-10-21",
+  "upgrades": {
+    "average_interval_days": null,
+    "complete": false,
+    "last_upgrade_date": null,
+    "last_upgrade_slot": null,
+    "upgrades": 0,
+    "upgrades_last_30_days": 0
+  }
+}

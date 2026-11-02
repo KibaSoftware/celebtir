@@ -1,0 +1,44 @@
+# Golden-test fixture, not the reviewed registry (P5). Real mainnet addresses.
+id: kamino-lend
+name: Kamino Lend
+chain: solana
+category: lending
+website: https://kamino.finance
+defillama_slug: kamino-lend
+programs:
+  - id: KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD
+    name: Lending
+    role: core
+    source: https://github.com/Kamino-Finance/klend
+  - id: FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr
+    name: Farms
+    role: periphery
+    source: https://github.com/Kamino-Finance/kfarms
+multisigs:
+  - address: 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM
+admin_accounts:
+  - account: 7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF
+    idl: idl/kamino-lend.json
+    field: lending_market_owner
+    power: parameters
+    source: https://solscan.io/account/7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF
+oracles:
+  - account: 7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE
+    market: SOL reserve
+    role: primary
+    source: https://solscan.io/account/7UVimffxr9ow1uXYxsr4LHAcV58mLzhmwaeKvJ1pjLiE
+  - account: 3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C
+    market: SOL reserve
+    role: fallback
+    source: https://solscan.io/account/3NJYftD5sjVfxSnUdZ1wVML8f3aC6mp1CXCL6L7TnU8C
+tokens:
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    roles: [collateral, borrowable]
+  - mint: J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn
+    roles: [collateral]
+review:
+  reviewed_by: golden-fixture
+  last_reviewed: 2026-10-17

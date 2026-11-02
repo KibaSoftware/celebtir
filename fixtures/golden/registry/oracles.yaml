@@ -1,0 +1,4 @@
+programs:
+  - {program: rec5EKMGg6MxZYaMdyBfgwp4d5rB9T1VQH5pJv5LtFJ, class: network, name: pyth, source: https://docs.pyth.network/price-feeds/contract-addresses/solana}
+  - {program: FsJ3A3u2vn5cTVofAjvy6y5kwABJAqYWpe4975bi2epH, class: network, name: pyth, source: https://docs.pyth.network/price-feeds/contract-addresses/solana}
+  - {program: HFn8GnPADiny6XqUoWE8uRPPxb29ikn4yTuPa9MF2fWJ, class: protocol-run, name: scope, source: https://github.com/Kamino-Finance/scope}

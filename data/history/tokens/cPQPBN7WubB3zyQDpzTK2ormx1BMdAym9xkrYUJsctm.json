@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 9,
+      "price_usd_micros": 112643280,
+      "supply": 2651432454776204
+    }
+  ],
+  "mint": "cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm",
+  "schema_version": "0.2.0",
+  "symbol": "fwdSOL"
+}

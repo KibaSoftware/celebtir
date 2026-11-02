@@ -1,0 +1,25 @@
+[package]
+name = "celebtir-score"
+description = "Celebtir scorer: pure functions from facts to ratings and Stage."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+
+# SCO-1: pure dependencies only; enforced by tests/sco_1_2_methodology.rs.
+[dependencies]
+celebtir-core.workspace = true
+schemars.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+toml.workspace = true
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+jsonschema.workspace = true
+proptest.workspace = true
+serde_json.workspace = true

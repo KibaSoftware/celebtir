@@ -1,0 +1,618 @@
+{
+  "$defs": {
+    "Address": {
+      "description": "An on-chain address in its chain's canonical text form (base58 on Solana,\n0x-hex on EVM). Format checks belong to the registry and collectors.",
+      "type": "string"
+    },
+    "Chain": {
+      "description": "The chain an address or fact lives on.",
+      "oneOf": [
+        {
+          "enum": [
+            "solana"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "hyper_evm",
+          "description": "Wave 2.",
+          "type": "string"
+        },
+        {
+          "const": "hyper_core",
+          "description": "Wave 2.",
+          "type": "string"
+        }
+      ]
+    },
+    "ControlClass": {
+      "description": "Ordered weakest first.",
+      "oneOf": [
+        {
+          "enum": [
+            "single_key",
+            "multisig_with_delay",
+            "immutable"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "unrecognized",
+          "description": "Controllers Celebtir cannot read or does not support yet.",
+          "type": "string"
+        },
+        {
+          "const": "multisig_without_delay",
+          "description": "Effective delay of zero: no time lock, or one a config authority\nbypasses (v0.3; before v0.3 also any delay below the bar).",
+          "type": "string"
+        },
+        {
+          "const": "multisig_short_delay",
+          "description": "v0.3 (D4 option B): a delay above zero but below the delayed bar.",
+          "type": "string"
+        }
+      ]
+    },
+    "Evidence": {
+      "description": "Where a fact came from: the account read, the slot it was read at, the\nfield that held the value, and a link anyone can open to check it.",
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address"
+        },
+        "chain": {
+          "$ref": "#/$defs/Chain"
+        },
+        "explorer_url": {
+          "format": "uri",
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        },
+        "slot": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "chain",
+        "address",
+        "slot",
+        "field",
+        "explorer_url"
+      ],
+      "type": "object"
+    },
+    "Factor": {
+      "description": "The six factors, in PRD order.",
+      "enum": [
+        "upgrade_control",
+        "upgrade_delay",
+        "admin_powers",
+        "code_transparency",
+        "oracle_dependency",
+        "dependencies"
+      ],
+      "type": "string"
+    },
+    "FactorScore": {
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "type": "array"
+        },
+        "next_step": {
+          "description": "What would raise the rating one level (SCO-5).",
+          "type": "string"
+        },
+        "rating": {
+          "$ref": "#/$defs/Rating"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "registry_sources": {
+          "description": "Registry source pages behind a reviewed-none finding, which has no\non-chain read to cite (v0.3).",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "rating",
+        "reason",
+        "next_step",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "NodeRating": {
+      "description": "One graph node's rating, for its colour and label (UI-21).",
+      "properties": {
+        "rating": {
+          "$ref": "#/$defs/Rating"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "rating",
+        "reason"
+      ],
+      "type": "object"
+    },
+    "ProgramRole": {
+      "description": "`core` programs hold or move user funds and decide the Stage (REG-5).",
+      "enum": [
+        "core",
+        "periphery"
+      ],
+      "type": "string"
+    },
+    "ProgramScore": {
+      "properties": {
+        "code_transparency": {
+          "$ref": "#/$defs/FactorScore"
+        },
+        "role": {
+          "$ref": "#/$defs/ProgramRole"
+        },
+        "upgrade_control": {
+          "$ref": "#/$defs/FactorScore"
+        },
+        "upgrade_delay": {
+          "$ref": "#/$defs/FactorScore"
+        }
+      },
+      "required": [
+        "role",
+        "upgrade_control",
+        "upgrade_delay",
+        "code_transparency"
+      ],
+      "type": "object"
+    },
+    "ProtocolScore": {
+      "properties": {
+        "admin": {
+          "additionalProperties": {
+            "$ref": "#/$defs/NodeRating"
+          },
+          "default": {},
+          "description": "Each admin field's own rating, keyed like the facts' `admin` map; the\nAdmin powers factor is their weakest link (UI-21).",
+          "type": "object"
+        },
+        "callees": {
+          "additionalProperties": {
+            "$ref": "#/$defs/NodeRating"
+          },
+          "default": {},
+          "description": "Each sampled callee's upgrade-control rating (UI-12, UI-21).",
+          "type": "object"
+        },
+        "control_class": {
+          "$ref": "#/$defs/ControlClass",
+          "description": "The class of the weakest core program's controller (VAL-2)."
+        },
+        "controller_summary": {
+          "description": "That controller in a few words, for tables.",
+          "type": "string"
+        },
+        "factors": {
+          "additionalProperties": false,
+          "properties": {
+            "admin_powers": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "code_transparency": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "dependencies": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "oracle_dependency": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "upgrade_control": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "upgrade_delay": {
+              "$ref": "#/$defs/FactorScore"
+            }
+          },
+          "type": "object"
+        },
+        "programs": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ProgramScore"
+          },
+          "description": "Every program, core and periphery, with its own ratings.",
+          "type": "object"
+        },
+        "risks": {
+          "description": "L2Beat-style risk sentences, most severe first (SCO-9).",
+          "items": {
+            "$ref": "#/$defs/RiskSentence"
+          },
+          "type": "array"
+        },
+        "stage": {
+          "$ref": "#/$defs/StageResult"
+        },
+        "tokens": {
+          "additionalProperties": {
+            "$ref": "#/$defs/TokenExposure"
+          },
+          "description": "Tokens the protocol uses, with their worst rating (TOK-7).",
+          "type": "object"
+        }
+      },
+      "required": [
+        "stage",
+        "control_class",
+        "controller_summary",
+        "risks",
+        "factors",
+        "programs",
+        "tokens"
+      ],
+      "type": "object"
+    },
+    "Rating": {
+      "description": "A factor rating. `Unknown` (missing data, SCO-7) and `NotApplicable` are\nshown separately from High; neither is a risk level.",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "unknown",
+        "not_applicable"
+      ],
+      "type": "string"
+    },
+    "Requirement": {
+      "description": "One Stage requirement and whether this protocol meets it.",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "detail": {
+          "description": "Why it is or is not met, naming programs and values.",
+          "type": "string"
+        },
+        "id": {
+          "description": "Stable ID, e.g. `s1.upgrade_delay`.",
+          "type": "string"
+        },
+        "met": {
+          "type": "boolean"
+        },
+        "stage": {
+          "$ref": "#/$defs/Stage",
+          "description": "The Stage this requirement unlocks."
+        }
+      },
+      "required": [
+        "id",
+        "stage",
+        "description",
+        "met",
+        "detail"
+      ],
+      "type": "object"
+    },
+    "RiskCategory": {
+      "enum": [
+        "stolen",
+        "frozen",
+        "price_manipulation"
+      ],
+      "type": "string"
+    },
+    "RiskSentence": {
+      "properties": {
+        "category": {
+          "$ref": "#/$defs/RiskCategory"
+        },
+        "factor": {
+          "$ref": "#/$defs/Factor"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "severity",
+        "category",
+        "factor",
+        "text"
+      ],
+      "type": "object"
+    },
+    "Severity": {
+      "description": "Follows the rating that produced the sentence. Low produces none.",
+      "enum": [
+        "high",
+        "medium"
+      ],
+      "type": "string"
+    },
+    "Stage": {
+      "enum": [
+        "unrated",
+        "stage_0",
+        "stage_1",
+        "stage_2"
+      ],
+      "type": "string"
+    },
+    "StageResult": {
+      "properties": {
+        "missing": {
+          "description": "Unmet requirements of `next`, as L2Beat's \"items missing for Stage N\".",
+          "items": {
+            "$ref": "#/$defs/Requirement"
+          },
+          "type": "array"
+        },
+        "next": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Stage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "The next Stage up, if any."
+        },
+        "requirements": {
+          "description": "Every requirement of every Stage, met or not.",
+          "items": {
+            "$ref": "#/$defs/Requirement"
+          },
+          "type": "array"
+        },
+        "stage": {
+          "$ref": "#/$defs/Stage"
+        }
+      },
+      "required": [
+        "stage",
+        "missing",
+        "requirements"
+      ],
+      "type": "object"
+    },
+    "TokenExposure": {
+      "properties": {
+        "roles": {
+          "items": {
+            "$ref": "#/$defs/TokenRole"
+          },
+          "type": "array"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "warning": {
+          "description": "Set when the protocol accepts a High-rated token as collateral.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "worst": {
+          "$ref": "#/$defs/Rating",
+          "description": "The token's weakest factor rating; Unknown if it was not scored."
+        }
+      },
+      "required": [
+        "symbol",
+        "roles",
+        "worst"
+      ],
+      "type": "object"
+    },
+    "TokenFactor": {
+      "enum": [
+        "supply_control",
+        "freeze_and_seize",
+        "transfer_restrictions",
+        "provenance"
+      ],
+      "type": "string"
+    },
+    "TokenRisk": {
+      "description": "\"Your balance can be frozen if…\": one per power rated High or Medium.",
+      "properties": {
+        "factor": {
+          "$ref": "#/$defs/TokenFactor"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "severity",
+        "factor",
+        "text"
+      ],
+      "type": "object"
+    },
+    "TokenRole": {
+      "description": "How a protocol uses a token (TOK-2).",
+      "enum": [
+        "collateral",
+        "borrowable",
+        "deposit",
+        "lp"
+      ],
+      "type": "string"
+    },
+    "TokenScore": {
+      "properties": {
+        "factors": {
+          "additionalProperties": false,
+          "properties": {
+            "freeze_and_seize": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "provenance": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "supply_control": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "transfer_restrictions": {
+              "$ref": "#/$defs/FactorScore"
+            }
+          },
+          "type": "object"
+        },
+        "risks": {
+          "default": [],
+          "description": "The token page's risk summary, most severe first (TOK-6).",
+          "items": {
+            "$ref": "#/$defs/TokenRisk"
+          },
+          "type": "array"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "factors"
+      ],
+      "type": "object"
+    },
+    "UnratedEntry": {
+      "description": "Something the methodology lists without rating (HSCO-4, ADR 024 D1).",
+      "properties": {
+        "rated": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "rated",
+        "reason"
+      ],
+      "type": "object"
+    },
+    "ValueByControl": {
+      "properties": {
+        "all": {
+          "$ref": "#/$defs/ValueRow"
+        },
+        "by_category": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ValueRow"
+          },
+          "description": "Keyed by registry category.",
+          "type": "object"
+        },
+        "excluded": {
+          "description": "Protocols left out because their TVL is unavailable.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "all",
+        "by_category",
+        "excluded"
+      ],
+      "type": "object"
+    },
+    "ValueRow": {
+      "description": "TVL per class; every class present, `total` the sum.",
+      "properties": {
+        "classes": {
+          "additionalProperties": {
+            "format": "uint64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "total": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "classes",
+        "total"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "`data/snapshots/<date>/scores.json`.",
+  "properties": {
+    "hip3_dexs": {
+      "additionalProperties": {
+        "$ref": "#/$defs/UnratedEntry"
+      },
+      "description": "HIP-3 DEXs, keyed by name: listed, never rated in v0.1 (HSCO-4).",
+      "type": "object"
+    },
+    "methodology_version": {
+      "type": "string"
+    },
+    "protocols": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ProtocolScore"
+      },
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "tokens": {
+      "additionalProperties": {
+        "$ref": "#/$defs/TokenScore"
+      },
+      "description": "Keyed by mint address (SCO-10).",
+      "type": "object"
+    },
+    "unassessed": {
+      "additionalProperties": {
+        "$ref": "#/$defs/UnratedEntry"
+      },
+      "description": "Protocols on chains the methodology does not rate (v0.3 coverage):\nlisted with their reason, never given ratings, a Stage or a class.",
+      "type": "object"
+    },
+    "value_by_control": {
+      "$ref": "#/$defs/ValueByControl",
+      "description": "TVL by control class for the day (VAL-2)."
+    }
+  },
+  "required": [
+    "schema_version",
+    "methodology_version",
+    "protocols",
+    "tokens",
+    "value_by_control"
+  ],
+  "title": "ScoresFile",
+  "type": "object"
+}

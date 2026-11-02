@@ -1,0 +1,32 @@
+# Where each vendored IDL came from (REG-8): the program's on-chain Anchor IDL
+# account, read at the slot given.
+jupiter-perps.json:
+  source: https://solscan.io/account/38GK1i4cQPAxqrbfKX4RRMNfXpKRn5PgLFHVJeXm1C8Y
+  slot: 458900731
+kamino-lend.json:
+  source: https://solscan.io/account/8qLKwp1fk8WyqmzarkuMeZEX3AzL4VDSmA2UZTKT2aCJ
+  slot: 458900729
+orca-whirlpools.json:
+  source: https://solscan.io/account/2KFqE4RWoPVbvodo8vbggCFeHPS8TDvgpwp79ALMrcyn
+  slot: 458900732
+pumpswap.json:
+  source: https://solscan.io/account/5fLnXNNoZcZt9Qku6HARM3un3Ttm2cGsR7gN9Zp1R7h3
+  slot: 458900734
+scope.json:
+  source: https://solscan.io/account/AWUuZ6o4ZJX2fDqjUqDaA1pfHenZ6XEbmuTamMgM911E
+  slot: 459326005
+jupiter-lend-liquidity.json:
+  source: https://github.com/jup-ag/jupiter-lend/blob/0ab370a0dff439ff895bb8e78f085ec9bb11b168/target/idl/liquidity.json
+  commit: 0ab370a0dff439ff895bb8e78f085ec9bb11b168
+jupiter-lend-earn.json:
+  source: https://github.com/jup-ag/jupiter-lend/blob/0ab370a0dff439ff895bb8e78f085ec9bb11b168/target/idl/lending.json
+  commit: 0ab370a0dff439ff895bb8e78f085ec9bb11b168
+jupiter-lend-vaults.json:
+  source: https://github.com/jup-ag/jupiter-lend/blob/0ab370a0dff439ff895bb8e78f085ec9bb11b168/target/idl/vaults.json
+  commit: 0ab370a0dff439ff895bb8e78f085ec9bb11b168
+raydium-clmm.json:
+  source: https://github.com/raydium-io/raydium-idl/blob/e7e0c96fe77bcf6a020b84a44c47a722aac8e359/raydium_clmm/raydium_clmm.json
+  commit: e7e0c96fe77bcf6a020b84a44c47a722aac8e359
+gmx-solana-store.json:
+  source: https://solscan.io/account/7EajSAQ8RufQsMrcVZzdAV5XmFNvFZahWvcknMzMJeQg
+  slot: 459329810

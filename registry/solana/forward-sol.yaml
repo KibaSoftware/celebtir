@@ -1,0 +1,37 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Mint cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm carries the on-chain metadata name Forward Industries Staked SOL.
+# Its pool is owned by Sanctum's single-validator SPL fork (ADR 019).
+id: forward-sol
+name: Forward Industries SOL
+chain: solana
+category: liquid-staking
+website: https://www.forwardindustries.com
+defillama_slug: forward-industries-sol
+programs:
+  - id: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+    name: Sanctum SPL Stake Pool
+    role: core
+    source: https://learn.sanctum.so/docs/for-developers/deployed-programs.md
+    shared_with: [drift-staked-sol]
+multisigs:
+  - address: AApfiPZgV5MoPU691GwhdDhq5sKEMMH1Uh8S4Z9xvP6b
+    program: squads-v3
+    vault_index: 1
+    source: https://solscan.io/account/AApfiPZgV5MoPU691GwhdDhq5sKEMMH1Uh8S4Z9xvP6b
+    shared_with: [drift-staked-sol, jupiter-staked-sol]
+stake_pools:
+  # Manager, staker and deposit/withdraw authorities are read on chain (F3, D2).
+  - account: 2iZHumJq19hyCYkD3xFoZ6dbiFbJ5nqbwALMdJBYQsJa
+    pool_mint: cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+oracles_reviewed_none:
+  source: https://github.com/igneous-labs/sanctum-spl-stake-pool
+  reviewed_on: 2026-10-25
+  note: "Sanctum's SPL stake pool fork prices pool tokens from its own stake and reserve account balances; none of its instructions takes a price-oracle account."
+tokens:
+  - mint: cPQPBN7WubB3zyQDpzTK2ormx1BMdAym9xkrYUJsctm
+    roles: [deposit]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

@@ -1,0 +1,56 @@
+{
+  "$defs": {
+    "ArchivedEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "archived_on": {
+          "description": "`YYYY-MM-DD`.",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "type": "string"
+        },
+        "id": {
+          "description": "The protocol's former registry ID; never reused.",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "reason": {
+          "description": "Why it left coverage, as a configuration fact.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "source": {
+          "description": "Public page that confirms it.",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "archived_on",
+        "reason",
+        "source"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "`registry/archived.yaml` (ADR 017): protocols that shut down or left\ncoverage. Optional.",
+  "properties": {
+    "archived": {
+      "items": {
+        "$ref": "#/$defs/ArchivedEntry"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "archived"
+  ],
+  "title": "ArchivedFile",
+  "type": "object"
+}

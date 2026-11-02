@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 9,
+      "price_usd_micros": null,
+      "supply": 23023031769514
+    }
+  ],
+  "mint": "LnTRntk2kTfWEY6cVB8K9649pgJbt6dJLS1Ns1GZCWg",
+  "schema_version": "0.2.0",
+  "symbol": "lanternSOL"
+}

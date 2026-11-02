@@ -1,0 +1,36 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Pool Hr9pzexrBge3vgmBNRR8u42CNQgBXdHm4UkUN2DH4a7r is owned by the SPL Stake Pool program (ADR 019).
+id: binance-staked-sol
+name: Binance Staked SOL
+chain: solana
+category: liquid-staking
+website: https://www.binance.com/en/solana-staking
+defillama_slug: binance-staked-sol
+programs:
+  - id: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+    name: SPL Stake Pool
+    role: core
+    source: https://spl.solana.com/stake-pool
+    shared_with: [jito]
+multisigs:
+  - address: 3yqoHFE4nBGchuVH5rJuZMFvsmnaDTuLLdvGPDUEJcbW
+    program: squads-v3
+    vault_index: 1
+    source: https://solscan.io/account/3yqoHFE4nBGchuVH5rJuZMFvsmnaDTuLLdvGPDUEJcbW
+    shared_with: [jito]
+stake_pools:
+  # Manager, staker and deposit/withdraw authorities are read on chain (F3, D2).
+  - account: Hr9pzexrBge3vgmBNRR8u42CNQgBXdHm4UkUN2DH4a7r
+    pool_mint: BNso1VUJnh4zcfpZa6986Ea66P6TCp59hvtNJ8b1X85
+    source: https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml
+oracles_reviewed_none:
+  source: https://github.com/solana-program/stake-pool
+  reviewed_on: 2026-10-25
+  note: "The SPL stake pool program prices pool tokens from its own stake and reserve account balances; none of its instructions takes a price-oracle account."
+tokens:
+  - mint: BNso1VUJnh4zcfpZa6986Ea66P6TCp59hvtNJ8b1X85
+    roles: [deposit]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

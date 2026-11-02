@@ -1,0 +1,12 @@
+{
+  "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+  "data_base64": "AQAAAJj+huiNm+Lqi8HMpIeLKYjCQPUrhCS/tA7Rot3LXhmbLlUP1Y9NHAAGAQEAAABicKqKWcWUBbRShshncubNEm6bil06OFNtN/e0FOi2Zw==",
+  "data_slice": null,
+  "executable": false,
+  "lamports": 549895049557,
+  "name": "mint-usdc",
+  "note": "USDC mint: classic SPL Token, mint and freeze authority both set",
+  "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+  "slot": 458015524,
+  "source": "api.mainnet-beta.solana.com getMultipleAccounts finalized"
+}

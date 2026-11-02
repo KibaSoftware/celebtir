@@ -1,0 +1,32 @@
+{
+  "budget": 5000,
+  "budget_exceeded": false,
+  "calls": {
+    "getMultipleAccounts": 95,
+    "getSignaturesForAddress": 39,
+    "getTransaction": 4732
+  },
+  "duration_ms": 892237,
+  "failures": [],
+  "finished_at": "2026-10-21T15:22:42Z",
+  "protocols": [
+    "binance-staked-sol",
+    "drift-staked-sol",
+    "forward-sol",
+    "gmx-solana",
+    "jito",
+    "jupiter-lend",
+    "jupiter-perps",
+    "jupiter-staked-sol",
+    "kamino-lend",
+    "orca",
+    "pumpswap",
+    "raydium-amm"
+  ],
+  "retries": 627,
+  "review_needed": [],
+  "rpc_host": "mainnet.helius-rpc.com",
+  "schema_version": "0.1.0",
+  "started_at": "2026-10-21T15:07:50Z",
+  "tool_version": "0.1.0 (b114b281ae6a)"
+}

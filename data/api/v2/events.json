@@ -1,0 +1,14 @@
+{
+  "$schema": "/data/v2/schemas/events.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "events": [],
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "schema_version": "2.0.0",
+  "snapshot_date": "2026-10-21"
+}

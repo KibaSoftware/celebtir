@@ -1,0 +1,186 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "getTransaction",
+    "params": [
+      "WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4",
+      {
+        "commitment": "finalized",
+        "encoding": "json",
+        "maxSupportedTransactionVersion": 1
+      }
+    ]
+  },
+  "response": {
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "blockTime": 1779972462,
+      "meta": {
+        "computeUnitsConsumed": 84927,
+        "costUnits": 91559,
+        "err": null,
+        "fee": 5010,
+        "innerInstructions": [
+          {
+            "index": 3,
+            "instructions": [
+              {
+                "accounts": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  14,
+                  15,
+                  3
+                ],
+                "data": "5Sxr3",
+                "programIdIndex": 13,
+                "stackHeight": 2
+              }
+            ]
+          }
+        ],
+        "loadedAddresses": {
+          "readonly": [],
+          "writable": []
+        },
+        "logMessages": [
+          "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+          "Program ComputeBudget111111111111111111111111111111 success",
+          "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+          "Program ComputeBudget111111111111111111111111111111 success",
+          "Program 11111111111111111111111111111111 invoke [1]",
+          "Program 11111111111111111111111111111111 success",
+          "Program SQDS4ep65T869zMMBKyuUq6aD6EgTu8psMjkvj52pCf invoke [1]",
+          "Program log: Instruction: VaultTransactionExecute",
+          "Program BPFLoaderUpgradeab1e11111111111111111111111 invoke [2]",
+          "Upgraded program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+          "Program BPFLoaderUpgradeab1e11111111111111111111111 success",
+          "Program SQDS4ep65T869zMMBKyuUq6aD6EgTu8psMjkvj52pCf consumed 84477 of 94477 compute units",
+          "Program SQDS4ep65T869zMMBKyuUq6aD6EgTu8psMjkvj52pCf success"
+        ],
+        "postBalances": [
+          189042706,
+          1046560,
+          8059680,
+          46197600,
+          72981780480,
+          33141440,
+          0,
+          32346023335,
+          1,
+          1,
+          12151440,
+          4565760,
+          3521760,
+          1,
+          1009200,
+          1169280
+        ],
+        "postTokenBalances": [],
+        "preBalances": [
+          189147716,
+          946560,
+          8059680,
+          46197600,
+          72981780480,
+          33141440,
+          16587663600,
+          15758359735,
+          1,
+          1,
+          12151440,
+          4565760,
+          3521760,
+          1,
+          1009200,
+          1169280
+        ],
+        "preTokenBalances": [],
+        "rewards": [],
+        "status": {
+          "Ok": null
+        }
+      },
+      "slot": 422723185,
+      "transaction": {
+        "message": {
+          "accountKeys": [
+            "5ggs2vd1csz74YMCzxesmcUEd3ycYFKAW6kfyttVYwBv",
+            "DttWaMuVvTiduZRnguLF7jNxTgiMBZ1hyAumKUiL2KRL",
+            "DskzmmQXmSmA15U7zySkvk61WuKv5QzBbdNki9xv1M1Y",
+            "GzFgdRJXmawPhGeBsyRCDLx4jAKPsvbUqoqitzppkzkW",
+            "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+            "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+            "8jUTqTUvF6uSKFpTVT4q3AQLPUgKG4z7hGC7Do6JHncU",
+            "3RVJPtdkUXAm4nKmzLyP6cydpPoi5AQ3HvFLfuVdimLz",
+            "ComputeBudget111111111111111111111111111111",
+            "11111111111111111111111111111111",
+            "SQDS4ep65T869zMMBKyuUq6aD6EgTu8psMjkvj52pCf",
+            "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
+            "3EeVsERXZqYrCeNXn9VUzTJH9HimAvW8usqGg62q57gx",
+            "BPFLoaderUpgradeab1e11111111111111111111111",
+            "SysvarRent111111111111111111111111111111111",
+            "SysvarC1ock11111111111111111111111111111111"
+          ],
+          "addressTableLookups": [],
+          "header": {
+            "numReadonlySignedAccounts": 0,
+            "numReadonlyUnsignedAccounts": 8,
+            "numRequiredSignatures": 1
+          },
+          "instructions": [
+            {
+              "accounts": [],
+              "data": "KPcPbV",
+              "programIdIndex": 8,
+              "stackHeight": 1
+            },
+            {
+              "accounts": [],
+              "data": "3WBgs5fm8oDy",
+              "programIdIndex": 8,
+              "stackHeight": 1
+            },
+            {
+              "accounts": [
+                0,
+                1
+              ],
+              "data": "3Bxs4ThwQbE4vyj5",
+              "programIdIndex": 9,
+              "stackHeight": 1
+            },
+            {
+              "accounts": [
+                11,
+                2,
+                12,
+                0,
+                3,
+                4,
+                5,
+                6,
+                7,
+                13,
+                14,
+                15
+              ],
+              "data": "ZTNTtVtnvbC",
+              "programIdIndex": 10,
+              "stackHeight": 1
+            }
+          ],
+          "recentBlockhash": "FLNvSSXjrz91HRPdyXHuayjGLvF8oTQgTBPk6JKN18r9"
+        },
+        "signatures": [
+          "WkzUHqZgSsTC9nFJL3mm1TgxCqJDtbovUZedoMHf7hGpZeTAQpasWomoFhk5zhgE8WLfsHpDcKA6mmFLmftSjk4"
+        ]
+      },
+      "transactionIndex": 435,
+      "version": 0
+    }
+  }
+}

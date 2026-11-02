@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 9,
+      "price_usd_micros": 122305162,
+      "supply": 9244126771159651
+    }
+  ],
+  "mint": "BNso1VUJnh4zcfpZa6986Ea66P6TCp59hvtNJ8b1X85",
+  "schema_version": "0.2.0",
+  "symbol": "BNSOL"
+}

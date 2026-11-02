@@ -1,0 +1,39 @@
+[package]
+name = "celebtir"
+description = "Celebtir CLI: validate, collect, score, diff, explain."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "celebtir"
+path = "src/main.rs"
+
+[dependencies]
+celebtir-core.workspace = true
+celebtir-registry.workspace = true
+celebtir-score.workspace = true
+celebtir-diff.workspace = true
+clap.workspace = true
+collect-solana.workspace = true
+collect-hyperliquid.workspace = true
+serde_norway.workspace = true
+tokio.workspace = true
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+jsonschema.workspace = true
+quick-xml.workspace = true
+tempfile.workspace = true
+toml.workspace = true
+
+[lints]
+workspace = true

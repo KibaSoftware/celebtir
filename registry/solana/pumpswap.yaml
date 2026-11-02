@@ -1,0 +1,43 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-19.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Admin: GlobalConfig.admin signs `disable` (create pool, deposit, withdraw, buy, sell) in the vendored IDL.
+# The upgrade authority and the admin key are vaults of two different Squads v4 multisigs.
+# Tokens: the largest assets in DefiLlama's TVL breakdown.
+id: pumpswap
+name: PumpSwap
+chain: solana
+category: dex
+website: https://swap.pump.fun
+defillama_slug: pumpswap
+programs:
+  - id: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
+    name: PumpSwap AMM
+    role: core
+    source: https://github.com/pump-fun/pump-public-docs/blob/main/docs/PUMP_SWAP_README.md
+multisigs:
+  - address: 2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/2yMoQqQrtbhq3nQ3wFoQQawWS65qcqUXcwHEYha4rshW
+  - address: 8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at
+    program: squads-v4
+    vault_index: 0
+    source: https://solscan.io/account/8EujzwPFNhZ5m4Kpa2XtrumNgwCbhgWwny9YWLCKA5at
+admin_accounts:
+  - account: ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw
+    idl: idl/pumpswap.json
+    field: admin
+    power: pause
+    source: https://solscan.io/account/ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw
+oracles_reviewed_none:
+  source: https://github.com/pump-fun/pump-public-docs
+  reviewed_on: 2026-10-25
+  note: "PumpSwap is a constant-product AMM; its published IDL has no price-oracle account in any instruction."
+tokens:
+  - mint: So11111111111111111111111111111111111111112
+    roles: [lp]
+  - mint: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    roles: [lp]
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-19

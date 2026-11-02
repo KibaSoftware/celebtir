@@ -1,0 +1,775 @@
+{
+  "$defs": {
+    "Address": {
+      "description": "An on-chain address in its chain's canonical text form (base58 on Solana,\n0x-hex on EVM). Format checks belong to the registry and collectors.",
+      "type": "string"
+    },
+    "AdminAccountEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/Address"
+        },
+        "field": {
+          "description": "The IDL field holding the admin key.",
+          "type": "string"
+        },
+        "idl": {
+          "description": "Path of the vendored IDL, relative to `registry/` (`idl/<file>.json`).",
+          "type": "string"
+        },
+        "power": {
+          "$ref": "#/$defs/AdminPower"
+        },
+        "shared_with": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "account",
+        "idl",
+        "field",
+        "power",
+        "source"
+      ],
+      "type": "object"
+    },
+    "AdminPower": {
+      "description": "What an admin key can do outside an upgrade.",
+      "enum": [
+        "parameters",
+        "pause",
+        "funds"
+      ],
+      "type": "string"
+    },
+    "AuthorityPda": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/Address"
+        },
+        "program": {
+          "$ref": "#/$defs/Address"
+        },
+        "seeds": {
+          "items": {
+            "$ref": "#/$defs/PdaSeed"
+          },
+          "type": "array"
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "program",
+        "seeds",
+        "source"
+      ],
+      "type": "object"
+    },
+    "Category": {
+      "enum": [
+        "lending",
+        "dex",
+        "perps",
+        "liquid-staking"
+      ],
+      "type": "string"
+    },
+    "Chain": {
+      "description": "The chain an address or fact lives on.",
+      "oneOf": [
+        {
+          "enum": [
+            "solana"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "hyper_evm",
+          "description": "Wave 2.",
+          "type": "string"
+        },
+        {
+          "const": "hyper_core",
+          "description": "Wave 2.",
+          "type": "string"
+        }
+      ]
+    },
+    "DependencyEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address"
+        },
+        "name": {
+          "type": "string"
+        },
+        "proxy": {
+          "$ref": "#/$defs/ProxyKind"
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "address",
+        "name",
+        "proxy",
+        "source"
+      ],
+      "type": "object"
+    },
+    "EvmAdminEntry": {
+      "additionalProperties": false,
+      "description": "An admin power on a HyperEVM contract. Without `role`, the holder is\nread from `owner()`; with `role` (an AccessControl role name, or\n`DEFAULT_ADMIN_ROLE`), `holder` is confirmed with `hasRole`.",
+      "properties": {
+        "contract": {
+          "$ref": "#/$defs/Address"
+        },
+        "holder": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Address"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "power": {
+          "$ref": "#/$defs/AdminPower"
+        },
+        "role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "contract",
+        "power",
+        "source"
+      ],
+      "type": "object"
+    },
+    "MultisigEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address"
+        },
+        "program": {
+          "$ref": "#/$defs/MultisigProgram"
+        },
+        "shared_with": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        },
+        "vault_index": {
+          "description": "Squads v4: the vault index. Squads v3: the authority index (the\ndefault vault is 1).",
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "address",
+        "program",
+        "vault_index",
+        "source"
+      ],
+      "type": "object"
+    },
+    "MultisigProgram": {
+      "oneOf": [
+        {
+          "enum": [
+            "squads-v4"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "squads-v3",
+          "description": "squads-mpl (`SMPLecH…`): no time lock; config changes need a vote.",
+          "type": "string"
+        }
+      ]
+    },
+    "OracleEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/Address"
+        },
+        "bounds_primary": {
+          "description": "The protocol rejects the market's primary price when it differs from\nthis feed by more than a threshold (v0.3 guarded primary, D3). The\n`source` must show it.",
+          "type": "boolean"
+        },
+        "guarded_by": {
+          "description": "Primary only: networks the publisher documents as bounding this\nprice; each must also be registered with `bounds_primary` (D3).",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "market": {
+          "type": "string"
+        },
+        "provider": {
+          "description": "Who publishes the price, when the owner program alone does not say.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role": {
+          "$ref": "#/$defs/OracleRole"
+        },
+        "scope_chain": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ScopeChain"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Where the market records which Scope entries it reads, so the\ncollector can list the feeds behind a Scope price (edge case 11)."
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        },
+        "verified_by": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Address"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "For pull reports that are not accounts (Chainlink Data Streams feed\nIDs): the on-chain program that verifies each report. `account` is\nthen the feed ID, and the feed is classified by this program."
+        }
+      },
+      "required": [
+        "account",
+        "market",
+        "role",
+        "source"
+      ],
+      "type": "object"
+    },
+    "OracleRole": {
+      "enum": [
+        "primary",
+        "fallback"
+      ],
+      "type": "string"
+    },
+    "PdaSeed": {
+      "description": "Every seed has an explicit encoding; address strings are decoded to 32 bytes.",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "literal",
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "address",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ProgramEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Address"
+        },
+        "name": {
+          "type": "string"
+        },
+        "proxy": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ProxyKind"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "HyperEVM contracts only, and required there: how the code can change\n(HREG-1)."
+        },
+        "role": {
+          "$ref": "#/$defs/ProgramRole",
+          "description": "`core` holds or moves user funds; `periphery` is everything else."
+        },
+        "shared_with": {
+          "description": "Other protocols that list the same address (REG-4).",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source": {
+          "description": "Where this program ID was confirmed (REG-3).",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "role",
+        "source"
+      ],
+      "type": "object"
+    },
+    "ProgramRole": {
+      "description": "`core` programs hold or move user funds and decide the Stage (REG-5).",
+      "enum": [
+        "core",
+        "periphery"
+      ],
+      "type": "string"
+    },
+    "ProxyKind": {
+      "description": "How a HyperEVM contract's code can change (ADR 024 D3).",
+      "oneOf": [
+        {
+          "const": "eip1967",
+          "description": "Transparent proxy: the EIP-1967 admin slot holds the upgrader.",
+          "type": "string"
+        },
+        {
+          "const": "uups",
+          "description": "UUPS: the admin slot is empty; the implementation's `owner()` upgrades.",
+          "type": "string"
+        },
+        {
+          "const": "uups-role-registry",
+          "description": "UUPS whose `_authorizeUpgrade` calls `roleRegistry().onlyProtocolUpgrader`\n(the ether.fi RoleRegistry pattern): the role registry's `owner()`\nupgrades. The program `source` must show the verified implementation.",
+          "type": "string"
+        },
+        {
+          "const": "none",
+          "description": "Not a proxy.",
+          "type": "string"
+        }
+      ]
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "last_reviewed": {
+          "description": "`YYYY-MM-DD`.",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "type": "string"
+        },
+        "reviewed_by": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reviewed_by",
+        "last_reviewed"
+      ],
+      "type": "object"
+    },
+    "ReviewedNone": {
+      "additionalProperties": false,
+      "description": "A registry statement that something is absent, with its evidence.",
+      "properties": {
+        "note": {
+          "description": "What was checked, in one sentence.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "reviewed_on": {
+          "description": "`YYYY-MM-DD`.",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "type": "string"
+        },
+        "source": {
+          "description": "The public source (program source, documentation) the review used.",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "reviewed_on",
+        "note"
+      ],
+      "type": "object"
+    },
+    "SafeEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address"
+        },
+        "shared_with": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "address",
+        "source"
+      ],
+      "type": "object"
+    },
+    "ScopeChain": {
+      "additionalProperties": false,
+      "description": "The account and IDL fields that name a market's Scope price account and\nits chain of Scope entries (Kamino: the reserve's `scope_configuration`).",
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/Address"
+        },
+        "chain_field": {
+          "description": "The field holding the `[u16; N]` chain of Scope entries.",
+          "type": "string"
+        },
+        "direct_feed_fields": {
+          "description": "IDL fields of direct Pyth or Switchboard overrides on each reserve,\nread alongside the Scope chain; unset fields are ignored.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "feed_field": {
+          "description": "The field holding the Scope price account; it must be this oracle.",
+          "type": "string"
+        },
+        "idl": {
+          "description": "Path of the vendored IDL for `account`, relative to `registry/`.",
+          "type": "string"
+        },
+        "reserves": {
+          "description": "Further markets (Kamino reserves) that read the same Scope price\naccount, each with its own chain in the same fields (F4).",
+          "items": {
+            "$ref": "#/$defs/ScopeReserve"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "account",
+        "idl",
+        "feed_field",
+        "chain_field"
+      ],
+      "type": "object"
+    },
+    "ScopeReserve": {
+      "additionalProperties": false,
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/Address"
+        },
+        "market": {
+          "description": "`\"<symbol> reserve\"`.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "market",
+        "account"
+      ],
+      "type": "object"
+    },
+    "StakePoolEntry": {
+      "additionalProperties": false,
+      "description": "An SPL stake pool account (Solana Program Library layout, also used by\nSanctum's forks), read on chain for its admin authorities.",
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/Address"
+        },
+        "pool_mint": {
+          "$ref": "#/$defs/Address",
+          "description": "The pool token mint the account must name; checked when decoding."
+        },
+        "shared_with": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "account",
+        "pool_mint",
+        "source"
+      ],
+      "type": "object"
+    },
+    "TimelockEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address"
+        },
+        "proposers": {
+          "description": "Confirmed on chain with `hasRole(PROPOSER_ROLE, …)`.",
+          "items": {
+            "$ref": "#/$defs/Address"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "shared_with": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "address",
+        "proposers",
+        "source"
+      ],
+      "type": "object"
+    },
+    "TokenRole": {
+      "description": "How a protocol uses a token (TOK-2).",
+      "enum": [
+        "collateral",
+        "borrowable",
+        "deposit",
+        "lp"
+      ],
+      "type": "string"
+    },
+    "TokenUse": {
+      "additionalProperties": false,
+      "description": "A token a protocol uses, and how (TOK-2).",
+      "properties": {
+        "mint": {
+          "$ref": "#/$defs/Address"
+        },
+        "roles": {
+          "items": {
+            "$ref": "#/$defs/TokenRole"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "mint",
+        "roles"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "admin_accounts": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/AdminAccountEntry"
+      },
+      "type": "array"
+    },
+    "admin_reviewed_none": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewedNone"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "A sourced review that found no admin accounts. Without it, a protocol\nwith no admin entries rates Unknown, never Low (v0.3, F3)."
+    },
+    "authority_pdas": {
+      "description": "Verified declarations for token, admin or upgrade authority PDAs.",
+      "items": {
+        "$ref": "#/$defs/AuthorityPda"
+      },
+      "type": "array"
+    },
+    "category": {
+      "$ref": "#/$defs/Category"
+    },
+    "chain": {
+      "$ref": "#/$defs/Chain"
+    },
+    "defillama_slug": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dependencies": {
+      "description": "HyperEVM: contracts called with user funds, declared here because\nwave 2 does not trace transactions (HCOL-10).",
+      "items": {
+        "$ref": "#/$defs/DependencyEntry"
+      },
+      "type": "array"
+    },
+    "evm_admins": {
+      "description": "HyperEVM: who holds admin powers on a contract (HCOL-7).",
+      "items": {
+        "$ref": "#/$defs/EvmAdminEntry"
+      },
+      "type": "array"
+    },
+    "id": {
+      "description": "Kebab-case, unique, never reused; matches the file name.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "multisigs": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/MultisigEntry"
+      },
+      "type": "array"
+    },
+    "name": {
+      "type": "string"
+    },
+    "oracles": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/OracleEntry"
+      },
+      "type": "array"
+    },
+    "oracles_reviewed_none": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReviewedNone"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "A sourced review that found no price feeds (v0.3). Not allowed for\nlending and perps."
+    },
+    "programs": {
+      "items": {
+        "$ref": "#/$defs/ProgramEntry"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "review": {
+      "$ref": "#/$defs/Review"
+    },
+    "safes": {
+      "description": "HyperEVM: Safe multisigs; members are read on chain (HREG-2).",
+      "items": {
+        "$ref": "#/$defs/SafeEntry"
+      },
+      "type": "array"
+    },
+    "stake_pools": {
+      "description": "SPL stake pools (and forks) whose manager, staker and deposit or\nwithdraw authorities are read on chain as admin powers (F3, D2).",
+      "items": {
+        "$ref": "#/$defs/StakePoolEntry"
+      },
+      "type": "array"
+    },
+    "timelocks": {
+      "description": "HyperEVM: OpenZeppelin `TimelockController`s (HREG-2, ADR 024 D4).",
+      "items": {
+        "$ref": "#/$defs/TimelockEntry"
+      },
+      "type": "array"
+    },
+    "tokens": {
+      "default": [],
+      "description": "Tokens the protocol accepts or issues (TOK-2); each must be in `tokens.yaml`.",
+      "items": {
+        "$ref": "#/$defs/TokenUse"
+      },
+      "type": "array"
+    },
+    "website": {
+      "format": "uri",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "chain",
+    "category",
+    "website",
+    "programs",
+    "review"
+  ],
+  "title": "ProtocolEntry",
+  "type": "object"
+}

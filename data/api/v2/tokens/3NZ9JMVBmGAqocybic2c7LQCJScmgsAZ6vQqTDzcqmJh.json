@@ -1,0 +1,207 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 8,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "field": "freeze_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "immutable"
+      }
+    },
+    "identity": {
+      "issuer": "Wormhole (Portal)",
+      "issuer_url": "https://portalbridge.com/",
+      "kind": "bridged",
+      "source": "https://github.com/wormhole-foundation/wormhole-token-list/blob/main/content/by_dest.csv"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "field": "mint_authority",
+          "slot": 459678101
+        },
+        {
+          "address": "BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7",
+          "field": "owner",
+          "slot": 459678105
+        }
+      ],
+      "value": {
+        "key": "BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7",
+        "kind": "unrecognized",
+        "owner_program": "11111111111111111111111111111111"
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "backing_address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+        "backing_chain": "ethereum",
+        "bridge": "Wormhole (Portal)",
+        "kind": "bridged"
+      }
+    },
+    "supply": 246786716228,
+    "symbol": "WBTC"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+  "price": {
+    "kind": "price",
+    "usd_micros": 84261240079
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+            "field": "freeze_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no freeze, pause or seize power"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "bridged tokens stay MEDIUM; see the bridge's own rating",
+        "rating": "medium",
+        "reason": "bridged through Wormhole (Portal), backed by 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599 on ethereum"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+            "field": "mint_authority",
+            "slot": 459678101
+          },
+          {
+            "address": "BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/BCD75RNBHrJJpW4dXVagL5mPjzRLnVZq4YirJdjEYMV7",
+            "field": "owner",
+            "slot": 459678105
+          }
+        ],
+        "next_step": "hold the mint authority in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "new supply can be minted by unrecognized controller BCD7…YMV7 owned by program 1111…1111"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [
+      {
+        "factor": "supply_control",
+        "severity": "high",
+        "text": "New supply can be minted if unrecognized controller BCD7…YMV7 owned by program 1111…1111 uses the mint authority."
+      },
+      {
+        "factor": "provenance",
+        "severity": "medium",
+        "text": "The token can lose its backing if the Wormhole (Portal) bridge stops holding 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599 on ethereum."
+      }
+    ],
+    "symbol": "WBTC"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 8,
+      "price_usd_micros": 84261240079,
+      "supply": 246786716228
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "jupiter-lend",
+      "roles": [
+        "collateral"
+      ]
+    },
+    {
+      "protocol": "jupiter-perps",
+      "roles": [
+        "deposit"
+      ]
+    },
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "collateral",
+        "borrowable"
+      ]
+    }
+  ]
+}

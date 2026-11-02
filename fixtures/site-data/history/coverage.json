@@ -1,0 +1,17 @@
+{
+  "assessed_chains": [
+    "solana"
+  ],
+  "methodology_version": "0.3",
+  "protocols": {
+    "kamino-lend": {
+      "assessment": "assessed",
+      "chain": "solana"
+    },
+    "spl-stake-pool": {
+      "assessment": "assessed",
+      "chain": "solana"
+    }
+  },
+  "schema_version": "0.1.0"
+}

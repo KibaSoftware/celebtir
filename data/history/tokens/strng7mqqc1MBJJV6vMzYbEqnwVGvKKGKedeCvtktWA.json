@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 9,
+      "price_usd_micros": 129068799,
+      "supply": 34428819459653
+    }
+  ],
+  "mint": "strng7mqqc1MBJJV6vMzYbEqnwVGvKKGKedeCvtktWA",
+  "schema_version": "0.2.0",
+  "symbol": "strongSOL"
+}

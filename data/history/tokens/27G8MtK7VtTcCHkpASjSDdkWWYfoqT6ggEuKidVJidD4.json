@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 6,
+      "price_usd_micros": 4631684,
+      "supply": 189946307496600
+    }
+  ],
+  "mint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+  "schema_version": "0.2.0",
+  "symbol": "JLP"
+}

@@ -1,0 +1,22 @@
+# Active collector input originally drafted by the build loop from on-chain reads and the sources below, 2026-10-21.
+# Automated evidence collection is not human review; owner review remains outstanding.
+# Morpho Blue is not a proxy; its owner can enable rate models and LLTVs and set fees.
+id: morpho-blue
+name: Morpho Blue
+chain: hyper_evm
+category: lending
+website: https://app.morpho.org
+defillama_slug: morpho-blue
+programs:
+  - id: "0x68e37dE8d93d3496ae143F2E900490f6280C57cD"
+    name: Morpho
+    role: core
+    proxy: none
+    source: https://docs.morpho.org/get-started/resources/addresses/
+evm_admins:
+  - contract: "0x68e37dE8d93d3496ae143F2E900490f6280C57cD"
+    power: parameters
+    source: https://docs.morpho.org/get-started/resources/addresses/
+review:
+  reviewed_by: celebtir-loop-draft
+  last_reviewed: 2026-10-21

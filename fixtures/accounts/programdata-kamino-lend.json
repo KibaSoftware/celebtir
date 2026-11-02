@@ -1,0 +1,15 @@
+{
+  "address": "9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA",
+  "data_base64": "AwAAAHdLQRoAAAAAAe2KAyz2sSxYZ1SbqX4ZAaGyRsTPFkrNy7+tAU2nA+an",
+  "data_slice": [
+    0,
+    45
+  ],
+  "executable": false,
+  "lamports": 72981780480,
+  "name": "programdata-kamino-lend",
+  "note": "Kamino Lend ProgramData header: authority set",
+  "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+  "slot": 458009921,
+  "source": "api.mainnet-beta.solana.com getMultipleAccounts finalized"
+}

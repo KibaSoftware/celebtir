@@ -1,0 +1,199 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 9,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "field": "freeze_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "immutable"
+      }
+    },
+    "identity": {
+      "issuer": "Jito",
+      "issuer_url": "https://www.jito.network/",
+      "kind": "liquid-staking",
+      "source": "https://github.com/igneous-labs/sanctum-lst-list/blob/master/sanctum-lst-list.toml"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "field": "mint_authority",
+          "slot": 459678101
+        },
+        {
+          "address": "6iQKfEyhr3bZMotVkW6beNZz5CPAkiwvgV2CTje9pVSS",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/6iQKfEyhr3bZMotVkW6beNZz5CPAkiwvgV2CTje9pVSS",
+          "field": "owner",
+          "slot": 459678102
+        }
+      ],
+      "value": {
+        "key": "6iQKfEyhr3bZMotVkW6beNZz5CPAkiwvgV2CTje9pVSS",
+        "kind": "unrecognized",
+        "owner_program": "11111111111111111111111111111111"
+      }
+    },
+    "program": "spl_token",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 7977052003453094,
+    "symbol": "JitoSOL"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+  "price": {
+    "kind": "price",
+    "usd_micros": 140778138
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+            "field": "freeze_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no freeze, pause or seize power"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+            "field": "mint_authority",
+            "slot": 459678101
+          },
+          {
+            "address": "6iQKfEyhr3bZMotVkW6beNZz5CPAkiwvgV2CTje9pVSS",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/6iQKfEyhr3bZMotVkW6beNZz5CPAkiwvgV2CTje9pVSS",
+            "field": "owner",
+            "slot": 459678102
+          }
+        ],
+        "next_step": "hold the mint authority in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "new supply can be minted by unrecognized controller 6iQK…pVSS owned by program 1111…1111"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "no transfer restrictions"
+      }
+    },
+    "risks": [
+      {
+        "factor": "supply_control",
+        "severity": "high",
+        "text": "New supply can be minted if unrecognized controller 6iQK…pVSS owned by program 1111…1111 uses the mint authority."
+      }
+    ],
+    "symbol": "JitoSOL"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 9,
+      "price_usd_micros": 140778138,
+      "supply": 7977052003453094
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "jito",
+      "roles": [
+        "deposit"
+      ]
+    },
+    {
+      "protocol": "jupiter-lend",
+      "roles": [
+        "collateral"
+      ]
+    },
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "collateral",
+        "borrowable"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.png binary
+*.bin binary
+
+# Published evidence, replay fixtures and versioned contracts keep exact bytes.
+# Do not normalize historical files when preparing the first commit.
+data/** -text
+fixtures/** -text
+registry/** -text
+methodology/** -text
+crates/celebtir-score/methodology/** -text
+schemas/** -text

@@ -1,0 +1,31 @@
+[package]
+name = "celebtir-collect-hyperliquid"
+description = "Celebtir Hyperliquid collector: HyperEVM proxy, Safe and timelock reads, HIP-3 perp DEXs."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+
+[lib]
+name = "collect_hyperliquid"
+
+[dependencies]
+celebtir-core.workspace = true
+celebtir-registry.workspace = true
+collect-solana.workspace = true
+serde_norway.workspace = true
+sha3.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+url.workspace = true
+tokio.workspace = true
+
+[dev-dependencies]
+celebtir-score.workspace = true
+tokio = { workspace = true, features = ["test-util"] }
+
+[lints]
+workspace = true

@@ -1,0 +1,170 @@
+{
+  "days": [
+    {
+      "by_chain": {
+        "hyperliquid": {
+          "assessment": "unassessed",
+          "protocols": 0,
+          "stages": null,
+          "total_tvl_usd": 0,
+          "value_by_control": null
+        },
+        "solana": {
+          "assessment": "assessed",
+          "protocols": 2,
+          "stages": {
+            "stage_0": 1,
+            "stage_1": 0,
+            "stage_2": 0,
+            "unrated": 1
+          },
+          "total_tvl_usd": 1310434543,
+          "value_by_control": {
+            "classes": {
+              "immutable": 0,
+              "multisig_short_delay": 0,
+              "multisig_with_delay": 1310434543,
+              "multisig_without_delay": 0,
+              "single_key": 0,
+              "unrecognized": 0
+            },
+            "total": 1310434543
+          }
+        }
+      },
+      "date": "2026-10-15",
+      "methodology_version": "0.3",
+      "protocols": 2,
+      "stages": {
+        "stage_0": 1,
+        "stage_1": 0,
+        "stage_2": 0,
+        "unrated": 1
+      },
+      "total_tvl_usd": 1310434543,
+      "unassessed": 0,
+      "value_by_control": {
+        "classes": {
+          "immutable": 0,
+          "multisig_short_delay": 0,
+          "multisig_with_delay": 1310434543,
+          "multisig_without_delay": 0,
+          "single_key": 0,
+          "unrecognized": 0
+        },
+        "total": 1310434543
+      }
+    },
+    {
+      "by_chain": {
+        "hyperliquid": {
+          "assessment": "unassessed",
+          "protocols": 0,
+          "stages": null,
+          "total_tvl_usd": 0,
+          "value_by_control": null
+        },
+        "solana": {
+          "assessment": "assessed",
+          "protocols": 2,
+          "stages": {
+            "stage_0": 1,
+            "stage_1": 0,
+            "stage_2": 0,
+            "unrated": 1
+          },
+          "total_tvl_usd": 1310434543,
+          "value_by_control": {
+            "classes": {
+              "immutable": 0,
+              "multisig_short_delay": 0,
+              "multisig_with_delay": 1310434543,
+              "multisig_without_delay": 0,
+              "single_key": 0,
+              "unrecognized": 0
+            },
+            "total": 1310434543
+          }
+        }
+      },
+      "date": "2026-10-16",
+      "methodology_version": "0.3",
+      "protocols": 2,
+      "stages": {
+        "stage_0": 1,
+        "stage_1": 0,
+        "stage_2": 0,
+        "unrated": 1
+      },
+      "total_tvl_usd": 1310434543,
+      "unassessed": 0,
+      "value_by_control": {
+        "classes": {
+          "immutable": 0,
+          "multisig_short_delay": 0,
+          "multisig_with_delay": 1310434543,
+          "multisig_without_delay": 0,
+          "single_key": 0,
+          "unrecognized": 0
+        },
+        "total": 1310434543
+      }
+    },
+    {
+      "by_chain": {
+        "hyperliquid": {
+          "assessment": "unassessed",
+          "protocols": 0,
+          "stages": null,
+          "total_tvl_usd": 0,
+          "value_by_control": null
+        },
+        "solana": {
+          "assessment": "assessed",
+          "protocols": 2,
+          "stages": {
+            "stage_0": 1,
+            "stage_1": 0,
+            "stage_2": 0,
+            "unrated": 1
+          },
+          "total_tvl_usd": 1310434543,
+          "value_by_control": {
+            "classes": {
+              "immutable": 0,
+              "multisig_short_delay": 0,
+              "multisig_with_delay": 1310434543,
+              "multisig_without_delay": 0,
+              "single_key": 0,
+              "unrecognized": 0
+            },
+            "total": 1310434543
+          }
+        }
+      },
+      "date": "2026-10-17",
+      "methodology_version": "0.3",
+      "protocols": 2,
+      "stages": {
+        "stage_0": 1,
+        "stage_1": 0,
+        "stage_2": 0,
+        "unrated": 1
+      },
+      "total_tvl_usd": 1310434543,
+      "unassessed": 0,
+      "value_by_control": {
+        "classes": {
+          "immutable": 0,
+          "multisig_short_delay": 0,
+          "multisig_with_delay": 1310434543,
+          "multisig_without_delay": 0,
+          "single_key": 0,
+          "unrecognized": 0
+        },
+        "total": 1310434543
+      }
+    }
+  ],
+  "schema_version": "0.2.0"
+}

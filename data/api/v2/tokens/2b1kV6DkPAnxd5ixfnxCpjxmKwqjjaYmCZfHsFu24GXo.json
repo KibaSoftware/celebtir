@@ -1,0 +1,212 @@
+{
+  "$schema": "/data/v2/schemas/token.schema.json",
+  "api_version": "v2",
+  "deprecation": null,
+  "facts": {
+    "decimals": 6,
+    "extensions": {
+      "evidence": [
+        {
+          "address": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+          "field": "extensions",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "default_frozen": false,
+        "metadata_update_authority": {
+          "key": "2apBGMsS6ti9RyF5TwQTDswXBWskiJP2LD4cUEDqYJjk",
+          "kind": "single_key"
+        },
+        "mint_close_authority": {
+          "key": "2apBGMsS6ti9RyF5TwQTDswXBWskiJP2LD4cUEDqYJjk",
+          "kind": "single_key"
+        },
+        "other": [
+          "confidential_transfer_mint",
+          "confidential_transfer_fee_config",
+          "metadata_pointer"
+        ],
+        "permanent_delegate": {
+          "key": "2apBGMsS6ti9RyF5TwQTDswXBWskiJP2LD4cUEDqYJjk",
+          "kind": "single_key"
+        },
+        "transfer_fee_authority": {
+          "key": "2apBGMsS6ti9RyF5TwQTDswXBWskiJP2LD4cUEDqYJjk",
+          "kind": "single_key"
+        },
+        "transfer_hook": {
+          "authority": {
+            "key": "2apBGMsS6ti9RyF5TwQTDswXBWskiJP2LD4cUEDqYJjk",
+            "kind": "single_key"
+          },
+          "program": null,
+          "program_controller": null
+        }
+      }
+    },
+    "freeze_authority": {
+      "evidence": [
+        {
+          "address": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+          "field": "freeze_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "key": "2apBGMsS6ti9RyF5TwQTDswXBWskiJP2LD4cUEDqYJjk",
+        "kind": "single_key"
+      }
+    },
+    "identity": {
+      "issuer": "Paxos",
+      "issuer_url": "https://www.paxos.com/pyusd",
+      "kind": "stablecoin",
+      "source": "https://docs.paxos.com/guides/stablecoin/pyusd/mainnet"
+    },
+    "mint_authority": {
+      "evidence": [
+        {
+          "address": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+          "field": "mint_authority",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "key": "AxJkHRY3puoofyj7Pn512M1SGBgWroXMkEdNPQypkzbu",
+        "kind": "single_key"
+      }
+    },
+    "program": "token2022",
+    "provenance": {
+      "evidence": [
+        {
+          "address": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+          "chain": "solana",
+          "explorer_url": "https://solscan.io/account/2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+          "field": "mint",
+          "slot": 459678101
+        }
+      ],
+      "value": {
+        "kind": "native"
+      }
+    },
+    "supply": 682333039159768,
+    "symbol": "PYUSD"
+  },
+  "licence": {
+    "attribution": "Data: Celebtir (CC BY 4.0)",
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "methodology_version": "0.1",
+  "mint": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+  "price": {
+    "kind": "price",
+    "usd_micros": 1000484
+  },
+  "schema_version": "2.0.0",
+  "score": {
+    "factors": {
+      "freeze_and_seize": {
+        "evidence": [
+          {
+            "address": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+            "field": "freeze_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "remove any permanent delegate and hold freeze or pause powers in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "permanent delegate single key 2apB…YJjk can move tokens out of any wallet; balances can be frozen by single key 2apB…YJjk"
+      },
+      "provenance": {
+        "evidence": [
+          {
+            "address": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+            "field": "mint",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "none: LOW is the lowest risk level",
+        "rating": "low",
+        "reason": "native to Solana"
+      },
+      "supply_control": {
+        "evidence": [
+          {
+            "address": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+            "field": "mint_authority",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "hold the mint authority in a multisig → MEDIUM",
+        "rating": "high",
+        "reason": "new supply can be minted by single key AxJk…kzbu"
+      },
+      "transfer_restrictions": {
+        "evidence": [
+          {
+            "address": "2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+            "chain": "solana",
+            "explorer_url": "https://solscan.io/account/2b1kV6DkPAnxd5ixfnxCpjxmKwqjjaYmCZfHsFu24GXo",
+            "field": "extensions",
+            "slot": 459678101
+          }
+        ],
+        "next_step": "make the transfer hook program immutable or multisig-controlled → MEDIUM",
+        "rating": "high",
+        "reason": "a transfer hook that can block transfers can be set by single key 2apB…YJjk; transfer fee can be changed by single key 2apB…YJjk"
+      }
+    },
+    "risks": [
+      {
+        "factor": "supply_control",
+        "severity": "high",
+        "text": "New supply can be minted if single key AxJk…kzbu uses the mint authority."
+      },
+      {
+        "factor": "freeze_and_seize",
+        "severity": "high",
+        "text": "Tokens can be moved from your wallet if single key 2apB…YJjk uses the permanent delegate."
+      },
+      {
+        "factor": "freeze_and_seize",
+        "severity": "high",
+        "text": "Your balance can be frozen if single key 2apB…YJjk uses the freeze authority."
+      }
+    ],
+    "symbol": "PYUSD"
+  },
+  "snapshot_date": "2026-10-21",
+  "supply_history": [
+    {
+      "date": "2026-10-21",
+      "decimals": 6,
+      "price_usd_micros": 1000484,
+      "supply": 682333039159768
+    }
+  ],
+  "used_by": [
+    {
+      "protocol": "kamino-lend",
+      "roles": [
+        "collateral",
+        "borrowable"
+      ]
+    }
+  ]
+}

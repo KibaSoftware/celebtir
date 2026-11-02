@@ -1,0 +1,13 @@
+{
+  "days": [
+    {
+      "date": "2026-10-21",
+      "decimals": 9,
+      "price_usd_micros": 130791178,
+      "supply": 4315763384955671
+    }
+  ],
+  "mint": "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v",
+  "schema_version": "0.2.0",
+  "symbol": "JupSOL"
+}

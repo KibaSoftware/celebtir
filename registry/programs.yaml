@@ -1,0 +1,131 @@
+# Source-code facts keyed by program ID (F1): one fact per program, shared by every
+# protocol that uses it. `public` names one repository (never an org page, docs page,
+# explorer or IDL/parsing repo) and, where the deployment branch is known, the full
+# commit whose `declare_id!` is this program ID. `none_found` records where the
+# search ended. Verification is read from OtterSec on every run, never assumed.
+# Checked 2026-10-25: OtterSec status, the repository's declare_id!, GitHub commit API.
+programs:
+  # SPL Stake Pool (Jito, Binance Staked SOL). OtterSec: not verified, no repo.
+  - id: SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy
+    name: SPL Stake Pool
+    source_code:
+      kind: public
+      repo: https://github.com/solana-program/stake-pool
+      path: program
+      evidence: https://www.solana-program.com/docs/stake-pool
+  # Sanctum's SPL fork. The deploy branch declares this ID; OtterSec: not verified.
+  - id: SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY
+    name: SanctumSpl Stake Pool
+    source_code:
+      kind: public
+      repo: https://github.com/igneous-labs/sanctum-spl-stake-pool
+      commit: 81f7e922a4cad340da8347a2ef244445d0cc3e26
+      path: stake-pool/program
+      evidence: https://github.com/igneous-labs/sanctum-spl-stake-pool/blob/81f7e922a4cad340da8347a2ef244445d0cc3e26/stake-pool/program/src/lib.rs
+  - id: SPMBzsVUuoHA4Jm6KunbsotaahvVikZs1JyTW6iJvbn
+    name: SanctumSplMulti Stake Pool
+    source_code:
+      kind: public
+      repo: https://github.com/igneous-labs/sanctum-spl-stake-pool
+      commit: 5fd31ede7629761d7c98b2358161cdc219e669fa
+      path: stake-pool/program
+      evidence: https://github.com/igneous-labs/sanctum-spl-stake-pool/blob/5fd31ede7629761d7c98b2358161cdc219e669fa/stake-pool/program/src/lib.rs
+  # GMX Solana Store. OtterSec: verified at 8af1e70c.
+  - id: Gmso1uvJnLbawvw7yezdfCDcPydwW2s2iqG3w6MDucLo
+    name: GMX Solana Store
+    source_code:
+      kind: public
+      repo: https://github.com/gmsol-labs/gmx-solana
+      commit: 8af1e70c0c0b6ff9d6b41ba4997910588fbcec28
+      evidence: https://verify.osec.io/status/Gmso1uvJnLbawvw7yezdfCDcPydwW2s2iqG3w6MDucLo
+  # Jupiter Lend. jup-ag/jupiter-lend publishes reference snippets only, not program
+  # source; developers.jup.ag lists the program IDs without a repository.
+  - id: jupeiUmn818Jg1ekPURTpr4mFo29p46vygyykFJ3wZC
+    name: Jupiter Lend Liquidity
+    source_code: &jupiter-lend-none
+      kind: none_found
+      evidence: https://github.com/jup-ag/jupiter-lend
+  - id: jup3YeL8QhtSx1e253b2FDvsMNC87fDrgQZivbrndc9
+    name: Jupiter Lend Earn
+    source_code: *jupiter-lend-none
+  - id: jupr81YtYssSyPt8jbnGuiWon5f6x9TcDEFxYe3Bdzi
+    name: Jupiter Lend Vaults
+    source_code: *jupiter-lend-none
+  - id: jupgfSgfuAXv4B6R2Uxu85Z1qdzgju79s6MfZekN6XS
+    name: Jupiter Lend Flashloan
+    source_code: *jupiter-lend-none
+  - id: jupZ4m2GqUCJ5iueMfzQf8khFfH31d4XAQt3RzCT9Vd
+    name: Jupiter Lend AMM
+    source_code: *jupiter-lend-none
+  - id: jup7TthsMgcR9Y3L277b8Eo9uboVSmu1utkuXHNUKar
+    name: Jupiter Lend Rewards Rate Model
+    source_code: *jupiter-lend-none
+  - id: jupnw4B6Eqs7ft6rxpzYLJZYSnrpRgPcr589n5Kv4oc
+    name: Jupiter Lend Oracle
+    source_code: *jupiter-lend-none
+  # Jupiter Perps and its Doves oracle: Jupiter publishes the IDL and account docs,
+  # not the program source. OtterSec: not verified, no repo.
+  - id: PERPHjGBqRHArX4DySjwM6UJHiR3sWAatqfdBS2qQJu
+    name: Jupiter Perpetuals
+    source_code:
+      kind: none_found
+      evidence: https://developers.jup.ag/docs/perps/custody-account
+  - id: DoVEsk76QybCEHQGzkvYPWLQu9gzNoZZZt3TPiL597e
+    name: Doves oracle
+    source_code:
+      kind: none_found
+      evidence: https://docs.jup.ag/user-docs/trade/perps/technical-reference
+  # Kamino. OtterSec: verified at the commits below.
+  - id: KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD
+    name: Kamino Lending
+    source_code:
+      kind: public
+      repo: https://github.com/Kamino-Finance/klend
+      commit: e921c648765fc2343c87614a00f4b39b640f0510
+      evidence: https://verify.osec.io/status/KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD
+  - id: FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr
+    name: Kamino Farms
+    source_code:
+      kind: public
+      repo: https://github.com/Kamino-Finance/kfarms
+      commit: bfa186034ba8ecd36e7faf27cae6b38ee24d0bc4
+      evidence: https://verify.osec.io/status/FarmsPZpWu9i7Kky8tPN37rs2TpmMrAZrC7S7vJa91Hr
+  # Orca Whirlpools: declare_id! in programs/whirlpool/src/lib.rs. OtterSec: not verified.
+  - id: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc
+    name: Orca Whirlpools
+    source_code:
+      kind: public
+      repo: https://github.com/orca-so/whirlpools
+      path: programs/whirlpool
+      evidence: https://github.com/orca-so/whirlpools/blob/cc683ec92acb5e7606caa3d8e514d9383e9c7c11/programs/whirlpool/src/lib.rs
+  # PumpSwap: pump-fun publishes the IDL and docs, not the program source.
+  - id: pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA
+    name: PumpSwap AMM
+    source_code:
+      kind: none_found
+      evidence: https://github.com/pump-fun/pump-public-docs
+  # Raydium: each repository's declare_id! at the commit recorded. OtterSec: not verified.
+  - id: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8
+    name: Raydium AMM v4
+    source_code:
+      kind: public
+      repo: https://github.com/raydium-io/raydium-amm
+      commit: 91739d8d9f5cf347e0ce14ebe4d2bb7069fb31b6
+      path: program
+      evidence: https://github.com/raydium-io/raydium-amm/blob/91739d8d9f5cf347e0ce14ebe4d2bb7069fb31b6/program/src/lib.rs
+  - id: CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C
+    name: Raydium CPMM
+    source_code:
+      kind: public
+      repo: https://github.com/raydium-io/raydium-cp-swap
+      commit: cfdb70a8ca9ea62bb5c304d4492ac0fc371ae8ce
+      path: programs/cp-swap
+      evidence: https://github.com/raydium-io/raydium-cp-swap/blob/cfdb70a8ca9ea62bb5c304d4492ac0fc371ae8ce/programs/cp-swap/src/lib.rs
+  - id: CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK
+    name: Raydium CLMM
+    source_code:
+      kind: public
+      repo: https://github.com/raydium-io/raydium-clmm
+      commit: 119ed36bf9f33335ed8d671780502bc37d9f1605
+      path: programs/amm
+      evidence: https://github.com/raydium-io/raydium-clmm/blob/119ed36bf9f33335ed8d671780502bc37d9f1605/programs/amm/src/lib.rs

@@ -1,0 +1,1003 @@
+{
+  "$defs": {
+    "Address": {
+      "description": "An on-chain address in its chain's canonical text form (base58 on Solana,\n0x-hex on EVM). Format checks belong to the registry and collectors.",
+      "type": "string"
+    },
+    "Chain": {
+      "description": "The chain an address or fact lives on.",
+      "oneOf": [
+        {
+          "enum": [
+            "solana"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "hyper_evm",
+          "description": "Wave 2.",
+          "type": "string"
+        },
+        {
+          "const": "hyper_core",
+          "description": "Wave 2.",
+          "type": "string"
+        }
+      ]
+    },
+    "Controller": {
+      "description": "Who can change something, resolved to its effective controller.",
+      "oneOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "immutable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "A registry-declared PDA re-derived from its program and typed seeds.",
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "program_controlled",
+              "type": "string"
+            },
+            "program": {
+              "$ref": "#/$defs/Address"
+            },
+            "upgrade": {
+              "$ref": "#/$defs/Controller"
+            }
+          },
+          "required": [
+            "kind",
+            "key",
+            "program",
+            "upgrade"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "single_key",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "key"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "config_authority": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Controller"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "kind": {
+              "const": "multisig",
+              "type": "string"
+            },
+            "multisig_kind": {
+              "$ref": "#/$defs/MultisigKind"
+            },
+            "nested_signers": {
+              "additionalProperties": {
+                "$ref": "#/$defs/Controller"
+              },
+              "description": "Signers that are not plain wallet keys (another multisig's vault,\nor an unknown program-derived address), resolved; each still\ncounts as one voter (edge case 5).",
+              "type": "object"
+            },
+            "signers": {
+              "description": "Keys of the members with the Vote permission, sorted (UI-20).",
+              "items": {
+                "$ref": "#/$defs/Address"
+              },
+              "type": "array"
+            },
+            "threshold": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "time_lock_secs": {
+              "format": "uint32",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "voters": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "multisig_kind",
+            "address",
+            "threshold",
+            "voters",
+            "time_lock_secs"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "EVM, wave 2.",
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "admin": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Controller"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "A `DEFAULT_ADMIN_ROLE` holder other than the timelock itself: it\ncan change roles and the delay without waiting (ADR 024 D4)."
+            },
+            "kind": {
+              "const": "timelock",
+              "type": "string"
+            },
+            "min_delay_secs": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "proposer": {
+              "$ref": "#/$defs/Controller"
+            }
+          },
+          "required": [
+            "kind",
+            "address",
+            "min_delay_secs",
+            "proposer"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "A multisig that can never reach its threshold (ADR 004).",
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "cannot_act",
+              "type": "string"
+            },
+            "threshold": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "voters": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "address",
+            "threshold",
+            "voters"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "unrecognized",
+              "type": "string"
+            },
+            "owner_program": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Address"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "key"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "An off-curve address (no private key can exist for it) whose\ncontrolling program is not resolved by a verified registry\ndeclaration. Never a key, never \"unrecognized\" (methodology v0.3).",
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/Address"
+            },
+            "kind": {
+              "const": "pda",
+              "type": "string"
+            },
+            "owner_program": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Address"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Owner of the account at that address; None when no account exists."
+            }
+          },
+          "required": [
+            "kind",
+            "key"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Deprecation": {
+      "description": "Deprecation metadata for future public API migrations (API-2).\nThe pre-launch v1 replacement is the explicit D7 exception.",
+      "properties": {
+        "successor": {
+          "description": "Path of the replacing version, e.g. `/data/v2/`.",
+          "type": "string"
+        },
+        "sunset_date": {
+          "description": "`YYYY-MM-DD`: the last day this version is published.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "successor",
+        "sunset_date"
+      ],
+      "type": "object"
+    },
+    "Evidence": {
+      "description": "Where a fact came from: the account read, the slot it was read at, the\nfield that held the value, and a link anyone can open to check it.",
+      "properties": {
+        "address": {
+          "$ref": "#/$defs/Address"
+        },
+        "chain": {
+          "$ref": "#/$defs/Chain"
+        },
+        "explorer_url": {
+          "format": "uri",
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        },
+        "slot": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "chain",
+        "address",
+        "slot",
+        "field",
+        "explorer_url"
+      ],
+      "type": "object"
+    },
+    "Fact": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/Controller"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact2": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/TokenExtensions"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Fact3": {
+      "description": "A value together with the evidence it was derived from. The evidence list\nis never empty (SNAP-1): construction and deserialization both reject it.",
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "value": {
+          "$ref": "#/$defs/TokenProvenance"
+        }
+      },
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "FactorScore": {
+      "properties": {
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "type": "array"
+        },
+        "next_step": {
+          "description": "What would raise the rating one level (SCO-5).",
+          "type": "string"
+        },
+        "rating": {
+          "$ref": "#/$defs/Rating"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "registry_sources": {
+          "description": "Registry source pages behind a reviewed-none finding, which has no\non-chain read to cite (v0.3).",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "rating",
+        "reason",
+        "next_step",
+        "evidence"
+      ],
+      "type": "object"
+    },
+    "Licence": {
+      "properties": {
+        "attribution": {
+          "description": "How to credit the data when reusing it.",
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "attribution"
+      ],
+      "type": "object"
+    },
+    "MultisigKind": {
+      "oneOf": [
+        {
+          "enum": [
+            "squads_v4",
+            "squads_v3"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "safe",
+          "description": "EVM, wave 2.",
+          "type": "string"
+        }
+      ]
+    },
+    "Rating": {
+      "description": "A factor rating. `Unknown` (missing data, SCO-7) and `NotApplicable` are\nshown separately from High; neither is a risk level.",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "unknown",
+        "not_applicable"
+      ],
+      "type": "string"
+    },
+    "Severity": {
+      "description": "Follows the rating that produced the sentence. Low produces none.",
+      "enum": [
+        "high",
+        "medium"
+      ],
+      "type": "string"
+    },
+    "TokenDay": {
+      "description": "One day of a token's supply and price (TOK-9).",
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "decimals": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "price_usd_micros": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "supply": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "date",
+        "supply",
+        "decimals"
+      ],
+      "type": "object"
+    },
+    "TokenExtensions": {
+      "additionalProperties": false,
+      "description": "Token-2022 powers. `None` means the extension is absent.",
+      "properties": {
+        "default_frozen": {
+          "default": false,
+          "description": "New token accounts start frozen (an allowlist).",
+          "type": "boolean"
+        },
+        "metadata_update_authority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mint_close_authority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "other": {
+          "description": "Decoded extensions that carry no control power Celebtir rates\n(confidential transfers, interest-bearing, groups, …), by name.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "pause_authority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Who can pause all transfers."
+        },
+        "permanent_delegate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Can move tokens out of any wallet."
+        },
+        "transfer_fee_authority": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Who can change the transfer fee; set when the extension is present."
+        },
+        "transfer_hook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TransferHook"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "unknown": {
+          "description": "Extension type numbers Celebtir does not decode (TOK-4).",
+          "items": {
+            "format": "uint16",
+            "maximum": 65535,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TokenFactor": {
+      "enum": [
+        "supply_control",
+        "freeze_and_seize",
+        "transfer_restrictions",
+        "provenance"
+      ],
+      "type": "string"
+    },
+    "TokenFacts": {
+      "additionalProperties": false,
+      "description": "One mint's control facts (TOK-3 to TOK-5). Every authority is resolved to\nits effective controller; `Immutable` means the authority is not set.",
+      "properties": {
+        "decimals": {
+          "default": 0,
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "extensions": {
+          "$ref": "#/$defs/Fact2",
+          "description": "Token-2022 extensions; empty for classic SPL Token mints."
+        },
+        "freeze_authority": {
+          "$ref": "#/$defs/Fact"
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TokenIdentity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Type, issuer and source from `registry/tokens.yaml` (TOK-1), for the\ntoken page."
+        },
+        "mint_authority": {
+          "$ref": "#/$defs/Fact"
+        },
+        "program": {
+          "$ref": "#/$defs/TokenProgram"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Fact3",
+          "description": "From `registry/tokens.yaml`; the evidence is the mint account."
+        },
+        "supply": {
+          "default": 0,
+          "description": "Supply in base units at the read slot (TOK-9).",
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "program",
+        "mint_authority",
+        "freeze_authority",
+        "extensions",
+        "provenance"
+      ],
+      "type": "object"
+    },
+    "TokenIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "issuer": {
+          "type": "string"
+        },
+        "issuer_url": {
+          "type": "string"
+        },
+        "kind": {
+          "description": "`stablecoin`, `liquid-staking`, `bridged`, `governance` or `other`.",
+          "type": "string"
+        },
+        "source": {
+          "description": "Confirms the mint, symbol and type.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "issuer",
+        "issuer_url",
+        "source"
+      ],
+      "type": "object"
+    },
+    "TokenMetrics": {
+      "description": "A token's price, in millionths of a US dollar so it stays an exact integer.",
+      "oneOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "price",
+              "type": "string"
+            },
+            "usd_micros": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "kind",
+            "usd_micros"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "kind": {
+              "const": "unavailable",
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "TokenProgram": {
+      "enum": [
+        "spl_token",
+        "token2022"
+      ],
+      "type": "string"
+    },
+    "TokenProvenance": {
+      "oneOf": [
+        {
+          "properties": {
+            "kind": {
+              "const": "native",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "backing_address": {
+              "type": "string"
+            },
+            "backing_chain": {
+              "type": "string"
+            },
+            "bridge": {
+              "type": "string"
+            },
+            "kind": {
+              "const": "bridged",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "bridge",
+            "backing_chain",
+            "backing_address"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "TokenRisk": {
+      "description": "\"Your balance can be frozen if…\": one per power rated High or Medium.",
+      "properties": {
+        "factor": {
+          "$ref": "#/$defs/TokenFactor"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "severity",
+        "factor",
+        "text"
+      ],
+      "type": "object"
+    },
+    "TokenRole": {
+      "description": "How a protocol uses a token (TOK-2).",
+      "enum": [
+        "collateral",
+        "borrowable",
+        "deposit",
+        "lp"
+      ],
+      "type": "string"
+    },
+    "TokenScore": {
+      "properties": {
+        "factors": {
+          "additionalProperties": false,
+          "properties": {
+            "freeze_and_seize": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "provenance": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "supply_control": {
+              "$ref": "#/$defs/FactorScore"
+            },
+            "transfer_restrictions": {
+              "$ref": "#/$defs/FactorScore"
+            }
+          },
+          "type": "object"
+        },
+        "risks": {
+          "default": [],
+          "description": "The token page's risk summary, most severe first (TOK-6).",
+          "items": {
+            "$ref": "#/$defs/TokenRisk"
+          },
+          "type": "array"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "factors"
+      ],
+      "type": "object"
+    },
+    "TokenUser": {
+      "properties": {
+        "protocol": {
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "$ref": "#/$defs/TokenRole"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "protocol",
+        "roles"
+      ],
+      "type": "object"
+    },
+    "TransferHook": {
+      "additionalProperties": false,
+      "properties": {
+        "authority": {
+          "$ref": "#/$defs/Controller",
+          "description": "Who can point the hook at another program."
+        },
+        "program": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Address"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "None when the extension is present but no hook program is set yet."
+        },
+        "program_controller": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Controller"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Upgrade control of the hook program itself."
+        }
+      },
+      "required": [
+        "authority"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "`/data/v2/tokens/<mint>.json`.",
+  "properties": {
+    "$schema": {
+      "description": "Root-relative path of this file's JSON Schema.",
+      "type": "string"
+    },
+    "api_version": {
+      "type": "string"
+    },
+    "deprecation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Deprecation"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "facts": {
+      "$ref": "#/$defs/TokenFacts"
+    },
+    "licence": {
+      "$ref": "#/$defs/Licence"
+    },
+    "methodology_version": {
+      "type": "string"
+    },
+    "mint": {
+      "type": "string"
+    },
+    "price": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TokenMetrics"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "score": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TokenScore"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "snapshot_date": {
+      "description": "The snapshot these data come from (`YYYY-MM-DD`).",
+      "type": "string"
+    },
+    "supply_history": {
+      "description": "One entry per snapshot, oldest first.",
+      "items": {
+        "$ref": "#/$defs/TokenDay"
+      },
+      "type": "array"
+    },
+    "used_by": {
+      "description": "Rated protocols using this token, sorted by protocol.",
+      "items": {
+        "$ref": "#/$defs/TokenUser"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "$schema",
+    "api_version",
+    "schema_version",
+    "snapshot_date",
+    "methodology_version",
+    "licence",
+    "mint",
+    "facts",
+    "supply_history",
+    "used_by"
+  ],
+  "title": "TokenApi",
+  "type": "object"
+}
